@@ -1,0 +1,4652 @@
+################################################################################
+                     |-----| UPGRADE: COMPLETED |-----|
+################################################################################
+This Upgrade Log sums up all adjustment that were accomplished by the CI-Upgrader. 
+
+SECTIONS: 
+1. INSTALLATION
+2. COPIED DIRECTORIES AND FILES
+3. EDITED FILES
+4. WHAT TO DO AFTER CI-UPGRADER
+
+################################################################################
+                       |-----| 1. INSTALLATION |-----|                       
+################################################################################
+
+Your CodeIgniter 3 source project is 'logopedas_test' (Path: 'C:\xampp\htdocs\logopedas_test')
+
+New CodeIgniter 4 project 'logopedas_test_CI4' was successfully installed (Path: 'C:\xampp\htdocs\logopedas_test_CI4')
+
+This installation includes the ci3-to-4-upgrade-helper from kenjis (For more informations: https://github.com/kenjis/ci3-to-4-upgrade-helper).
+
+################################################################################
+                 |-----| 2. COPIED DIRECTORIES AND FILES |-----|
+################################################################################
+
+Here you can check out, which directories and files were copied from your old CI3 project to your new CI4 project. 
+If your are missing something, you have to copy it by your own hand. 
+
+The CI-Upgrader ran through your Views, Models, Controllers, Core (if exists, the Upgrader will just copy your MY_Controller.php from Core), Migrations, Language, Libraries, Helper and Assets. 
+(Assets if the most used name for the directory, which contains your img, css, js, etc... files. If you use a different name in your CI3 project or if your assets folder is not in your root or application directory, the Upgrader will not find and copy these files. In this case, you have to copy it manually.)
+
+-------------------------------------------------------------------------------
+
+################################  |VIEWS|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\views'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Views'
+
+|Directories: 265 |
+   - admin
+   - emails
+   - forums_and_topics
+   - options
+   - users
+   - colegiados
+   - includes
+   - js
+   - menus
+   - phpmailer
+   - docs
+   - examples
+   - images
+   - language
+   - phpdoc
+   - media
+   - PHPMailer
+   - test
+   - errors
+   - cli
+   - html
+   - forum
+   - create
+   - itemCRUD
+   - pages
+   - menus
+   - privado
+   - ckeditor
+   - adapters
+   - images
+   - lang
+   - plugins
+   - a11yhelp
+   - dialogs
+   - lang
+   - about
+   - dialogs
+   - autogrow
+   - clipboard
+   - dialogs
+   - colordialog
+   - dialogs
+   - dialog
+   - div
+   - dialogs
+   - find
+   - dialogs
+   - flash
+   - dialogs
+   - images
+   - forms
+   - dialogs
+   - images
+   - iframedialog
+   - image
+   - dialogs
+   - link
+   - dialogs
+   - images
+   - liststyle
+   - dialogs
+   - pagebreak
+   - images
+   - pastefromword
+   - filter
+   - pastetext
+   - dialogs
+   - scayt
+   - dialogs
+   - showblocks
+   - images
+   - smiley
+   - dialogs
+   - images
+   - specialchar
+   - dialogs
+   - styles
+   - styles
+   - table
+   - dialogs
+   - tableresize
+   - tabletools
+   - dialogs
+   - templates
+   - dialogs
+   - templates
+   - images
+   - uicolor
+   - dialogs
+   - lang
+   - yui
+   - assets
+   - wsc
+   - dialogs
+   - skins
+   - kama
+   - images
+   - office2003
+   - images
+   - v2
+   - images
+   - themes
+   - default
+   - _samples
+   - api_dialog
+   - asp
+   - assets
+   - php
+   - _source
+   - adapters
+   - core
+   - dom
+   - htmlparser
+   - lang
+   - plugins
+   - a11yhelp
+   - dialogs
+   - lang
+   - about
+   - dialogs
+   - autogrow
+   - basicstyles
+   - bidi
+   - blockquote
+   - button
+   - clipboard
+   - dialogs
+   - colorbutton
+   - colordialog
+   - dialogs
+   - contextmenu
+   - dialog
+   - dialogadvtab
+   - dialogui
+   - div
+   - dialogs
+   - domiterator
+   - editingblock
+   - elementspath
+   - enterkey
+   - entities
+   - fakeobjects
+   - filebrowser
+   - find
+   - dialogs
+   - flash
+   - dialogs
+   - images
+   - floatpanel
+   - font
+   - format
+   - forms
+   - dialogs
+   - images
+   - horizontalrule
+   - htmldataprocessor
+   - htmlwriter
+   - iframedialog
+   - image
+   - dialogs
+   - indent
+   - justify
+   - keystrokes
+   - link
+   - dialogs
+   - images
+   - list
+   - listblock
+   - liststyle
+   - dialogs
+   - maximize
+   - menu
+   - menubutton
+   - newpage
+   - pagebreak
+   - images
+   - panel
+   - panelbutton
+   - pastefromword
+   - filter
+   - pastetext
+   - dialogs
+   - popup
+   - preview
+   - print
+   - removeformat
+   - resize
+   - richcombo
+   - save
+   - scayt
+   - dialogs
+   - selection
+   - showblocks
+   - images
+   - showborders
+   - smiley
+   - dialogs
+   - images
+   - sourcearea
+   - specialchar
+   - dialogs
+   - styles
+   - styles
+   - stylescombo
+   - tab
+   - table
+   - dialogs
+   - tableresize
+   - tabletools
+   - dialogs
+   - templates
+   - dialogs
+   - templates
+   - images
+   - toolbar
+   - uicolor
+   - dialogs
+   - lang
+   - yui
+   - assets
+   - undo
+   - wsc
+   - dialogs
+   - wysiwygarea
+   - skins
+   - kama
+   - images
+   - office2003
+   - images
+   - v2
+   - images
+   - themes
+   - default
+   - css
+   - images
+   - includes
+   - js
+   - menus
+   - phpmailer
+   - docs
+   - extras
+   - language
+   - test
+   - test_script
+   - images
+   - scripts
+   - src
+   - styles
+   - sql
+   - temp
+   - textarea
+   - icons
+   - includes
+   - popups
+   - styles
+   - paypal
+   - products
+   - seccion
+   - templates
+   - topic
+   - create
+   - users
+   - admin
+   - logout
+   - profile
+
+|Files: 1183 |
+   - emails.php
+   - forums_and_topics.php
+   - options.php
+   - edit_user.php
+   - users.php
+   - configuracion.php
+   - control.php
+   - documentos.php
+   - download.php
+   - error_log
+   - facturas.php
+   - footer.php
+   - functions.php
+   - header.php
+   - menu.php
+   - seguridad.php
+   - index.php
+   - inscripciones.php
+   - funciones.js.php
+   - funciones2.js
+   - ts_picker2.js
+   - main.php
+   - mensaje.php
+   - mensajes.php
+   - mensajes_colegiado.php
+   - mensajes_enviados.php
+   - mensaje_enviado.php
+   - m_colegiados.php
+   - switch_menus.php
+   - mis_cuotas.php
+   - mis_cuotas_anterior.php
+   - mis_datos.php
+   - mis_facturas.php
+   - nosession.php
+   - oferta.php
+   - ofertas.php
+   - pagar_cuotas.php
+   - password.php
+   - ChangeLog.txt
+   - class.phpmailer.php
+   - class.pop3.php
+   - class.smtp.php
+   - codeworxtech.html
+   - extending.html_
+   - faq.html
+   - pop3_article.txt_
+   - timeoutfix.diff_
+   - use_gmail.txt
+   - contents.html_
+   - bkgrnd.gif_
+   - phpmailer.gif_
+   - phpmailer.png_
+   - phpmailer_mini.gif_
+   - index.html_
+   - pop3_before_smtp_test.php_
+   - test1.php
+   - phpmailer.lang-br.php_
+   - phpmailer.lang-ca.php_
+   - phpmailer.lang-cz.php_
+   - phpmailer.lang-de.php_
+   - phpmailer.lang-dk.php_
+   - phpmailer.lang-en.php_
+   - phpmailer.lang-es.php_
+   - phpmailer.lang-et.php_
+   - phpmailer.lang-fi.php_
+   - phpmailer.lang-fo.php_
+   - phpmailer.lang-fr.php_
+   - phpmailer.lang-hu.php_
+   - phpmailer.lang-it.php_
+   - phpmailer.lang-ja.php_
+   - phpmailer.lang-nl.php_
+   - phpmailer.lang-no.php_
+   - phpmailer.lang-pl.php_
+   - phpmailer.lang-ro.php_
+   - phpmailer.lang-ru.php_
+   - phpmailer.lang-se.php_
+   - phpmailer.lang-tr.php_
+   - LICENSE
+   - blank.html
+   - classtrees_PHPMailer.html_
+   - elementindex.html_
+   - elementindex_PHPMailer.html_
+   - errors.html
+   - index.html
+   - li_PHPMailer.html_
+   - banner.css_
+   - stylesheet.css_
+   - packages.html_
+   - PHPMailer.html_
+   - SMTP.html_
+   - _class_phpmailer_php.html_
+   - _class_smtp_php.html_
+   - README
+   - phpmailer_test.php_
+   - phpunit.php
+   - test.png
+   - rec_password.php
+   - respuesta.php
+   - resumen_pagos.php
+   - seguridad.php
+   - selec_menu.php
+   - solicitar_baja.php
+   - solicitar_cambio.php
+   - solicitar_traslado.php
+   - error_404_ci3.php
+   - error_404_ci3.php
+   - error_db.php
+   - error_exception_ci3.php
+   - error_exception_ci3.php
+   - error_general.php
+   - error_php.php
+   - index.html
+   - error404.php
+   - error_404_ci3.php
+   - error_404_ci3.php
+   - error_db.php
+   - error_exception_ci3.php
+   - error_exception_ci3.php
+   - error_general.php
+   - error_php.php
+   - index.html
+   - index.html
+   - create.php
+   - create_success.php
+   - index.html
+   - index.php
+   - single.php
+   - index.html
+   - create.php
+   - edit.php
+   - list.php
+   - show.php
+   - aaa.php
+   - acuerdos.php
+   - admin.php
+   - alta_colegiado_prueba.php
+   - alta_cuota.php
+   - alta_cuota_prueba.php
+   - alta_documento.php
+   - alta_documentos_prueba.php
+   - alta_evento.php
+   - alta_evento_ag_prueba.php
+   - alta_evento_ajeno.php
+   - alta_evento_gratis.php
+   - alta_evento_prueba.php
+   - alta_oferta.php
+   - alta_oferta_prueba.php
+   - alta_proyecto.php
+   - alta_prueba.php
+   - alta_sociedades.php
+   - alta_sociedades_prueba.php
+   - alta_usuario.php
+   - alucinante.php
+   - aviso.php
+   - baja.php
+   - bandeja_de_entrada.php
+   - borrar_baja.php
+   - borrar_cambio.php
+   - borrar_colegiado.php
+   - borrar_documento.php
+   - borrar_evento.php
+   - borrar_evento_ajeno.php
+   - borrar_inscrito.php
+   - borrar_mensaje.php
+   - borrar_oferta.php
+   - borrar_pedidos.php
+   - borrar_reclamaciones.php
+   - borrar_sociedad.php
+   - borrar_traslado.php
+   - borrar_usuario.php
+   - busca_colegiados.php
+   - busca_reclamaciones.php
+   - cambio.php
+   - cambio_status.php
+   - codigo.php
+   - colegio.php
+   - configuracion.php
+   - contacto.php
+   - control.php
+   - cplc.php
+   - edit_colegiado.php
+   - edit_cuotas.php
+   - edit_documento.php
+   - edit_evento.php
+   - edit_evento_ajeno.php
+   - edit_evento_gratis.php
+   - edit_oferta.php
+   - edit_sociedad.php
+   - elayudante.code-workspace
+   - eliminar_cuota.php
+   - email_template.php
+   - email_verification.php
+   - email_view.php
+   - encuentra.php
+   - enviar_mensajes-eventos.php
+   - enviar_mensajes.php
+   - enviar_mensajes_old.php
+   - error_log
+   - estado_cuota.php
+   - estado_cuota2.php
+   - estado_cuota3.php
+   - estatutos.php
+   - example.php
+   - exito_Compra.php
+   - facturas.php
+   - faq.php
+   - formacion.php
+   - formacion_detalle.php
+   - home.php
+   - imprimir_baja.php
+   - imprimir_cambio.php
+   - imprimir_colegiado.php
+   - imprimir_traslado.php
+   - index.php
+   - INFO.PHP
+   - inscripcion.php
+   - juntagob.php
+   - lanza-factura.php
+   - lanza_control_firmas.php
+   - lanza_etiquetas.php
+   - lanza_etiquetas_cursos.php
+   - lanza_excel.php
+   - lanza_factura.php
+   - lanza_inscripciones.php
+   - lanza_inscrito.php
+   - lanza_listado.php
+   - lanza_listado_sociedades.php
+   - lista_colegiados.php
+   - lista_documentos.php
+   - lista_eventos.php
+   - lista_eventos_ajenos.php
+   - lista_eventos_gratis.php
+   - lista_inscripciones.php
+   - lista_ofertas.php
+   - lista_operaciones.php
+   - lista_reclamaciones.php
+   - lista_sociedades.php
+   - lista_usuarios.php
+   - logopedas.php
+   - main.php
+   - mantenimiento.php
+   - masteryp.php
+   - mensaje-respuesta.php
+   - mensaje.php
+   - mensajes_enviado-eventos.php
+   - mensajes_enviado.php
+   - mensaje_enviado-eventos.php
+   - mensaje_enviado.php
+   - m_cobros.php
+   - m_colegiados.php
+   - m_documentos.php
+   - m_empleo.php
+   - m_eventos.php
+   - m_reclamaciones.php
+   - m_usuarios.php
+   - switch_menus.php
+   - normativa.php
+   - nosession.php
+   - noticias.php
+   - nuevas_reclamaciones.php
+   - nuevas_sociedades.php
+   - nuevos_colegiados.php
+   - oferta.php
+   - oferta_detalle.php
+   - oferta_detalle_2.php
+   - oferta_detalle_3.php
+   - oferta_detalle_4.php
+   - otroscursos.php
+   - password copy.php
+   - password.php
+   - previa_registro.php
+   - privacidad.php
+   - aaa.php
+   - alta_colegiado.php
+   - alta_cuota.php
+   - alta_documento.php
+   - alta_evento.php
+   - alta_evento_ajeno.php
+   - alta_evento_gratis.php
+   - alta_oferta.php
+   - alta_proyecto.php
+   - alta_sociedades.php
+   - alta_usuario.php
+   - baja.php
+   - bandeja_de_entrada.php
+   - borrar_baja.php
+   - borrar_cambio.php
+   - borrar_colegiado.php
+   - borrar_documento.php
+   - borrar_evento.php
+   - borrar_evento_ajeno.php
+   - borrar_inscrito.php
+   - borrar_mensaje.php
+   - borrar_oferta.php
+   - borrar_pedidos.php
+   - borrar_reclamaciones.php
+   - borrar_sociedad.php
+   - borrar_traslado.php
+   - borrar_usuario.php
+   - busca_colegiados.php
+   - busca_reclamaciones.php
+   - cambio.php
+   - cambio_status.php
+   - jquery.js
+   - CHANGES.html
+   - ckeditor.asp
+   - ckeditor.js
+   - ckeditor.pack
+   - ckeditor.php
+   - ckeditor_basic.js
+   - ckeditor_basic_source.js
+   - ckeditor_php4.php
+   - ckeditor_php5.php
+   - ckeditor_source.js
+   - config.js
+   - contents.css
+   - spacer.gif
+   - INSTALL.html
+   - af.js
+   - ar.js
+   - bg.js
+   - bn.js
+   - bs.js
+   - ca.js
+   - cs.js
+   - cy.js
+   - da.js
+   - de.js
+   - el.js
+   - en-au.js
+   - en-ca.js
+   - en-gb.js
+   - en.js
+   - eo.js
+   - es.js
+   - et.js
+   - eu.js
+   - fa.js
+   - fi.js
+   - fo.js
+   - fr-ca.js
+   - fr.js
+   - gl.js
+   - gu.js
+   - he.js
+   - hi.js
+   - hr.js
+   - hu.js
+   - is.js
+   - it.js
+   - ja.js
+   - km.js
+   - ko.js
+   - lt.js
+   - lv.js
+   - mn.js
+   - ms.js
+   - nb.js
+   - nl.js
+   - no.js
+   - pl.js
+   - pt-br.js
+   - pt.js
+   - ro.js
+   - ru.js
+   - sk.js
+   - sl.js
+   - sr-latn.js
+   - sr.js
+   - sv.js
+   - th.js
+   - tr.js
+   - uk.js
+   - vi.js
+   - zh-cn.js
+   - zh.js
+   - _languages.js
+   - _translationstatus.txt
+   - LICENSE.html
+   - a11yhelp.js_
+   - en.js
+   - he.js
+   - about.js_
+   - logo_ckeditor.png_
+   - plugin.js
+   - paste.js_
+   - colordialog.js_
+   - dialogDefinition.js_
+   - div.js
+   - find.js_
+   - flash.js_
+   - placeholder.png_
+   - button.js_
+   - checkbox.js_
+   - form.js_
+   - hiddenfield.js_
+   - radio.js_
+   - select.js_
+   - textarea.js_
+   - textfield.js_
+   - hiddenfield.gif_
+   - plugin.js_
+   - image.js_
+   - anchor.js_
+   - link.js_
+   - anchor.gif_
+   - liststyle.js_
+   - pagebreak.gif_
+   - default.js_
+   - pastetext.js_
+   - options.js_
+   - toolbar.css_
+   - block_address.png_
+   - block_blockquote.png_
+   - block_div.png_
+   - block_h1.png_
+   - block_h2.png_
+   - block_h3.png_
+   - block_h4.png_
+   - block_h5.png_
+   - block_h6.png_
+   - block_p.png_
+   - block_pre.png_
+   - smiley.js_
+   - angel_smile.gif_
+   - angry_smile.gif_
+   - broken_heart.gif_
+   - confused_smile.gif_
+   - cry_smile.gif_
+   - devil_smile.gif_
+   - embaressed_smile.gif_
+   - envelope.gif_
+   - heart.gif_
+   - kiss.gif_
+   - lightbulb.gif_
+   - omg_smile.gif_
+   - regular_smile.gif_
+   - sad_smile.gif_
+   - shades_smile.gif_
+   - teeth_smile.gif_
+   - thumbs_down.gif_
+   - thumbs_up.gif_
+   - tounge_smile.gif_
+   - whatchutalkingabout_smile.gif_
+   - wink_smile.gif_
+   - specialchar.js_
+   - default.js_
+   - table.js_
+   - plugin.js_
+   - tableCell.js_
+   - templates.js_
+   - default.js_
+   - template1.gif_
+   - template2.gif_
+   - template3.gif_
+   - uicolor.js_
+   - en.js
+   - plugin.js
+   - uicolor.gif
+   - hue_bg.png_
+   - hue_thumb.png_
+   - picker_mask.png_
+   - picker_thumb.png_
+   - yui.css_
+   - yui.js
+   - ciframe.html_
+   - tmpFrameset.html_
+   - wsc.css
+   - wsc.js
+   - dialog.css
+   - editor.css
+   - icons.png
+   - icons_rtl.png
+   - dialog_sides.gif_
+   - dialog_sides.png_
+   - dialog_sides_rtl.png_
+   - mini.gif
+   - noimage.png_
+   - sprites.png_
+   - sprites_ie6.png_
+   - toolbar_start.gif_
+   - skin.js
+   - templates.css
+   - dialog.css
+   - editor.css
+   - icons.png
+   - icons_rtl.png_
+   - dialog_sides.gif_
+   - dialog_sides.png_
+   - dialog_sides_rtl.png_
+   - mini.gif_
+   - noimage.png_
+   - sprites.png_
+   - sprites_ie6.png_
+   - skin.js
+   - templates.css_
+   - dialog.css
+   - editor.css
+   - icons.png
+   - icons_rtl.png
+   - dialog_sides.gif_
+   - dialog_sides.png_
+   - dialog_sides_rtl.png_
+   - mini.gif
+   - noimage.png
+   - sprites.png
+   - sprites_ie6.png_
+   - toolbar_start.gif_
+   - skin.js
+   - templates.css
+   - theme.js
+   - ajax.html
+   - api.html
+   - my_dialog.js_
+   - api_dialog.html
+   - advanced.asp
+   - events.asp
+   - index.html
+   - replace.asp
+   - replaceall.asp
+   - sample_posteddata.asp_
+   - standalone.asp
+   - output_xhtml.css_
+   - autogrow.html
+   - divreplace.html
+   - enterkey.html
+   - fullpage.html
+   - index.html
+   - jqueryadapter.html
+   - output_html.html
+   - output_xhtml.html
+   - advanced.php
+   - events.php
+   - replace.php
+   - replaceall.php
+   - standalone.php
+   - replacebyclass.html_
+   - replacebycode.html
+   - sample.css
+   - sample.js
+   - sample_posteddata.php_
+   - sharedspaces.html
+   - skins.html
+   - ui_color.html
+   - ui_languages.html
+   - jquery.js
+   - comment.js
+   - document.js_
+   - documentfragment.js_
+   - domobject.js_
+   - element.js
+   - elementpath.js_
+   - event.js
+   - node.js
+   - nodelist.js_
+   - range.js
+   - rangelist.js_
+   - text.js
+   - walker.js
+   - window.js
+   - basicwriter.js_
+   - cdata.js_
+   - comment.js_
+   - element.js_
+   - filter.js_
+   - fragment.js_
+   - text.js_
+   - af.js
+   - ar.js
+   - bg.js
+   - bn.js
+   - bs.js
+   - ca.js
+   - cs.js
+   - cy.js
+   - da.js
+   - de.js
+   - el.js
+   - en-au.js
+   - en-ca.js
+   - en-gb.js
+   - en.js
+   - eo.js
+   - es.js
+   - et.js
+   - eu.js
+   - fa.js
+   - fi.js
+   - fo.js
+   - fr-ca.js
+   - fr.js
+   - gl.js
+   - gu.js
+   - he.js
+   - hi.js
+   - hr.js
+   - hu.js
+   - is.js
+   - it.js
+   - ja.js
+   - km.js
+   - ko.js
+   - lt.js
+   - lv.js
+   - mn.js
+   - ms.js
+   - nb.js
+   - nl.js
+   - no.js
+   - pl.js
+   - pt-br.js
+   - pt.js
+   - ro.js
+   - ru.js
+   - sk.js
+   - sl.js
+   - sr-latn.js
+   - sr.js
+   - sv.js
+   - th.js
+   - tr.js
+   - uk.js
+   - vi.js
+   - zh-cn.js
+   - zh.js
+   - _languages.js
+   - _translationstatus.txt_
+   - a11yhelp.js_
+   - en.js_
+   - he.js_
+   - plugin.js_
+   - about.js_
+   - logo_ckeditor.png_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - paste.js_
+   - plugin.js_
+   - plugin.js_
+   - colordialog.js_
+   - plugin.js_
+   - plugin.js_
+   - dialogDefinition.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - div.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - find.js_
+   - plugin.js_
+   - flash.js_
+   - placeholder.png_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - button.js_
+   - checkbox.js_
+   - form.js_
+   - hiddenfield.js_
+   - radio.js_
+   - select.js_
+   - textarea.js_
+   - textfield.js_
+   - hiddenfield.gif_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - image.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - anchor.js_
+   - link.js_
+   - anchor.gif_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - liststyle.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - pagebreak.gif_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - default.js_
+   - plugin.js_
+   - pastetext.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - plugin.js_
+   - options.js_
+   - toolbar.css_
+   - plugin.js_
+   - plugin.js_
+   - block_address.png_
+   - block_blockquote.png_
+   - block_div.png_
+   - block_h1.png_
+   - block_h2.png_
+   - block_h3.png_
+   - block_h4.png_
+   - block_h5.png_
+   - block_h6.png_
+   - block_p.png_
+   - block_pre.png_
+   - plugin.js_
+   - plugin.js_
+   - smiley.js_
+   - angel_smile.gif_
+   - angry_smile.gif_
+   - broken_heart.gif_
+   - confused_smile.gif_
+   - cry_smile.gif_
+   - devil_smile.gif_
+   - embaressed_smile.gif_
+   - envelope.gif_
+   - heart.gif_
+   - kiss.gif_
+   - lightbulb.gif_
+   - omg_smile.gif_
+   - regular_smile.gif_
+   - sad_smile.gif_
+   - shades_smile.gif_
+   - teeth_smile.gif_
+   - thumbs_down.gif_
+   - thumbs_up.gif_
+   - tounge_smile.gif_
+   - whatchutalkingabout_smile.gif_
+   - wink_smile.gif_
+   - plugin.js_
+   - plugin.js_
+   - specialchar.js_
+   - plugin.js_
+   - plugin.js_
+   - default.js_
+   - plugin.js_
+   - plugin.js_
+   - table.js_
+   - plugin.js_
+   - plugin.js_
+   - tableCell.js_
+   - plugin.js_
+   - templates.js_
+   - plugin.js_
+   - default.js_
+   - template1.gif_
+   - template2.gif_
+   - template3.gif_
+   - plugin.js_
+   - uicolor.js_
+   - en.js_
+   - plugin.js_
+   - uicolor.gif_
+   - hue_bg.png_
+   - hue_thumb.png_
+   - picker_mask.png_
+   - picker_thumb.png_
+   - yui.css_
+   - yui.js_
+   - plugin.js_
+   - ciframe.html_
+   - tmpFrameset.html_
+   - wsc.css_
+   - wsc.js_
+   - plugin.js_
+   - plugin.js_
+   - dialog.css_
+   - editor.css_
+   - elementspath.css_
+   - icons.css_
+   - icons.png_
+   - icons_rtl.png_
+   - dialog_sides.gif_
+   - dialog_sides.png_
+   - dialog_sides_rtl.png_
+   - mini.gif_
+   - noimage.png_
+   - sprites.png_
+   - sprites_ie6.png_
+   - toolbar_start.gif_
+   - mainui.css_
+   - menu.css
+   - panel.css_
+   - presets.css_
+   - reset.css_
+   - richcombo.css_
+   - skin.js
+   - templates.css_
+   - toolbar.css_
+   - dialog.css_
+   - editor.css_
+   - elementspath.css_
+   - icons.css_
+   - icons.png_
+   - icons_rtl.png_
+   - dialog_sides.gif_
+   - dialog_sides.png_
+   - dialog_sides_rtl.png_
+   - mini.gif_
+   - noimage.png_
+   - sprites.png_
+   - sprites_ie6.png_
+   - mainui.css_
+   - menu.css_
+   - panel.css_
+   - presets.css_
+   - reset.css_
+   - richcombo.css_
+   - skin.js_
+   - templates.css_
+   - toolbar.css_
+   - dialog.css
+   - editor.css
+   - elementspath.css_
+   - icons.css
+   - icons.png
+   - icons_rtl.png_
+   - dialog_sides.gif_
+   - dialog_sides.png_
+   - dialog_sides_rtl.png_
+   - mini.gif_
+   - noimage.png_
+   - sprites.png_
+   - sprites_ie6.png_
+   - toolbar_start.gif_
+   - mainui.css
+   - menu.css
+   - panel.css
+   - presets.css_
+   - reset.css
+   - richcombo.css_
+   - skin.js
+   - templates.css_
+   - toolbar.css_
+   - theme.js_
+   - configuracion.php
+   - control.php
+   - estilos.css
+   - edit_colegiado.php
+   - edit_cuotas.php
+   - edit_documento.php
+   - edit_evento.php
+   - edit_evento_ajeno.php
+   - edit_evento_gratis.php
+   - edit_oferta.php
+   - edit_sociedad.php
+   - eliminar_cuota.php
+   - enviar_mensajes-eventos.php
+   - enviar_mensajes.php
+   - enviar_mensajes_old.php
+   - error_log
+   - estado_cuota.php
+   - estado_cuota2.php
+   - estado_cuota3.php
+   - facturas.php
+   - btn_responder.jpg
+   - cal.gif
+   - delete.gif
+   - delete.jpg
+   - edit.gif
+   - evento_off.jpg
+   - evento_on.jpg
+   - icon_etiquetas.jpg
+   - icon_excel.jpg
+   - icon_pdf.jpg
+   - icon_pdf_firmas.jpg
+   - logo.jpg
+   - next.gif
+   - prev.gif
+   - Thumbs.db
+   - imprimir_baja.php
+   - imprimir_cambio.php
+   - imprimir_colegiado.php
+   - imprimir_traslado.php
+   - footer.php
+   - functions.php
+   - header.php
+   - menu.php
+   - seguridad.php
+   - index.php
+   - INFO.PHP
+   - inscripcion.php
+   - funciones.js.php
+   - funciones2.js
+   - scripts.js
+   - ts_picker2.js
+   - lanza-factura.php
+   - lanza_control_firmas.php
+   - lanza_etiquetas.php
+   - lanza_etiquetas_cursos.php
+   - lanza_excel.php
+   - lanza_inscripciones.php
+   - lanza_inscrito.php
+   - lanza_listado.php
+   - lanza_listado_sociedades.php
+   - lista_colegiados.php
+   - lista_documentos.php
+   - lista_eventos.php
+   - lista_eventos_ajenos.php
+   - lista_eventos_gratis.php
+   - lista_inscripciones.php
+   - lista_ofertas.php
+   - lista_operaciones.php
+   - lista_reclamaciones.php
+   - lista_sociedades.php
+   - lista_usuarios.php
+   - main.php
+   - mensaje-respuesta.php
+   - mensaje.php
+   - mensajes_enviado-eventos.php
+   - mensajes_enviado.php
+   - mensaje_enviado-eventos.php
+   - mensaje_enviado.php
+   - m_cobros.php
+   - m_colegiados.php
+   - m_documentos.php
+   - m_empleo.php
+   - m_eventos.php
+   - m_reclamaciones.php
+   - m_usuarios.php
+   - switch_menus.php
+   - nosession.php
+   - nuevas_reclamaciones.php
+   - nuevas_sociedades.php
+   - nuevos_colegiados.php
+   - password.php
+   - changelog.md
+   - class.phpmailer.php
+   - class.pop3.php
+   - class.smtp.php
+   - composer.json
+   - Callback_function_notes.txt_
+   - DomainKeys_notes.txt_
+   - extending.html_
+   - faq.html
+   - generatedocs.sh_
+   - Note_for_SMTP_debugging.txt_
+   - pop3_article.txt_
+   - use_gmail.txt
+   - class.html2text.php
+   - htmlfilter.php
+   - ntlm_sasl_client.php
+   - phpmailer.lang-ar.php_
+   - phpmailer.lang-br.php_
+   - phpmailer.lang-ca.php_
+   - phpmailer.lang-ch.php_
+   - phpmailer.lang-cz.php_
+   - phpmailer.lang-de.php_
+   - phpmailer.lang-dk.php_
+   - phpmailer.lang-eo.php_
+   - phpmailer.lang-es.php
+   - phpmailer.lang-et.php_
+   - phpmailer.lang-fi.php_
+   - phpmailer.lang-fo.php_
+   - phpmailer.lang-fr.php_
+   - phpmailer.lang-he.php_
+   - phpmailer.lang-hu.php_
+   - phpmailer.lang-it.php_
+   - phpmailer.lang-ja.php_
+   - phpmailer.lang-nl.php_
+   - phpmailer.lang-no.php_
+   - phpmailer.lang-pl.php_
+   - phpmailer.lang-ro.php_
+   - phpmailer.lang-ru.php_
+   - phpmailer.lang-se.php_
+   - phpmailer.lang-sk.php_
+   - phpmailer.lang-tr.php_
+   - phpmailer.lang-zh.php_
+   - phpmailer.lang-zh_cn.php_
+   - contents.html
+   - fakesendmail.sh_
+   - phpmailerLangTest.php_
+   - phpmailerTest.php_
+   - test.png
+   - testbootstrap-dist.php_
+   - testemail.php
+   - test_callback.php_
+   - contents.html_
+   - aikido.gif_
+   - bkgrnd.gif_
+   - phpmailer.gif_
+   - index.php_
+   - LGPLv3.txt_
+   - clipboard.swf_
+   - shBrushBash.js_
+   - shBrushCpp.js_
+   - shBrushCSharp.js_
+   - shBrushCss.js_
+   - shBrushDelphi.js_
+   - shBrushDiff.js_
+   - shBrushGroovy.js_
+   - shBrushJava.js_
+   - shBrushJScript.js_
+   - shBrushPerl.js_
+   - shBrushPhp.js_
+   - shBrushPlain.js_
+   - shBrushPython.js_
+   - shBrushRuby.js_
+   - shBrushScala.js_
+   - shBrushSql.js_
+   - shBrushVb.js_
+   - shBrushXml.js_
+   - shCore.js_
+   - shLegacy.js_
+   - shCore.js_
+   - shLegacy.js_
+   - help.png_
+   - magnifier.png_
+   - page_white_code.png_
+   - page_white_copy.png_
+   - printer.png_
+   - shCore.css_
+   - shThemeDefault.css_
+   - shThemeDjango.css_
+   - shThemeEmacs.css_
+   - shThemeFadeToGrey.css_
+   - shThemeMidnight.css_
+   - shThemeRDark.css_
+   - wrapping.png_
+   - test.html_
+   - prueba_mail.php
+   - rec_password.php
+   - responder_reclamacion.php
+   - seguridad.php
+   - selec_menu.php
+   - solicitudes_baja.php
+   - solicitudes_cambio.php
+   - solicitudes_traslado.php
+   - admin.txt
+   - status_anulado.php
+   - status_enviado.php
+   - status_error.php
+   - status_pendiente.php
+   - status_procesado.php
+   - fileXML.xml
+   - example.html
+   - backcolor.gif
+   - backcolor_on.gif
+   - background_silver.jpg
+   - bold.gif
+   - bold_on.gif
+   - copy.gif
+   - copy_on.gif
+   - cut.gif
+   - cut_on.gif
+   - forecolor.gif
+   - forecolor_on.gif
+   - help.gif
+   - help_on.gif
+   - indent_left.gif
+   - indent_left_on.gif
+   - indent_right.gif
+   - indent_right_on.gif
+   - insert_hyperlink.gif
+   - insert_hyperlink_on.gif_
+   - insert_picture.gif
+   - insert_picture_on.gif
+   - insert_table.gif
+   - insert_table_on.gif
+   - italics.gif
+   - italics_on.gif
+   - justify_center.gif
+   - justify_center_on.gif
+   - justify_left.gif
+   - justify_left_on.gif
+   - justify_right.gif
+   - justify_right_on.gif
+   - list_ordered.gif
+   - list_ordered_on.gif
+   - list_unordered.gif
+   - list_unordered_on.gif
+   - logo.gif
+   - paste.gif
+   - paste_on.gif
+   - redo.gif
+   - redo_on.gif
+   - select_font.gif
+   - select_font_on.gif
+   - select_size.gif
+   - select_size_on.gif
+   - seperator.gif
+   - seperator2.gif
+   - strikethrough.gif
+   - strikethrough_on.gif
+   - subscript.gif
+   - subscript_on.gif
+   - superscript.gif
+   - superscript_on.gif
+   - Thumbs.db
+   - underline.gif
+   - underline_on.gif
+   - undo.gif
+   - undo_on.gif
+   - view_source.gif
+   - view_source_on.gif
+   - view_text.gif
+   - view_text_on.gif
+   - footer.php
+   - functions.php
+   - header.php
+   - incl_imagen.php
+   - incl_video_ext.php
+   - menu.php
+   - about.html
+   - about_license.html
+   - create_table.html
+   - insert_hyperlink.html_
+   - insert_image.html
+   - license.html
+   - select_color.html
+   - readme.html
+   - styles.css
+   - wysiwyg.js
+   - traslado.php
+   - ver_colegiado.php
+   - ver_inscrito.php
+   - ver_sociedad.php
+   - prueba_mail.php
+   - rec_password.php
+   - responder_reclamacion.php
+   - seguridad.php
+   - selec_menu.php
+   - serviciocolegiado.php
+   - solicitudes_baja.php
+   - solicitudes_cambio.php
+   - solicitudes_traslado.php
+   - status_anulado.php
+   - status_enviado.php
+   - status_error.php
+   - status_pendiente.php
+   - status_procesado.php
+   - traslado.php
+   - ver_colegiado.php
+   - ver_inscrito.php
+   - ver_sociedad.php
+   - videonoticias.php
+   - cancel.php
+   - success.php
+   - index.php
+   - index.php
+   - template.php
+   - cookie_view.php
+   - footer.php
+   - header.php
+   - menu_admin.php
+   - create.php
+   - index.html
+   - index.html
+   - reply.php
+   - single.php
+   - index.html
+   - login.php
+   - index.html
+   - login.php
+   - index.html
+   - logout_success.php
+   - delete.php
+   - edit.php
+   - index.html
+   - profile.php
+   - register.php
+
+-------------------------------------------------------------------------------
+
+################################  |MODELS|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\models'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Models'
+
+|Directories: 0 |
+   - No Directories found in CI3-Path
+
+|Files: 9 |
+   - Admin_model.php
+   - Curso_model.php
+   - Email_model.php
+   - Forum_model.php
+   - index.html
+   - ItemCRUDModel.php
+   - Payment.php
+   - Product.php
+   - User_model.php
+
+-------------------------------------------------------------------------------
+
+################################  |CONTROLLERS|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\controllers'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Controllers'
+
+|Directories: 0 |
+   - No Directories found in CI3-Path
+
+|Files: 12 |
+   - Admin.php
+   - Crud.php
+   - Cursos.php
+   - Email.php
+   - Errors.php
+   - Forum.php
+   - index.html
+   - itemCRUD.php
+   - Pages.php
+   - Paypal.php
+   - Products.php
+   - Users.php
+
+-------------------------------------------------------------------------------
+
+################################  |CORE|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\core'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Controllers'
+
+|Directories: 0 |
+   - No Directories found in CI3-Path
+
+|Files: 0 |
+   - No Files found in CI3-Path
+
+-------------------------------------------------------------------------------
+
+################################  |MIGRATIONS|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\migrations'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Database\Migrations'
+
+|Directories: 0 |
+   - No Directories found in CI3-Path
+
+|Files: 0 |
+   - No Files found in CI3-Path
+
+-------------------------------------------------------------------------------
+
+################################  |LANGUAGE|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\language'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Language'
+
+|Directories: 1 |
+   - english
+
+|Files: 2 |
+   - index.html
+   - index.html
+
+-------------------------------------------------------------------------------
+
+################################  |LIBRARIES|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\libraries'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Libraries'
+
+|Directories: 0 |
+   - No Directories found in CI3-Path
+
+|Files: 3 |
+   - index.html
+   - Paypal_lib.php
+   - Phpmailer_libraryy.php
+
+-------------------------------------------------------------------------------
+
+################################  |HELPERS|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\helpers'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Helpers'
+
+|Directories: 0 |
+   - No Directories found in CI3-Path
+
+|Files: 3 |
+   - form_helper.php
+   - index.html
+   - login_helper.php
+
+-------------------------------------------------------------------------------
+
+################################  |ASSETS|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\assets'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\assets'
+
+|Directories: 8 |
+   - css
+   - downloads
+   - images
+   - empresas
+   - junta
+   - png
+   - Inicio
+   - js
+
+|Files: 135 |
+   - .DS_Store
+   - style.css
+   - CGCL_Manifiesto_Día_de_la_Logopedia.pdf
+   - codigocplc.pdf
+   - curso-alteraciones-procesamiento-auditivo-central.pdf
+   - estatutoscplc.pdf
+   - protocolo_logopedia.pdf
+   - .DS_Store
+   - LOGOPEDAS_WEB_EMPRESASUTAC.png
+   - LOGOPEDAS_WEB_EMPRESAS_AMA.png
+   - LOGOPEDAS_WEB_EMPRESAS_AVAN.jpg
+   - LOGOPEDAS_WEB_EMPRESAS_BALNEARIOPVIESGO.png
+   - LOGOPEDAS_WEB_EMPRESAS_CASTILLATERMAL.jpg
+   - LOGOPEDAS_WEB_EMPRESAS_CLC.jpg
+   - LOGOPEDAS_WEB_EMPRESAS_CLM.jpg
+   - LOGOPEDAS_WEB_EMPRESAS_DIVERLEXIA.jpg
+   - LOGOPEDAS_WEB_EMPRESAS_DOCTORSHOP.png
+   - LOGOPEDAS_WEB_EMPRESAS_EIA.png
+   - LOGOPEDAS_WEB_EMPRESAS_GEU.png
+   - LOGOPEDAS_WEB_EMPRESAS_HAPPYCAR.png
+   - LOGOPEDAS_WEB_EMPRESAS_INFOSAL.png
+   - LOGOPEDAS_WEB_EMPRESAS_JAVIER.png
+   - LOGOPEDAS_WEB_EMPRESAS_LOGOPEDICUM.png
+   - LOGOPEDAS_WEB_EMPRESAS_NEUROTEC.png
+   - LOGOPEDAS_WEB_EMPRESAS_ONDAEDUCA.png
+   - LOGOPEDAS_WEB_EMPRESAS_OYEMAS.png
+   - LOGOPEDAS_WEB_EMPRESAS_PEREZDELCAMINO.png
+   - LOGOPEDAS_WEB_EMPRESAS_PRODAT.png
+   - LOGOPEDAS_WEB_EMPRESAS_PSN.png
+   - LOGOPEDAS_WEB_EMPRESAS_SANJUAN.png
+   - LOGOPEDAS_WEB_EMPRESAS_SANTANDER.png
+   - LOGOPEDAS_WEB_EMPRESAS_UOC.png
+   - LOGOPEDAS_WEB_EMPRESAS_URABARRI.png
+   - bianka.jpg
+   - carmen.jpg
+   - laura.jpg
+   - marina-carmen.jpg
+   - marina.jpg
+   - marta.jpg
+   - mili.jpg
+   - .DS_Store
+   - 1AZUL.jpg
+   - 2AZUL.jpg
+   - 340x300__0000_CPLC_WEB_CODIGO2.jpg
+   - 340x300__0000_CPLC_WEB_CONTACTO.jpg
+   - 340x300__0000_CPLC_WEB_CURSOSCPLC.jpg
+   - 340x300__0000_CPLC_WEB_MASTER.jpg
+   - 340x300__0000_CPLC_WEB_OTROSCURSOS.jpg
+   - 340x300__0001_CPLC_WEB_ACUERDOS.jpg
+   - 340x300__0002_CPLC_WEB_TASAS.jpg
+   - 340x300__0003_CPLC_WEB_FOROS.jpg
+   - 545x270__0000_CPLC_WEB_BLOG.jpg
+   - 545x270__0001_CPLC_WEB_FOROS.jpg
+   - 545x270__0002_CPLC_WEB_FAQ.jpg
+   - 545x270__0003_CPLC_WEB_BUSCAR.jpg
+   - 545x270__0004_CPLC_WEB_CODIGO.jpg
+   - 545x270__0004_CPLC_WEB_JUNTA.jpg
+   - 545x270__0005_CPLC_WEB_CONTACTO.jpg
+   - 545x270__0006_CPLC_WEB_ESTATUTOS.jpg
+   - acceso-header.png
+   - acuerdos.gif
+   - acuerdos.png
+   - aesara.png
+   - aviso-header.png
+   - banner_ama.gif
+   - banner_lebaniego.gif
+   - close-icon.png
+   - codigodeo.png
+   - colegio-img.png
+   - conversacion.png
+   - cookies-icon.png
+   - CPLC_IMAGOTIPO_VERT_BALNCO.png
+   - CPLC_ISOTIPO.png
+   - curso-alteraciones-procesamiento-auditivo-central.jpg
+   - curso-cplc-arasaac.jpg
+   - curso.gif
+   - curso.png
+   - cursos-cplc-img.png
+   - deon-img.png
+   - encuentra-header.png
+   - encuentra.gif
+   - estatutos-img.png
+   - estatutos.png
+   - estatutoslink.gif
+   - faq-header.png
+   - faq.png
+   - favicon.ico
+   - fondo.jpg
+   - formacion.gif
+   - formulario-header.png
+   - foro-img.png
+   - foro.png
+   - globo.png
+   - imago_twoblues.png
+   - img-back.jpeg
+   - img-curso.jpg
+   - img-form.svg
+   - ineup.png
+   - Recurso 10.png
+   - Recurso 2.png
+   - Recurso 3.png
+   - Recurso 3.svg
+   - Recurso 4.png
+   - Recurso 5.png
+   - Recurso 51.png
+   - Recurso 6.png
+   - Recurso 7.png
+   - Recurso 8.png
+   - Recurso 9.png
+   - junta-img.png
+   - junta.png
+   - logopedia_burgos.jpg
+   - logo_header.png
+   - mapa.png
+   - master-img.png
+   - norma-header.png
+   - normas-img.png
+   - normativas-header.png
+   - noticia1.jpg
+   - noticia2.png
+   - noticia3.png
+   - otroscursos-img.png
+   - paypal-btn.png
+   - politica-header.png
+   - prueba1.jpeg
+   - prueba2.png
+   - prueba3.png
+   - santander.png
+   - servicio.png
+   - servicios.png
+   - tasas-img.png
+   - video-img.png
+   - voto-img.png
+   - cookie_consent.js
+   - faq.js
+
+################################################################################
+|-----| 3. EDITED FILES |-----| 
+################################################################################
+
+Here you can check out, which lines were edited, added or removed from every file. 
+You should consider, that the CI-Upgrader can not transfer all files and functions of your CI3 project without errors into CI4. For more informations about the adjustments you have to make or what can cause errors after the Upgrade, take a look at section '4. WHAT TO DO AFTER CI-UPGRADER.'
+
+The CI-Upgrader transferred all your settings from the most important Config files (autoload.php, config.php, database.php, migration.php, routes.php) and a lot of code from your Models, Views, Controllers, Libraries, Languages, and Migrations files with the help of the ci3-to-4-upgrade-helper from kenjis in CI4.
+
+-------------------------------------------------------------------------------
+
+################################  |CONFIG FILES|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\config'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Config'
+
+| App.php (CI4) |
+Lines edited: 4
+   - [Line 27]: public $baseURL = 'https://localhost/logopedas_dos/';
+   - [Line 40]: public $indexPage = '';
+   - [Line 73]: public $defaultLocale = 'english';
+   - [Line 300]: public $cookieHTTPOnly = FALSE;
+
+-------------------------------------------------------------------------------
+
+| Logger.php (CI4 |
+Lines edited: 1
+   - [Line 41]: public $threshold = 0;
+
+-------------------------------------------------------------------------------
+
+| Cache.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| Encryption.php CI4) |
+Lines edited: 1
+   - [Line 26]: public $key = 'xRUqKhsoZ5qV6y3kqARFJFdPqJvp7X2z';
+
+-------------------------------------------------------------------------------
+
+| Database.php (CI4) |
+Lines edited: 11
+   - [Line 34]: 'DSN' => 'port=3306',
+   - [Line 60]: 'DSN' => 'port=3306',
+   - [Line 61]: 'hostname' => 'localhost',
+   - [Line 36]: 'username' => 'root',
+   - [Line 62]: 'username' => 'root',
+   - [Line 37]: 'password' => 'root',
+   - [Line 63]: 'password' => 'root',
+   - [Line 38]: 'database' => 'logopedas',
+   - [Line 64]: 'database' => 'logopedas',
+   - [Line 65]: 'DBDriver' => 'mysqli',
+   - [Line 66]: 'DBPrefix' => '',
+
+-------------------------------------------------------------------------------
+
+################################  |ROUTES|  ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\config\routes.php'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Config\Routes.php'
+
+Lines edited: 4
+   - [Line 20]: $routes->setDefaultController('pages');
+   - [Line 21]: $routes->setDefaultMethod('view');
+   - [Line 38]: $routes->get('/', 'pages::view');
+   - [Line 23]: $routes->set404Override(errors);
+
+Lines added: 22
+   - $routes->add('users', 'users::index');
+   - $routes->add('users/(:any)/edit', 'users::edit/$1');
+   - $routes->add('users/(:any)/delete', 'users::delete/$1');
+   - $routes->add('users/login', 'users::login');
+   - $routes->add('users/admin/login', 'admin::login');
+   - $routes->add('users/register', 'users::register');
+   - $routes->add('users/logout', 'users::logout');
+   - $routes->add('users/profile/edit', 'users::edit');
+   - $routes->add('create_forum', 'forum::create_forum');
+   - $routes->add('topic/create', 'forum::create_topic');
+   - $routes->add('(:any)/create_topic', 'forum::create_topic/$1');
+   - $routes->add('topic/(:any)/(:any)', 'forum::topic/$1/$2');
+   - $routes->add('(:any)/(:any)/reply', 'forum::create_post/$1/$2');
+   - $routes->add('itemCRUD', "itemCRUD::index");
+   - $routes->add('itemCRUD/(:num)', "itemCRUD");
+   - $routes->add('itemCRUDShow/(:any)', "itemCRUD::show/$1");
+   - $routes->add('itemCRUDCreate', "itemCRUD::store");
+   - $routes->add('itemCRUDEdit/(:any)', "itemCRUD::edit/$1");
+   - $routes->add('itemCRUDUpdate/(:any)', "itemCRUD::update/$1");
+   - $routes->add('itemCRUDDelete/(:any)', "itemCRUD::delete/$1");
+   - $routes->add('paypal/success/(:any)', 'paypal::success/$1');
+   - $routes->add('(:any)', 'pages::view/$1');
+
+-------------------------------------------------------------------------------
+
+################################  |MIGRATIONS| ################################
+
+|--------------------| Migrations Config |--------------------|
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\config\migration.php'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Config\Migrations.php'
+
+| Migrations.php (CI4) |
+Lines edited: 2
+   - [Line 21]: public $enabled = FALSE;
+   - [Line 54]: public $timestampFormat = 'YmdHis_';
+
+-------------------------------------------------------------------------------
+
+|--------------------| Migrations Files |--------------------|
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\migrations'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Database\Migrations'
+
+No Migrations files found
+
+-------------------------------------------------------------------------------
+
+################################  |LANGUAGES| ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\libraries'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Libraries'
+
+| en\Validation.php (CI4) |
+Lines edited: 2
+   return [
+   ];
+
+-------------------------------------------------------------------------------
+
+################################  |LIBRARIES| ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\language'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Language'
+
+#####  | 1. Subfolders |  #####
+(In CI4, all names of Libraries subfolders has to be first letter uppercase)
+
+Subfolder names edited: 0
+   - All subfoler names are already correct or no subfolders found
+
+-------------------------------------------------------------------------------
+
+#####  | 2. Files content |  #####
+
+| Paypal_lib.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Libraries;   |added|
+
+-------------------------------------------------------------------------------
+
+| Phpmailer_libraryy.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Libraries;   |added|
+
+-------------------------------------------------------------------------------
+
+################################  |MODELS| ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\models'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Models'
+
+#####  | 1. Subfolders |  #####
+(In CI4, all names of Models subfolders has to be first letter uppercase)
+
+Subfolder names edited: 0
+   - All subfoler names are already correct or no subfolders found
+
+-------------------------------------------------------------------------------
+
+#####  | 2. Files content |  #####
+
+| Admin_model.php (CI4) |
+Lines edited: 2
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| Curso_model.php (CI4) |
+Lines edited: 2
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| Email_model.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+
+-------------------------------------------------------------------------------
+
+| Forum_model.php (CI4) |
+Lines edited: 2
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| ItemCRUDModel.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+
+-------------------------------------------------------------------------------
+
+| Payment.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+
+-------------------------------------------------------------------------------
+
+| Product.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+
+-------------------------------------------------------------------------------
+
+| User_model.php (CI4) |
+Lines edited: 2
+   - [Line 2]: namespace App\Models; use Kenjis\CI3Compatible\Core\CI_Model;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+################################  |CONTROLLERS| ################################
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\controllers'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Controllers'
+
+#####  | 1. Subfolders |  #####
+(In CI4, all names of Models subfolders has to be first letter uppercase)
+
+Subfolder names edited: 0
+   - All subfoler names are already correct or no subfolders found
+
+-------------------------------------------------------------------------------
+
+#####  | 2. Files Content |  #####
+
+|--------------------| BaseController |--------------------|
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Controllers\BaseController.php'
+
+| BaseController.php (CI4) |
+Lines edited: 4
+   - [Line 38]: protected $helpers = ['url','form_helper','login_helper'];
+   - [Line 31]: protected $libraries = ['form_validation','session','encryption','database','pagination'];    |added| 
+   - [Line 3]: 
+use App\Models\User_model;
+   - [Line 53]: 
+		$this->user_model = new User_model(); 
+
+|--------------------| Other Controllers Files |--------------------|
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\controllers'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Controllers'
+
+| Admin.php (CI4) |
+Lines edited: 45
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 43]: echo view('templates/header');
+   - [Line 44]: echo view('users/admin/login', $data);
+   - [Line 45]: echo view('templates/footer');
+   - [Line 67]: echo view('templates/header');
+   - [Line 68]: echo view('pages/admin/main', $data);
+   - [Line 69]: echo view('templates/footer');
+   - [Line 77]: echo view('templates/header');
+   - [Line 78]: echo view('users/admin/login', $data);
+   - [Line 79]: echo view('templates/footer');
+   - [Line 89]: redirect(base_url(),'/');
+   - [Line 89]: return redirect()->to(base_url(),'/');
+   - [Line 96]: echo view('templates/header');
+   - [Line 97]: echo view('admin/home/index', $data);
+   - [Line 98]: echo view('templates/footer');
+   - [Line 106]: redirect(base_url(),'/');
+   - [Line 106]: return redirect()->to(base_url(),'/');
+   - [Line 115]: echo view('templates/header');
+   - [Line 116]: echo view('admin/users/users', $data);
+   - [Line 117]: echo view('templates/footer');
+   - [Line 132]: redirect(base_url(),'/');
+   - [Line 132]: return redirect()->to(base_url(),'/');
+   - [Line 138]: return redirect()->to(base_url('admin/users'));
+   - [Line 181]: echo view('templates/header');
+   - [Line 182]: echo view('admin/users/edit_user', $data);
+   - [Line 183]: echo view('templates/footer');
+   - [Line 207]: echo view('templates/header');
+   - [Line 208]: echo view('admin/users/edit_user', $data);
+   - [Line 209]: echo view('templates/footer');
+   - [Line 219]: redirect(base_url(),'/');
+   - [Line 219]: return redirect()->to(base_url(),'/');
+   - [Line 226]: echo view('templates/header');
+   - [Line 227]: echo view('admin/forums_and_topics/forums_and_topics', $data);
+   - [Line 228]: echo view('templates/footer');
+   - [Line 236]: redirect(base_url(),'/');
+   - [Line 236]: return redirect()->to(base_url(),'/');
+   - [Line 243]: echo view('templates/header');
+   - [Line 244]: echo view('admin/options/options', $data);
+   - [Line 245]: echo view('templates/footer');
+   - [Line 253]: redirect(base_url(),'/');
+   - [Line 253]: return redirect()->to(base_url(),'/');
+   - [Line 260]: echo view('templates/header');
+   - [Line 261]: echo view('admin/emails/emails', $data);
+   - [Line 262]: echo view('templates/footer');
+
+-------------------------------------------------------------------------------
+
+| Crud.php (CI4) |
+Lines edited: 13
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 29]: echo view('templates/header');
+   - [Line 30]: echo view('pages/lista_usuarios', $data);
+   - [Line 31]: echo view('templates/footer');
+   - [Line 39]: echo view('templates/header');
+   - [Line 40]: echo view('pages/ver_colegiado', array('item'=>$item));
+   - [Line 41]: echo view('templates/footer');
+   - [Line 49]: echo view('templates/header');
+   - [Line 50]: echo view('pages/edit_colegiado', array('item'=>$item));
+   - [Line 51]: echo view('templates/footer');
+   - [Line 99]: return redirect()->to(base_url('pages/edit_colegiado'.$id));
+   - [Line 104]: return redirect()->to(base_url('pages/admin'));
+   - [Line 111]: return redirect()->to(base_url('pages/admin'));
+
+-------------------------------------------------------------------------------
+
+| Cursos.php (CI4) |
+Lines edited: 2
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| Email.php (CI4) |
+Lines edited: 6
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 20]: echo view('pages/email_view');
+   - [Line 34]: echo view('templates/header');
+   - [Line 35]: echo view('pages/email_view', $data);
+   - [Line 36]: echo view('templates/footer');
+
+-------------------------------------------------------------------------------
+
+| Errors.php (CI4) |
+Lines edited: 4
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 20]: echo view('templates/header');
+   - [Line 21]: echo view('errors/error404');
+   - [Line 22]: echo view('templates/footer');
+
+-------------------------------------------------------------------------------
+
+| Forum.php (CI4) |
+Lines edited: 39
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 86]: echo view('templates/header');
+   - [Line 87]: echo view('forum/index', $data);
+   - [Line 88]: echo view('templates/footer');
+   - [Line 101]: // $breadcrumb .= '<li><a href="' . base_url(),'/' . '">Home</a></li>';
+   - [Line 122]: echo view('templates/header');
+   - [Line 123]: echo view('forum/single', $data);
+   - [Line 124]: echo view('templates/footer');
+   - [Line 150]: // $breadcrumb .= '<li><a href="' . base_url(),'/' . '">Home</a></li>';
+   - [Line 172]: echo view('templates/header');
+   - [Line 173]: echo view('forum/create/create', $data);
+   - [Line 174]: echo view('templates/footer');
+   - [Line 185]: echo view('templates/header');
+   - [Line 186]: echo view('forum/create/create_success', $data);
+   - [Line 187]: echo view('templates/footer');
+   - [Line 195]: echo view('templates/header');
+   - [Line 196]: echo view('forum/create/create', $data);
+   - [Line 197]: echo view('templates/footer');
+   - [Line 231]: // $breadcrumb .= '<li><a href="' . base_url(),'/' . '">Home</a></li>';
+   - [Line 254]: echo view('templates/header');
+   - [Line 255]: echo view('topic/create/create', $data);
+   - [Line 256]: echo view('templates/footer');
+   - [Line 268]: return redirect()->to(base_url('topic/' . $forum_slug . '/' . strtolower(url_title($title))));
+   - [Line 276]: echo view('templates/header');
+   - [Line 277]: echo view('topic/create/create', $data);
+   - [Line 278]: echo view('templates/footer');
+   - [Line 316]: // $breadcrumb .= '<li><a href="' . base_url(),'/' . '">Home</a></li>';
+   - [Line 328]: echo view('templates/header');
+   - [Line 329]: echo view('topic/single', $data);
+   - [Line 330]: echo view('templates/footer');
+   - [Line 371]: // $breadcrumb .= '<li><a href="' . base_url(),'/' . '">Home</a></li>';
+   - [Line 395]: echo view('templates/header');
+   - [Line 396]: echo view('topic/reply', $data);
+   - [Line 397]: echo view('templates/footer');
+   - [Line 407]: return redirect()->to(base_url('topic/' . $forum_slug . '/' . $topic_slug));
+   - [Line 415]: echo view('templates/header');
+   - [Line 416]: echo view('topic/reply', $data);
+   - [Line 417]: echo view('templates/footer');
+
+-------------------------------------------------------------------------------
+
+| Home.php (CI4) |
+Lines edited: 1
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+
+-------------------------------------------------------------------------------
+
+| itemCRUD.php (CI4) |
+Lines edited: 24
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 25]: $encrypter = \Config\Services::encrypter();
+   - [Line 53]: $config['base_url'] = base_url(),'/' . "itemCRUD";
+   - [Line 72]: echo view('templates/header');       
+   - [Line 73]: echo view('itemCRUD/list',$data);
+   - [Line 74]: echo view('templates/footer');
+   - [Line 82]: echo view('templates/header');       
+   - [Line 83]: echo view('itemCRUD/list_sociedades',$data);
+   - [Line 84]: echo view('templates/footer');
+   - [Line 98]: echo view('templates/header');
+   - [Line 99]: echo view('itemCRUD/show',array('item'=>$item));
+   - [Line 100]: echo view('templates/footer');
+   - [Line 111]: echo view('templates/header');
+   - [Line 112]: echo view('itemCRUD/create');
+   - [Line 113]: echo view('templates/footer');   
+   - [Line 159]: return redirect()->to(base_url('itemCRUD/create'));
+   - [Line 164]: return redirect()->to(base_url('itemCRUD'));
+   - [Line 179]: echo view('templates/header');
+   - [Line 180]: echo view('itemCRUD/edit',array('item'=>$item));
+   - [Line 181]: echo view('templates/footer');
+   - [Line 203]: return redirect()->to(base_url('itemCRUD/edit/'.$id));
+   - [Line 206]: return redirect()->to(base_url('itemCRUD'));
+   - [Line 221]: return redirect()->to(base_url('pages/lista_colegiados'));
+
+-------------------------------------------------------------------------------
+
+| Pages.php (CI4) |
+Lines edited: 5
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 16]: echo view('templates/header');
+   - [Line 17]: echo view('pages/'.$page, $data);
+   - [Line 18]: echo view('templates/footer');
+
+-------------------------------------------------------------------------------
+
+| Paypal.php (CI4) |
+Lines edited: 7
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 44]: echo view('templates/header');
+   - [Line 45]: echo view('paypal/success', $data); 
+   - [Line 46]: echo view('templates/footer');
+   - [Line 51]: echo view('templates/header');
+   - [Line 52]: echo view('paypal/cancel');
+   - [Line 53]: echo view('templates/footer'); 
+
+-------------------------------------------------------------------------------
+
+| Products.php (CI4) |
+Lines edited: 7
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 25]: echo view('templates/header');
+   - [Line 26]: echo view('products/index', $data); 
+   - [Line 27]: echo view('templates/footer');
+   - [Line 34]: $returnURL = base_url(),'/'.'paypal/success'; //payment success url 
+   - [Line 35]: $cancelURL = base_url(),'/'.'paypal/cancel'; //payment cancel url 
+   - [Line 36]: $notifyURL = base_url(),'/'.'paypal/ipn'; //ipn url 
+
+-------------------------------------------------------------------------------
+
+| Users.php (CI4) |
+Lines edited: 135
+   - [Line 2]: namespace App\Controllers; use Kenjis\CI3Compatible\Core\CI_Controller;   |added|
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 32]: echo view('templates/header');
+   - [Line 33]: echo view('users/register', $data);
+   - [Line 34]: echo view('templates/footer');
+   - [Line 44]: echo view('templates/header');
+   - [Line 45]: echo view('users/login', $data);
+   - [Line 46]: echo view('templates/footer');
+   - [Line 53]: echo view('templates/header');
+   - [Line 54]: echo view('users/register', $data);
+   - [Line 55]: echo view('templates/footer');
+   - [Line 84]: echo view('templates/header');
+   - [Line 85]: echo view('pages/formacion_detalle', $data);
+   - [Line 86]: echo view('templates/footer');
+   - [Line 109]: echo view('templates/header');
+   - [Line 110]: echo view('pages/previa_registro', $data);
+   - [Line 111]: echo view('templates/footer');
+   - [Line 117]: echo view('templates/header');
+   - [Line 118]: echo view('pages/formacion_detalle', $data);
+   - [Line 119]: echo view('templates/footer');
+   - [Line 132]: echo view('templates/header');
+   - [Line 133]: echo view('pages/previa_registro', $data);
+   - [Line 134]: echo view('templates/footer');
+   - [Line 184]: echo view('templates/header');
+   - [Line 185]: echo view('pages/alta_colegiado', $data);
+   - [Line 186]: echo view('templates/footer');
+   - [Line 233]: echo view('templates/header');
+   - [Line 234]: echo view('pages/alta_colegiado', $data);
+   - [Line 235]: echo view('templates/footer');
+   - [Line 241]: echo view('templates/header');
+   - [Line 242]: echo view('pages/alta_colegiado', $data);
+   - [Line 243]: echo view('templates/footer');
+   - [Line 254]: echo view('errors/error404');
+   - [Line 300]: echo view('templates/header');
+   - [Line 301]: echo view('pages/edit_colegiado', $data);
+   - [Line 302]: echo view('templates/footer');
+   - [Line 346]: echo view('templates/header');
+   - [Line 347]: echo view('pages/alta_sociedades_prueba', $data);
+   - [Line 348]: echo view('templates/footer');
+   - [Line 382]: echo view('templates/header');
+   - [Line 383]: echo view('pages/alta_sociedades', $data);
+   - [Line 384]: echo view('templates/footer');
+   - [Line 391]: echo view('templates/header');
+   - [Line 392]: echo view('pages/alta_sociedades', $data);
+   - [Line 393]: echo view('templates/footer');
+   - [Line 418]: echo view('templates/header');
+   - [Line 419]: echo view('pages/alta_evento_prueba', $data);
+   - [Line 420]: echo view('templates/footer');
+   - [Line 437]: echo view('templates/header');
+   - [Line 438]: echo view('pages/alta_evento_prueba', $data);
+   - [Line 439]: echo view('templates/footer');
+   - [Line 445]: echo view('templates/header');
+   - [Line 446]: echo view('pages/alta_evento_prueba', $data);
+   - [Line 447]: echo view('templates/footer');
+   - [Line 469]: echo view('templates/header');
+   - [Line 470]: echo view('pages/alta_evento_prueba', $data);
+   - [Line 471]: echo view('templates/footer');
+   - [Line 485]: echo view('templates/header');
+   - [Line 486]: echo view('pages/alta_evento_prueba', $data);
+   - [Line 487]: echo view('templates/footer');
+   - [Line 493]: echo view('templates/header');
+   - [Line 494]: echo view('pages/alta_evento_prueba', $data);
+   - [Line 495]: echo view('templates/footer');
+   - [Line 513]: echo view('templates/header');
+   - [Line 514]: echo view('pages/alta_documentos_prueba', $data);
+   - [Line 515]: echo view('templates/footer');
+   - [Line 527]: echo view('templates/header');
+   - [Line 528]: echo view('pages/alta_documentos_prueba', $data);
+   - [Line 529]: echo view('templates/footer');
+   - [Line 535]: echo view('templates/header');
+   - [Line 536]: echo view('pages/alta_documentos_prueba', $data);
+   - [Line 537]: echo view('templates/footer');
+   - [Line 556]: echo view('templates/header');
+   - [Line 557]: echo view('pages/alta_oferta_prueba', $data);
+   - [Line 558]: echo view('templates/footer');
+   - [Line 570]: echo view('templates/header');
+   - [Line 571]: echo view('pages/alta_oferta_prueba', $data);
+   - [Line 572]: echo view('templates/footer');
+   - [Line 578]: echo view('templates/header');
+   - [Line 579]: echo view('pages/alta_oferta_prueba', $data);
+   - [Line 580]: echo view('templates/footer');
+   - [Line 597]: echo view('templates/header');
+   - [Line 598]: echo view('pages/alta_cuota_prueba', $data);
+   - [Line 599]: echo view('templates/footer');
+   - [Line 610]: echo view('templates/header');
+   - [Line 611]: echo view('pages/alta_cuota_prueba', $data);
+   - [Line 612]: echo view('templates/footer');
+   - [Line 618]: echo view('templates/header');
+   - [Line 619]: echo view('pages/alta_cuota_prueba', $data);
+   - [Line 620]: echo view('templates/footer');
+   - [Line 638]: echo view('templates/header');
+   - [Line 639]: echo view('users/login', $data);
+   - [Line 640]: echo view('templates/footer');
+   - [Line 662]: echo view('templates/header');
+   - [Line 663]: echo view('pages/serviciocolegiado', $data);
+   - [Line 664]: echo view('templates/footer');
+   - [Line 672]: echo view('templates/header');
+   - [Line 673]: echo view('users/login', $data);
+   - [Line 674]: echo view('templates/footer');
+   - [Line 694]: echo view('templates/header');
+   - [Line 695]: echo view('users/logout/logout_success', $data);
+   - [Line 696]: echo view('templates/footer');
+   - [Line 702]: return redirect()->to('/');
+   - [Line 721]: echo view('upload_form', $error);
+   - [Line 727]: echo view('upload_success', $data);
+   - [Line 744]: echo view('templates/header');
+   - [Line 745]: echo view('users/register/confirmation', $data);
+   - [Line 746]: echo view('templates/footer');
+   - [Line 751]: echo view('templates/header');
+   - [Line 752]: echo view('users/register/confirmation');
+   - [Line 753]: echo view('templates/header');
+   - [Line 762]: //     redirect(base_url(),'/');
+   - [Line 762]: //     return redirect()->to(base_url(),'/');
+   - [Line 786]: // $breadcrumb .= '<li><a href="' . base_url(),'/' . '">Inicio</a></li>';
+   - [Line 798]: echo view('templates/header');
+   - [Line 799]: echo view('users/profile/edit', $data);
+   - [Line 800]: echo view('templates/footer');
+   - [Line 836]: echo view('upload_form', $error);
+   - [Line 864]: return redirect()->to(base_url('users/' . $update_data['username'] . '/edit'));
+   - [Line 872]: echo view('templates/header');
+   - [Line 873]: echo view('users/profile/edit', $data);
+   - [Line 874]: echo view('templates/footer');
+   - [Line 883]: echo view('templates/header');
+   - [Line 884]: echo view('users/profile/edit', $data);
+   - [Line 885]: echo view('templates/footer');
+   - [Line 894]: redirect(base_url(),'/');
+   - [Line 894]: return redirect()->to(base_url(),'/');
+   - [Line 911]: echo view('templates/header');
+   - [Line 912]: echo view('users/profile/delete', $data);
+   - [Line 913]: echo view('templates/footer');
+   - [Line 921]: echo view('templates/header');
+   - [Line 922]: echo view('users/profile/edit', $data);
+   - [Line 923]: echo view('templates/footer');
+   - [Line 929]: redirect(base_url(),'/');
+   - [Line 929]: return redirect()->to(base_url(),'/');
+
+-------------------------------------------------------------------------------
+
+################################  |VIEWS| ################################
+
+|--------------------| Views Config |--------------------|
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Config\View.php'
+
+| View.php (CI4) |
+Lines edited: 2
+   - [Line 6]: use Kenjis\CI3Compatible\Traits\View\ThisConfigInView;   |added|
+   - [Line 10]: use ThisConfigInView;   |added|
+
+-------------------------------------------------------------------------------
+
+|--------------------| Views Files |--------------------|
+[CI3] 'C:\xampp\htdocs\logopedas_test\application\views'
+[CI4] 'C:\xampp\htdocs\logopedas_test_CI4\app\Views'
+
+| emails.php (CI4) |
+Lines edited: 1
+   - [Line 4]: <li role="presentation"><a href="<?= base_url(),'/' ?>">Inicio</a></li>
+
+-------------------------------------------------------------------------------
+
+| forums_and_topics.php (CI4) |
+Lines edited: 1
+   - [Line 4]: <li role="presentation"><a href="<?= base_url(),'/' ?>">Inicio</a></li>
+
+-------------------------------------------------------------------------------
+
+| options.php (CI4) |
+Lines edited: 1
+   - [Line 4]: <li role="presentation"><a href="<?= base_url(),'/' ?>">Inicio</a></li>
+
+-------------------------------------------------------------------------------
+
+| edit_user.php (CI4) |
+Lines edited: 1
+   - [Line 4]: <li role="presentation"><a href="<?= base_url(),'/' ?>">Inicio</a></li>
+
+-------------------------------------------------------------------------------
+
+| users.php (CI4) |
+Lines edited: 1
+   - [Line 4]: <li role="presentation"><a href="<?= base_url(),'/' ?>">Inicio</a></li>
+
+-------------------------------------------------------------------------------
+
+| configuracion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| control.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| documentos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| download.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| facturas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| footer.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| functions.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| header.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| menu.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| seguridad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| index.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| inscripciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| funciones.js.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| main.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes_enviados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| switch_menus.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mis_cuotas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mis_cuotas_anterior.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mis_datos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mis_facturas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nosession.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ofertas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| pagar_cuotas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| password.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.phpmailer.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.pop3.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.smtp.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| test1.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| phpunit.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| rec_password.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| respuesta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| resumen_pagos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| seguridad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| selec_menu.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitar_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitar_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitar_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| error_404.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| error_404_ci3.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_db.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_exception.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| error_exception_ci3.php (CI4) |
+Lines edited: 1
+   - [Line 1]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_general.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_php.php (CI4) |
+Lines edited: 1
+   - [Line 1]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| production.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| error404.php (CI4) |
+Lines edited: 2
+   - [Line 1]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 162]: <a href="<?php echo base_url(),'/'; ?>" class="more-link">Volver a Logopedas</a>
+
+-------------------------------------------------------------------------------
+
+| error_404.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| error_404_ci3.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_db.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_exception.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| error_exception_ci3.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_general.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| error_php.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| production.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| create.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| create_success.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| index.php (CI4) |
+Lines edited: 1
+   - [Line 24]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu btn btn-info px-3 me-2" type="submit">ACCESO A COLEGIADOS</a>
+
+-------------------------------------------------------------------------------
+
+| single.php (CI4) |
+Lines edited: 1
+   - [Line 55]: <a href="<?= base_url(),'/'.$forum->slug . '/create_topic' ?>" class="btn btn-primary text-uppercase">Crear un nuevo tema</a>
+
+-------------------------------------------------------------------------------
+
+| create.php (CI4) |
+Lines edited: 2
+   - [Line 83]: <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+   - [Line 88]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| edit.php (CI4) |
+Lines edited: 2
+   - [Line 17]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 20]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| list.php (CI4) |
+Lines edited: 2
+   - [Line 28]: <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+   - [Line 62]: <form method="post" action="<?= base_url(),'/'?>itemCRUD">
+
+-------------------------------------------------------------------------------
+
+| show.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+
+-------------------------------------------------------------------------------
+
+| aaa.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| acuerdos.php (CI4) |
+Lines edited: 22
+   - [Line 29]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_LOGOPEDICUM.png">
+   - [Line 42]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 64]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 74]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_CASTILLATERMAL.jpg">
+   - [Line 103]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_HAPPYCAR.png">
+   - [Line 116]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 138]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 148]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_PSN.png">
+   - [Line 177]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_AMA.png">
+   - [Line 190]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 212]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 222]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_DOCTORSHOP.png">
+   - [Line 251]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_ONDAEDUCA.png">
+   - [Line 264]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 286]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 296]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_SANTANDER.png">
+   - [Line 325]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_BALNEARIOPVIESGO.png">
+   - [Line 338]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 360]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+   - [Line 370]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_JAVIER.png">
+   - [Line 399]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_DIVERLEXIA.jpg">
+   - [Line 412]: <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
+
+-------------------------------------------------------------------------------
+
+| admin.php (CI4) |
+Lines edited: 3
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 32]: <form action="<?php echo base_url(),'/'; ?>itemCRUD" method="post" name="formulario" style="margin:20px 0 0 20px">
+   - [Line 40]: <p class="mt-4"><a href="<?php echo base_url(),'/'; ?>password">¿Olvidaste tu contraseña?</a></p>
+
+-------------------------------------------------------------------------------
+
+| alta_colegiado_prueba.php (CI4) |
+Lines edited: 19
+   - [Line 105]: <li><a href="<?php echo base_url(),'/'; ?>alta_colegiado">Alta colegiados</a></li>
+   - [Line 106]: <li><a href="<?php echo base_url(),'/'; ?>lista_colegiados">Lista colegiados</a></li>
+   - [Line 107]: <li><a href="<?php echo base_url(),'/'; ?>alta_sociedades">Alta sociedades</a></li>
+   - [Line 108]: <li><a href="<?php echo base_url(),'/'; ?>lista_sociedades">Lista sociedades</a></li>
+   - [Line 115]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento">Alta de eventos propios</a></li>
+   - [Line 116]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_gratis">Alta de eventos gratuitos</a></li>
+   - [Line 117]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_ajeno">Alta de eventos ajenos</a></li>
+   - [Line 118]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos">Lista de eventos propios</a></li>
+   - [Line 119]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_gratis">Lista de eventos gratis</a></li>
+   - [Line 120]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_ajenos">Lista de eventos ajenos</a></li>
+   - [Line 128]: <li><a href="<?php echo base_url(),'/'; ?>alta_documento">Alta documentos</a></li>
+   - [Line 129]: <li><a href="<?php echo base_url(),'/'; ?>lista_documento">Lista documentos</a></li>
+   - [Line 140]: <li><a href="<?php echo base_url(),'/'; ?>alta_oferta">Alta ofertas</a></li>
+   - [Line 141]: <li><a href="<?php echo base_url(),'/'; ?>lista_ofertas">Lista ofertas</a></li>
+   - [Line 148]: <li><a href="<?php echo base_url(),'/'; ?>alta_cuota">Alta cuota</a></li>
+   - [Line 149]: <li><a href="<?php echo base_url(),'/'; ?>eliminar_cuota">Eliminar cuota</a></li>
+   - [Line 150]: <li><a href="<?php echo base_url(),'/'; ?>estado_cuota">Estado cuota colegiados</a></li>
+   - [Line 151]: <li><a href="<?php echo base_url(),'/'; ?>edit_cuotas">Importe cuotas</a></li>
+   - [Line 165]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_cuota.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_cuota_prueba.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_documento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_documentos_prueba.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_evento.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_evento_ag_prueba.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_evento_ajeno.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_evento_gratis.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_evento_prueba.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_oferta_prueba.php (CI4) |
+Lines edited: 2
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 18]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_proyecto.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_prueba.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_sociedades.php (CI4) |
+Lines edited: 2
+   - [Line 93]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 96]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_sociedades_prueba.php (CI4) |
+Lines edited: 19
+   - [Line 105]: <li><a href="<?php echo base_url(),'/'; ?>alta_colegiado">Alta colegiados</a></li>
+   - [Line 106]: <li><a href="<?php echo base_url(),'/'; ?>lista_colegiados">Lista colegiados</a></li>
+   - [Line 107]: <li><a href="<?php echo base_url(),'/'; ?>alta_sociedades">Alta sociedades</a></li>
+   - [Line 108]: <li><a href="<?php echo base_url(),'/'; ?>lista_sociedades">Lista sociedades</a></li>
+   - [Line 115]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento">Alta de eventos propios</a></li>
+   - [Line 116]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_gratis">Alta de eventos gratuitos</a></li>
+   - [Line 117]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_ajeno">Alta de eventos ajenos</a></li>
+   - [Line 118]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos">Lista de eventos propios</a></li>
+   - [Line 119]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_gratis">Lista de eventos gratis</a></li>
+   - [Line 120]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_ajenos">Lista de eventos ajenos</a></li>
+   - [Line 128]: <li><a href="<?php echo base_url(),'/'; ?>alta_documento">Alta documentos</a></li>
+   - [Line 129]: <li><a href="<?php echo base_url(),'/'; ?>lista_documento">Lista documentos</a></li>
+   - [Line 140]: <li><a href="<?php echo base_url(),'/'; ?>alta_oferta">Alta ofertas</a></li>
+   - [Line 141]: <li><a href="<?php echo base_url(),'/'; ?>lista_ofertas">Lista ofertas</a></li>
+   - [Line 148]: <li><a href="<?php echo base_url(),'/'; ?>alta_cuota">Alta cuota</a></li>
+   - [Line 149]: <li><a href="<?php echo base_url(),'/'; ?>eliminar_cuota">Eliminar cuota</a></li>
+   - [Line 150]: <li><a href="<?php echo base_url(),'/'; ?>estado_cuota">Estado cuota colegiados</a></li>
+   - [Line 151]: <li><a href="<?php echo base_url(),'/'; ?>edit_cuotas">Importe cuotas</a></li>
+   - [Line 165]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| alta_usuario.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alucinante.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| aviso.php (CI4) |
+Lines edited: 3
+   - [Line 3]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/aviso-header.png"></img>
+   - [Line 8]: <p>El presente aviso legal regula el uso del servicio de la página web <a href="<?php echo base_url(),'/'; ?>">www.logopedascantabria.org</a> del COLEGIO PROFESIONAL DE LOGOPEDAS DE CANTABRIA.</p>
+   - [Line 43]: <p>Las presentes condiciones particulares de uso del Directorio de Colegiados con URL <a href="<?php echo base_url(),'/'; ?>">http://www.logopedascantabria.org</a> (en adelante la PÁGINA), son suscritas, de una parte, por el COLEGIO PROFESIONAL DE LOGOPEDAS DE CANTABRIA, (en adelante el COLEGIO); con domicilio en la CALLE CALDERON DE LA BARCA, 15, 39002 SANTANDER (CANTABRIA), con CIF número Q3900765C.</p>
+
+-------------------------------------------------------------------------------
+
+| baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| bandeja_de_entrada.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_documento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_evento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_evento_ajeno.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_inscrito.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_mensaje.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_pedidos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_sociedad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_usuario.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| busca_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| busca_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| cambio_status.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| codigo.php (CI4) |
+Lines edited: 1
+   - [Line 42]: <a class="estatuto-pdf" href="<?php echo base_url(),'/'; ?>assets/downloads/codigocplc.pdf" target="_blank"><img src="<?php echo base_url(),'/'; ?>assets/images/png/estatutoslink.gif"></img></a>             
+
+-------------------------------------------------------------------------------
+
+| colegio.php (CI4) |
+Lines edited: 10
+   - [Line 3]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>colegio">
+   - [Line 4]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/colegio-img.png" style="height: 300; width:340; margin-top: 40;"></img>
+   - [Line 6]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>juntagob">
+   - [Line 7]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/junta-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+   - [Line 9]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>estatutos">
+   - [Line 10]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/estatutos-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+   - [Line 15]: <a class="col-lg-6" href="<?php echo base_url(),'/'; ?>codigo">
+   - [Line 16]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/deon-img.png" style="height: 270; width:545; margin-top: 40;"></img>
+   - [Line 18]: <a class="col-lg-6" href="<?php echo base_url(),'/'; ?>normativa">
+   - [Line 19]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/norma-img.png" style="height: 270; width:545; margin-top: 40;"></img>
+
+-------------------------------------------------------------------------------
+
+| configuracion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| contacto.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| control.php (CI4) |
+Lines edited: 18
+   - [Line 27]: <li><a href="<?php echo base_url(),'/'; ?>alta_colegiado">Alta colegiados</a></li>
+   - [Line 28]: <li><a href="<?php echo base_url(),'/'; ?>lista_colegiados">Lista colegiados</a></li>
+   - [Line 29]: <li><a href="<?php echo base_url(),'/'; ?>alta_sociedades">Alta sociedades</a></li>
+   - [Line 30]: <li><a href="<?php echo base_url(),'/'; ?>lista_sociedades">Lista sociedades</a></li>
+   - [Line 37]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento">Alta de eventos propios</a></li>
+   - [Line 38]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_gratis">Alta de eventos gratuitos</a></li>
+   - [Line 39]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_ajeno">Alta de eventos ajenos</a></li>
+   - [Line 40]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos">Lista de eventos propios</a></li>
+   - [Line 41]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_gratis">Lista de eventos gratis</a></li>
+   - [Line 42]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_ajenos">Lista de eventos ajenos</a></li>
+   - [Line 50]: <li><a href="<?php echo base_url(),'/'; ?>alta_documento">Alta documentos</a></li>
+   - [Line 51]: <li><a href="<?php echo base_url(),'/'; ?>lista_documento">Lista documentos</a></li>
+   - [Line 62]: <li><a href="<?php echo base_url(),'/'; ?>alta_oferta">Alta ofertas</a></li>
+   - [Line 63]: <li><a href="<?php echo base_url(),'/'; ?>lista_ofertas">Lista ofertas</a></li>
+   - [Line 70]: <li><a href="<?php echo base_url(),'/'; ?>alta_cuota">Alta cuota</a></li>
+   - [Line 71]: <li><a href="<?php echo base_url(),'/'; ?>eliminar_cuota">Eliminar cuota</a></li>
+   - [Line 72]: <li><a href="<?php echo base_url(),'/'; ?>estado_cuota">Estado cuota colegiados</a></li>
+   - [Line 73]: <li><a href="<?php echo base_url(),'/'; ?>edit_cuotas">Importe cuotas</a></li>
+
+-------------------------------------------------------------------------------
+
+| cplc.php (CI4) |
+Lines edited: 12
+   - [Line 2]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>curso1">
+   - [Line 3]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/colegio-img.png" style="height: 300; width:340; margin-top: 40;"></img>
+   - [Line 5]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>curso2">
+   - [Line 6]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/junta-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+   - [Line 8]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>curso3">
+   - [Line 9]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/estatutos-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+   - [Line 13]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>curso4">
+   - [Line 14]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/colegio-img.png" style="height: 300; width:340; margin-top: 40;"></img>
+   - [Line 16]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>curso5">
+   - [Line 17]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/junta-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+   - [Line 19]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>curso6">
+   - [Line 20]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/estatutos-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+
+-------------------------------------------------------------------------------
+
+| edit_colegiado.php (CI4) |
+Lines edited: 2
+   - [Line 17]: <?php echo view('templates/menu_admin'); ?>
+   - [Line 20]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| edit_cuotas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_documento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_evento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_evento_ajeno.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_evento_gratis.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_sociedad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| eliminar_cuota.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| email_template.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| email_verification.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| email_view.php (CI4) |
+Lines edited: 2
+   - [Line 30]: <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+   - [Line 35]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| encuentra.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| enviar_mensajes-eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| enviar_mensajes.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| enviar_mensajes_old.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estado_cuota.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estado_cuota2.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estado_cuota3.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estatutos.php (CI4) |
+Lines edited: 1
+   - [Line 33]: <a class="estatuto-pdf" href="<?php echo base_url(),'/'; ?>assets/downloads/estatutoscplc.pdf" target="_blank"><img src="<?php echo base_url(),'/'; ?>assets/images/png/estatutoslink.gif"></img></a>              
+
+-------------------------------------------------------------------------------
+
+| example.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| exito_Compra.php (CI4) |
+Lines edited: 1
+   - [Line 18]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/curso.png" alt="imagen de página de éxito en la transacción" class="img-fluid pt-5">
+
+-------------------------------------------------------------------------------
+
+| facturas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| faq.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| formacion.php (CI4) |
+Lines edited: 6
+   - [Line 27]: <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+   - [Line 31]: <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/images/png/curso-alteraciones-procesamiento-auditivo-central.jpg">
+   - [Line 72]: <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+   - [Line 76]: <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/images/png/curso-cplc-arasaac.jpg">
+   - [Line 101]: <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+   - [Line 105]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png">
+
+-------------------------------------------------------------------------------
+
+| formacion_detalle.php (CI4) |
+Lines edited: 3
+   - [Line 25]: <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+   - [Line 29]: <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/images/png/curso-cplc-arasaac.jpg">
+   - [Line 391]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| home.php (CI4) |
+Lines edited: 22
+   - [Line 9]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="text-white" target="_blank">
+   - [Line 12]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="text-white" target="_blank">
+   - [Line 29]: <a href="<?php echo base_url(),'/'; ?>faq" class="text-white" target="_blank">
+   - [Line 36]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/Inicio/Recurso 2.png" alt="logos">
+   - [Line 43]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/Inicio/Recurso 3.svg" alt="logos">
+   - [Line 50]: <a href="<?php echo base_url(),'/'; ?>formacion" class="text-white" target="_blank">
+   - [Line 67]: <a href="<?php echo base_url(),'/'; ?>juntagob" class="text-white" target="_blank">
+   - [Line 82]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/Inicio/Recurso 10.png">
+   - [Line 89]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="text-white" target="_blank">
+   - [Line 106]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="text-white" target="_blank">
+   - [Line 121]: <a href="<?php echo base_url(),'/'; ?>codigo" class="text-white" target="_blank">
+   - [Line 124]: <a href="<?php echo base_url(),'/'; ?>estatutos" class="text-white" target="_blank">
+   - [Line 159]: <!--<img src="<?php echo base_url(),'/'; ?>assets/images/png/noticia2.png" class="card-img" alt="...">-->
+   - [Line 204]: <img src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_DOCTORSHOP.png" alt="logotipo doctorshop" class="img-fluid acuerdoempresainicio grayscale">
+   - [Line 209]: <img src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_HAPPYCAR.png" alt="logotipo happycar" class="img-fluid acuerdoempresainicio grayscale">
+   - [Line 214]: <img src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_JAVIER.png" alt="logotipo empresas javier" class="img-fluid acuerdoempresainicio grayscale">
+   - [Line 219]: <img src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_LOGOPEDICUM.png" alt="logotipo logopedicum" class="img-fluid acuerdoempresainicio grayscale">
+   - [Line 224]: <img src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_ONDAEDUCA.png" alt="logotipo ondadeduca" class="img-fluid acuerdoempresainicio grayscale">
+   - [Line 229]: <a href="<?php echo base_url(),'/'; ?>acuerdos" class="text-white" target="_blank">
+   - [Line 244]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/img-form.svg" class="img-fluid rounded-start h-100" alt="...">
+   - [Line 298]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/banner_ama.gif" alt="banner de ama" class="img-fluid my-5">
+   - [Line 303]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/banner_lebaniego.gif" alt="banner de ama" class="img-fluid my-5">
+
+-------------------------------------------------------------------------------
+
+| imprimir_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| index.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| inscripcion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| juntagob.php (CI4) |
+Lines edited: 6
+   - [Line 41]: <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/laura.jpg">
+   - [Line 79]: <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/mili.jpg">
+   - [Line 97]: <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/marta.jpg">
+   - [Line 139]: <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/bianka.jpg">
+   - [Line 157]: <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/marina-carmen.jpg">
+   - [Line 175]: <a href="<?php echo base_url(),'/'; ?>users/register" class="text-white" target="_blank">
+
+-------------------------------------------------------------------------------
+
+| lanza-factura.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_control_firmas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_etiquetas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_etiquetas_cursos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_excel.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_factura.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_inscripciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_inscrito.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_listado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_listado_sociedades.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_colegiados.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_documentos.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_eventos.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_eventos_ajenos.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_eventos_gratis.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_inscripciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_ofertas.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_operaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_sociedades.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| lista_usuarios.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| logopedas.php (CI4) |
+Lines edited: 6
+   - [Line 8]: <a class="col-6" href="<?php echo base_url(),'/'; ?>acuerdos">
+   - [Line 9]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/acuerdos.png"></img>
+   - [Line 13]: <a class="col-lg-6" href="<?php echo base_url(),'/'; ?>foro">
+   - [Line 14]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/foro.png"></img>
+   - [Line 16]: <a class="col-lg-6" href="<?php echo base_url(),'/'; ?>videonoticias">
+   - [Line 17]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/video-img.png"></img>
+
+-------------------------------------------------------------------------------
+
+| main.php (CI4) |
+Lines edited: 18
+   - [Line 27]: <li><a href="<?php echo base_url(),'/'; ?>alta_colegiado">Alta colegiados</a></li>
+   - [Line 28]: <li><a href="<?php echo base_url(),'/'; ?>itemCRUD">Lista colegiados</a></li>
+   - [Line 29]: <li><a href="<?php echo base_url(),'/'; ?>alta_sociedades">Alta sociedades</a></li>
+   - [Line 30]: <li><a href="<?php echo base_url(),'/'; ?>lista_sociedades">Lista sociedades</a></li>
+   - [Line 37]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento">Alta de eventos propios</a></li>
+   - [Line 38]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_gratis">Alta de eventos gratuitos</a></li>
+   - [Line 39]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_ajeno">Alta de eventos ajenos</a></li>
+   - [Line 40]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos">Lista de eventos propios</a></li>
+   - [Line 41]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_gratis">Lista de eventos gratis</a></li>
+   - [Line 42]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_ajenos">Lista de eventos ajenos</a></li>
+   - [Line 50]: <li><a href="<?php echo base_url(),'/'; ?>alta_documento">Alta documentos</a></li>
+   - [Line 51]: <li><a href="<?php echo base_url(),'/'; ?>lista_documento">Lista documentos</a></li>
+   - [Line 62]: <li><a href="<?php echo base_url(),'/'; ?>alta_oferta">Alta ofertas</a></li>
+   - [Line 63]: <li><a href="<?php echo base_url(),'/'; ?>lista_ofertas">Lista ofertas</a></li>
+   - [Line 70]: <li><a href="<?php echo base_url(),'/'; ?>alta_cuota">Alta cuota</a></li>
+   - [Line 71]: <li><a href="<?php echo base_url(),'/'; ?>eliminar_cuota">Eliminar cuota</a></li>
+   - [Line 72]: <li><a href="<?php echo base_url(),'/'; ?>estado_cuota">Estado cuota colegiados</a></li>
+   - [Line 73]: <li><a href="<?php echo base_url(),'/'; ?>edit_cuotas">Importe cuotas</a></li>
+
+-------------------------------------------------------------------------------
+
+| mantenimiento.php (CI4) |
+Lines edited: 1
+   - [Line 18]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/conversacion.png" alt="imagen de página en construcción" class="img-fluid">
+
+-------------------------------------------------------------------------------
+
+| masteryp.php (CI4) |
+Lines edited: 4
+   - [Line 2]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/servicio.png" style="height: 270; width:100%;"></img>
+   - [Line 11]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/img-back.jpeg" alt="" style="height:270; width:100%; margin-bottom:30px;"></img>
+   - [Line 14]: <a href="<?php echo base_url(),'/'; ?>products/index" class="btn btn-primary" role="button" style="width:100%; height:70px; font-size:30px; padding-top:13px;">¡Inscríbete!</a>
+   - [Line 16]: <a href="<?php echo base_url(),'/'; ?>#" class="btn btn-secondary" role="button" style="margin-top:20px; width:100%; height:70px; font-size:30px; padding-top:13px;">Más información...</a>
+
+-------------------------------------------------------------------------------
+
+| mensaje-respuesta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes_enviado-eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje_enviado-eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_cobros.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_documentos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_empleo.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_usuarios.php (CI4) |
+Lines edited: 2
+   - [Line 2]: <li><a href="<?php echo base_url(),'/'; ?>alta_usuario">Alta de usuarios</a></li>
+   - [Line 3]: <li><a href="<?php echo base_url(),'/'; ?>lista_usuarios">Listar usuarios</a></li>    
+
+-------------------------------------------------------------------------------
+
+| switch_menus.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| normativa.php (CI4) |
+Lines edited: 1
+   - [Line 2]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/norma-header.png" style="height: 270; width:1200; margin-top: 40;"></img>
+
+-------------------------------------------------------------------------------
+
+| nosession.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| noticias.php (CI4) |
+Lines edited: 4
+   - [Line 19]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png" alt="logotipo logopeds cantabria" class="img-colabo">
+   - [Line 21]: <h3 style="padding-bottom:1.18em;"><a href="<?php echo base_url(),'/'; ?>assets/downloads/protocolo_logopedia.pdf" style="color: #fff; text-decoration:none;">+Información</a></h3>
+   - [Line 38]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png" alt="logotipo logopeds cantabria" class="img-colabo">
+   - [Line 40]: <h3 style="padding-bottom:1.18em;"><a href="<?php echo base_url(),'/'; ?>assets/downloads/CGCL_Manifiesto_Día_de_la_Logopedia.pdf" style="color: #fff; text-decoration:none;">+Información</a></h3>
+
+-------------------------------------------------------------------------------
+
+| nuevas_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nuevas_sociedades.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nuevos_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| oferta.php (CI4) |
+Lines edited: 8
+   - [Line 19]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/aesara.png" alt="logotipo aesara" class="img-colabo">
+   - [Line 21]: <h3 style="padding-bottom:1.18em;"><a href="<?php echo base_url(),'/'; ?>oferta_detalle" style="color: #fff; text-decoration:none;">+Información</a></h3>
+   - [Line 39]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/logopedia_burgos.jpg" alt="logotipo logopedia burgos" class="img-colabo">
+   - [Line 41]: <h3 style="padding-bottom:1.18em;"><a href="<?php echo base_url(),'/'; ?>oferta_detalle_2" style="color: #fff; text-decoration:none;" target="_blank">+Información</a></h3>
+   - [Line 59]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png" alt="logotipo logopedia burgos" class="img-colabo">
+   - [Line 61]: <h3 style="padding-bottom:1.18em;"><a href="<?php echo base_url(),'/'; ?>oferta_detalle_3" style="color: #fff; text-decoration:none;" target="_blank">+Información</a></h3>
+   - [Line 79]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/ineup.png" alt="logotipo ineup" class="img-colabo">
+   - [Line 81]: <h3 style="padding-bottom:1.18em;"><a href="<?php echo base_url(),'/'; ?>oferta_detalle_4" style="color: #fff; text-decoration:none;" target="_blank">+Información</a></h3>
+
+-------------------------------------------------------------------------------
+
+| oferta_detalle.php (CI4) |
+Lines edited: 1
+   - [Line 20]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/aesara.png" alt="logotipo aesara" class="img-colabo">
+
+-------------------------------------------------------------------------------
+
+| oferta_detalle_2.php (CI4) |
+Lines edited: 1
+   - [Line 20]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/logopedia_burgos.jpg" alt="logotipo logopedia burgos" class="img-colabo">
+
+-------------------------------------------------------------------------------
+
+| oferta_detalle_3.php (CI4) |
+Lines edited: 1
+   - [Line 20]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png" alt="logotipo aesara" class="img-colabo">
+
+-------------------------------------------------------------------------------
+
+| oferta_detalle_4.php (CI4) |
+Lines edited: 1
+   - [Line 20]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/ineup.png" style="margin: 2em 0 2em 0" alt="logotipo aesara" class="img-colabo">
+
+-------------------------------------------------------------------------------
+
+| otroscursos.php (CI4) |
+Lines edited: 6
+   - [Line 24]: <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+   - [Line 28]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_CLC.jpg">
+   - [Line 72]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_AVAN.jpg">
+   - [Line 96]: <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+   - [Line 100]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_CLM.jpg">
+   - [Line 144]: <img style="height:250px;" src="<?php echo base_url(),'/'; ?>assets/images/empresas/LOGOPEDAS_WEB_EMPRESAS_LOGOPEDICUM.png">
+
+-------------------------------------------------------------------------------
+
+| password copy.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| password.php (CI4) |
+Lines edited: 1
+   - [Line 227]: <form name="contacto" action="<?php echo base_url(),'/'; ?>password" method="post">
+
+-------------------------------------------------------------------------------
+
+| previa_registro.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| privacidad.php (CI4) |
+Lines edited: 1
+   - [Line 3]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/politica-header.png"></img>
+
+-------------------------------------------------------------------------------
+
+| aaa.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_cuota.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_documento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_evento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_evento_ajeno.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_evento_gratis.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_proyecto.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_sociedades.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| alta_usuario.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| bandeja_de_entrada.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_documento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_evento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_evento_ajeno.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_inscrito.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_mensaje.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_pedidos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_sociedad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| borrar_usuario.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| busca_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| busca_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| cambio_status.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ckeditor.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ckeditor_php4.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ckeditor_php5.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| advanced.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| events.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| replace.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| replaceall.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| standalone.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| configuracion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| control.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_cuotas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_documento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_evento.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_evento_ajeno.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_evento_gratis.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_oferta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| edit_sociedad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| eliminar_cuota.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| enviar_mensajes-eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| enviar_mensajes.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| enviar_mensajes_old.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estado_cuota.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estado_cuota2.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| estado_cuota3.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| facturas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| imprimir_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| footer.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| functions.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| header.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| menu.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| seguridad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| index.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| inscripcion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| funciones.js.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza-factura.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_control_firmas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_etiquetas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_etiquetas_cursos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_excel.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_inscripciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_inscrito.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_listado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lanza_listado_sociedades.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_documentos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_eventos_ajenos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_eventos_gratis.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_inscripciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_ofertas.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_operaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_sociedades.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| lista_usuarios.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| main.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje-respuesta.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes_enviado-eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensajes_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje_enviado-eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| mensaje_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_cobros.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_documentos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_empleo.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_eventos.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| m_usuarios.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| switch_menus.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nosession.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nuevas_reclamaciones.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nuevas_sociedades.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| nuevos_colegiados.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| password.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.phpmailer.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.pop3.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.smtp.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| class.html2text.php (CI4) |
+Lines edited: 1
+   - [Line 289]: $this->set_base_url(),'/';
+
+-------------------------------------------------------------------------------
+
+| htmlfilter.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ntlm_sasl_client.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| phpmailer.lang-es.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| testemail.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| prueba_mail.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| rec_password.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| responder_reclamacion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| seguridad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| selec_menu.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitudes_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitudes_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitudes_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_anulado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_error.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_pendiente.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_procesado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| footer.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| functions.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| header.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| incl_imagen.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| incl_video_ext.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| menu.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ver_colegiado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ver_inscrito.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ver_sociedad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| prueba_mail.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| rec_password.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| responder_reclamacion.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| seguridad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| selec_menu.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| serviciocolegiado.php (CI4) |
+Lines edited: 12
+   - [Line 2]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/servicio.png" style="height: 270; width:100%;"></img>
+   - [Line 6]: <a class="col-lg-6" href="<?php echo base_url(),'/'; ?>codigo">
+   - [Line 7]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/normas-img.png" style="height: 270; width:545; margin-top: 40;"></img>
+   - [Line 9]: <a class="col-lg-6" href="<?php echo base_url(),'/'; ?>forum/index">
+   - [Line 10]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/foro-img.png" style="height: 270; width:545; margin-top: 40;"></img>
+   - [Line 14]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>products/index">
+   - [Line 15]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/tasas-img.png" style="height: 300; width:340; margin-top: 40;"></img>
+   - [Line 17]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>juntagob">
+   - [Line 18]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/junta-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 5;"></img>
+   - [Line 21]: <a class="col-lg-4" href="<?php echo base_url(),'/'; ?>alucinante">
+   - [Line 22]: <img src="<?php echo base_url(),'/'; ?>assets/images/png/voto-img.png" style="height: 300; width:340; margin-top: 40; margin-left: 10;"></img>
+   - [Line 27]: <a href="<?php echo base_url(),'/'; ?>users/profile/edit" class="alineadobotonmenu btn btn-primary btn-lg btn-block" type="submit">EDITAR PERFIL</a>
+
+-------------------------------------------------------------------------------
+
+| solicitudes_baja.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitudes_cambio.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| solicitudes_traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_anulado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_enviado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_error.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_pendiente.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| status_procesado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| traslado.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ver_colegiado.php (CI4) |
+Lines edited: 1
+   - [Line 15]: <?php echo view('templates/menu_admin'); ?>
+
+-------------------------------------------------------------------------------
+
+| ver_inscrito.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| ver_sociedad.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| videonoticias.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| cancel.php (CI4) |
+Lines edited: 1
+   - [Line 3]: <a href="<?php echo base_url(),'/'; ?>">Volver a inicio</a>
+
+-------------------------------------------------------------------------------
+
+| success.php (CI4) |
+Lines edited: 1
+   - [Line 18]: <a href="<?php echo base_url(),'/'; ?>">Volver a inicio</a>
+
+-------------------------------------------------------------------------------
+
+| index.php (CI4) |
+Lines edited: 3
+   - [Line 41]: <img class="card-img-top" src="<?=base_url(),'/'?>assets/images/png/curso.gif" alt="Imagen tasas">
+   - [Line 53]: <img class="card-img-top" src="<?=base_url(),'/'?>assets/images/png/curso.gif" alt="Imagen tasas">
+   - [Line 65]: <img class="card-img-top" src="<?=base_url(),'/'?>assets/images/png/curso.gif" alt="Imagen tasas">
+
+-------------------------------------------------------------------------------
+
+| index.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| template.php (CI4) |
+Lines edited: 3
+   - [Line 10]: <link rel="stylesheet" type="text/css" href="<?php echo base_url(),'/' . 'assets/reset.css'; ?>">
+   - [Line 11]: <link rel="stylesheet" type="text/css" href="<?php echo base_url(),'/' . 'assets/960.css'; ?>">
+   - [Line 12]: <link rel="stylesheet" type="text/css" href="<?php echo base_url(),'/' . 'assets/menu.css'; ?>">
+
+-------------------------------------------------------------------------------
+
+| cookie_view.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| footer.php (CI4) |
+Lines edited: 11
+   - [Line 10]: <p>Este sitio web utiliza cookies o tecnologías similares para mejorar su experiencia de navegación y brindar recomendaciones personalizadas. Si continúa utilizando nuestro sitio web, acepta nuestra <a style="color:#115cfa;" href="<?php echo base_url(),'/'; ?>privacidad">Política de Privacidad</a></p>
+   - [Line 22]: <img class="img-fluid" id="imagenfooter" src="<?php echo base_url(),'/'; ?>assets/images/png/CPLC_IMAGOTIPO_VERT_BALNCO.png"></img>
+   - [Line 25]: <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid" id="imagensantander"src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
+   - [Line 31]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>home" target="_blank">Inicio</a></li>
+   - [Line 32]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>faq" target="_blank">FAQ</a></li>
+   - [Line 33]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>codigo" target="_blank">Código Deontológico</a></li>
+   - [Line 34]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>forum/index" target="_blank">Foro</a></li>
+   - [Line 40]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
+   - [Line 41]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/login" target="_blank">Accede</a></li>
+   - [Line 42]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a></li>
+   - [Line 43]: <li><a class="text-white" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">Política de Privacidad</a></li>
+
+-------------------------------------------------------------------------------
+
+| header.php (CI4) |
+Lines edited: 21
+   - [Line 18]: <link rel="stylesheet" href="<?php echo base_url(),'/'; ?>assets/css/style.css">
+   - [Line 19]: <link rel="icon" href="<?=base_url(),'/'?>assets/images/png/favicon.ico" type="image/vnd.microsfot.icon">
+   - [Line 29]: <a class="navbar-brand" href="<?php echo base_url(),'/'; ?>home"><img class="logo_header" src="<?php echo base_url(),'/'; ?>assets/images/png/logo_header.png"></img></a>
+   - [Line 37]: <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>colegio" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EL COLEGIO</a>
+   - [Line 39]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>juntagob">JUNTA DE GOBIERNO</a>
+   - [Line 40]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>estatutos">ESTATUTOS</a>
+   - [Line 41]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>codigo">CÓDIGO DEONTOLÓGICO</a>
+   - [Line 42]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">NOTICIAS</a>
+   - [Line 46]: <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>logopedas" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGOPEDAS</a>
+   - [Line 48]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>acuerdos">ACUERDOS CON EMPRESAS</a>
+   - [Line 49]: <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>ofertas">OFERTAS</a>-->
+   - [Line 50]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>users/login">FORO</a>
+   - [Line 51]: <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">VIDEONOTICIAS</a>-->
+   - [Line 55]: <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>mantenimiento" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FORMACIÓN</a>
+   - [Line 57]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>formacion">CURSOS CPLC</a>
+   - [Line 58]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>otroscursos">OTROS CURSOS</a>
+   - [Line 59]: <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">MÁSTER Y POSTGRADO</a>
+   - [Line 63]: <a class="nav-link" href="<?php echo base_url(),'/'; ?>faq">PREGUNTAS FRECUENTES</a>
+   - [Line 69]: <a href="<?php echo base_url(),'/'; ?>serviciocolegiado" class="alineadobotonmenu btn btn-info px-3 me-2" type="submit">SERVICIOS LOGOPEDAS</a>
+   - [Line 72]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
+   - [Line 75]: <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
+
+-------------------------------------------------------------------------------
+
+| menu_admin.php (CI4) |
+Lines edited: 18
+   - [Line 9]: <a href="<?php echo base_url(),'/'; ?>itemCRUD"><i class="fas fa-users fa-lg"></i> Colegiados<i class="arrow fas-fa-chevron-right"></i></a>
+   - [Line 12]: <li><a href="<?php echo base_url(),'/'; ?>itemCRUD/create">Alta colegiados</a></li>
+   - [Line 13]: <li><a href="<?php echo base_url(),'/'; ?>email_view">Enviar mensaje</a></li>
+   - [Line 20]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento">Alta de eventos propios</a></li>
+   - [Line 21]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_ajeno">Alta de eventos gratuitos</a></li>
+   - [Line 22]: <li><a href="<?php echo base_url(),'/'; ?>alta_evento_ajeno">Alta de eventos ajenos</a></li>
+   - [Line 23]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos">Lista de eventos propios</a></li>
+   - [Line 24]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_gratis">Lista de eventos gratis</a></li>
+   - [Line 25]: <li><a href="<?php echo base_url(),'/'; ?>lista_eventos_ajenos">Lista de eventos ajenos</a></li>
+   - [Line 26]: <li><a href="<?php echo base_url(),'/'; ?>lista_inscripciones">Listar inscripciones</a></li>
+   - [Line 34]: <li><a href="<?php echo base_url(),'/'; ?>alta_documento">Alta documentos</a></li>
+   - [Line 35]: <li><a href="<?php echo base_url(),'/'; ?>lista_documentos">Lista documentos</a></li>
+   - [Line 46]: <li><a href="<?php echo base_url(),'/'; ?>alta_oferta">Alta ofertas</a></li>
+   - [Line 47]: <li><a href="<?php echo base_url(),'/'; ?>lista_ofertas">Lista ofertas</a></li>
+   - [Line 54]: <li><a href="<?php echo base_url(),'/'; ?>alta_cuota">Alta cuota</a></li>
+   - [Line 55]: <li><a href="<?php echo base_url(),'/'; ?>eliminar_cuota">Eliminar cuota</a></li>
+   - [Line 56]: <li><a href="<?php echo base_url(),'/'; ?>estado_cuota">Estado cuota colegiados</a></li>
+   - [Line 57]: <li><a href="<?php echo base_url(),'/'; ?>edit_cuotas">Importe cuotas</a></li>
+
+-------------------------------------------------------------------------------
+
+| create.php (CI4) |
+Lines edited: 1
+   - [Line 1]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| reply.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| single.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| login.php (CI4) |
+Lines edited: 2
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 4]: <img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/acceso-header.png" style="width:100%; height: 270px; margin-bottom: 30px;"></img>
+
+-------------------------------------------------------------------------------
+
+| login.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| logout_success.php (CI4) |
+Lines edited: 1
+   - [Line 1]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| delete.php (CI4) |
+Lines edited: 2
+   - [Line 1]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+   - [Line 16]: <p>Go back to <a href="<?= base_url(),'/' ?>">Home page</a></p>
+
+-------------------------------------------------------------------------------
+
+| edit.php (CI4) |
+Lines edited: 1
+   - [Line 2]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| profile.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+| register.php (CI4) |
+Lines edited: 1
+   - [Line 12]: defined('BASEPATH') OR exit('No direct script access allowed');   |deleted|
+
+-------------------------------------------------------------------------------
+
+| welcome_message.php (CI4) |
+Lines edited: 0
+
+-------------------------------------------------------------------------------
+
+################################################################################
+|-----| 4. WHAT TO DO AFTER CI-UPGRADER |-----|
+################################################################################
+
+Check out the User-Guide of CI-Upgrader. Here you will find all informations about the tasks you have to do after the upgrade. 
+(https://github.com/FlorianNelles/CI-Upgrader/blob/main/Documentation.md#after-the-upgrade)

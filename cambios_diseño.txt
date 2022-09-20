@@ -1,0 +1,4 @@
+Arreglar el menú de las siguientes vistas:
+
+	-itemCRUD/Edit
+	-pages/lista_documentos

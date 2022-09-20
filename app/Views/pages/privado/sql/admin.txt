@@ -1,0 +1,9 @@
+CREATE TABLE `admin` (
+  `Id` int(5) NOT NULL auto_increment,
+  `Nombre` varchar(255) NOT NULL default '',
+  `Usuario` varchar(255) NOT NULL default '',
+  `Pass` varchar(255) NOT NULL default '',
+  `Permisos` varchar(255) NOT NULL default '',
+  `Email` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`Id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
