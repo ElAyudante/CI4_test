@@ -541,47 +541,6 @@ use Kenjis\CI3Compatible\Core\CI_Controller;
         }
 
 
-        public function register_empleo(){
-            
-            $data = new stdClass();
-
-            $this->load->helper('form');
-
-            $titulo = $this->form_validation->set_rules('titulo', 'Titulo', 'required');
-            $descripcion = $this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
-            $activo = $this->form_validation->set_rules('activo', 'Activo', 'required');
-
-            if($this->form_validation->run() === false) {
-                
-                echo view('templates/header');
-                echo view('pages/alta_oferta_prueba', $data);
-                echo view('templates/footer');
-
-            } else {
-
-                $titulo = $this->input->post('titulo');
-                $descripcion = $this->input->post('descripcion');
-                $activo = $this->input->post('activo');
-
-                if($this->user_model->create_empleo($titulo, $descripcion, $activo)) {
-
-                    $data->success = "El documento se ha creado con éxito.";
-
-                    echo view('templates/header');
-                    echo view('pages/alta_oferta_prueba', $data);
-                    echo view('templates/footer');
-
-                } else {
-
-                    $data->error = "Ha habido un problema creando la oferta. Por favor, inténtalo de nuevo. Si el problema persiste contacta con el desarrollador.";
-
-                    echo view('templates/header');
-                    echo view('pages/alta_oferta_prueba', $data);
-                    echo view('templates/footer');
-
-                }
-            }
-        }
 
         public function register_cuota(){
             

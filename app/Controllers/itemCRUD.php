@@ -47,6 +47,7 @@ class ItemCRUD extends CI_Controller {
 
         $crud->unsetBootstrap();
 
+
 	    $output = $crud->render();
 
         echo view('templates/header'); 
@@ -66,7 +67,9 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('documentos');
         $crud->setSubject('Documento', 'Documentos');
-        $crud->columns(['Nombre', 'Archivo']);
+        $crud->columns(['Nombre', 'Descripcion', 'Publico', 'Archivo']);
+
+        $crud->unsetBootstrap();
 
         $output = $crud->render();
 
@@ -74,6 +77,61 @@ class ItemCRUD extends CI_Controller {
         echo view('App\Views\pages\lista_documentos',(array)$output);
         echo view('templates/footer');
    }
+
+   public function create_cursos()
+   {
+      echo view('templates/header');
+      echo view('App\Views\pages\alta_evento');
+      echo view('templates/footer');   
+   }
+
+   public function listar_cursos_CPLC(){
+    
+        $crud = new GroceryCrud();
+        $crud->setTable('eventos');
+        $crud->setSubject('Evento', 'Eventos');
+        $crud->columns(['Evento', 'Descripcion', 'ImporteColegiados', 'NoColegiados']);
+
+        $crud->unsetBootstrap();
+
+        $output = $crud->render();
+
+        echo view('templates/header'); 
+        echo view('App\Views\pages\lista_eventos',(array)$output);
+        echo view('templates/footer');
+   }
+
+   public function listar_cursos_ajenos(){
+        
+        $crud = new GroceryCrud();
+        $crud->setTable('eventos_ajenos');
+        $crud->setSubject('Evento', 'Eventos');
+        $crud->columns(['Evento', 'Descripcion']);
+
+        $crud->unsetBootstrap();
+
+        $output = $crud->render();
+
+        echo view('templates/header'); 
+        echo view('App\Views\pages\lista_eventos_ajenos',(array)$output);
+        echo view('templates/footer');
+    }
+
+    public function listar_ofertas(){
+
+        $crud = new GroceryCrud();
+        $crud->setTable('ofertas_empleo');
+        $crud->setSubject('Oferta', 'Ofertas');
+        $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto', 'Activo']);
+
+        $crud->unsetBootstrap();
+
+        $output = $crud->render();
+
+        echo view('templates/header'); 
+        echo view('App\Views\pages\lista_ofertas',(array)$output);
+        echo view('templates/footer');
+    }
 
    public function index_sociedades()
    {
@@ -165,6 +223,57 @@ class ItemCRUD extends CI_Controller {
 
         }
     }
+    
+    public function register_empleo(){
+
+        echo view('templates/header');
+        echo view('pages/alta_oferta_prueba');
+        echo view('templates/footer');
+
+    }
+
+    public function store_documento(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'nombre' => 'required|min_length[3]|max_length[255]',
+            'publico'  => 'required',
+        ])) {
+            $model->insert_documento([
+                'nombre' => $this->request->getPost('nombre'),
+                'descripcion'  => $this->request->getPost('descripcion'),
+                'publico'  => $this->request->getPost('publico'),
+                'archivo'  => $this->request->getPost('archivo'),
+            ]);
+        }
+
+
+        return $this->listar_documentos();
+    }
+
+    public function store_empleo(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'empresa' => 'required|min_length[3]|max_length[255]',
+            'lugar'  => 'required',
+            'contacto'  => 'required',
+        ])) {
+            $model->insert_oferta([
+                'empresa' => $this->request->getPost('empresa'),
+                'lugar'  => $this->request->getPost('lugar'),
+                'contacto'  => $this->request->getPost('contacto'),
+                'ofrece'  => $this->request->getPost('ofrece'),
+                'activo'  => $this->request->getPost('activo'),
+                'condiciones'  => $this->request->getPost('condiciones'),
+            ]);
+        }
+
+
+        return $this->listar_ofertas();
+    }
 
 
    /**
@@ -181,6 +290,23 @@ class ItemCRUD extends CI_Controller {
        echo view('templates/footer');
    }
 
+   public function edit_empleo($id)
+   {
+       $item = $this->itemCRUD->find_empleo($id);
+
+       echo view('templates/header');
+       echo view('pages/edit_empleo',array('item'=>$item));
+       echo view('templates/footer');
+   }
+   public function edit_documento($id)
+   {
+       $item = $this->itemCRUD->find_documento($id);
+
+       echo view('templates/header');
+       echo view('pages/edit_documento',array('item'=>$item));
+       echo view('templates/footer');
+   }
+
 
    /**
     * Update Data from this method.
@@ -188,12 +314,6 @@ class ItemCRUD extends CI_Controller {
     * @return Response
    */
    public function update($id) {
-        //error_reporting(E_ALL);
-        //ini_set("display_errors",true);
-
-
-       //var_dump($this->form_validation);
-        //exit();
         
         $this->form_validation->set_rules('email', 'Email', 'valid_email');
         $this->form_validation->set_rules('cuentabancaria', 'Cuentabancaria', 'trim');
@@ -206,6 +326,35 @@ class ItemCRUD extends CI_Controller {
           return redirect()->to(base_url('itemCRUD'));
         }
 
+    }
+
+    public function update_empleo(){
+
+        $data = array(
+
+			'Empresa' => $this->input->post('empresa'),
+			'Lugar' => $this->input->post('lugar'),
+			'Ofrece' => $this->input->post('ofrece'),
+			'Condiciones' => $this->input->post('condiciones'),
+			'Contacto' => $this->input->post('contacto'),
+			'Activo' => $this->input->post('activo')
+		);
+
+        $this->db->update('ofertas_empleo', $data);
+        return $this->listar_ofertas();
+    }
+    public function update_documento(){
+
+        $data = array(
+
+			'Nombre' => $this->input->post('nombre'),
+			'Descripcion' => $this->input->post('descripcion'),
+			'Publico' => $this->input->post('publico'),
+			'Archivo' => $this->input->post('archivo')
+		);
+
+        $this->db->update('documentos', $data);
+        return $this->listar_documentos();
     }
 
 
@@ -221,7 +370,25 @@ class ItemCRUD extends CI_Controller {
        return redirect()->to(base_url('pages/lista_colegiados'));
    }
 
-   private function _exampleOutput($output = null) {
+   public function delete_empleo($id)
+   {
+        $this->itemCRUD->delete_empleo($id);
+
+       return $this->listar_ofertas();
+   }
+
+   public function delete_documento($id)
+   {
+        $this->itemCRUD->delete_documento($id);
+
+       return $this->listar_documentos();
+   }
+
+
+    private function _exampleOutput($output = null) {
         return view('itemCRUD/list', (array)$output);
+    }
+    private function _exampleOutput1($output = null) {
+        return view('listar_ofertas', (array)$output);
     }
 }

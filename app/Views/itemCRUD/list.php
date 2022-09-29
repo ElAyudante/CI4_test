@@ -38,12 +38,12 @@ $sel_comunidades =  array (
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
-                <a class="btn btn-success" href="<?php echo base_url('itemCRUDCreate') ?>"> Crear colegiado</a>
+                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Crear colegiado</a>
             </div>
         </div>
     </div>
 
-    <div class="container junta" style="position: relative; top: ; left: 50px">
+    <div class="container junta" style="position: relative; top: -870px; left: 100px">
             
         <div> <?php echo $output; ?> </div>
         <?php foreach($js_files as $file): ?>

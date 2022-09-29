@@ -1,14 +1,4 @@
-<?php include ("includes/header.php");
-?>
-<!-- *******************************************************-->
-<div id="menu_lat">
-<?php
-	include("menus/switch_menus.php");	
-?>
-</div>
-<!-- *******************************************************-->
-<!-- *******************************************************-->
-<div id="cont_2">
+
 <?php 
 			// VALIDAR FORMULARIO
 			$error ="";
@@ -130,7 +120,7 @@
 										<table width="100%" height="25" style="border:none" cellpadding="0" cellspacing="0">
 									  <tr>
 										<td width="55%" bgcolor="#ff0000" class="texto"><font color="#FFFFFF">Colegio Profesional de Logopedas de Cantabria</font><font color="#FFFFFF">. </font></td>
-										<td width="45%" align="right" bgcolor="#ff0000"><a href="http://www.logopedascantabria.org" class="corp">Visita nuestra web</a></td>
+										<td width="45%" text-align="right" bgcolor="#ff0000"><a href="http://www.logopedascantabria.org" class="corp">Visita nuestra web</a></td>
 									  </tr>
 									</table>
 										</td>
@@ -256,20 +246,20 @@
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td width="225" height="25" align="right" class="privada">Nombre de la oferta*:&nbsp;&nbsp;</td>
+        <td width="225" height="25" text-align="right" class="privada">Nombre de la oferta*:&nbsp;&nbsp;</td>
         <td height="25"><input name="nombre" type="text" maxlength="200" size="25" value="<?php if(isset($_POST["nombre"])) echo $_POST["nombre"]; ?>"></td>
       </tr> 
       <tr>
-        <td width="225" height="25" align="right" class="privada" valign="top">Descripción*:&nbsp;&nbsp;</td>
+        <td width="225" height="25" text-align="right" class="privada" valign="top">Descripción*:&nbsp;&nbsp;</td>
         <td height="25"><textarea name="descripcion" style="width:350px; height:60px"><?php if(isset($_POST["descripcion"])) echo $_POST["descripcion"]; ?></textarea></td>
       </tr>   
      
       <tr>
-        <td width="225" height="25" align="right" class="privada">Activo:&nbsp;&nbsp;</td>
+        <td width="225" height="25" text-align="right" class="privada">Activo:&nbsp;&nbsp;</td>
         <td height="25"><input type="radio" name="activo" id="activosi" value="1" <?php if((isset($_POST["activo"]) && $_POST["activo"]==1)) echo 'checked="checked"'; ?>/> <label for="activosi">Si</label> &nbsp;<input type="radio" name="activo" id="activono" value="0" <?php if((isset($_POST["activo"]) && $_POST["activo"]==0)) echo 'checked="checked"'; ?>/> <label for="activono">No</label></td>
       </tr>    
       <tr>
-        <td height="25" colspan="2" align="center"><input type="submit" name="enviar" value="Guardar Oferta"></td>
+        <td height="25" colspan="2" text-align="center"><input type="submit" name="enviar" value="Guardar Oferta"></td>
         </tr>
     </table>
 
@@ -281,8 +271,3 @@
 		} // fin if (isset($_POST['enviar']) && !$error) {	
 	?>
 </div>
-<!-- *******************************************************-->
-
-<?php
-include ("includes/footer.php");
-?>

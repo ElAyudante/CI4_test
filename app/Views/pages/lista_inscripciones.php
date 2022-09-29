@@ -1,13 +1,4 @@
-<?php include ("includes/header.php");
-?>
-<!-- *******************************************************-->
-<div id="menu_lat">
-<?php
-	include("menus/switch_menus.php");	
-?>
-</div>
-<!-- *******************************************************-->
-<!-- *******************************************************-->
+
 <div id="cont_2">
 
     <h1>Lista de inscripciones</h1>
@@ -17,7 +8,7 @@
         <td>&nbsp;</td>
       </tr>
       <tr>        
-        <td height="25" align="right" colspan="2">
+        <td height="25" text-align="right" colspan="2">
         <?php
         $concat="SELECT * FROM eventos ORDER BY Id DESC";
 		$concat=mysql_query($concat) or die (mysql_error());
@@ -102,7 +93,7 @@
         <td>&nbsp;</td>
       </tr>    
       <tr>
-        <td height="25" colspan="2" align="center">&nbsp;</td>
+        <td height="25" colspan="2" text-align="center">&nbsp;</td>
       </tr>
     </table>
 
@@ -110,7 +101,3 @@
     
 </div>
 <!-- *******************************************************-->
-
-<?php
-include ("includes/footer.php");
-?>

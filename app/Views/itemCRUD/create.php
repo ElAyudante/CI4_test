@@ -87,7 +87,7 @@ $sel_comunidades =  array (
         <div class="container p-5">
           <?php  ?>
 
-          <?php echo form_open('itemCRUD/store'); ?>
+          <?php echo form_open('/itemCRUD/store'); ?>
             <div class="row">
               <?php
                 /*if ($this->session->flashdata('errors')){

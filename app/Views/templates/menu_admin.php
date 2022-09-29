@@ -14,16 +14,14 @@
                 </ul>
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                    <a href="#service"><i class="far fa-calendar-check fa-lg"></i> Eventos <span class="arrow"></span></a>
+                    <a href="#service"><i class="far fa-calendar-check fa-lg"></i> Cursos/Eventos <span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
-                    <li><a href="<?php echo base_url().'/'; ?>alta_evento">Alta de eventos propios</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta de eventos gratuitos</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta de eventos ajenos</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>lista_eventos">Lista de eventos propios</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>lista_eventos_gratis">Lista de eventos gratis</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>lista_eventos_ajenos">Lista de eventos ajenos</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>lista_inscripciones">Listar inscripciones</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>crear_curso_cpcl">Alta Cursos CPLC</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta Cursos Ajenos</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>cursos_CPLC">Lista Cursos CPLC</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>cursos_ajenos">Lista Cursos Ajenos</a></li>
+                    <li><a href="#<?php echo base_url().'/'; ?>lista_inscripciones">Listar inscripciones</a></li>
                 </ul>
 
 
@@ -31,7 +29,7 @@
                     <a href="#documentos"><i class="fas fa-file-alt fa-lg"></i> Documentos <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="documentos">
-                    <li><a href="<?php echo base_url().'/'; ?>alta_documentos_prueba">Alta documentos</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>crear_documentos">Alta documentos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>documentos">Lista documentos</a></li>
                 </ul>
 
@@ -43,8 +41,8 @@
                     <a href="#empleo"><i class="fas fa-briefcase fa-lg"></i> Empleo <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="empleo">
-                    <li><a href="<?php echo base_url().'/'; ?>alta_oferta">Alta ofertas</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>lista_ofertas">Lista ofertas</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>crear_oferta">Alta ofertas</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>lista_oferta">Lista ofertas</a></li>
                 </ul>
 
                 <li data-toggle="collapse" data-target="#cobros" class="collapsed"> 

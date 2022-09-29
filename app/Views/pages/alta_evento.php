@@ -1,22 +1,9 @@
-</div>
-
-<section class="presentacion p-5 text-left">
-    <div class="container">
-        <div class="row align-items-center text-white">
-            <div class="col-md-12" id="texto-cabecera">
-                <h1 class="mb-3 title-main align-middle text-uppercase">Alta Evento</h1>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="junta app" style="margin-top: 2.1em; margin-bottom: -5.1em; height: auto;">
+    <div class="col-lg-2 ps-0">
+       <?php echo view('templates/menu_admin'); ?> 
+    </div>
 
-	<?php echo view('templates/menu_admin'); ?>
-
-  	<div class="container" style="width: 70%; padding:0; margin-right:2em; margin-top: -60em;">
-		<?php  ?>
-
+    <div class="junta">
 		<?php echo form_open('users/register_evento_propio'); ?>
 			<div class="row">
 			<?php if (validation_errors()) : ?>

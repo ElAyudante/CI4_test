@@ -1,65 +1,53 @@
-</div>
+<section class="junta">
 
-<section class="presentacion p-5 text-left">
-    <div class="container">
-        <div class="row align-items-center text-white">
-            <div class="col-md-12" id="texto-cabecera">
-                <h1 class="mb-3 title-main align-middle text-uppercase">Alta Oferta</h1>
-            </div>
-        </div>
-    </div>
-</section>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col-lg-2 ps-0">
+        <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+      </div>
 
-<section class="junta app" style="margin-top: 2.1em; margin-bottom: -5.1em; height: auto;">
-
-	<?php echo view('templates/menu_admin'); ?>
-
-  	<div class="container" style="width: 70%; padding:0; margin-right:2em; margin-top: -60em;">
-		<?php  ?>
-
-		<?php echo form_open('users/register_empleo'); ?>
+      <div class="col-lg-10">
+        <div class="container p-5">
+		<?php echo form_open('/itemCRUD/store_empleo'); ?>
 			<div class="row">
-			<?php if (validation_errors()) : ?>
-				<div class="col-md-12">
-					<div class="alert alert-danger" role="alert">
-						<?= validation_errors() ?>
-					</div>
-				</div>
-			<?php endif; ?>
-			<?php if (isset($error)) : ?>
-				<div class="col-md-12">
-					<div class="alert alert-danger" role="alert">
-						<?= $error ?>
-					</div>
-				</div>
-			<?php endif; ?>
-      <?php if (isset($success)) : ?>
-				<div class="col-md-12">
-					<div class="alert alert-success" role="alert">
-						<?= $success ?>
-					</div>
-				</div>
-			<?php endif; ?>
 			<h3 style="color: #004987; text-transform: uppercase; font-size:3em">Alta oferta</h3>
             <div class="col-md-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="titulo" placeholder="Nombre de la oferta" autofocus>
+                    <input type="text" class="form-control" name="empresa" placeholder="Empresa" autofocus>
                 </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-3">
                 <div class="form-group">
-                    <textarea type="text" class="form-control" name="descripcion" placeholder="Descripción"></textarea>
+                    <input type="text" class="form-control" name="lugar" placeholder="Lugar" autofocus>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="form-group custom-checkbox text-uppercase pt-3">
-                <label style="color: #004987; font-weight:500;">Activo</label>
-                <input type="checkbox" class="custom-control-input" name="activo" id="activo1">
-                <label class="custom-control-label" for="activo1" value="1" style="color: #004987; font-weight:500;">Sí</label>
-                <input type="checkbox" class="custom-control-input" name="activo" id="activo2">
-                <label class="custom-control-label" for="activo2" value="0" style="color: #004987; font-weight:500;">No</label>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="contacto" placeholder="Contacto" autofocus>
                 </div>
-            </div>     
+            </div>
+            <div class="col-md-3">
+            <div class="form-group custom-control custom-radio text-uppercase pt-3">
+                  <label style="color: #004987; font-weight:500;">Activo</label>
+                  <input type="radio" class="custom-control-input" value="1" name="activo" id="activo1">
+                  <label class="custom-control-label" for="habitacion1" style="color: #004987; font-weight:500;">Sí</label>
+                  <input type="radio" class="custom-control-input" value="0" name="activo" id="activo2">
+                  <label class="custom-control-label" for="habitacion2"style="color: #004987; font-weight:500;">No</label>
+                </div>
+            </div>    
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea type="text" class="form-control" name="ofrece" placeholder="Ofrece"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea type="text" class="form-control" name="condiciones" placeholder="Condiciones"></textarea>
+                </div>
+            </div>
+
+             
             <div class="row">
                 <div class="col-md-3 mb-5">
                     <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>

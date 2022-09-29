@@ -54,7 +54,7 @@
 				
 					
 	?>
-    <h1>Alta de documentos</h1>
+    <h1></h1>
     <?php if ($error) { echo "<p>".$error."</p>"; }	  ?>
 	<form method="post" name="alta_documento" action="alta_documento.php" enctype="multipart/form-data">
 	<table width="700" style="border:none" cellpadding="0" cellspacing="0">

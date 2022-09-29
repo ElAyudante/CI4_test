@@ -56,54 +56,62 @@ class ItemCRUDModel extends CI_Model{
         return $this->db->insert('colegiados', $data);
     }
 
-//UPDATE
-    public function update_item($id) 
-    {
-		$data=array(
-            'FechaAlta' => $this->input->post('falta'),
-            'Nombre'=> $this->input->post('nombre'),
-			'Apellidos' => $this->input->post('apellidos'),
-			'NIF' => $this->input->post('nif'),
-			'Direccion' => $this->input->post('direccion'),
-			'Localidad' => $this->input->post('localidad'),
-			'CP' => $this->input->post('cp'),
-			'Provincia' => $this->input->post('provincia'),
-			'Comunidad' => $this->input->post('comunidad'),
-			'Telefono' => $this->input->post('telefono'),
-			'Movil' => $this->input->post('movil'),
-			'Email' => $this->input->post('email'),
-			'Lugarnacimiento' => $this->input->post('lnacimiento'),
-			'Fechanacimiento' => $this->input->post('fnacimiento'),
-			'Cuentabancaria' => $this->input->post('cuenta'),
-			'Telefonotrabajo' => $this->input->post('tlftrabajo'),
-			'Lugartrabajo' => $this->input->post('lugtrabajo'),
-			'Direcciontrabajo' => $this->input->post('dtrabajo'),
-			'Localidadtrabajo' => $this->input->post('loctrabajo'),
-			'Colegiado' => $this->input->post('ncolegiado'),
-			'Ejerciente' => $this->input->post('ejerciente'),
-			'Especialidad' => $this->input->post('especialidad'),
-			'Ambitotrabajo' => $this->input->post('ambito'),
-			'Sector' => $this->input->post('sector'),
-        );
+	public function insert_oferta(){
 
-        if($id==0){
-            return $this->db->insert('colegiados',$data);
-        }else{
-            $this->db->where('id',$id);
-            return $this->db->update('colegiados',$data);
-        } 
-    }
+		$data = array(
+
+			'Empresa' => $this->input->post('empresa'),
+			'Lugar' => $this->input->post('lugar'),
+			'Ofrece' => $this->input->post('ofrece'),
+			'Condiciones' => $this->input->post('condiciones'),
+			'Contacto' => $this->input->post('contacto'),
+			'Activo' => $this->input->post('activo')
+		);
+
+		return $this->db->insert('ofertas_empleo', $data);
+	}
+
+	public function insert_documento(){
+
+		$data = array(
+
+			'Nombre' => $this->input->post('nombre'),
+			'Descripcion' => $this->input->post('descripcion'),
+			'Publico' => $this->input->post('publico'),
+			'Archivo' => $this->input->post('archivo')
+		);
+
+		return $this->db->insert('documentos', $data);
+	}
 
 //READ
     public function find_item($id)
     {
         return $this->db->get_where('colegiados', array('Id' => $id))->row();
     }
+	public function find_empleo($id)
+    {
+        return $this->db->get_where('ofertas_empleo', array('ID' => $id))->row();
+    }
+	public function find_documento($id)
+    {
+        return $this->db->get_where('documentos', array('Id' => $id))->row();
+    }
 
 //DELETE
     public function delete_item($id)
     {
         return $this->db->delete('colegiados', array('id' => $id));
+    }
+
+	public function delete_empleo($id)
+    {
+        return $this->db->delete('ofertas_empleo', array('ID' => $id));
+    }
+
+	public function delete_documento($id)
+    {
+        return $this->db->delete('documentos', array('Id' => $id));
     }
 }
 ?>
