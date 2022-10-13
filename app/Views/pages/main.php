@@ -1,5 +1,3 @@
-</div>    
-
 <section class="presentacion p-5 text-left mb-5">
     <div class="container">
         <div class="row align-items-center text-white">
