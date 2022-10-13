@@ -72,7 +72,7 @@
                             <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
                                 <button type="button" class="btn btn-header">COLÉGIATE</button>
                             </a>
-                            <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
+                            <a href="<?php echo base_url(),'/'; ?>users/login" class="alineadobotonmenu me-2" target="_blank">
                                 <button type="button" class="btn btn-header">ACCESO A COLEGIADOS</button>
                             </a>
                         <?php endif; ?>

@@ -7,6 +7,12 @@ use Kenjis\CI3Compatible\Core\CI_Model;
 
 class ItemCRUDModel extends CI_Model{
 
+
+	public function login($usuario, $pass){
+		$query = $this->db->get_where('colegiados', array('Usuario'=>$usuario, 'Pass'=>$pass));
+		return $query->row_array();
+	}
+
 	//CREATE
     public function insert_item()
     {    

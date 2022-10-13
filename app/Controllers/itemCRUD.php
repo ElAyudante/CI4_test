@@ -391,4 +391,58 @@ class ItemCRUD extends CI_Controller {
     private function _exampleOutput1($output = null) {
         return view('listar_ofertas', (array)$output);
     }
+
+    //LOG IN
+    public function index_login(){
+		//load session library
+		$this->load->library('session');
+ 
+		//restrict users to go back to login if session has been set
+		if($this->session->userdata('user')){
+			redirect('usuarios/home');
+		}
+		else{
+			$this->load->view('App\Views\pages\usuarios\login');
+		}
+	}
+ 
+	public function login(){
+		//load session library
+		$this->load->library('session');
+ 
+		$nif = $_POST['nif'];
+		$password = $_POST['password'];
+ 
+		$data = $this->itemCRUDModel->login($nif, $password);
+ 
+		if($data){
+			$this->session->set_userdata('user', $data);
+			redirect('App\Views\pages\usuarios\home');
+		}
+		else{
+			header('location:'.base_url().$this->index());
+			$this->session->set_flashdata('error','Invalid login. User not found');
+		} 
+	}
+ 
+	public function home_login(){
+		//load session library
+		$this->load->library('session');
+ 
+		//restrict users to go to home if not logged in
+		if($this->session->userdata('user')){
+			$this->load->view('usuarios/home');
+		}
+		else{
+			redirect('/');
+		}
+ 
+	}
+ 
+	public function logout(){
+		//load session library
+		$this->load->library('session');
+		$this->session->unset_userdata('user');
+		redirect('/');
+	}
 }

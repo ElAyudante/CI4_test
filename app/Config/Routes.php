@@ -21,6 +21,7 @@
 
     $routes->get('/', 'Home::index');
 
+    /*
     $routes->get('users', 'users::index');
     $routes->get('users/(:any)/edit', 'users::edit/$1');
     $routes->get('users/(:any)/delete', 'users::delete/$1');
@@ -29,6 +30,10 @@
     $routes->get('users/register', 'users::register');
     $routes->get('users/logout', 'users::logout');
     $routes->get('users/profile/edit', 'users::edit');
+    */
+    $routes->get('users/login', 'itemCRUD::index_login');
+    $routes->post('users/home', 'itemCRUD::home_login');
+
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');
