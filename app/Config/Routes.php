@@ -31,8 +31,11 @@
     $routes->get('users/logout', 'users::logout');
     $routes->get('users/profile/edit', 'users::edit');
     */
-    $routes->get('users/login', 'itemCRUD::index_login');
+    $routes->get('users/index_login', 'itemCRUD::index_login');
+    $routes->post('users/login', 'itemCRUD::login');
+    $routes->get('users/home', 'itemCRUD::home_login');
     $routes->post('users/home', 'itemCRUD::home_login');
+    $routes->get('users/logout', 'itemCRUD::logout');
 
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
@@ -52,7 +55,7 @@
     $routes->get('topic/(:any)/(:any)', 'forum::topic/$1/$2');
     $routes->get('(:any)/(:any)/reply', 'forum::create_post/$1/$2');
 
-    $routes->add('itemCRUD', "itemCRUD::lista_colegiados");
+    $routes->get('itemCRUD', "itemCRUD::lista_colegiados");
     $routes->get('itemCRUD/(:num)', "itemCRUD");
     $routes->get('itemCRUDShow/(:any)', "itemCRUD::show/$1");
     $routes->get('itemCRUD/create', "itemCRUD::create");

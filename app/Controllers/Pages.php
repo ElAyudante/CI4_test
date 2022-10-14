@@ -13,7 +13,11 @@ use Kenjis\CI3Compatible\Core\CI_Controller;
 
             $data['title'] = ucfirst($page);
 
-            echo view('templates/header');
+            if($this->session->userdata('user')){
+                $this->load->view('templates\header_usuarios');
+            } else {
+                $this->load->view('templates\header');
+            }
             echo view('pages/'.$page, $data);
             echo view('templates/footer');
         }

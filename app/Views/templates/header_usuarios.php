@@ -69,11 +69,13 @@
                             <a href="<?php echo base_url(),'/'; ?>serviciocolegiado" class="alineadobotonmenu btn btn-info px-3 me-2" type="submit">SERVICIOS LOGOPEDAS</a>
                             <a href="<?= base_url('users/logout/logout_success') ?>" class="alineadobotonmenu btn btn-info px-3 me-2" type="submit">SALIR</a>
                         <?php else : ?>
-                            <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
-                                <button type="button" class="btn btn-header">COLÉGIATE</button>
+
+                            <a href="<?php echo base_url(),'/'; ?>users/home" class="alineadobotonmenu me-2" target="">
+                                <button type="button" class="btn btn-header">MI ZONA</button>
                             </a>
-                            <a href="<?php echo base_url(),'/'; ?>users/index_login" class="alineadobotonmenu me-2" target="">
-                                <button type="button" class="btn btn-header">ACCESO A COLEGIADOS</button>
+
+                            <a href="<?php echo base_url(),'/'; ?>users/logout" class="alineadobotonmenu me-2" target="">
+                                <button type="button" class="btn btn-header">SALIR</button>
                             </a>
                         <?php endif; ?>
                     </div>

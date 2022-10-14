@@ -1,17 +1,15 @@
-</div>    
-    <?php  ?>
 
 <section class="presentacion p-5 text-left mb-5">
     <div class="container">
         <div class="row align-items-center text-white">
             <div class="col-md-12" id="texto-cabecera">
-                <h1 class="mb-3 title-main align-middle text-uppercase">Acceso Adiminstrador</h1>
+                <h1 class="mb-3 title-main align-middle text-uppercase">Acceso Administrador</h1>
             </div>
         </div>
     </div>
 </section>
 
-<section class="junta" style="height: 200; margin-top: 6em; margin-bottom: -3em;">
+<section class="junta" style="height: 400; margin-top: 6em; margin-bottom: -3em;">
     <div class="container">
       <div class="row">
         <?php if (validation_errors()) : ?>

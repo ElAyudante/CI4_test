@@ -399,10 +399,14 @@ class ItemCRUD extends CI_Controller {
  
 		//restrict users to go back to login if session has been set
 		if($this->session->userdata('user')){
-			redirect('usuarios/home');
+            $this->load->view('templates\header_usuarios');
+            $this->load->view('App\Views\pages\usuarios\home');
+            $this->load->view('templates\footer');
 		}
 		else{
+            $this->load->view('templates\header');
 			$this->load->view('App\Views\pages\usuarios\login');
+            $this->load->view('templates\footer');
 		}
 	}
  
@@ -411,16 +415,20 @@ class ItemCRUD extends CI_Controller {
 		$this->load->library('session');
  
 		$nif = $_POST['nif'];
-		$password = $_POST['password'];
+		$password = $_POST['pass'];
  
-		$data = $this->itemCRUDModel->login($nif, $password);
+		$data = $this->itemCRUD->login($nif, $password);
  
 		if($data){
 			$this->session->set_userdata('user', $data);
-			redirect('App\Views\pages\usuarios\home');
+			$this->load->view('templates\header_usuarios');
+            $this->load->view('App\Views\pages\usuarios\home');
+            $this->load->view('templates\footer');
 		}
 		else{
-			header('location:'.base_url().$this->index());
+			$this->load->view('templates\header');
+            $this->load->view('App\Views\pages\usuarios\index_login');
+            $this->load->view('templates\footer');
 			$this->session->set_flashdata('error','Invalid login. User not found');
 		} 
 	}
@@ -431,10 +439,19 @@ class ItemCRUD extends CI_Controller {
  
 		//restrict users to go to home if not logged in
 		if($this->session->userdata('user')){
-			$this->load->view('usuarios/home');
+            $this->load->view('templates\header_usuarios');
+			$this->load->view('App\Views\pages\usuarios\home');
+            $this->load->view('templates\footer');
 		}
 		else{
-			redirect('/');
+			if($this->session->userdata('user')){
+                $this->load->view('templates\header_usuarios');
+            } else {
+                $this->load->view('templates\header');
+            }
+            
+            $this->load->view('App\Views\pages\home');
+            $this->load->view('templates\footer');
 		}
  
 	}
@@ -443,6 +460,14 @@ class ItemCRUD extends CI_Controller {
 		//load session library
 		$this->load->library('session');
 		$this->session->unset_userdata('user');
-		redirect('/');
+        
+        if($this->session->userdata('user')){
+            $this->load->view('templates\header_usuarios');
+        } else {
+            $this->load->view('templates\header');
+        }
+        
+        $this->load->view('App\Views\pages\home');
+        $this->load->view('templates\footer');
 	}
 }
