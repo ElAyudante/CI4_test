@@ -5,12 +5,12 @@
 
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
-                <li  data-toggle="" data-target="#colegiados" class="active">
-                    <a href="<?php echo base_url().'/'; ?>itemCRUD"><i class="fas fa-users fa-lg"></i> Mis Datos</i></a>
+                <li  data-toggle="" data-target="#colegiados" class="">
+                    <a href="<?php echo base_url().'/'; ?>users/datos"><i class="fas fa-users fa-lg"></i> Mis Datos</i></a>
                 </li>
 
                 <li data-toggle="" data-target="#service" class="">
-                    <a href="#service"><i class="far fa-calendar-check fa-lg"></i> Mis Documentos</span></a>
+                    <a href="<?php echo base_url().'/'; ?>users/documentos"><i class="far fa-calendar-check fa-lg"></i> Mis Documentos</span></a>
                 </li>  
 
 
@@ -25,11 +25,11 @@
                 </li>
 
                 <li data-toggle="" data-target="#empleo" class="">
-                    <a href="#empleo"><i class="fas fa-briefcase fa-lg"></i> Ofertas de Empleo</span></a>
+                    <a href="<?php echo base_url().'/'; ?>users/empleo"><i class="fas fa-briefcase fa-lg"></i> Ofertas de Empleo</span></a>
                 </li>
 
                 <li data-toggle="" data-target="#empleo" class="">
-                    <a href="#empleo"><i class="fas fa-briefcase fa-lg"></i> Cambio de Modalidad / Baja</span></a>
+                    <a href=""><i class="fas fa-briefcase fa-lg"></i> Cambio de Modalidad / Baja</span></a>
                 </li>
 
             </ul>

@@ -26,18 +26,25 @@
                 </div>
             </div>
         <?php endif; ?>
-        <div class="col-md-4 mx-auto">
-          <form action="<?php echo base_url(),'/'; ?>itemCRUD" method="post" name="formulario" style="margin:20px 0 0 20px">
-            <div class="form-group">
-              <input type="text" class="form-control text-center" name="username" placeholder="Usuario">
+        <div class="login-panel panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> Login
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form method="POST" action="<?php echo base_url(); ?>/users/admin/login">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Usuario" type="text" name="usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" type="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control text-center" name="password" placeholder="Contraseña">
-            </div>
-            <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Entrar</button>
-            <p class="mt-4"><a href="<?php echo base_url(),'/'; ?>password">¿Olvidaste tu contraseña?</a></p>
-          </form>
-        </div>
       </div>
     </div>
 </section>

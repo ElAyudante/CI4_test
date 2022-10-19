@@ -15,6 +15,9 @@ use Kenjis\CI3Compatible\Core\CI_Controller;
 
             if($this->session->userdata('user')){
                 $this->load->view('templates\header_usuarios');
+                
+            } else if($this->session->userdata('admin')){
+                $this->load->view('templates\header_admin');
             } else {
                 $this->load->view('templates\header');
             }

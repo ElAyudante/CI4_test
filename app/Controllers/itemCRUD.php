@@ -50,14 +50,14 @@ class ItemCRUD extends CI_Controller {
 
 	    $output = $crud->render();
 
-        echo view('templates/header'); 
+        echo view('templates/header_admin'); 
         echo view('itemCRUD/list',(array)$output);
         echo view('templates/footer');
     
    }
    public function create_documentos()
    {
-      echo view('templates/header');
+      echo view('templates/header_admin');
       echo view('App\Views\pages\alta_documentos_prueba');
       echo view('templates/footer');   
    }
@@ -73,14 +73,38 @@ class ItemCRUD extends CI_Controller {
 
         $output = $crud->render();
 
-        echo view('templates/header'); 
+        echo view('templates/header_admin'); 
         echo view('App\Views\pages\lista_documentos',(array)$output);
         echo view('templates/footer');
    }
 
+   public function listar_documentos_usuarios(){
+
+    $crud = new GroceryCrud();
+    $crud->setTable('documentos');
+    $crud->setSubject('Documento', 'Documentos');
+    $crud->columns(['Nombre', 'Archivo']);
+
+    $crud->where("documentos.Publico = '0'");
+
+
+    $crud->unsetBootstrap();
+    $crud->unsetDelete();
+    $crud->unsetEdit();
+    $crud->setActionButton('' ,'', function($row){
+        return base_url().'/users/documentos/'.$row;
+    });
+
+    $output = $crud->render();
+
+    echo view('templates/header_usuarios'); 
+    echo view('App\Views\pages\usuarios\lista_documentos_usuarios',(array)$output);
+    echo view('templates/footer');
+}
+
    public function create_cursos()
    {
-      echo view('templates/header');
+      echo view('templates/header_admin');
       echo view('App\Views\pages\alta_evento');
       echo view('templates/footer');   
    }
@@ -96,7 +120,7 @@ class ItemCRUD extends CI_Controller {
 
         $output = $crud->render();
 
-        echo view('templates/header'); 
+        echo view('templates/header_admin'); 
         echo view('App\Views\pages\lista_eventos',(array)$output);
         echo view('templates/footer');
    }
@@ -112,7 +136,7 @@ class ItemCRUD extends CI_Controller {
 
         $output = $crud->render();
 
-        echo view('templates/header'); 
+        echo view('templates/header_admin'); 
         echo view('App\Views\pages\lista_eventos_ajenos',(array)$output);
         echo view('templates/footer');
     }
@@ -128,16 +152,40 @@ class ItemCRUD extends CI_Controller {
 
         $output = $crud->render();
 
-        echo view('templates/header'); 
+        echo view('templates/header_admin'); 
         echo view('App\Views\pages\lista_ofertas',(array)$output);
         echo view('templates/footer');
     }
+
+    public function listar_empleos_usuarios(){
+
+        $crud = new GroceryCrud();
+        $crud->setTable('ofertas_empleo');
+        $crud->setSubject('Oferta', 'Ofertas');
+        $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto']);
+
+        $crud->where('Activo = 0');
+        $crud->setActionButton('' ,'', function($row){
+            return base_url().'/users/empleo/'.$row;
+        });
+
+        $crud->unsetBootstrap();
+        $crud->unsetDelete();
+        $crud->unsetEdit();
+
+        $output = $crud->render();
+
+        echo view('templates/header_usuarios'); 
+        echo view('App\Views\pages\usuarios\lista_ofertas_usuarios',(array)$output);
+        echo view('templates/footer');
+    }
+
 
    public function index_sociedades()
    {
        $data['data'] = $this->itemCRUD->get_itemCRUDsociedades();
 
-       echo view('templates/header');       
+       echo view('templates/header_admin');       
        echo view('itemCRUD/list_sociedades',$data);
        echo view('templates/footer');
    }
@@ -153,7 +201,7 @@ class ItemCRUD extends CI_Controller {
       $item = $this->itemCRUD->find_item($id);
 
 
-      echo view('templates/header');
+      echo view('templates/header_admin');
       echo view('itemCRUD/show',array('item'=>$item));
       echo view('templates/footer');
    }
@@ -166,7 +214,7 @@ class ItemCRUD extends CI_Controller {
    */
    public function create()
    {
-      echo view('templates/header');
+      echo view('templates/header_admin');
       echo view('itemCRUD/create');
       echo view('templates/footer');   
    }
@@ -226,7 +274,7 @@ class ItemCRUD extends CI_Controller {
     
     public function register_empleo(){
 
-        echo view('templates/header');
+        echo view('templates/header_admin');
         echo view('pages/alta_oferta_prueba');
         echo view('templates/footer');
 
@@ -276,6 +324,24 @@ class ItemCRUD extends CI_Controller {
     }
 
 
+    public function mostrar_documento($id)
+   {
+       $item = $this->itemCRUD->find_documento($id);
+
+       echo view('templates/header_usuarios');
+       echo view('pages/edit_documento',array('item'=>$item));
+       echo view('templates/footer');
+   }
+
+   public function mostrar_ofertas($id)
+   {
+       $item = $this->itemCRUD->find_empleo($id);
+
+       echo view('templates/header_usuarios');
+       echo view('pages/edit_empleo',array('item'=>$item));
+       echo view('templates/footer');
+   }
+
    /**
     * Edit Data from this method.
     *
@@ -285,7 +351,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->find_item($id);
 
-       echo view('templates/header');
+       echo view('templates/header_admin');
        echo view('itemCRUD/edit',array('item'=>$item));
        echo view('templates/footer');
    }
@@ -294,7 +360,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->find_empleo($id);
 
-       echo view('templates/header');
+       echo view('templates/header_admin');
        echo view('pages/edit_empleo',array('item'=>$item));
        echo view('templates/footer');
    }
@@ -302,7 +368,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->find_documento($id);
 
-       echo view('templates/header');
+       echo view('templates/header_admin');
        echo view('pages/edit_documento',array('item'=>$item));
        echo view('templates/footer');
    }
@@ -400,7 +466,7 @@ class ItemCRUD extends CI_Controller {
 		//restrict users to go back to login if session has been set
 		if($this->session->userdata('user')){
             $this->load->view('templates\header_usuarios');
-            $this->load->view('App\Views\pages\usuarios\home');
+            $this->load->view('App\Views\pages\itemCRUD\list');
             $this->load->view('templates\footer');
 		}
 		else{
@@ -409,6 +475,27 @@ class ItemCRUD extends CI_Controller {
             $this->load->view('templates\footer');
 		}
 	}
+
+    
+    public function index_admin_login(){
+		//load session library
+		$this->load->library('session');
+ 
+		//restrict users to go back to login if session has been set
+		if($this->session->userdata('admin')){
+            $this->load->view('templates\header_usuarios');
+            $this->load->view('App\Views\pages\itemCRUD\list');
+            $this->load->view('templates\footer');
+		}
+		else{
+            $this->load->view('templates\header');
+			$this->load->view('App\Views\pages\admin');
+            $this->load->view('templates\footer');
+		}
+	}
+    
+
+    
  
 	public function login(){
 		//load session library
@@ -432,6 +519,28 @@ class ItemCRUD extends CI_Controller {
 			$this->session->set_flashdata('error','Invalid login. User not found');
 		} 
 	}
+
+    public function admin_login(){
+		//load session library
+		$this->load->library('session');
+ 
+		$usuario = $_POST['usuario'];
+		$password = $_POST['password'];
+ 
+		$data = $this->itemCRUD->login_admin($usuario, $password);
+ 
+		if($data){
+			$this->session->set_userdata('admin', $data);
+			$this->lista_colegiados();
+		}
+		else{
+			$this->load->view('templates\header');
+            $this->load->view('App\Views\pages\admin');
+            $this->load->view('templates\footer');
+			$this->session->set_flashdata('error','Invalid login. User not found');
+		} 
+	}
+ 
  
 	public function home_login(){
 		//load session library
@@ -453,7 +562,21 @@ class ItemCRUD extends CI_Controller {
             $this->load->view('App\Views\pages\home');
             $this->load->view('templates\footer');
 		}
+	}
+
+    public function home_admin_login(){
+		//load session library
+		$this->load->library('session');
  
+		//restrict users to go to home if not logged in
+		if($this->session->userdata('admin')){
+            $this->lista_colegiados();
+		}
+		else{
+            $this->load->view('templates\header');
+            $this->load->view('App\Views\pages\home');
+            $this->load->view('templates\footer');
+		}
 	}
  
 	public function logout(){
@@ -463,6 +586,21 @@ class ItemCRUD extends CI_Controller {
         
         if($this->session->userdata('user')){
             $this->load->view('templates\header_usuarios');
+        } else {
+            $this->load->view('templates\header');
+        }
+        
+        $this->load->view('App\Views\pages\home');
+        $this->load->view('templates\footer');
+	}
+
+    public function admin_logout(){
+		//load session library
+		$this->load->library('session');
+		$this->session->unset_userdata('admin');
+        
+        if($this->session->userdata('admin')){
+            $this->load->view('templates\header_admin');
         } else {
             $this->load->view('templates\header');
         }

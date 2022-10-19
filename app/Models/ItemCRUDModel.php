@@ -18,6 +18,11 @@ class ItemCRUDModel extends CI_Model{
 		return $query->row_array();
 	}
 
+	public function login_admin($usuario, $pass){
+		$query = $this->db->get_where('users', array('username'=>$usuario, 'password'=>$pass));
+		return $query->row_array();
+	}
+
 	//CREATE
     public function insert_item()
     {    
