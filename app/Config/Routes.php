@@ -41,6 +41,9 @@
     $routes->get('users/documentos/(:any)', "itemCRUD::mostrar_documento/$1");
     $routes->get('users/empleo', 'itemCRUD::listar_empleos_usuarios');
     $routes->get('users/empleo/(:any)', "itemCRUD::mostrar_ofertas/$1");
+    $routes->get('users/reclamaciones', 'itemCRUD::listar_reclamaciones');
+    $routes->get('users/reclamaciones/(:any)', "itemCRUD::mostrar_reclamaciones/$1");
+    $routes->get('users/nueva_reclamacion', 'itemCRUD::nueva_reclamacion');
 
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
     $routes->post('users/admin/login', 'itemCRUD::admin_login');

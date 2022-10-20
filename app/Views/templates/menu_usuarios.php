@@ -21,7 +21,7 @@
 
 
                 <li data-toggle="" data-target="#reclamaciones" class="">
-                    <a href="#reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Mis Reclamaciones</span></a>
+                    <a href="<?php echo base_url().'/'; ?>users/reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Mis Reclamaciones</span></a>
                 </li>
 
                 <li data-toggle="" data-target="#empleo" class="">

@@ -2,6 +2,7 @@
 namespace App\Controllers; 
 use Kenjis\CI3Compatible\Core\CI_Controller; 
 use App\Libraries\GroceryCrud;
+use CodeIgniter\I18n\Time;
 
 
 class ItemCRUD extends CI_Controller {
@@ -180,6 +181,31 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     }
 
+    public function listar_reclamaciones(){
+
+        $crud = new GroceryCrud();
+        $crud->setTable('reclamaciones');
+        $crud->setSubject('Mis Reclamaciones', 'Mis Reclamaciones');
+        $crud->columns(['Fecha', 'Asunto', 'Comentarios','MiRespuesta']);
+
+        $value = $this->session->userdata('user');
+        $email = $value['Email'];
+        $crud->where("reclamaciones.Email='{$email}'");
+        $crud->setActionButton('' ,'', function($row){
+            return base_url().'/users/reclamaciones/'.$row;
+        });
+
+        $crud->unsetBootstrap();
+        $crud->unsetDelete();
+        $crud->unsetEdit();
+
+        $output = $crud->render();
+
+        echo view('templates/header_usuarios'); 
+        echo view('App\Views\pages\usuarios\reclamaciones',(array)$output);
+        echo view('templates/footer');
+    }
+
 
    public function index_sociedades()
    {
@@ -323,13 +349,39 @@ class ItemCRUD extends CI_Controller {
         return $this->listar_ofertas();
     }
 
+    public function crear_reclamacion(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'nombre' => 'required|min_length[3]|max_length[255]',
+            'apellidos'  => 'required',
+            'email' => 'required|valid_email',
+            'telefono' => 'required|numeric|max_lenght[9]',
+            'asunto'  => 'required',
+            'descripcion'  => 'required'
+        ])) {
+            $model->insert_reclamacion([
+                'nombre' => $this->request->getPost('nombre'),
+                'apellidos'  => $this->request->getPost('apellidos'),
+                'email' => $this->request->getPost('email'),
+                'telefono' => $this->request->getPost('telefono'),
+                'asunto'  => $this->request->getPost('asunto'),
+                'descripcion'  => $this->request->getPost('descripcion')
+            ]);
+        }
+
+
+        return $this->listar_reclamaciones();
+    }
+
 
     public function mostrar_documento($id)
    {
        $item = $this->itemCRUD->find_documento($id);
 
        echo view('templates/header_usuarios');
-       echo view('pages/edit_documento',array('item'=>$item));
+       echo view('App\Views\pages\usuarios\ver_documento.php',array('item'=>$item));
        echo view('templates/footer');
    }
 
@@ -338,8 +390,24 @@ class ItemCRUD extends CI_Controller {
        $item = $this->itemCRUD->find_empleo($id);
 
        echo view('templates/header_usuarios');
-       echo view('pages/edit_empleo',array('item'=>$item));
+       echo view('App\Views\pages\usuarios\ver_oferta.php',array('item'=>$item));
        echo view('templates/footer');
+   }
+
+   public function mostrar_reclamaciones($id)
+   {
+       $item = $this->itemCRUD->find_reclamaciones($id);
+
+       echo view('templates/header_usuarios');
+       echo view('App\Views\pages\usuarios\ver_reclamaciones.php',array('item'=>$item));
+       echo view('templates/footer');
+   }
+
+   public function nueva_reclamacion(){
+
+    echo view('templates/header_usuarios');
+    echo view('App\Views\pages\usuarios\nueva_reclamacion.php');
+    echo view('templates/footer');
    }
 
    /**

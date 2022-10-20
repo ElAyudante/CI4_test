@@ -1,6 +1,7 @@
 <?php 
 namespace App\Models; 
 use Kenjis\CI3Compatible\Core\CI_Model; 
+use CodeIgniter\I18n\Time;
 
 
 //EL VERDADERO CRUD
@@ -100,6 +101,22 @@ class ItemCRUDModel extends CI_Model{
 		return $this->db->insert('documentos', $data);
 	}
 
+	public function insert_reclamacion(){
+
+		$data = array(
+
+			//'Fecha' => Time::now(),
+			'Nombre' => $this->input->post('nombre'),
+			'Apellidos' => $this->input->post('apellidos'),
+			'Email' => $this->input->post('email'),
+			'Telefono' => $this->input->post('telefono'),
+			'Asunto' => $this->input->post('asunto'),
+			'Descripcion' => $this->input->post('descripcion')
+		);
+
+		return $this->db->insert('reclamaciones', $data);
+	}
+
 //READ
     public function find_item($id)
     {
@@ -112,6 +129,10 @@ class ItemCRUDModel extends CI_Model{
 	public function find_documento($id)
     {
         return $this->db->get_where('documentos', array('Id' => $id))->row();
+    }
+	public function find_reclamaciones($id)
+    {
+        return $this->db->get_where('reclamaciones', array('Id' => $id))->row();
     }
 
 //DELETE
