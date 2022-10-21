@@ -357,7 +357,7 @@ class ItemCRUD extends CI_Controller {
             'nombre' => 'required|min_length[3]|max_length[255]',
             'apellidos'  => 'required',
             'email' => 'required|valid_email',
-            'telefono' => 'required|numeric|max_lenght[9]',
+            'telefono' => 'required|numeric|max_length[9]',
             'asunto'  => 'required',
             'descripcion'  => 'required'
         ])) {
@@ -367,7 +367,7 @@ class ItemCRUD extends CI_Controller {
                 'email' => $this->request->getPost('email'),
                 'telefono' => $this->request->getPost('telefono'),
                 'asunto'  => $this->request->getPost('asunto'),
-                'descripcion'  => $this->request->getPost('descripcion')
+                'comentarios'  => $this->request->getPost('comentarios')
             ]);
         }
 

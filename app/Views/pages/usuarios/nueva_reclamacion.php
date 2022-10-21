@@ -14,7 +14,7 @@
       <div class="col-lg-10">
         <div class="container p-5">
 
-          <?php echo form_open('/itemCRUD/crear_reclamacion'); ?>
+          <?php echo form_open('users/crear_reclamacion'); ?>
             <div class="row">
               <?php
                 /*if ($this->session->flashdata('errors')){
@@ -30,13 +30,13 @@
               <div class="col-md-3">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <p type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus><?= $value['Nombre'] ?> </p>
+                        <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus>
                     </div>
               </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="apellidos">Apellidos</label>
-                        <p type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>"><?= $value['Apellidos'] ?> </p>
+                        <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>">
                     </div>
               </div>
               <div class="col-md-3">
@@ -63,8 +63,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="descripcion">Descripción</label>
-                        <input type="text" class="form-control bg-transparent" name="descripcion" value="" style="height:100px">
+                        <label for="comentarios">Descripción</label>
+                        <input type="text" class="form-control bg-transparent" name="comentarios" value="" style="height:100px">
                     </div>
                 </div>
             </div>

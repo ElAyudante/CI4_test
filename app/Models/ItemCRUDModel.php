@@ -111,10 +111,10 @@ class ItemCRUDModel extends CI_Model{
 			'Email' => $this->input->post('email'),
 			'Telefono' => $this->input->post('telefono'),
 			'Asunto' => $this->input->post('asunto'),
-			'Descripcion' => $this->input->post('descripcion')
+			'Comentarios' => $this->input->post('comentarios')
 		);
 
-		return $this->db->insert('reclamaciones', $data);
+		return $this->db->table('reclamaciones')->insert($data);
 	}
 
 //READ

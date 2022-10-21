@@ -44,6 +44,7 @@
     $routes->get('users/reclamaciones', 'itemCRUD::listar_reclamaciones');
     $routes->get('users/reclamaciones/(:any)', "itemCRUD::mostrar_reclamaciones/$1");
     $routes->get('users/nueva_reclamacion', 'itemCRUD::nueva_reclamacion');
+    $routes->post('users/crear_reclamacion', 'itemCRUD::crear_reclamacion');
 
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
     $routes->post('users/admin/login', 'itemCRUD::admin_login');
