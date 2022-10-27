@@ -9,6 +9,7 @@
   	<div class="col-lg-2 ps-0">
         <?php echo view('templates/menu_usuarios'); ?>
     </div>
+    
 	
 	<div class="container junta" style="position: relative; top: -850px; left: 50px">
 		

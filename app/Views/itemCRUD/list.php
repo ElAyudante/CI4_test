@@ -35,8 +35,17 @@ $sel_comunidades =  array (
         <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
     </div>
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
+    <div class="row pt-2">
+        <div class="col-lg-2 margin-tb d-flex flex-row">
+            <div class="">
+                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
+            </div>
+            <div class="">
+                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
+            </div>
+        </div>
+
+        <div class="col-lg-10 margin-tb">
             <div class="pull-right">
                 <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Crear colegiado</a>
             </div>
