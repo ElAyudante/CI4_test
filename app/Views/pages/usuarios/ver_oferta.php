@@ -4,45 +4,40 @@
             <div class="col-lg-2 ps-0">
                 <?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
             </div>
-
             <div class="col-lg-10 mt-4">
-                <div class="container junta">
-
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Nombre de la Empresa:</strong>
-                                <?php echo $item->Empresa; ?>
+                <section class="junta-derecha mb-4">
+                    <div class="container container-curso" style="margin-top:100px">
+                        <div class="row row-cols-2 row-cols-sm-1">
+                            <div class="col-lg-4 text-white mt-5">
+                                <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+                                    <div class="cards-curso m-auto" style="margin-top: -8em !important;">
+                                        <div class="imgBx-curso">
+                                            <div>
+                                                <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/images/png/curso-cplc-arasaac.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="overlay-curso"></div>
+                                        <div class="content-curso">
+                                            <h2 class="text-uppercase fw-bold cgray mt-0"><?php echo $item->Empresa; ?></h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 text-white mt-5 pb-5 pt-2 d-flex flex-column">
+                                <div class="col-lg-8 decana mt-1">
+                                    <h3 class="curso-tittle text-white mb-4"><?php echo $item->Ofrece; ?></h3>
+                                </div>
+                                <ul class="objetivos">
+                                    <li><?php echo $item->Empresa; ?></li>
+                                    <li><?php echo $item->Lugar; ?></li>
+                                    <li><?php echo $item->Condiciones; ?></li>
+                                    <li><?php echo $item->Contacto; ?></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Lugar:</strong>
-                                <?php echo $item->Lugar; ?>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Ofrece:</strong>
-                                <?php echo $item->Ofrece; ?>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Condiciones:</strong>
-                                <?php echo $item->Condiciones; ?>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Contacto:</strong>
-                                <?php echo $item->Contacto; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </div>  
+                </section>
+            </div>     
         </div>
     </div>
 </section>

@@ -245,6 +245,18 @@ class ItemCRUD extends CI_Controller {
       echo view('templates/footer');   
    }
 
+   public function alta_nueva(){
+    echo view('templates/header');
+    echo view('itemCRUD/create_nuevo');
+    echo view('templates/footer'); 
+   }
+
+   public function payment_advance(){
+    echo view('templates/header');
+    echo view('pages/payment_platform');
+    echo view('templates/footer');
+   }
+
 
    /**
     * Store Data from this method.

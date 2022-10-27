@@ -69,7 +69,7 @@
                             <a href="<?php echo base_url(),'/'; ?>serviciocolegiado" class="alineadobotonmenu btn btn-info px-3 me-2" type="submit">SERVICIOS LOGOPEDAS</a>
                             <a href="<?= base_url('users/logout/logout_success') ?>" class="alineadobotonmenu btn btn-info px-3 me-2" type="submit">SALIR</a>
                         <?php else : ?>
-                            <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
+                            <a href="<?php echo base_url(),'/'; ?>alta_nueva" class="alineadobotonmenu me-2" target="_blank">
                                 <button type="button" class="btn btn-header">COLÉGIATE</button>
                             </a>
                             <a href="<?php echo base_url(),'/'; ?>users/index_login" class="alineadobotonmenu me-2" target="">

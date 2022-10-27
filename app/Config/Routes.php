@@ -31,6 +31,8 @@
     $routes->get('users/profile/edit', 'users::edit');
     */
 
+    $routes->get('alta_nueva', 'itemCRUD::alta_nueva');
+
     $routes->get('users/index_login', 'itemCRUD::index_login');
     $routes->post('users/login', 'itemCRUD::login');
     $routes->get('users/home', 'itemCRUD::home_login');
@@ -49,6 +51,8 @@
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
     $routes->post('users/admin/login', 'itemCRUD::admin_login');
     $routes->get('users/admin/logout', 'itemCRUD::admin_logout');
+
+    $routes->post('itemCRUD/payment_advance', 'itemCRUD::payment_advance');
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');
