@@ -11,21 +11,21 @@
     <div class="container">
         <div class="row row-cols-lg-2">
             <div class="col d-lg-block d-none">
-                <a class="cblue indice fs-1">Índice</a>
+                <a class="cblue indice fs-1 text-uppercase text-decoration-none fw-bold">Índice</a>
                 <div class="row row-cols-lg-2">
                     <div class="col list-group w-auto pe-5">
-                        <a href="#capitulo1" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo I</a>
-                        <a href="#capitulo2" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo II</a>
-                        <a href="#capitulo3" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo III</a>
-                        <a href="#capitulo4" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo IV</a>
-                        <a href="#capitulo5" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo V</a>
+                        <a href="#capitulo1" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo I</a>
+                        <a href="#capitulo2" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo II</a>
+                        <a href="#capitulo3" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo III</a>
+                        <a href="#capitulo4" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo IV</a>
+                        <a href="#capitulo5" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo V</a>
                         
                     </div>
                     <div class="col list-group w-auto">
-                        <a href="#capitulo6" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo VI</a>
-                        <a href="#capitulo7" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo VII</a>
-                        <a href="#capitulo8" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo VII</a>
-                        <a href="#capitulo9" class="list-group-item list-group-item-action cblue fs-3 capitulo">Capítulo IX</a>
+                        <a href="#capitulo6" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo VI</a>
+                        <a href="#capitulo7" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo VII</a>
+                        <a href="#capitulo8" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo VII</a>
+                        <a href="#capitulo9" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo IX</a>
                     </div>
                 </div>
             </div>
@@ -587,7 +587,7 @@
     </div>
 </section>
 
-<section class="pb-5 d-lg-block d-none">
+<section class="py-5 d-lg-block d-none">
     <div class="container texto-codigo-blanco">
         <h3>Primera</h3>
         <p>Los presentes Estatutos, una vez aprobados por la Asamblea Colegial Constituyente, serán remitidos a la Consejería de la Presidencia, Ordenación del Territorio y Urbanismo departamento competente en materia de colegios profesionales, para que verifique su legalidad y consecuente inscripción registral y publicación en el Boletín Oficial de Cantabria</p>

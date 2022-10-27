@@ -31,6 +31,8 @@
     $routes->get('users/profile/edit', 'users::edit');
     */
 
+    $routes->get('/', 'Home::index');
+
     $routes->get('users/index_login', 'itemCRUD::index_login');
     $routes->post('users/login', 'itemCRUD::login');
     $routes->get('users/home', 'itemCRUD::home_login');

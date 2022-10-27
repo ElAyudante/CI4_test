@@ -84,7 +84,7 @@
                 <div class="col-lg-7 mt-5 mb-3">
                     <h3 class="section-subheading titulo-junta">SECRETARIA</h3>
                     <h3 class="section-subheading nombre-junta">Marta Teresa Candela de Aroca</h3>
-                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.5em;">FUNCIONES</h3>
+                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.65em;">FUNCIONES</h3>
                 </div>
             </div>
         </div>
@@ -144,7 +144,7 @@
                 <div class="col-lg-7 col-md-2 col-sm-2 decana mt-5 texto-junta mb-3">
                     <h3 class="section-subheading titulo-junta">VOCALES</h3>
                     <h3 class="section-subheading nombre-junta">Marina Terán Cruz & Carmen Gainza Brandariz</h3>
-                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.5em;">FUNCIONES</h3>
+                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.65em;">FUNCIONES</h3>
                 </div>
             </div>
         </div>

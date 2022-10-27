@@ -8,20 +8,20 @@
 </section>
 
 <section class="junta">
-  <div class="container p-5">
+  <div class="container py-5">
     <div class="faq-content">
 
       <div class="faq-question pb-5">
         <input id="q1" type="checkbox" class="panel" style="display:none;">
-        <div class="plus">+</div>
-        <label for="q1" class="panel-title">¿Qué es la logopedia?</label>
+        <div class="plus cblue fw-bold">+</div>
+        <label for="q1" class="panel-title cblue fw-bold text-uppercase">¿Qué es la logopedia?</label>
         <div class="panel-content ps-5 pt-3">La logopedia es una profesión sanitaria, cuyo campo de actuación es la prevención, detección, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación, del lenguaje, del habla, de la voz, de la audición y de las funciones orales asociadas (respiración, succión, masticación y deglución).</div>
       </div>
 
       <div class="faq-question pb-5">
         <input id="q2" type="checkbox" class="panel" style="display:none;">
-        <div class="plus">+</div>
-        <label for="q2" class="panel-title">¿Por qué exigir un logopeda colegiado?</label>
+        <div class="plus cblue fw-bold">+</div>
+        <label for="q2" class="panel-title cblue fw-bold text-uppercase">¿Por qué exigir un logopeda colegiado?</label>
         <div class="panel-content ps-5 pt-3">
           <ul>
             <li>El logopeda colegiado significa certificado oficial de su formación específica en logopedia y es garantía de una buena práctica profesional.</li>
@@ -33,8 +33,8 @@
     
       <div class="faq-question pb-5">
         <input id="q3" type="checkbox" class="panel" style="display:none;">
-        <div class="plus">+</div>
-        <label for="q3" class="panel-title">¿Dónde trabajan los logopedas?</label>
+        <div class="plus cblue fw-bold">+</div>
+        <label for="q3" class="panel-title cblue fw-bold text-uppercase">¿Dónde trabajan los logopedas?</label>
         <div class="panel-content ps-5 pt-3">
           <ul>
             <li>Su campo de actuación es amplio: puede abarcar desde la atención temprana en la población infantil, hasta la intervención en la edad adolescente, adulta y en la tercera edad.</li>
@@ -45,8 +45,8 @@
 
       <div class="faq-question pb-5">
         <input id="q4" type="checkbox" class="panel" style="display:none;">
-        <div class="plus">+</div>
-        <label for="q4" class="panel-title">¿Qué alteraciones tratan los logopedas?</label>
+        <div class="plus cblue fw-bold">+</div>
+        <label for="q4" class="panel-title cblue fw-bold text-uppercase">¿Qué alteraciones tratan los logopedas?</label>
         <div class="panel-content ps-5 pt-3">
           <ul>
             <li><strong>Área del habla</strong>: discurso de la producción de sonido, articulación, apraxia del habla, disartria, resonancia, trastornos de la fluidez del habla (hiperfluidez, tartamudeo, etc.), comunicación prelingüística y paralingüística, etc.</li>
@@ -61,15 +61,15 @@
 
       <div class="faq-question pb-5">
         <input id="q5" type="checkbox" class="panel" style="display:none;">
-        <div class="plus">+</div>
-        <label for="q5" class="panel-title">¿Quieres participar en un voluntariado profesional?</label>
+        <div class="plus cblue fw-bold">+</div>
+        <label for="q5" class="panel-title cblue fw-bold text-uppercase">¿Quieres participar en un voluntariado profesional?</label>
         <div class="panel-content ps-5 pt-3">
             <p>La Asociación Felicidad sin Fronteras es una organización no gubernamental para el desarrollo sin ánimo de lucro. Nace a raíz de la inquietud de un grupo de jóvenes voluntarios de diferentes países que intentan movilizar a la sociedad por una cuestión de justicia y solidaridad. Fue creada en 2010, y desde entonces lleva realizando numerosos proyectos con diferentes colectivos, sobretodo niños y personas con discapacidad.</p>
             <p>Éstos se realizan mayormente en Azrou, una ciudad bereber situada en Marruecos, a 89 km al sur de Fez, en la región de Meknes-Talifait., ubicada en un territorio con un insólito encanto por su riqueza en biodiversidad faunística y florística.</p>
             <p>Cuando visitas el país y te adentras en la cultura, te das cuenta de las necesidades y pocos recursos con los que cuentan; en Azrou se creó un centro de salud y rehabilitación con suficientes materiales para la práctica, pero la inexistencia de profesionales hace que los niños y las familias no reciban tratamiento, Es por ello que tras uno de los proyectos del verano de 2015, un grupo de voluntarios nos preguntamos “¿Por qué no hacer un proyecto de larga duracción, dónde no sólo ofrezcamos tratamiento multidisciplinar a los niños con discapacidad y ayuda a las familias, si no que podamos intercambiar formación con personal local para una futura autogestión del centro? Es por ellos que empezamos a crear este maravilloso proyecto; Evaluación, rehabilitación e integración de niños con discapacidad.</p>
             <p>El voluntariado está abierto a profesionales del ámbito de la salud y sociosanitario (TO, fisioterapeutas, logopedas, psicólogos, médicos...). Se realizará entre Enero y diciembre de 2016, los voluntarios podrán inscribirse en periodos mínimos de 3 semanas y máximos a elección, habiendo un límite de 10 voluntarios por periodo. El proyecto tendrá un coste de 80 euros y éste incluye; alojamiento, 3 comidas diarias, material necesario, recogida y vuelta al aeropuerto y clases de árabe. No incluye avión y gastos propios.</p>
             <p>Además durante vuestra estancia realizaremos diferentes excursiones por la zona (Desierto, Bosque de Cedros, ciuda de Meknes...)</p>
-            <p >Las inscripciones ya están abiertas, para más información y cualquier duda al respecto podéis visitar nuestra página <a href="https://felicidadsfronteras.org/" target="_blank" class="stretched-link">www.felicidadsfronteras.org</a>, escribirnos al mail: <a href="mailto: informatefsf@gmail.com">informatefsf@gmail.com</a> o al número de teléfono (vía Whatsapp) <a href='https://wa.me/+34610963104' target='_blank'>+34 610963104</a> (Cristina Morgades) o <a href='https://wa.me/+34660676876' target='_blank'>+34 660676876</a> (Eva Montero)</p>
+            <p >Las inscripciones ya están abiertas, para más información y cualquier duda al respecto podéis visitar nuestra página <a class="text-decoration-none cblue" href="https://felicidadsfronteras.org/" target="_blank">www.felicidadsfronteras.org</a>, escribirnos al mail: <a class="text-decoration-none cblue" href="mailto: informatefsf@gmail.com">informatefsf@gmail.com</a> o al número de teléfono (vía Whatsapp) <a class="text-decoration-none cblue" href='https://wa.me/+34610963104' target='_blank'>+34 610963104</a> (Cristina Morgades) o <a class="text-decoration-none cblue" href='https://wa.me/+34660676876' target='_blank'>+34 660676876</a> (Eva Montero)</p>
         </div>
       </div>
 

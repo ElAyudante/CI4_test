@@ -147,7 +147,7 @@
                             <div class="overlay1"></div>
                             <div class="content1">
                                 <!--<h4>Importancia de los Colegios profesionales</h4>-->
-                                <h4>Para poneros en antecedentes, comentábamos acerca de un reciente debate ocurrido en redes sociales acerca de la exoneración del pago de cuotas de los Colegios Profesionales de Logopedia.</h4>
+                                <p>Para poneros en antecedentes, comentábamos acerca de un reciente debate ocurrido en redes sociales acerca de la exoneración del pago de cuotas de los Colegios Profesionales de Logopedia.</p>
                             </div>
                         </div> 
                     </a> 
@@ -164,7 +164,7 @@
                             </div>
                         <div class="overlay1"></div>
                         <div class="content1">
-                            <h4>Si algo caracteriza a la covid-19 es la diversidad de órganos y sistemas a los que afecta. A nivel neurológico, por ejemplo, los pacientes con covid-19 presentan una sintomatología muy compleja.</h4>
+                            <p>Si algo caracteriza a la covid-19 es la diversidad de órganos y sistemas a los que afecta. A nivel neurológico, por ejemplo, los pacientes con covid-19 presentan una sintomatología muy compleja.</p>
                         </div>
                     </div> 
                     </a>         
@@ -180,7 +180,7 @@
                         </div>
                         <div class="overlay1"></div>
                         <div class="content1">
-                            <h4>Miles de profesionales sanitarios trabajan a diario para borrar las marcas que deja la Covid-19 en sus pacientes. Se trata de un trabajo multidisciplinar de distintos especialistas que se prolonga durante meses en una gran mayoría de los casos.</h4>
+                            <p>Miles de profesionales sanitarios trabajan a diario para borrar las marcas que deja la Covid-19 en sus pacientes. Se trata de un trabajo multidisciplinar de distintos especialistas que se prolonga durante meses en una gran mayoría de los casos.</p>
                         </div>
                     </div>
                     </a>          
@@ -234,11 +234,11 @@
 </section>
 
 <!-- SECCIÓN CONTACTO -->
-<section class="octavobloque">
+<section class="octavobloque py-5">
     <div class="container">
         <!--<script type="text/javascript" src="https://form.jotform.com/jsform/212343600643041"></script>-->
 
-        <div class="card m-3">
+        <div class="card">
             <div class="row mx-0">
                 <div class="d-lg-block d-none col-lg-4">
                     <img src="<?php echo base_url(),'/'; ?>assets/images/png/img-form.svg" class="img-fluid rounded-start h-100" alt="...">
@@ -282,7 +282,7 @@
                                 <hr>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" class="btn btn-primary text-uppercase">Enviar</button>
                             </div>
                             
                         </form>

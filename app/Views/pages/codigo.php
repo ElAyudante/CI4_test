@@ -7,34 +7,34 @@
     </div>
 </section>
 
-<section class="junta">
+<section class="">
 
     <section class="cabecera-codigo px-5 pt-5 pb-lg-0 pb-5">
         <div class="container">   
-            <blockquote class="blockquote fs-3 cblue1 borderclblue d-lg-block d-none">
+            <blockquote class="blockquote fs-5 cblue1 borderclblue d-lg-block d-none">
                 <p>* El Consejo General de Colegios de Logopedas (de ahora en adelante "CGCL"), en ejercicio de sus funciones, considera necesario garantizar un alto nivel de ética profesional de los profesionales logopedas, no sólo por la dignificación y notoriedad de la profesión, sino también por la defensa de los derechos de los usuarios de la logopedia.</p>
                 <p>* Este Código Deontológico del CGCL asume el contenido de los Códigos Éticos aprobados por los distintos Colegios Profesionales que integran el CGCL, que seguirán rigiendo en su ámbito territorial. Así pues, los logopedas que ejerzan la profesión dentro del ámbito español quedan obligados a seguir fielmente este Código Deontológico y a hacer respetar sus principios.</p>
                 <p>* Las infracciones a este código quedan sujetas a las normas disciplinarias previstas por la ley, por los Estatutos del CGCL y por los Estatutos de los Colegios Profesionales que integran el Consejo.</p>
             </blockquote>
             <div class="row row-cols-lg-2 pt-lg-5 p-0">
                 <div class="col d-lg-block d-none">
-                    <a class="cblue preambulo fs-1" href="#preambulo">Preámbulo</a>
+                    <a class="cblue preambulo fs-1 text-uppercase text-decoration-none fw-bold" href="#preambulo">Preámbulo</a>
                     <div class="row row-cols-lg-2">
                         <div class="col list-group w-auto pe-5">
-                            <a href="#articulo1" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 1</a>
-                            <a href="#articulo2" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 2</a>
-                            <a href="#articulo3" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 3</a>
-                            <a href="#articulo4" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 4</a>
-                            <a href="#articulo5" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 5</a>
-                            <a href="#articulo6" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 6</a>
+                            <a href="#articulo1" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 1</a>
+                            <a href="#articulo2" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 2</a>
+                            <a href="#articulo3" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 3</a>
+                            <a href="#articulo4" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 4</a>
+                            <a href="#articulo5" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 5</a>
+                            <a href="#articulo6" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 6</a>
                         </div>
                         <div class="col list-group w-auto">
-                            <a href="#articulo7" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 7</a>
-                            <a href="#articulo8" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 8</a>
-                            <a href="#articulo9" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 9</a>
-                            <a href="#articulo10" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 10</a>
-                            <a href="#articulo11" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 11</a>
-                            <a href="#articulo12" class="list-group-item list-group-item-action cblue fs-3 articulo">Artículo 12</a>
+                            <a href="#articulo7" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 7</a>
+                            <a href="#articulo8" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 8</a>
+                            <a href="#articulo9" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 9</a>
+                            <a href="#articulo10" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 10</a>
+                            <a href="#articulo11" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 11</a>
+                            <a href="#articulo12" class="list-group-item list-group-item-action cblue fs-3 articulo text-uppercase">Artículo 12</a>
                         </div>
                     </div>
                 </div>
@@ -714,10 +714,10 @@
         </div>
     </section>
 
-    <section class="bg-blue d-lg-block d-none">
+    <section class="bg-blue d-lg-block d-none py-5">
         <div class="container">
             <div class="row row-cols-2 row-cols-sm-1">
-                <div class="col-md-6 text-white mt-5">
+                <div class="col-md-6 text-white">
                     <h3>Artículo 12.1</h3>
                     <p>
                     1. El Comité Ejecutivo del CGCL, de oficio a instancia de cualquier Colegio Profesional, podrá iniciar el proceso de revisión de este Código.

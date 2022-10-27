@@ -38,11 +38,14 @@
   border-color: #156ac0 !important;
 }
 /*==========================================*/
+.panel-heading{
+  background-color: #004987 !important;
+}
 .cards-curso{
   margin-top: -8em !important;
 }
 .fs-7{
-  font-size: 4rem !important;
+  font-size: 3rem !important;
 }
 .navbar-toggler{
   border-color: white;
@@ -59,8 +62,9 @@
   border-radius: 0;
 }
 .articulo:hover, .capitulo:hover{
-  background-color: #005cb9 !important;
-  color: white;
+  background-color: white !important;
+  font-weight: 600;
+  color: #004987 !important;
 }
 .estatuto-pdf:hover{
   background-color:transparent !important;
@@ -84,6 +88,7 @@
 .junta-derecha .list-group-item{
   background-color: transparent !important;
   color: #fff;
+  border-color: white
 }
 .junta-izquierda .list-group-item{
   background-color: transparent !important;
@@ -93,8 +98,6 @@
 .nav-link{
   color: #fff !important;
   text-decoration: none !important;
-}:hover{ 
-  color: #fff !important;
 }
 #navbarDropdown {
   z-index: 999;
@@ -171,13 +174,6 @@
   border-color: #004987;
 }
 
-.logo_header {
-    margin-top: -16;
-    margin-left: -15px;
-    width: 150;
-    height: 50;
-}
-
 #imagenfooter{
  width: 8rem;
  height: 1,9785rem;
@@ -242,11 +238,9 @@
 
 .panel-title {
   font-size: 24px;
-  color: #2778ca;
-  width: 100%;
   position: relative;
-  margin-left: -20px;
-  padding: 10px 10px 0 48px;
+  margin-left: -10px;
+  padding-left: 48px;
   display: block;
   cursor: pointer;
 }
@@ -272,7 +266,6 @@
 .plus {
   position: absolute;
   color: #005cb9;
-  margin-top: 4px;
   z-index: 5;
   font-size: 42px;
   line-height: 100%;
@@ -669,7 +662,7 @@ a.test:nth-child(odd) {
   background-image: url('http://logopedascantabria.org/assets/images/png/Inicio/Recurso 6.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 200px !important;
+  height: 450px;
 }
 
 .bloque5btn1 {
@@ -830,9 +823,9 @@ img.bloque1txt {
   overflow-y: scroll; 
 }*/
 
-body::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
+/*body::-webkit-scrollbar {
+  display: none;  /*for Chrome, Safari, and Opera
+}*/
 
  /* Popup en los acuerdos de empresa */
 
@@ -913,7 +906,7 @@ body::-webkit-scrollbar {
 .title-main {
   color: #fff;
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 .title-white {
   color: #fff;
@@ -1161,7 +1154,7 @@ label {
    padding: 0;
 }
 .container1 .noticia1 .content1 p,.container1 .noticia2 .content1 p, .container1 .noticia3 .content1 p{
-  font-size: 12px;
+  font-size: 16px;
 }
 
 /*====================================================*/
@@ -1473,13 +1466,13 @@ img.grayscale:hover {
 
 .titulo-junta {
   font-weight: 800;
-  font-size: 7rem;
+  font-size: 5rem;
   color: #00a0e0;
 }
 
 .titulo-junta-blanco {
   font-weight: 800;
-  font-size: 7rem;
+  font-size: 5rem;
   color: #fff;
 }
 
@@ -1555,21 +1548,20 @@ img.grayscale:hover {
 }
 .titulo-codigo {
   font-weight: 500;
-  font-size: 7rem;
+  font-size: 5rem;
   color: #156ac0;
-  margin-bottom: -0.2em;
+  margin-bottom: -0.25em;
 }
 .titulo-codigo-blanco {
   font-weight: 500;
-  font-size: 7rem;
+  font-size: 5rem;
   color: #fff;
-  margin-bottom: -0.2em;
+  margin-bottom: -0.25em;
 }
 .texto-codigo-blanco {
   color: #156ac0;
 }
 #articulo2, #articulo4, #articulo6, #articulo8, #articulo10, #articulo12 {
-  margin-left: 0.2em;
   margin-right: -2em;
 }
 #fila-curso {
@@ -2270,9 +2262,4 @@ table.tabla-foro-single td:nth-child(2) {
   height: 60px;
   -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-::-webkit-scrollbar {
-  display: none;
-}
-
 /*=============================================================================================*/

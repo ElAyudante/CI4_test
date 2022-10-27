@@ -8,7 +8,7 @@
 </section>
 
 <section class="container pt-5">
-    <blockquote class="blockquote fs-3 cblue1 borderclblue">
+    <blockquote class="blockquote fs-5 cblue1 borderclblue">
         <p>*Incluye a Colegiados del CPLC y otros Colegios de Logopedas. Los colegiados en otros Colegios de Logopedas deben adjuntar documento que lo acredite, por ejemplo: certificado de colegiación o carnet. En el caso de ser estudiantes, adjuntar un documento que lo acredite.</p>
     </blockquote>
 

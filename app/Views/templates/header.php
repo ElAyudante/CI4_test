@@ -4,9 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <title>Logopedas</title>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>/public/assets/grocery_crud/themes/bootstrap-v4/css/bootstrap/bootstrap.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -18,15 +16,18 @@
         <link rel="stylesheet" href="<?php echo base_url(),'/'; ?>assets/css/style.css">
         <link rel="icon" href="<?=base_url(),'/'?>assets/images/png/favicon.ico" type="image/vnd.microsfot.icon">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://js.stripe.com/v3/"></script>        
     </head>
 
     <!-- Navigation-->
-    <header>
-        <nav class="navbar sticky-top navbar-expand-lg bg-light">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
                 <!-- LOGOTIPO DEL NAVEGADOR -->
-                <a class="navbar-brand" href="<?php echo base_url(),'/'; ?>home"><img class="logo_header" src="<?php echo base_url(),'/'; ?>assets/images/png/logo_header.png"></img></a>
+                <a class="navbar-brand" href="<?php echo base_url(),'/'; ?>home">
+                    <img src="<?php echo base_url(),'/'; ?>assets/images/png/logo_header.png" style="height: 50;"></img>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -72,7 +73,7 @@
                             <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="alineadobotonmenu me-2" target="_blank">
                                 <button type="button" class="btn btn-header">COLÉGIATE</button>
                             </a>
-                            <a href="<?php echo base_url(),'/'; ?>users/index_login" class="alineadobotonmenu me-2" target="">
+                            <a href="<?php echo base_url(),'/'; ?>users/index_login" class="alineadobotonmenu" target="">
                                 <button type="button" class="btn btn-header">ACCESO A COLEGIADOS</button>
                             </a>
                         <?php endif; ?>

@@ -1,4 +1,4 @@
-<section class="presentacion p-5 text-left" style="height: 200">
+<section class="presentacion p-5 text-left" style="height: 300">
     <div class="container">
         <div class="row align-items-center text-white">
             <div class="col-md-12" id="texto-cabecera">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         <?php endif; ?>
-        <div class="login-panel panel panel-primary">
+        <div class="login-panel panel panel-primary p-0">
                 <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> Login
                     </h3>
