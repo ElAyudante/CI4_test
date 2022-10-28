@@ -38,6 +38,12 @@
   border-color: #156ac0 !important;
 }
 /*==========================================*/
+.btn:active{
+  background-color: rgba(0, 73, 135, 0.80) !important;
+  border-color: transparent !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
 .panel-heading{
   background-color: #004987 !important;
 }

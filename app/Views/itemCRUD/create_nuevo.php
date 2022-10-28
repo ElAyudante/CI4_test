@@ -78,13 +78,12 @@ $sel_comunidades =  array (
 
   <div class="container-fluid">
     <div class="row">
-
       <div class="col-lg-10 m-auto">
         <div class="container p-5">
-          <?php  ?>
-
+          <h3 style="color: #004987; text-transform: uppercase; font-size:3em">Alta colegiado</h3>
           <?php echo form_open('/itemCRUD/payment_advance'); ?>
-            <div class="row">
+
+            <div class="row row-cols-lg-4">
               <?php
                 /*if ($this->session->flashdata('errors')){
                   echo '<div class="alert alert-danger">';
@@ -93,63 +92,90 @@ $sel_comunidades =  array (
                 }*/
               ?>
 
-            <h3 style="color: #004987; text-transform: uppercase; font-size:3em">Alta colegiado</h3>
-
-            <div class="col-md-3">
-              </div>
-              <div class="col-md-3">
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus>
                 </div>
               </div>
-              <div class="col-md-6">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="password" class="form-control bg-transparent" name="pass" placeholder="Contraseña">
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="password" class="form-control bg-transparent" name="confirm_pass" placeholder="Confirma contraseña">
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI">
                 </div>
               </div>
-              <div class="col-md-8">
+              
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control bg-transparent" name="email" placeholder="Email">
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+              
+              <div class="col">
+                <div class="form-group">
+                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono">
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <input type="number" class="form-control bg-transparent" name="movil" placeholder="Móvil">
+                </div>
+              </div>
+
+              <div class="col">
+                <select id="lnacimiento" class="form-control bg-transparent" name="lnacimiento">
+                  <option selected value="0">Lugar de nacimiento</option>
+                  <?php 
+                    foreach ($sel_provincias as $sel_prov => $abreviatura) {
+                      echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
+                    }
+                    ?>
+                </select>
+              </div>
+
+              <div class="col">
+                <div class="form-group" style="display:flex;">
+                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
+                  <?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento"'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?>          
+                </div>
+              </div>
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección">
                 </div>
               </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP">
+                </div>
+              </div>
+
               <div class="col-md-4">
                 <div class="form-group">
                   <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad">
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP">
-                </div>
-              </div>
-            </div>
-            <div class="row">
+
               <div class="form-group col-md-3">
                 <select id="provincia" class="form-control bg-transparent" name="provincia">
                   <option selected value="0">Selecciona una provincia</option>
@@ -160,6 +186,7 @@ $sel_comunidades =  array (
                     ?>
                 </select>
               </div>
+              
               <div class="form-group col-md-3">
                 <select id="comunidad" class="form-control bg-transparent" name="comunidad">
                   <option selected value="0">Comunidad autónoma</option>
@@ -170,40 +197,15 @@ $sel_comunidades =  array (
                     ?>
                 </select>
               </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="movil" placeholder="Móvil">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-3">
-                <select id="lnacimiento" class="form-control bg-transparent" name="lnacimiento">
-                  <option selected value="0">Lugar de nacimiento</option>
-                  <?php 
-                    foreach ($sel_provincias as $sel_prov => $abreviatura) {
-                      echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
-                    }
-                    ?>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group" style="display:flex;">
-                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento"'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?>          
-                </div>
-              </div>
+
               <div class="col-md-6">
                 <div class="form-group">
                   <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC">
                 </div>
               </div>
+
             </div>
+
             <div class="row">
               <div class="col-md-3">
                 <div class="form-group">
