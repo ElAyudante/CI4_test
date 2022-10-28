@@ -18,6 +18,9 @@
 .bg-blue{
   background-color: #156ac0 !important;
 }
+.bg-blue2{
+  background-color: #004987 !important;
+}
 .bg-blue-opacity{
   background-color: rgba(0, 73, 135, 0.6) !important;
 }
@@ -37,7 +40,15 @@
 .bordercblue2{
   border-color: #156ac0 !important;
 }
+.bordergray{
+  border-color: #d3d3d3 !important;
+}
 /*==========================================*/
+.form_ac{
+  border-width: 0px 2px 2px 2px;
+  border-style: solid;
+  border-color: #d3d3d3
+}
 .btn:active{
   background-color: rgba(0, 73, 135, 0.80) !important;
   border-color: transparent !important;

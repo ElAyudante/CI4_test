@@ -1,4 +1,4 @@
-<section class="presentacion p-5 text-left" style="height: 300">
+<section class="presentacion p-5 text-lg-start text-center d-flex align-items-center" style="height: 300">
     <div class="container">
         <div class="row align-items-center text-white">
             <div class="col-md-12" id="texto-cabecera">
@@ -8,16 +8,16 @@
     </div>
 </section>
 
-<section class="junta" style="height: 400; margin-top: 6em; margin-bottom: -3em;">
-    <div class="container">
-      <div class="row">
+<section class="bg-gray">
+    <div class="container p-5">
         <?php if (validation_errors()) : ?>
-          <div class="col-md-12">
-              <div class="alert alert-danger" role="alert">
-                  <?= validation_errors() ?>
-              </div>
-          </div>
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <?= validation_errors() ?>
+                </div>
+            </div>
         <?php endif; ?>
+
         <?php if (isset($error)) : ?>
             <div class="col-md-12">
                 <div class="alert alert-danger" role="alert">
@@ -25,26 +25,23 @@
                 </div>
             </div>
         <?php endif; ?>
-        <div class="login-panel panel panel-primary p-0">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> Login
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <form method="POST" action="<?php echo base_url(); ?>/users/login">
-                        <fieldset>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="NIF" type="text" name="nif" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" type="password" name="pass" required>
-                            </div>
-                            <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-      </div>
+
+        <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Login</h3>
+
+        <div class="panel-body">
+            <form method="POST" action="<?php echo base_url(); ?>/users/login">
+                <fieldset>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="NIF" type="text" name="nif" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Password" type="password" name="pass" required>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                </fieldset>
+            </form>
+        </div>
+        
     </div>
 </section>
 
