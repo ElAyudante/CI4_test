@@ -6,11 +6,12 @@
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
                 <li  data-toggle="collapse" data-target="#colegiados" class="collapsed active">
-                    <a href="<?php echo base_url().'/'; ?>itemCRUD"><i class="fas fa-users fa-lg"></i> Colegiados<i class="arrow fas-fa-chevron-right"></i></a>
+                    <a href=""><i class="fas fa-users fa-lg"></i> Colegiados<i class="arrow fas-fa-chevron-right"></i></a>
                 </li>
                 <ul class="sub-menu collapse" id="colegiados">
-                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create">Alta colegiados</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>email_view">Enviar mensaje</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create">Alta Colegiados</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/pending">Altas Pendientes</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD">Lista Colegiados</a></li>
                 </ul>
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
@@ -21,7 +22,6 @@
                     <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta Cursos Ajenos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>cursos_CPLC">Lista Cursos CPLC</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>cursos_ajenos">Lista Cursos Ajenos</a></li>
-                    <li><a href="#<?php echo base_url().'/'; ?>lista_inscripciones">Listar inscripciones</a></li>
                 </ul>
 
 

@@ -18,7 +18,12 @@
         <link rel="stylesheet" href="<?php echo base_url(),'/'; ?>assets/css/style.css">
         <link rel="icon" href="<?=base_url(),'/'?>assets/images/png/favicon.ico" type="image/vnd.microsfot.icon">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-        <script src="https://js.stripe.com/v3/"></script>        
+        <script src="https://js.stripe.com/v3/"></script>      
+        <script>
+            $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+  </script>
     </head>
 
     <!-- Navigation-->

@@ -195,7 +195,8 @@ $sel_comunidades =  array (
               <div class="col-md-3">
                 <div class="form-group" style="display:flex;">
                   <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento"'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?>          
+                  <!--<?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento"'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?> -->
+                  <input id="datepicker" type="text">         
                 </div>
               </div>
               <div class="col-md-6">
@@ -360,39 +361,44 @@ $sel_comunidades =  array (
 </section>
 
 <script type="text/javascript">
-$.datepicker.regional['es'] = {
- closeText: 'Cerrar',
- prevText: '< Ant ',
- nextText: ' Sig >',
- currentText: 'Hoy',
- monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
- monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
- dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
- dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
- dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
- weekHeader: 'Sm',
- dateFormat: 'dd/mm/yy',
- firstDay: 1,
- isRTL: false,
- showMonthAfterYear: false,
- yearSuffix: ''
- };
- $.datepicker.setDefaults($.datepicker.regional['es']);
-$(function() {
-    $("#fnacimiento").datepicker(
-      {
-        dateFormat: 'dd-mm-yy'
-    }
-    );
-    $("#fexpiracion").datepicker(
-      {
-        dateFormat: 'dd-mm-yy'
-    }
-    );
-    $("#falta").datepicker(
-      {
-        dateFormat: 'dd-mm-yy'
-    }
-    );
-});
+    $.datepicker.regional['es'] = {
+      closeText: 'Cerrar',
+      prevText: '< Ant ',
+      nextText: ' Sig >',
+      currentText: 'Hoy',
+      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+      dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+      dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+      dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+      weekHeader: 'Sm',
+      dateFormat: 'dd/mm/yy',
+      firstDay: 1,
+      isRTL: false,
+      showMonthAfterYear: false,
+      yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+      $(function() {
+          $("#fnacimiento").datepicker(
+            {
+              dateFormat: 'dd-mm-yy'
+          }
+          );
+          $("#fexpiracion").datepicker(
+            {
+              dateFormat: 'dd-mm-yy'
+          }
+          );
+          $("#falta").datepicker(
+            {
+              dateFormat: 'dd-mm-yy'
+          }
+        );
+    });
+</script>
+<script>
+            $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
 </script>

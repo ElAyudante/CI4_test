@@ -103,6 +103,24 @@ class ItemCRUD extends CI_Controller {
     echo view('templates/footer');
 }
 
+    public function lista_colegiados_pending(){
+        $crud = new GroceryCrud();
+
+	    $crud->setTable('colegiados');
+        $crud->setSubject('Colegiado', 'Colegiados');
+        $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
+
+        $crud->unsetBootstrap();
+        $crud->where('Colegiado = NULL');
+
+
+	    $output = $crud->render();
+
+        echo view('templates/header_admin'); 
+        echo view('itemCRUD/list',(array)$output);
+        echo view('templates/footer');
+    }
+
    public function create_cursos()
    {
       echo view('templates/header_admin');
@@ -257,7 +275,19 @@ class ItemCRUD extends CI_Controller {
     echo view('templates/footer');
    }
 
+   public function pago_alta(){
 
+        $error = false;
+        $amount = false;
+
+        if (isset($_GET['error']))
+            $error = $_GET['error'];
+
+        if (isset($_GET['amount']))
+            $amount = $_GET['amount'];
+
+        
+   }
    /**
     * Store Data from this method.
     *
@@ -611,7 +641,9 @@ class ItemCRUD extends CI_Controller {
  
 		if($data){
 			$this->session->set_userdata('admin', $data);
-			$this->lista_colegiados();
+			$this->load->view('templates\header_admin');
+            $this->load->view('App\Views\pages\main');
+            $this->load->view('templates\footer');
 		}
 		else{
 			$this->load->view('templates\header');
