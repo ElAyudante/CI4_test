@@ -197,7 +197,6 @@ $sel_comunidades =  array (
                     ?>
                 </select>
               </div>
-
               <div class="col-md-6">
                 <div class="form-group">
                   <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC">
@@ -362,39 +361,44 @@ $sel_comunidades =  array (
 </section>
 
 <script type="text/javascript">
-$.datepicker.regional['es'] = {
- closeText: 'Cerrar',
- prevText: '< Ant ',
- nextText: ' Sig >',
- currentText: 'Hoy',
- monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
- monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
- dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
- dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
- dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
- weekHeader: 'Sm',
- dateFormat: 'dd/mm/yy',
- firstDay: 1,
- isRTL: false,
- showMonthAfterYear: false,
- yearSuffix: ''
- };
- $.datepicker.setDefaults($.datepicker.regional['es']);
-$(function() {
-    $("#fnacimiento").datepicker(
-      {
-        dateFormat: 'dd-mm-yy'
-    }
-    );
-    $("#fexpiracion").datepicker(
-      {
-        dateFormat: 'dd-mm-yy'
-    }
-    );
-    $("#falta").datepicker(
-      {
-        dateFormat: 'dd-mm-yy'
-    }
-    );
-});
+    $.datepicker.regional['es'] = {
+      closeText: 'Cerrar',
+      prevText: '< Ant ',
+      nextText: ' Sig >',
+      currentText: 'Hoy',
+      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+      dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+      dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+      dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+      weekHeader: 'Sm',
+      dateFormat: 'dd/mm/yy',
+      firstDay: 1,
+      isRTL: false,
+      showMonthAfterYear: false,
+      yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+      $(function() {
+          $("#fnacimiento").datepicker(
+            {
+              dateFormat: 'dd-mm-yy'
+          }
+          );
+          $("#fexpiracion").datepicker(
+            {
+              dateFormat: 'dd-mm-yy'
+          }
+          );
+          $("#falta").datepicker(
+            {
+              dateFormat: 'dd-mm-yy'
+          }
+        );
+    });
+</script>
+<script>
+            $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
 </script>

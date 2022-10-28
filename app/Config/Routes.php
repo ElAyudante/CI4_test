@@ -73,6 +73,7 @@
 
     $routes->get('itemCRUD', "itemCRUD::home_admin_login");
     $routes->post('itemCRUD', "itemCRUD::home_admin_login");
+    $routes->get('itemCRUD/pending', "itemCRUD::lista_colegiados_pending");
     $routes->get('itemCRUD/(:num)', "itemCRUD");
     $routes->get('itemCRUDShow/(:any)', "itemCRUD::show/$1");
     $routes->get('itemCRUD/create', "itemCRUD::create");
