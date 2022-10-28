@@ -74,7 +74,8 @@
     $routes->get('itemCRUD/edit/(:any)', "itemCRUD::edit/$1");
     $routes->get('itemCRUD/pending/edit/(:any)', "itemCRUD::edit_pendiente/$1");
     $routes->get('itemCRUD/pending/delete/(:any)', "itemCRUD::delete/$1");
-    $routes->get('itemCRUD/update/(:any)', "itemCRUD::update/$1");
+    $routes->post('itemCRUD/update/(:any)', "itemCRUD::update/$1");
+    $routes->post('itemCRUD/update_pendiente/(:any)', "itemCRUD::update_pendiente/$1");
     $routes->get('itemCRUD/delete/(:any)', "itemCRUD::delete/$1");
 
     $routes->get('crear_documentos', 'itemCRUD::create_documentos');

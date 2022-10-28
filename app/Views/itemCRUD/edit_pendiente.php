@@ -26,8 +26,8 @@
 			<div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4">
                 <div class="form-group">
-                    <strong>Fecha Alta:</strong>
-                    <input type="text" name="falta" class="form-control" value="<?php echo $item->FechaAlta; ?>">
+                    <strong>Nº Colegiado:</strong>
+                    <input type="text" name="colegiado" class="form-control" value="<?php echo $item->Colegiado; ?>">
                 </div>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
@@ -193,6 +193,7 @@
 				<div class="col-md-3">
 					<button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Enviar pago</button>
 				</div>
+                <input name = "id" type = "hidden" value="<?php echo $item->Id; ?>">
 			</div>
 
 		<?php echo form_close(); ?>

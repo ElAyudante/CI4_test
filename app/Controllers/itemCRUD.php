@@ -515,6 +515,31 @@ class ItemCRUD extends CI_Controller {
 
     }
 
+    public function update_pendiente(){
+
+        $id = $_POST['id'];
+
+        $data = array(
+
+			'Colegiado' => $this->input->post('colegiado'),
+            'Usuario' => $this->input->post('nif'),
+            'Pass' => 'temp'
+
+		);
+
+        $this->db->update('colegiados', $data, 'ID ='.$id);
+
+        $data_pago = array(
+            'Nombre'=>$this->input->post('nombre'),
+            'Apellidos'=>$this->input->post('apellidos'),
+            'Transacción'=>$this->input->post('Cuota Alta'),
+            'Cantidad'=>$this->input->post('40.00'),
+            'Estado'=>$this->input->post('Pendiente'),
+        );
+
+        return redirect()->to(base_url('itemCRUD'));
+    }
+
     public function update_empleo(){
 
         $id = $_POST['id'];
