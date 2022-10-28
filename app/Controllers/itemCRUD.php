@@ -4,7 +4,6 @@ use Kenjis\CI3Compatible\Core\CI_Controller;
 use App\Libraries\GroceryCrud;
 use CodeIgniter\I18n\Time;
 
-
 class ItemCRUD extends CI_Controller {
 
 
@@ -30,6 +29,8 @@ class ItemCRUD extends CI_Controller {
       $CI->load->library('pagination');
 
       $this->itemCRUD = new \App\Models\ItemCRUDModel;
+
+      
    }
 
 
@@ -47,6 +48,7 @@ class ItemCRUD extends CI_Controller {
         $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
 
         $crud->unsetBootstrap();
+        $crud->where("(Colegiado IS NOT NULL)");
 
 
 	    $output = $crud->render();
@@ -111,7 +113,7 @@ class ItemCRUD extends CI_Controller {
         $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
 
         $crud->unsetBootstrap();
-        $crud->where('Colegiado = NULL');
+        $crud->where("(Colegiado IS NULL)");
 
 
 	    $output = $crud->render();
@@ -466,6 +468,15 @@ class ItemCRUD extends CI_Controller {
        echo view('templates/footer');
    }
 
+   public function edit_pendiente($id)
+   {
+       $item = $this->itemCRUD->find_item($id);
+
+       echo view('templates/header_admin');
+       echo view('itemCRUD/edit_pendiente',array('item'=>$item));
+       echo view('templates/footer');
+   }
+
    public function edit_empleo($id)
    {
        $item = $this->itemCRUD->find_empleo($id);
@@ -506,6 +517,8 @@ class ItemCRUD extends CI_Controller {
 
     public function update_empleo(){
 
+        $id = $_POST['id'];
+
         $data = array(
 
 			'Empresa' => $this->input->post('empresa'),
@@ -516,10 +529,12 @@ class ItemCRUD extends CI_Controller {
 			'Activo' => $this->input->post('activo')
 		);
 
-        $this->db->update('ofertas_empleo', $data);
+        $this->db->update('ofertas_empleo', $data, 'ID ='.$id);
         return $this->listar_ofertas();
     }
     public function update_documento(){
+
+        $id = $_POST['id'];
 
         $data = array(
 
@@ -529,7 +544,7 @@ class ItemCRUD extends CI_Controller {
 			'Archivo' => $this->input->post('archivo')
 		);
 
-        $this->db->update('documentos', $data);
+        $this->db->update('documentos', $data, 'ID ='.$id);
         return $this->listar_documentos();
     }
 
@@ -543,7 +558,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->delete_item($id);
 
-       return redirect()->to(base_url('pages/lista_colegiados'));
+       return $this->lista_colegiados_pending();
    }
 
    public function delete_empleo($id)

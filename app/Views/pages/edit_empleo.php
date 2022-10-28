@@ -1,5 +1,4 @@
 <section class="junta">
-
   <div class="container-fluid">
     <div class="row">
       
@@ -11,7 +10,7 @@
         <div class="container p-5">
           <?php  ?>
 
-          <?php echo form_open('/itemCRUD/update_empleo'); ?>
+          <?php echo form_open('/itemCRUD/update_empleo') ?>
             <div class="row">
               <?php
                 /*if ($this->session->flashdata('errors')){
@@ -66,6 +65,7 @@
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
               </div>
             </div>
+            <input name = "id" type = "hidden" value="<?php echo $item->ID; ?>">
           <?php echo form_close(); ?>
         </div>
       </div>
