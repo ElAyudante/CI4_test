@@ -1,5 +1,5 @@
 <?php
-$form_att=["class"=> "needs-validation form_ac p-3 bg-white mb-0", "novalidate"=>'',];
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
 
 $sel_provincias = array (
   'Alava' => 'Alava',

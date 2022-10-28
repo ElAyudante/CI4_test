@@ -9,7 +9,8 @@
 </section>
 
 <section class="bg-gray">
-    <div class="container p-5">
+    <div class="container p-5 w-50">
+
         <?php if (validation_errors()) : ?>
             <div class="col-md-12">
                 <div class="alert alert-danger" role="alert">
@@ -26,22 +27,18 @@
             </div>
         <?php endif; ?>
 
-        <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Login</h3>
+        <div class="p-5">
 
-        <div class="panel-body">
-            <form method="POST" action="<?php echo base_url(); ?>/users/login">
-                <fieldset>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="NIF" type="text" name="nif" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Password" type="password" name="pass" required>
-                    </div>
-                    <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
-                </fieldset>
+            <h3 class="p-3 text-white text-uppercase fs-2 bg-blue fw-bold mb-0"><i class="bi bi-person-circle"></i> Login</h3>
+            <form class="form-border p-3 bg-white mb-0" method="POST" action="<?php echo base_url(); ?>/users/login">
+                <input class="form-control mb-3" placeholder="NIF" type="text" name="nif" required>
+                <input class="form-control mb-3" placeholder="Password" type="password" name="pass" required>
+                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase mb-3">Login</button>
+                <p class="text-muted mb-0">¿Olvidaste tu contraseña?</p>
             </form>
+            
         </div>
-        
+
     </div>
 </section>
 

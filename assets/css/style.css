@@ -44,7 +44,7 @@
   border-color: #d3d3d3 !important;
 }
 /*==========================================*/
-.form_ac{
+.form-border{
   border-width: 0px 2px 2px 2px;
   border-style: solid;
   border-color: #d3d3d3
@@ -935,9 +935,7 @@ img.bloque1txt {
   color:#00a0df;
   font-weight: bold;
 }
-i {
-  color: #004987;
-}
+
 a.contactext {
   width: 90%;
   padding-top: 5px;
