@@ -58,10 +58,9 @@
                     <a href="#cobros"><i class="fas fa-money-bill-wave fa-lg"></i> Cobros <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="cobros">
-                    <li><a href="<?php echo base_url().'/'; ?>alta_cuota">Alta cuota</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>eliminar_cuota">Eliminar cuota</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>estado_cuota">Estado cuota colegiados</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>edit_cuotas">Importe cuotas</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>cobros_pendientes">Cobros Pendientes</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>cobros_realizados">Cobros Realizados</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>edit_cuotas">Importe Cuotas</a></li>
                 </ul>
 
                 <li data-toggle="collapse" data-target="#salir" class="collapsed">

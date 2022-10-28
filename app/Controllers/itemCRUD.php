@@ -81,6 +81,23 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
    }
 
+   public function cobros_pendientes(){
+
+    $crud = new GroceryCrud();
+    $crud->setTable('pagos_pendientes');
+    $crud->setSubject('Pagos Pendientes', 'Pagos');
+    $crud->columns(['Nombre', 'Apellidos', 'Transacción', 'Cantidad', 'Estado']);
+
+    $crud->unsetBootstrap();
+
+    $output = $crud->render();
+
+    echo view('templates/header_admin'); 
+    echo view('App\Views\pages\lista_documentos',(array)$output);
+    echo view('templates/footer');
+}
+
+
    public function listar_documentos_usuarios(){
 
     $crud = new GroceryCrud();
@@ -536,6 +553,8 @@ class ItemCRUD extends CI_Controller {
             'Cantidad'=>$this->input->post('40.00'),
             'Estado'=>$this->input->post('Pendiente'),
         );
+
+        $this->db->update('pagos_pendientes', $data_pago, 'ID ='.$id);
 
         return redirect()->to(base_url('itemCRUD'));
     }

@@ -53,6 +53,8 @@
     $routes->get('users/admin/logout', 'itemCRUD::admin_logout');
 
     $routes->post('itemCRUD/payment_advance', 'itemCRUD::payment_advance');
+    $routes->get('cobros_pendientes', 'itemCRUD::cobros_pendientes');
+
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');
