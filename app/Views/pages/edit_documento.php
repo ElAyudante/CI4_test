@@ -52,7 +52,7 @@
 			<div class="col-md-3">
 			  <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
 			</div>
-			<input name = "id" type = "hidden" value="<?php echo $item->ID; ?>">
+			<input name = "id" type = "hidden" value="<?php echo $item->Id; ?>">
 		  </div>
 		<?php echo form_close(); ?>
 	  </div>

@@ -54,6 +54,9 @@
 
     $routes->post('itemCRUD/payment_advance', 'itemCRUD::payment_advance');
     $routes->get('cobros_pendientes', 'itemCRUD::cobros_pendientes');
+    $routes->get('cobros_realizados', 'itemCRUD::cobros_realizados');
+    $routes->get('edit_cuotas', 'itemCRUD::edit_cuotas');
+    $routes->post('itemCRUD/update_cuotas', 'itemCRUD::update_cuotas');
 
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');

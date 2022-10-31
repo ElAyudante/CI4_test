@@ -134,6 +134,9 @@ class ItemCRUDModel extends CI_Model{
     {
         return $this->db->get_where('reclamaciones', array('Id' => $id))->row();
     }
+	public function find_cuota(){
+		return $this->db->get_where('cuotas', array('Id' => '1'))->row();
+	}
 
 //DELETE
     public function delete_item($id)
