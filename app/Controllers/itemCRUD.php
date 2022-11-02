@@ -56,9 +56,12 @@ class ItemCRUD extends CI_Controller {
         $titulo = array('titulo' => 'Lista Colegiados (Admin)');
 
         $data = array_merge((array)$output, $titulo);
+
+
+        $data = array_merge((array)$output, $titulo);
 ;
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',$data);
+        echo view('itemCRUD/list',(array)$output);
         echo view('templates/footer');
     
    }
@@ -67,6 +70,12 @@ class ItemCRUD extends CI_Controller {
       echo view('templates/header_admin');
       echo view('App\Views\pages\alta_documentos_prueba');
       echo view('templates/footer');   
+   }
+
+   public function crear_convenio(){
+    echo view('templates/header_admin');
+    echo view('App\Views\pages\alta_convenio');
+    echo view('templates/footer');
    }
 
    public function listar_documentos(){
@@ -88,6 +97,28 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/header_admin'); 
         echo view('itemCRUD/list',$data);
         echo view('templates/footer');
+   }
+
+   public function listar_convenios(){
+
+    $crud = new GroceryCrud();
+
+    $crud->setTable('convenios');
+    $crud->setSubject('Convenio', 'Convenios');
+    $crud->columns(['empresa','codigo','descripcion','web']);
+
+    $crud->unsetBootstrap();
+    $crud->unsetAdd();
+
+    $output = $crud->render();
+    $titulo = array('titulo' => 'Lista Convenios (Admin)');
+
+    $data = array_merge((array)$output, $titulo);
+
+
+    echo view('templates/header_admin'); 
+    echo view('itemCRUD/list', $data);
+    echo view('templates/footer');
    }
 
    public function cobros_pendientes(){
