@@ -50,10 +50,8 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                             </div>
 
                             <div class="col d-flex align-items-center justify-content-center">
-                                <div class="custom-file">
-                                <label class="custom-file-label text-uppercase fw-bold me-3" for="customFile">Archivo adjunto</label>
-                                    <input type="file" class="custom-file-input"  name="archivo" id="customFile">                    
-                                </div>
+                                <label for="formFile" class="form-label text-uppercase fw-bold me-3 text-center">Archivo adjunto</label>
+                                <input class="form-control" type="file" id="formFile" name="archivo">
                             </div>
 
                             <div class="col">

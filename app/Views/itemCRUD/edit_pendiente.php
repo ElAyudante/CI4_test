@@ -1,5 +1,5 @@
 
-<section class="junta">
+<section class="bg-gray">
 
     <div class="col-lg-2 ps-0">
         <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->

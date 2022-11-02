@@ -37,12 +37,12 @@
                     <a href="#convenios"><i class="fas fa-file-alt fa-lg me-2"></i> Convenios <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="convenios">
-                    <li><a href="<?php echo base_url().'/'; ?>crear_documentos">Alta convenios</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>documentos">Lista convenios</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>crear_convenio">Alta convenios</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>lista_convenios">Lista convenios</a></li>
                 </ul>
 
 
-                <li data-toggle="collapse" data-target="#reclamaciones" class="collapsed">
+                <li data-bs-toggle="collapse" data-bs-target="#reclamaciones" class="collapsed">
                     <a href="#reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones <span class="arrow"></span></a>
                 </li>
 
@@ -63,7 +63,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>edit_cuotas">Importe Cuotas</a></li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#salir" class="collapsed">
+                <li data-bs-toggle="collapse" data-bs-target="#salir" class="collapsed">
                     <a href="<?= base_url('users/logout/logout_success') ?>"><i class="fas fa-sign-out-alt fa-lg me-2"></i> Salir <span class="arrow"></span></a>
                 </li>
             </ul>
