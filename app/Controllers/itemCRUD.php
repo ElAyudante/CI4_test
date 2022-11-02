@@ -219,13 +219,17 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('ofertas_empleo');
         $crud->setSubject('Oferta', 'Ofertas');
         $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto', 'Activo']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
 
         $output = $crud->render();
 
+        $titulo = array('titulo' => 'Lista Ofertas (Admin)');
+        $data = array_merge((array)$output, $titulo);
+
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_ofertas',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
     }
 

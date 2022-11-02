@@ -33,7 +33,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>documentos">Lista documentos</a></li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#convenios" class="collapsed">
+                <li data-bs-toggle="collapse" data-bs-target="#convenios" class="collapsed">
                     <a href="#convenios"><i class="fas fa-file-alt fa-lg me-2"></i> Convenios <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="convenios">
@@ -46,7 +46,7 @@
                     <a href="#reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones <span class="arrow"></span></a>
                 </li>
 
-                <li data-toggle="collapse" data-target="#empleo" class="collapsed">
+                <li data-bs-toggle="collapse" data-bs-target="#empleo" class="collapsed">
                     <a href="#empleo"><i class="fas fa-briefcase fa-lg me-2"></i> Empleo <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="empleo">
@@ -54,7 +54,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>lista_oferta">Lista ofertas</a></li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#cobros" class="collapsed"> 
+                <li data-bs-toggle="collapse" data-bs-target="#cobros" class="collapsed"> 
                     <a href="#cobros"><i class="fas fa-money-bill-wave fa-lg me-2"></i> Cobros <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="cobros">
