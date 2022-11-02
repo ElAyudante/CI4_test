@@ -14,10 +14,10 @@
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD">Lista Colegiados</a></li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                    <a href="#service"><i class="far fa-calendar-check fa-lg me-2"></i> Cursos/Eventos <span class="arrow"></span></a>
+                <li data-toggle="collapse" data-target="#cursos" class="collapsed">
+                    <a href="#cursos"><i class="far fa-calendar-check fa-lg"></i> Cursos/Eventos <span class="arrow"></span></a>
                 </li>  
-                <ul class="sub-menu collapse" id="service">
+                <ul class="sub-menu collapse" id="cursos">
                     <li><a href="<?php echo base_url().'/'; ?>crear_curso_cpcl">Alta Cursos CPLC</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta Cursos Ajenos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>cursos_CPLC">Lista Cursos CPLC</a></li>
@@ -65,8 +65,7 @@
 
                 <li data-bs-toggle="collapse" data-bs-target="#salir" class="collapsed">
                     <a href="<?= base_url('users/logout/logout_success') ?>"><i class="fas fa-sign-out-alt fa-lg me-2"></i> Salir <span class="arrow"></span></a>
-                </li>
-            </ul>
+     </ul>
         </div>
     </div>
 </aside>
