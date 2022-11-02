@@ -4,8 +4,6 @@ use Kenjis\CI3Compatible\Core\CI_Model;
 use CodeIgniter\I18n\Time;
 
 
-//EL VERDADERO CRUD
-
 class ItemCRUDModel extends CI_Model{
 
 	function __construct(){
@@ -114,8 +112,24 @@ class ItemCRUDModel extends CI_Model{
 			'Comentarios' => $this->input->post('comentarios')
 		);
 
-		return $this->db->table('reclamaciones')->insert($data);
+		return $this->db->insert('reclamaciones', $data);
 	}
+
+	public function insert_convenio(){
+
+		$data = array(
+
+			//'Fecha' => Time::now(),
+			'empresa' => $this->input->post('empresa'),
+			'descripcion' => $this->input->post('descripcion'),
+			'codigo' => $this->input->post('codigo'),
+			'web' => $this->input->post('web'),
+
+		);
+
+		return $this->db->insert('convenios', $data);
+	}
+
 
 //READ
     public function find_item($id)

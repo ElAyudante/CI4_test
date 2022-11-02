@@ -484,6 +484,27 @@ class ItemCRUD extends CI_Controller {
         return $this->listar_ofertas();
     }
 
+    public function store_convenio(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'empresa' => 'required|max_length[255]',
+            'descripcion'  => 'max_length[500]',
+            'codigo'  => 'max_length[255]',
+            'web' => 'max_length[255]'
+        ])) {
+            $model->insert_convenio([
+                'empresa' => $this->request->getPost('empresa'),
+                'descripcion'  => $this->request->getPost('descripcion'),
+                'codigo'  => $this->request->getPost('codigo'),
+                'web'  => $this->request->getPost('web')
+            ]);
+        }
+
+        return redirect()->to(base_url('lista_convenios'));
+    }
+
     public function crear_reclamacion(){
 
         $model = model(ItemCRUDModel::class);
@@ -699,7 +720,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->delete_item($id);
 
-       return $this->lista_colegiados_pending();
+       return redirect()->to(base_url('itemCRUD/pending'));
    }
 
    public function delete_empleo($id)
@@ -714,6 +735,13 @@ class ItemCRUD extends CI_Controller {
         $this->itemCRUD->delete_documento($id);
 
        return $this->listar_documentos();
+   }
+
+   public function delete_convenio($id)
+   {
+        $this->itemCRUD->delete_convenio($id);
+
+        return redirect()->to(base_url('lista_convenios'));
    }
 
 

@@ -73,6 +73,8 @@
     $routes->get('crear_convenio', 'itemCRUD::crear_convenio');
     $routes->post('itemCRUD/store_convenio', 'itemCRUD::store_convenio');
     $routes->get('lista_convenios', 'itemCRUD::listar_convenios');
+    $routes->get('lista_convenios/edit/(:any)', 'itemCRUD::edit_convenio/$1');
+    $routes->get('lista_convenios/delete/(:any)', 'itemCRUD::delete_convenio/$1');
 
     $routes->get('itemCRUD', "itemCRUD::home_admin_login");
     $routes->post('itemCRUD', "itemCRUD::home_admin_login");
