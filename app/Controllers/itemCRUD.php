@@ -605,6 +605,14 @@ class ItemCRUD extends CI_Controller {
        echo view('pages/edit_documento',array('item'=>$item));
        echo view('templates/footer');
    }
+   public function edit_convenio($id)
+   {
+       $item = $this->itemCRUD->find_convenio($id);
+
+       echo view('templates/header_admin');
+       echo view('pages/edit_convenio',array('item'=>$item));
+       echo view('templates/footer');
+   }
 
    public function edit_cuotas(){
 
@@ -710,6 +718,21 @@ class ItemCRUD extends CI_Controller {
         return redirect()->to(base_url('edit_cuotas'));
     }
 
+    public function update_convenio(){
+
+        $id = $_POST['id'];
+
+        $data = array(
+
+			'empresa' => $this->input->post('empresa'),
+			'descripcion' => $this->input->post('descripcion'),
+			'codigo' => $this->input->post('codigo'),
+			'web' => $this->input->post('web')
+		);
+
+        $this->db->update('convenios', $data, 'id ='.$id);
+        return redirect()->to(base_url('lista_convenios'));
+    }
 
    /**
     * Delete Data from this method.
@@ -720,7 +743,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->delete_item($id);
 
-       return redirect()->to(base_url('itemCRUD/pending'));
+       return $this->listar_colegiados();
    }
 
    public function delete_empleo($id)
@@ -741,7 +764,7 @@ class ItemCRUD extends CI_Controller {
    {
         $this->itemCRUD->delete_convenio($id);
 
-        return redirect()->to(base_url('lista_convenios'));
+       return $this->listar_convenios();
    }
 
 

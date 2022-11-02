@@ -151,8 +151,8 @@ class ItemCRUDModel extends CI_Model{
 	public function find_cuota(){
 		return $this->db->get_where('cuotas', array('Id' => '1'))->row();
 	}
-	public function find_convenio(){
-		return $this->db->get_where('convenios', array('Id' => $id))->row();
+	public function find_convenio($id){
+		return $this->db->get_where('convenios', array('id' => $id))->row();
 	}
 
 
