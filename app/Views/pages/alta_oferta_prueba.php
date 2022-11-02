@@ -3,7 +3,6 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 ?>
 
 <section class="bg-gray">
-
   <div class="container-fluid">
     <div class="row">
       

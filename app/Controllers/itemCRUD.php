@@ -96,6 +96,7 @@ class ItemCRUD extends CI_Controller {
     $crud->setTable('pagos_pendientes');
     $crud->setSubject('Pagos Pendientes', 'Pagos');
     $crud->columns(['Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
+    $crud->unsetAdd();
 
     $crud->unsetBootstrap();
     $crud->unsetEdit();
@@ -103,8 +104,11 @@ class ItemCRUD extends CI_Controller {
 
     $output = $crud->render();
 
+    $titulo = array('titulo' => 'Cobros Pendientes (Admin)');
+    $data = array_merge((array)$output, $titulo);
+
     echo view('templates/header_admin'); 
-    echo view('App\Views\pages\lista_documentos',(array)$output);
+    echo view('itemCRUD/list',$data);
     echo view('templates/footer');
 }
 
@@ -114,6 +118,7 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('pagos_pendientes');
         $crud->setSubject('Pagos Pendientes', 'Pagos');
         $crud->columns(['Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
         $crud->unsetEdit();
@@ -121,8 +126,11 @@ class ItemCRUD extends CI_Controller {
 
         $output = $crud->render();
 
+        $titulo = array('titulo' => 'Cobros Realizados (Admin)');
+        $data = array_merge((array)$output, $titulo);
+
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_documentos',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
     }
 
