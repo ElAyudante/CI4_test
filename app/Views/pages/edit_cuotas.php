@@ -1,96 +1,72 @@
-<?php include ("includes/header.php");
-?>
-<!-- *******************************************************-->
-<div id="menu_lat">
-<?php
-	include("menus/switch_menus.php");	
-?>
-</div>
-<!-- *******************************************************-->
-<!-- *******************************************************-->
-<div id="cont_2">
-<?php 
-			// VALIDAR FORMULARIO
-			$error ="";
+<section class="junta">
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col-lg-2 ps-0">
+        <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+      </div>
 
-			if (isset($_POST["enviar"])) {				 
-				  if (empty($_POST["inscripcion"])){
-					  $error .="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face='arial narrow, arial' size='2' color='red'>Debe indicar el importe de la cuota de inscripcion.</font> \n <br>";
-				  }
-				  
-				  if (empty($_POST["ordinaria"])){
-					  $error .="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face='arial narrow, arial' size='2' color='red'>Debe indicar el importe de la cuota ordinaria.</font> \n <br>";
-				  }
-				  
-				  if (empty($_POST["noejerciente"])){
-					  $error .="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face='arial narrow, arial' size='2' color='red'>Debe indicar el importe de la cuota para los no ejercientes.</font> \n <br>";
-				  }
-			}
+      <div class="col-lg-10">
+        <div class="container p-5">
+          <?php  ?>
 
-			
-			// PROCESAMOS EL FORMULARIO
-		  	if (isset($_POST['enviar']) && !$error) {			
-				
-				$sql="UPDATE cuotas SET Inscripcion='".str_replace(",",".",$_POST["inscripcion"])."', Ordinaria='".str_replace(",",".",$_POST["ordinaria"])."', NoEjerciente='".str_replace(",",".",$_POST["noejerciente"])."', Jubilados='".str_replace(",",".",$_POST["jubilados"])."', Estuaiantes='".str_replace(",",".",$_POST["estudiantes"])."' WHERE Id='1'";		
-				$consulta=mysql_query($sql) or die(mysql_error() /*"Error al procesar el formulario. Vuelva a intentarlo. <br>"*/);			
+          <?php echo form_open('/itemCRUD/update_cuotas') ?>
+            <div class="row">
+              <?php
+                /*if ($this->session->flashdata('errors')){
+                  echo '<div class="alert alert-danger">';
+                  echo $this->session->flashdata('errors');
+                  echo "</div>";
+                }*/
+              ?>
 
-				echo "<h1>Modificar Cuotas</h1><p>Los cambios de han guardado correctamente.</p>";
+            <h3 style="color: #004987; text-transform: uppercase; font-size:3em">Editar Tasas/Cuotas</h3>
 
-			}
-			else {						
-				$sql_e="SELECT * FROM cuotas WHERE Id='1'";
-				$con_e=mysql_query($sql_e) or die (mysql_error());
-				if(mysql_num_rows($con_e)>0) {
-					$docu=mysql_fetch_array($con_e);				
-					
-	?>
-    <h1>Modificar Cuotas</h1>
-    <?php if ($error) { echo "<p>".$error."</p>"; }	  ?>
-	<form method="post" name="edit_cuotas" action="edit_cuotas.php">
-	<table width="700" style="border:none" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="200">&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="200" height="25" align="right" class="privada">Inscripcion*:&nbsp;&nbsp;</td>
-        <td height="25"><input name="inscripcion" type="text" maxlength="8" size="8" value="<?php if(isset($_POST["inscripcion"])) echo $_POST["inscripcion"]; else echo $docu["Inscripcion"]; ?>"> &euro;</td>
-      </tr> 
-      <tr>
-        <td width="200" height="25" align="right" class="privada">Cuota ordinaria*:&nbsp;&nbsp;</td>
-        <td height="25"><input name="ordinaria" type="text" maxlength="8" size="8" value="<?php if(isset($_POST["ordinaria"])) echo $_POST["ordinaria"]; else echo $docu["Ordinaria"]; ?>"> &euro;</td>
-      </tr> 
-      <tr>
-        <td width="200" height="25" align="right" class="privada">No Ejercientes*:&nbsp;&nbsp;</td>
-        <td height="25"><input name="noejerciente" type="text" maxlength="8" size="8" value="<?php if(isset($_POST["noejerciente"])) echo $_POST["noejerciente"]; else echo $docu["NoEjerciente"]; ?>"> &euro;</td>
-      </tr>     
-      <tr>
-        <td width="200" height="25" align="right" class="privada">Jubilados*:&nbsp;&nbsp;</td>
-        <td height="25"><input name="jubilados" type="text" maxlength="8" size="8" value="<?php if(isset($_POST["jubilados"])) echo $_POST["jubilados"]; else echo $docu["Jubilados"]; ?>"> &euro;</td>
-      </tr>     
-      <tr>
-        <td width="200" height="25" align="right" class="privada">Estudiantes*:&nbsp;&nbsp;</td>
-        <td height="25"><input name="estudiantes" type="text" maxlength="8" size="8" value="<?php if(isset($_POST["estudiantes"])) echo $_POST["estudiantes"]; else echo $docu["Estudiantes"]; ?>"> &euro;</td>
-      </tr>        
-         
-      <tr>
-        <td height="25" colspan="2" align="center"><input type="submit" name="enviar" value="Guardar cambios"></td>
-        </tr>
-    </table>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="form-group">
+					<label for="inscripcion">Tasa Inscripción:</label>
+					<input type="text" class="form-control" name="inscripcion" value="<?=$item->Inscripcion;?>" autofocus>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="form-group">
+					<label for="ejerciente">Cuota Ejerciente:</label>
+					<input type="text" class="form-control" name="ejerciente" value="<?=$item->Ordinaria;?>" autofocus>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+					<label for="noEjerciente">Cuota No Ejerciente:</label>
+					<input type="text" class="form-control" name="noEjerciente" value="<?=$item->NoEjerciente;?>" autofocus>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="form-group">
+					<label for="estudiantes">Cuota Estudiante:</label>
+					<input type="text" class="form-control" name="estudiantes" value="<?=$item->Estudiantes;?>" autofocus>
+					</div>
+              	</div>
+			  	<div class="col-md-2">
+                	<div class="form-group">
+					<label for="jubilados">Cuota Jubilado:</label>
+                  	<input type="text" class="form-control" name="jubilados" value="<?=$item->Jubilados;?>" autofocus>
+                </div>
+			</div>
+			<div class="row">
+				<button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Actualizar</button>
+			</div>
 
-	<!-- fin de tabla de contenido-->
-	</form>	
+              </div>
+            </div>
+          <?php echo form_close(); ?>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <?php	
-				} 
-				else {
-					echo "<h1>Modificar coutas</h1><p>Se ha producido un error. Pongase en contacto con el administrador del sistema.</p>";	
-				}
-		} // fin if (isset($_POST['enviar']) && !$error) {	
-	?>
-</div>
-<!-- *******************************************************-->
-
-<?php
-include ("includes/footer.php");
-?>
+</section>

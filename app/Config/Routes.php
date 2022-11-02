@@ -53,6 +53,11 @@
     $routes->get('users/admin/logout', 'itemCRUD::admin_logout');
 
     $routes->post('itemCRUD/payment_advance', 'itemCRUD::payment_advance');
+    $routes->get('cobros_pendientes', 'itemCRUD::cobros_pendientes');
+    $routes->get('cobros_realizados', 'itemCRUD::cobros_realizados');
+    $routes->get('edit_cuotas', 'itemCRUD::edit_cuotas');
+    $routes->post('itemCRUD/update_cuotas', 'itemCRUD::update_cuotas');
+
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');
@@ -65,12 +70,6 @@
     $routes->get('itemCRUD/store_empleo/edit/(:any)', 'itemCRUD::edit_empleo/$1');
     $routes->get('itemCRUD/update_empleo/edit/(:any)', 'itemCRUD::edit_empleo/$1');
 
-    $routes->get('create_forum', 'forum::create_forum');
-    $routes->get('topic/create', 'forum::create_topic');
-    $routes->get('(:any)/create_topic', 'forum::create_topic/$1');
-    $routes->get('topic/(:any)/(:any)', 'forum::topic/$1/$2');
-    $routes->get('(:any)/(:any)/reply', 'forum::create_post/$1/$2');
-
     $routes->get('itemCRUD', "itemCRUD::home_admin_login");
     $routes->post('itemCRUD', "itemCRUD::home_admin_login");
     $routes->get('itemCRUD/pending', "itemCRUD::lista_colegiados_pending");
@@ -78,8 +77,11 @@
     $routes->get('itemCRUDShow/(:any)', "itemCRUD::show/$1");
     $routes->get('itemCRUD/create', "itemCRUD::create");
     $routes->get('itemCRUD/edit/(:any)', "itemCRUD::edit/$1");
-    $routes->get('itemCRUDUpdate/(:any)', "itemCRUD::update/$1");
-    $routes->get('itemCRUDDelete/(:any)', "itemCRUD::delete/$1");
+    $routes->get('itemCRUD/pending/edit/(:any)', "itemCRUD::edit_pendiente/$1");
+    $routes->get('itemCRUD/pending/delete/(:any)', "itemCRUD::delete/$1");
+    $routes->post('itemCRUD/update/(:any)', "itemCRUD::update/$1");
+    $routes->post('itemCRUD/update_pendiente/(:any)', "itemCRUD::update_pendiente/$1");
+    $routes->get('itemCRUD/delete/(:any)', "itemCRUD::delete/$1");
 
     $routes->get('crear_documentos', 'itemCRUD::create_documentos');
     $routes->get('documentos', 'itemCRUD::listar_documentos');
@@ -98,3 +100,9 @@
 
     $routes->get('paypal/success/(:any)', 'paypal::success/$1');
     $routes->get('(:any)', 'pages::view/$1');
+
+    $routes->get('create_forum', 'forum::create_forum');
+    $routes->get('topic/create', 'forum::create_topic');
+    $routes->get('(:any)/create_topic', 'forum::create_topic/$1');
+    $routes->get('topic/(:any)/(:any)', 'forum::topic/$1/$2');
+    $routes->get('(:any)/(:any)/reply', 'forum::create_post/$1/$2');

@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-lg-12 mb-5">
                             <div>
-                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/edit/'.$item->Id) ?>"> Editar colegiado</a>
+                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/edit/'.$item->Id) ?>"> Editar  asd colegiado</a>
                             </div>
                         </div>
                     </div>

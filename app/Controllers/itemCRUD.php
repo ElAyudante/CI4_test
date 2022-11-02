@@ -4,7 +4,6 @@ use Kenjis\CI3Compatible\Core\CI_Controller;
 use App\Libraries\GroceryCrud;
 use CodeIgniter\I18n\Time;
 
-
 class ItemCRUD extends CI_Controller {
 
 
@@ -30,6 +29,8 @@ class ItemCRUD extends CI_Controller {
       $CI->load->library('pagination');
 
       $this->itemCRUD = new \App\Models\ItemCRUDModel;
+
+      
    }
 
 
@@ -48,6 +49,7 @@ class ItemCRUD extends CI_Controller {
         $crud->unsetAdd();
 
         $crud->unsetBootstrap();
+        $crud->where("(Colegiado IS NOT NULL)");
 
 
 	    $output = $crud->render();
@@ -88,6 +90,44 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
    }
 
+   public function cobros_pendientes(){
+
+    $crud = new GroceryCrud();
+    $crud->setTable('pagos_pendientes');
+    $crud->setSubject('Pagos Pendientes', 'Pagos');
+    $crud->columns(['Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
+
+    $crud->unsetBootstrap();
+    $crud->unsetEdit();
+    $crud->where("pagos_pendientes.Estado = 'Pendiente'");
+
+    $output = $crud->render();
+
+    echo view('templates/header_admin'); 
+    echo view('App\Views\pages\lista_documentos',(array)$output);
+    echo view('templates/footer');
+}
+
+    public function cobros_realizados(){
+
+        $crud = new GroceryCrud();
+        $crud->setTable('pagos_pendientes');
+        $crud->setSubject('Pagos Pendientes', 'Pagos');
+        $crud->columns(['Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
+
+        $crud->unsetBootstrap();
+        $crud->unsetEdit();
+        $crud->where("pagos_pendientes.Estado = 'Realizado'");
+
+        $output = $crud->render();
+
+        echo view('templates/header_admin'); 
+        echo view('App\Views\pages\lista_documentos',(array)$output);
+        echo view('templates/footer');
+    }
+
+
+
    public function listar_documentos_usuarios(){
 
     $crud = new GroceryCrud();
@@ -121,7 +161,7 @@ class ItemCRUD extends CI_Controller {
         $crud->unsetAdd();
 
         $crud->unsetBootstrap();
-        $crud->where('Colegiado = NULL');
+        $crud->where("(Colegiado IS NULL)");
 
 
 	    $output = $crud->render();
@@ -479,6 +519,15 @@ class ItemCRUD extends CI_Controller {
        echo view('templates/footer');
    }
 
+   public function edit_pendiente($id)
+   {
+       $item = $this->itemCRUD->find_item($id);
+
+       echo view('templates/header_admin');
+       echo view('itemCRUD/edit_pendiente',array('item'=>$item));
+       echo view('templates/footer');
+   }
+
    public function edit_empleo($id)
    {
        $item = $this->itemCRUD->find_empleo($id);
@@ -494,6 +543,15 @@ class ItemCRUD extends CI_Controller {
        echo view('templates/header_admin');
        echo view('pages/edit_documento',array('item'=>$item));
        echo view('templates/footer');
+   }
+
+   public function edit_cuotas(){
+
+        $item = $this->itemCRUD->find_cuota();
+
+        echo view('templates/header_admin');
+        echo view('pages/edit_cuotas',array('item'=>$item));
+        echo view('templates/footer');
    }
 
 
@@ -517,7 +575,36 @@ class ItemCRUD extends CI_Controller {
 
     }
 
+    public function update_pendiente(){
+
+        $id = $_POST['id'];
+
+        $data = array(
+
+			'Colegiado' => $this->input->post('colegiado'),
+            'Usuario' => $this->input->post('nif'),
+            'Pass' => 'temp'
+
+		);
+
+        $this->db->update('colegiados', $data, 'ID ='.$id);
+
+        $data_pago = array(
+            'Nombre'=>$this->input->post('nombre'),
+            'Apellidos'=>$this->input->post('apellidos'),
+            'Transaccion'=>'Cuota Alta',
+            'Cantidad'=>$this->db->get_where('cuotas', array('ID' => '1')->row->Inscripcion),
+            'Estado'=>'Pendiente',
+        );
+
+        $this->db->insert('pagos_pendientes', $data_pago);
+
+        return redirect()->to(base_url('itemCRUD'));
+    }
+
     public function update_empleo(){
+
+        $id = $_POST['id'];
 
         $data = array(
 
@@ -529,10 +616,12 @@ class ItemCRUD extends CI_Controller {
 			'Activo' => $this->input->post('activo')
 		);
 
-        $this->db->update('ofertas_empleo', $data);
+        $this->db->update('ofertas_empleo', $data, 'ID ='.$id);
         return $this->listar_ofertas();
     }
     public function update_documento(){
+
+        $id = $_POST['id'];
 
         $data = array(
 
@@ -542,8 +631,22 @@ class ItemCRUD extends CI_Controller {
 			'Archivo' => $this->input->post('archivo')
 		);
 
-        $this->db->update('documentos', $data);
+        $this->db->update('documentos', $data, 'ID ='.$id);
         return $this->listar_documentos();
+    }
+
+    public function update_cuotas(){
+        $data = array(
+            'Jubilados' => $this->input->post('jubilados'),
+            'Estudiantes' => $this->input->post('estudiantes'),
+            'Inscripcion' => $this->input->post('inscripcion'),
+            'Ordinaria' => $this->input->post('ejerciente'),
+            'NoEjerciente' => $this->input->post('noEjerciente')
+        );
+
+        $this->db->update('cuotas', $data, 'Id = 1');
+
+        return redirect()->to(base_url('edit_cuotas'));
     }
 
 
@@ -556,7 +659,7 @@ class ItemCRUD extends CI_Controller {
    {
        $item = $this->itemCRUD->delete_item($id);
 
-       return redirect()->to(base_url('pages/lista_colegiados'));
+       return $this->lista_colegiados_pending();
    }
 
    public function delete_empleo($id)
