@@ -33,12 +33,12 @@
                     <li><a href="<?php echo base_url().'/'; ?>documentos">Lista documentos</a></li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#documentos" class="collapsed">
-                    <a href="#documentos"><i class="fas fa-file-alt fa-lg"></i> Convenios <span class="arrow"></span></a>
+                <li data-toggle="collapse" data-target="#convenios" class="collapsed">
+                    <a href="#convenios"><i class="fas fa-file-alt fa-lg"></i> Convenios <span class="arrow"></span></a>
                 </li>
-                <ul class="sub-menu collapse" id="documentos">
-                    <li><a href="<?php echo base_url().'/'; ?>crear_documentos">Alta convenios</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>documentos">Lista convenios</a></li>
+                <ul class="sub-menu collapse" id="convenios">
+                    <li><a href="<?php echo base_url().'/'; ?>crear_convenio">Alta convenios</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>lista_convenios">Lista convenios</a></li>
                 </ul>
 
 

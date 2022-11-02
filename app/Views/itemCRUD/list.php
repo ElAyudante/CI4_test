@@ -54,6 +54,7 @@ $sel_comunidades =  array (
 
     <div class="container junta" style="position: relative; top: -870px; left: 100px">
             
+        <div><?php echo $titulo?></div>
         <div> <?php echo $output; ?> </div>
         <?php foreach($js_files as $file): ?>
             <script src="<?php echo $file; ?>"></script>

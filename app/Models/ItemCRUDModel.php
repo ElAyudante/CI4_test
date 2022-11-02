@@ -137,6 +137,10 @@ class ItemCRUDModel extends CI_Model{
 	public function find_cuota(){
 		return $this->db->get_where('cuotas', array('Id' => '1'))->row();
 	}
+	public function find_convenio(){
+		return $this->db->get_where('convenios', array('Id' => $id))->row();
+	}
+
 
 //DELETE
     public function delete_item($id)
@@ -153,5 +157,10 @@ class ItemCRUDModel extends CI_Model{
     {
         return $this->db->delete('documentos', array('Id' => $id));
     }
+	public function delete_convenio($id)
+    {
+        return $this->db->delete('convenios', array('Id' => $id));
+    }
+	
 }
 ?>
