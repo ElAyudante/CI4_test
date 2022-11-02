@@ -40,25 +40,26 @@ $sel_comunidades =  array (
 
             <div class="col-lg-10">
                 <div class="container p-5">
-                    <div class="row pt-2">
-                        <div class="col-lg-2 margin-tb d-flex flex-row">
-                            <div class="">
-                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
-                            </div>
-                            <div class="">
-                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-10 margin-tb">
-                            <div class="pull-right">
-                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Crear colegiado</a>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="bg-white"> 
-                        <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><?php echo $titulo;?></h3>
+                        <div class="d-flex bg-blue">
+                            <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><?php echo $titulo;?></h3>
+                            <div class="row pt-2 d-flex justify-content-end">
+                                <div class="col-lg-2 margin-tb d-flex flex-row">
+                                    <div class="">
+                                        <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
+                                    </div>
+                                <div class="">
+                                    <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
+                                </div>
+                            </div>
+
+
+                    </div>
+                        </div>
+                        
+
                         <?php echo $output; ?> 
                     </div>
                     <?php foreach($js_files as $file): ?>
