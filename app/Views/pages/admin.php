@@ -1,5 +1,4 @@
-
-<section class="presentacion p-5 text-left mb-5">
+<section class="presentacion p-5 text-lg-start text-center d-flex align-items-center" style="height: 300">
     <div class="container">
         <div class="row align-items-center text-white">
             <div class="col-md-12" id="texto-cabecera">
@@ -9,9 +8,9 @@
     </div>
 </section>
 
-<section class="junta" style="height: 400; margin-top: 6em; margin-bottom: -3em;">
-    <div class="container">
-      <div class="row">
+<section class="bg-gray">
+    <div class="container p-5 w-50 d-flex justify-content-center">
+      
         <?php if (validation_errors()) : ?>
           <div class="col-md-12">
               <div class="alert alert-danger" role="alert">
@@ -26,25 +25,24 @@
                 </div>
             </div>
         <?php endif; ?>
-        <div class="login-panel panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span class="glyphicon glyphicon-lock"></span> Login
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <form method="POST" action="<?php echo base_url(); ?>/users/admin/login">
-                        <fieldset>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Usuario" type="text" name="usuario" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" type="password" name="password" required>
-                            </div>
-                            <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
-                        </fieldset>
-                    </form>
-                </div>
+
+        <div class="p-5 w-75">
+        <h3 class="py-4 px-5 text-white text-uppercase fs-2 bg-blue fw-bold mb-0 text-center"><i class="bi bi-person-circle"></i> Colegiados Admin</h3>
+            
+        <form class="form-border p-5 bg-white mb-0 text-center" method="POST" action="<?php echo base_url(); ?>/users/admin/login">
+            <div class="d-flex align-items-center mb-4">
+                <i class="bi bi-people-fill fs-1 me-4 cblue"></i>
+                <input class="form-control" placeholder="Usuario" type="text" name="usuario" required>
             </div>
-      </div>
+            <div class="d-flex align-items-center mb-4">
+                <i class="bi bi-key-fill fs-1 me-4 cblue"></i>
+                <input class="form-control" placeholder="Password" type="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase mb-3">Login</button>
+            <p class="text-muted mb-0">¿Olvidaste tu contraseña?</p>
+        </form>
+            
+        </div>
+
     </div>
 </section>

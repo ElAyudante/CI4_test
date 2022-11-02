@@ -10,7 +10,7 @@
         <?php echo view('templates/menu_admin'); ?>
     </div>
 	
-	<div class="container junta" style="position: relative; top: -850px; left: 50px">
+	<div class="bg-gray container" >
 		
         <div> <?php echo $output; ?> </div>
             <?php foreach($js_files as $file): ?>

@@ -1,4 +1,6 @@
 <?php
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+
 $sel_provincias = array (
   'Alava' => 'Alava',
   'Albaceta' => 'Albacete',
@@ -74,7 +76,7 @@ $sel_comunidades =  array (
 )
 ?>
 
-<section class="junta">
+<section class="bg-gray">
 
   <div class="container-fluid">
     <div class="row">
@@ -85,10 +87,10 @@ $sel_comunidades =  array (
 
       <div class="col-lg-10">
         <div class="container p-5">
-          <?php  ?>
-
-          <?php echo form_open('/itemCRUD/store'); ?>
-            <div class="row">
+          <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Alta colegiado (ADMIN)</h3>
+          <?php echo form_open('/itemCRUD/store', $form_att); ?>
+            
+            <div class="row row-cols-lg-4 g-lg-4 cblue">
               <?php
                 /*if ($this->session->flashdata('errors')){
                   echo '<div class="alert alert-danger">';
@@ -96,76 +98,77 @@ $sel_comunidades =  array (
                   echo "</div>";
                 }*/
               ?>
-
-            <h3 style="color: #004987; text-transform: uppercase; font-size:3em">Alta colegiado</h3>
-
-            <div class="col-md-3">
+            
+              <div class="col">
                 <div class="form-group" style="display:flex;">
                   <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
                   <?php $attributes = 'id="falta" name="falta" class="form-control" placeholder="Fecha de alta"'; echo form_input('falta', set_value('falta'), $attributes); ?>           
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus>
+                  <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus required>
                 </div>
               </div>
-              <div class="col-md-6">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
+                  <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="usuario" placeholder="Usuario">
+                  <input type="text" class="form-control bg-transparent" name="usuario" placeholder="Usuario" required>
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="password" class="form-control bg-transparent" name="pass" placeholder="Contraseña">
+                  <input type="password" class="form-control bg-transparent" name="pass" placeholder="Contraseña" required>
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="password" class="form-control bg-transparent" name="confirm_pass" placeholder="Confirma contraseña">
+                  <input type="password" class="form-control bg-transparent" name="confirm_pass" placeholder="Confirma contraseña" required>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI">
+                  <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI" required>
                 </div>
               </div>
-              <div class="col-md-8">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="email" placeholder="Email">
+                  <input type="text" class="form-control bg-transparent" name="email" placeholder="Email" required>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección">
+                  <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección" required>
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad">
+                  <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad" required>
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP">
+                  <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP" required>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-3">
-                <select id="provincia" class="form-control bg-transparent" name="provincia">
-                  <option selected value="0">Selecciona una provincia</option>
+
+              <div class="col">
+                <select id="provincia" class="form-control bg-transparent" name="provincia" required>
+                  <option disabled selected hidden value="">Selecciona una provincia</option>
                   <?php 
                     foreach ($sel_provincias as $sel_prov => $abreviatura) {
                       echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
@@ -173,9 +176,10 @@ $sel_comunidades =  array (
                     ?>
                 </select>
               </div>
-              <div class="form-group col-md-3">
-                <select id="comunidad" class="form-control bg-transparent" name="comunidad">
-                  <option selected value="0">Comunidad autónoma</option>
+
+              <div class="col">
+                <select id="comunidad" class="form-control bg-transparent" name="comunidad" required>
+                  <option disabled selected hidden value="">Comunidad autónoma</option>
                   <?php 
                     foreach ($sel_comunidades as $sel_com => $siglas) {
                       echo '<option value="' . $sel_com . '">' . $siglas .'</option>';
@@ -183,21 +187,22 @@ $sel_comunidades =  array (
                     ?>
                 </select>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono">
+                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono" required>
                 </div>
               </div>
-              <div class="col-md-3">
+              
+              <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="movil" placeholder="Móvil">
+                  <input type="number" class="form-control bg-transparent" name="movil" placeholder="Móvil" required>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-3">
-                <select id="lnacimiento" class="form-control bg-transparent" name="lnacimiento">
-                  <option selected value="0">Lugar de nacimiento</option>
+
+              <div class="col">
+                <select id="lnacimiento" class="form-control bg-transparent" name="lnacimiento" required>
+                  <option disabled selected hidden value="">Lugar de nacimiento</option>
                   <?php 
                     foreach ($sel_provincias as $sel_prov => $abreviatura) {
                       echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
@@ -205,56 +210,61 @@ $sel_comunidades =  array (
                     ?>
                 </select>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group" style="display:flex;">
                   <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
                   <?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento"'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?>          
                 </div>
               </div>
-              <div class="col-md-6">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC">
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="number" class="form-control text-uppercase bg-transparent" name="tlftrabajo" placeholder="Teléfono del trabajo">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="lugtrabajo" placeholder="¿Dónde trabajas?">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="dtrabajo" placeholder="Dirección del trabajo">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="loctrabajo" placeholder="Localidad del trabajo">
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="number" class="form-control text-uppercase bg-transparent" name="ncolegiado" placeholder="Número de colegiado">
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group" style="display:flex;">
                   <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
                   <?php $attributes = 'id="fexpiracion" name="fexpiracion" class="form-control" placeholder="Fecha de caducidad"'; echo form_input('fexpiracion', set_value('fexpiracion'), $attributes); ?>           
                 </div>
               </div>
-              <div class="col-md-4">
+
+              <div class="col">
                 <div class="form-group">
                   <select id ="ejerciente" class="form-control bg-transparent" name="ejerciente">
-                    <option value="" select>Tipo de colegiado</option>
+                    <option disabled selected hidden value="" select>Tipo de colegiado</option>
                     <option value="1">Ejerciente</option>
                     <option value="0">No ejerciente</option>
                     <option value="2">Jubilado</option>
@@ -262,88 +272,44 @@ $sel_comunidades =  array (
                   </select>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="titulacion" placeholder="Titulación">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="especialidad" placeholder="Especialidad">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="form-group custom-checkbox text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">Sector</label>
-                  <input type="hidden" class="custom-control-input" name="publico" value="0">
-                  <input type="checkbox" class="custom-control-input" name="sector" value="publico" id="sector1">
-                  <label class="custom-control-label" for="sector1" style="color: #004987; font-weight:500;">Público</label>
-                  <input type="hidden" class="custom-control-input" name="sector" value="privado" id="sector2">
-                  <input type="checkbox" class="custom-control-input" name="privado" value="1" id="sector2">
-                  <label class="custom-control-label" for="sector2" style="color: #004987; font-weight:500;">Privado</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">Solicita habilitación</label>
-                  <input type="radio" class="custom-control-input" value="0" name="habitacion" id="habitacion1">
-                  <label class="custom-control-label" for="habitacion1" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" value="1" name="habitacion" id="habitacion2">
-                  <label class="custom-control-label" for="habitacion2"style="color: #004987; font-weight:500;">No</label>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">Logopeda diplomado</label>
-                  <input type="radio" class="custom-control-input" value="0" name="diplomado" id="diplomado1">
-                  <label class="custom-control-label" for="diplomado1" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" value="1" name="diplomado" id="diplomado2">
-                  <label class="custom-control-label" for="diplomado2" style="color: #004987; font-weight:500;">No</label>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">Bolsa de trabajo</label>
-                  <input type="radio" class="custom-control-input" value="0" name="bolsa" id="bolsa1">
-                  <label class="custom-control-label" for="bolsa1" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" value="1" name="bolsa" id="bolsa2">
-                  <label class="custom-control-label" for="bolsa2" style="color: #004987; font-weight:500;">No</label>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group custom-checkbox text-uppercase pt-3">
-                  <input type="hidden" class="custom-control-input" value="0" name="traslado" id="traslado">
-                  <input type="checkbox" class="custom-control-input" value="1" name="traslado" id="traslado">
-                  <label class="custom-control-label" for="sector" style="color: #004987; font-weight:500;">Traslado</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="observacion" placeholder="Observaciones">
                 </div>
               </div>
-              <div class="col-md-3">
+
+              <div class="col">
                 <div class="form-group">
                   <select id ="cuota" name="cuota" class="form-control bg-transparent">
                     <option value="" select>Asignar 1ª cuota</option>
@@ -354,49 +320,126 @@ $sel_comunidades =  array (
                   </select>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">Paga inscripción</label>
-                  <input type="radio" class="custom-control-input" name="inscripcion" id="inscripcion1">
-                  <label class="custom-control-label" for="habitacion1" value="0" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" name="inscripcion" id="inscripcion2">
-                  <label class="custom-control-label" for="habitacion2" value="1" style="color: #004987; font-weight:500;">No</label>
+              
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">Paga inscripción</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="inscription" id="inscription1" value="1" checked>
+                  <label class="form-check-label" for="inscription1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="inscription" id="inscription2" value="0">
+                  <label class="form-check-label" for="inscription2">No</label>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">¿Publicidad?</label>
-                  <input type="radio" class="custom-control-input" name="publicidad" id="publicidad1">
-                  <label class="custom-control-label" for="diplomado1" value="0" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" name="publicidad" id="publicidad2">
-                  <label class="custom-control-label" for="diplomado2" value="1" style="color: #004987; font-weight:500;">No</label>
+
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">¿Publicidad?</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="publicity" id="publicity1" value="1" checked>
+                  <label class="form-check-label" for="publicity1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="publicity" id="publicity2" value="0">
+                  <label class="form-check-label" for="publicity2">No</label>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">Email de bienvenida</label>
-                  <input type="radio" class="custom-control-input" name="bienvenida" id="bienvenida1">
-                  <label class="custom-control-label" for="bolsa1" value="0" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" name="bienvenida" id="bienvenida2">
-                  <label class="custom-control-label" for="bolsa2" value="1" style="color: #004987; font-weight:500;">No</label>
+
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">Email de bienvenida</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="welcome" id="welcome1" value="1" checked>
+                  <label class="form-check-label" for="welcome1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="welcome" id="welcome2" value="0">
+                  <label class="form-check-label" for="welcome2">No</label>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                  <label style="color: #004987; font-weight:500;">¿Está colegiado?</label>
-                  <input type="radio" class="custom-control-input" name="colegiadoactual" id="colegiadoactual1">
-                  <label class="custom-control-label" for="bolsa1" value="0" style="color: #004987; font-weight:500;">Sí</label>
-                  <input type="radio" class="custom-control-input" name="colegiadoactual" id="colegiadoactual2">
-                  <label class="custom-control-label" for="bolsa2" value="1" style="color: #004987; font-weight:500;">No</label>
+              
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">Sector</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="sectores" id="sector1" value="publico" checked>
+                  <label class="form-check-label" for="sector1">Público</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="sectores" id="sector2" value="privado">
+                  <label class="form-check-label" for="sector2">Privado</label>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
+
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">Solicita habilitación</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="hability" id="hability1" value="1" checked>
+                  <label class="form-check-label" for="hability1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="hability" id="hability2" value="0">
+                  <label class="form-check-label" for="hability2">No</label>
+                </div>
+              </div>
+
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">Logopeda diplomado</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="diplomado" id="diplomado1" value="1" checked>
+                  <label class="form-check-label" for="diplomado1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="diplomado" id="diplomado2" value="0">
+                  <label class="form-check-label" for="diplomado2">No</label>
+                </div>
+              </div>
+
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">Bolsa de trabajo</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="bolsa" id="bolsa1" value="1" checked>
+                  <label class="form-check-label" for="bolsa1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="bolsa" id="bolsa2" value="0">
+                  <label class="form-check-label" for="bolsa2">No</label>
+                </div>
+              </div>
+
+              <div class="col text-uppercase d-flex align-items-center">
+                <label class="fw-bold me-3">¿Está colegiado?</label>
+                <div class="form-check form-check-inline me-2 mb-0">
+                  <input class="form-check-input" type="radio" name="user" id="user1" value="1" checked>
+                  <label class="form-check-label" for="user1">Sí</label>
+                </div>
+
+                <div class="form-check form-check-inline me-0 mb-0">
+                  <input class="form-check-input" type="radio" name="user" id="user2" value="0">
+                  <label class="form-check-label" for="user2">No</label>
+                </div>
+              </div>
+
+              <div class="col text-uppercase">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
+                </div>
+              </div>
+
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+
+              <div class="col">
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>
               </div>
+
             </div>
           <?php echo form_close(); ?>
         </div>
@@ -405,6 +448,27 @@ $sel_comunidades =  array (
   </div>
 
 </section>
+
+<script>
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
 
 <script type="text/javascript">
 $.datepicker.regional['es'] = {

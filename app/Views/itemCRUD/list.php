@@ -29,61 +29,46 @@ $sel_comunidades =  array (
 </head>
 <body>
 
-<section class="junta" >
-  	
-    <div class="col-lg-2 ps-0">
-        <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+<section class="bg-gray" >
+
+    <div class="container-fluid">
+        <div class="row">
+        
+            <div class="col-lg-2 ps-0">
+                <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
+            </div>
+
+            <div class="col-lg-10">
+                <div class="container p-5">
+                    <div class="row pt-2">
+                        <div class="col-lg-2 margin-tb d-flex flex-row">
+                            <div class="">
+                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
+                            </div>
+                            <div class="">
+                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-10 margin-tb">
+                            <div class="pull-right">
+                                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Crear colegiado</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white"> 
+                        <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><?php echo $titulo;?></h3>
+                        <?php echo $output; ?> 
+                    </div>
+                    <?php foreach($js_files as $file): ?>
+                        <script src="<?php echo $file; ?>"></script>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <div class="row pt-2">
-        <div class="col-lg-2 margin-tb d-flex flex-row">
-            <div class="">
-                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
-            </div>
-            <div class="">
-                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
-            </div>
-        </div>
-
-        <div class="col-lg-10 margin-tb">
-            <div class="pull-right">
-                <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Crear colegiado</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container junta" style="position: relative; top: -870px; left: 100px">
-            
-        <div> <?php echo $output; ?> </div>
-        <?php foreach($js_files as $file): ?>
-            <script src="<?php echo $file; ?>"></script>
-        <?php endforeach; ?>
-
-    </div>
-    <!--
-    <?php if (validation_errors()) : ?>
-        <div class="col-md-12">
-            <div class="alert alert-danger" role="alert">
-                <?= validation_errors() ?>
-            </div>
-        </div>
-    <?php endif; ?>
-    <?php if (isset($error)) : ?>
-        <div class="col-md-12">
-            <div class="alert alert-danger" role="alert">
-                <?= $error ?>
-            </div>
-        </div>
-    <?php endif; ?>
-    <?php if (isset($success)) : ?>
-        <div class="col-md-12">
-            <div class="alert alert-success" role="alert">
-                <?= $success ?>
-            </div>
-        </div>
-    <?php endif; ?>
-    -->
-	
 </section>
     
 </body>

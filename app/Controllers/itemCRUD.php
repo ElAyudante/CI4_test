@@ -45,14 +45,18 @@ class ItemCRUD extends CI_Controller {
 	    $crud->setTable('colegiados');
         $crud->setSubject('Colegiado', 'Colegiados');
         $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
 
 
 	    $output = $crud->render();
+        $titulo = array('titulo' => 'Lista Colegiados (Admin)');
 
+        $data = array_merge((array)$output, $titulo);
+;
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
     
    }
@@ -69,13 +73,18 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('documentos');
         $crud->setSubject('Documento', 'Documentos');
         $crud->columns(['Nombre', 'Descripcion', 'Publico', 'Archivo']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
+        
 
         $output = $crud->render();
 
+        $titulo = array('titulo' => 'Lista Documentos (Admin)');
+        $data = array_merge((array)$output, $titulo);
+        
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_documentos',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
    }
 
@@ -109,15 +118,19 @@ class ItemCRUD extends CI_Controller {
 	    $crud->setTable('colegiados');
         $crud->setSubject('Colegiado', 'Colegiados');
         $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
         $crud->where('Colegiado = NULL');
 
 
 	    $output = $crud->render();
+        $titulo = array('titulo' => 'Altas Pendientes (Admin)');
+
+        $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
     }
 
