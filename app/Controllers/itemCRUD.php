@@ -53,15 +53,12 @@ class ItemCRUD extends CI_Controller {
 
 
 	    $output = $crud->render();
+
         $titulo = array('titulo' => 'Lista Colegiados (Admin)');
-
-        $data = array_merge((array)$output, $titulo);
-
-
         $data = array_merge((array)$output, $titulo);
 ;
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
     
    }
@@ -111,8 +108,8 @@ class ItemCRUD extends CI_Controller {
     $crud->unsetAdd();
 
     $output = $crud->render();
-    $titulo = array('titulo' => 'Lista Convenios (Admin)');
 
+    $titulo = array('titulo' => 'Lista Convenios (Admin)');
     $data = array_merge((array)$output, $titulo);
 
 
