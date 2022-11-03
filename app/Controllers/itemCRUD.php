@@ -309,7 +309,6 @@ class ItemCRUD extends CI_Controller {
         $crud->setActionButton('Responder', '', function ($row){
             return 'lista_reclamaciones/edit/'.$row;
         });
-        $crud->callbackColumn('Fecha', array($this, 'callback_date'));
 
         $output = $crud->render();
         $titulo = array('titulo' => 'Lista Reclamaciones (Admin)');
@@ -321,17 +320,6 @@ class ItemCRUD extends CI_Controller {
         echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     }
-
-
-   public function index_sociedades()
-   {
-       $data['data'] = $this->itemCRUD->get_itemCRUDsociedades();
-
-       echo view('templates/header_admin');       
-       echo view('itemCRUD/list_sociedades',$data);
-       echo view('templates/footer');
-   }
-
 
    /**
     * Show Details this method.
