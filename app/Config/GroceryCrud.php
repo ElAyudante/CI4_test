@@ -13,7 +13,7 @@ class GroceryCrud
      * There are only three choices: "uk-date" (dd/mm/yyyy), "us-date" (mm/dd/yyyy) or "sql-date" (yyyy-mm-dd)
      * @var string
      */
-    public $date_format = 'uk-date';
+    public $date_format = 'sql-date';
 
     /**
      * The default per page when a user firstly see a list page

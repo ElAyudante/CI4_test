@@ -48,6 +48,12 @@
     $routes->get('users/nueva_reclamacion', 'itemCRUD::nueva_reclamacion');
     $routes->post('users/crear_reclamacion', 'itemCRUD::crear_reclamacion');
 
+    $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
+    $routes->get('lista_reclamaciones/edit/(:any)', 'itemCRUD::edit_reclamacion/$1');
+    $routes->get('lista_reclamaciones/delete/(:any)', 'itemCRUD::delete_reclamacion/$1');
+    $routes->post('itemCRUD/responder_reclamacion', 'itemCRUD::responder_reclamacion');
+
+
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
     $routes->post('users/admin/login', 'itemCRUD::admin_login');
     $routes->get('users/admin/logout', 'itemCRUD::admin_logout');

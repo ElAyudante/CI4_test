@@ -325,6 +325,31 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     }
 
+    public function listar_reclamaciones_ADMIN(){
+
+        $crud = new GroceryCrud();
+        $crud->setTable('reclamaciones');
+        $crud->setSubject('Reclamaciones', 'Reclamaciones');
+        $crud->columns(['Fecha', 'Nombre', 'Apellidos', 'Asunto' , 'Comentarios', 'Estado']);
+
+        $crud->unsetBootstrap();
+        $crud->unsetEdit();
+        $crud->unsetAdd();
+        $crud->setActionButton('Responder', '', function ($row){
+            return 'lista_reclamaciones/edit/'.$row;
+        });
+
+        $output = $crud->render();
+        $titulo = array('titulo' => 'Lista Reclamaciones (Admin)');
+
+        $data = array_merge((array)$output, $titulo);
+    
+    
+        echo view('templates/header_admin'); 
+        echo view('itemCRUD/list', $data);
+        echo view('templates/footer');
+    }
+
 
    public function index_sociedades()
    {
@@ -621,6 +646,14 @@ class ItemCRUD extends CI_Controller {
        echo view('pages/edit_convenio',array('item'=>$item));
        echo view('templates/footer');
    }
+   public function edit_reclamacion($id)
+   {
+       $item = $this->itemCRUD->find_reclamaciones($id);
+
+       echo view('templates/header_admin');
+       echo view('pages/edit_reclamacion',array('item'=>$item));
+       echo view('templates/footer');
+   }
 
    public function edit_cuotas(){
 
@@ -742,6 +775,18 @@ class ItemCRUD extends CI_Controller {
         return redirect()->to(base_url('lista_convenios'));
     }
 
+    public function responder_reclamacion(){
+        $id = $_POST['id'];
+
+        $data = array(
+            'MiRespuesta' =>$this->input->post('mirespuesta'),
+            'Estado' => 'Resuelto/a',
+        );
+
+        $this->db->update('reclamaciones', $data, 'Id ='.$id);
+        return redirect()->to(base_url('lista_reclamaciones'));
+    }
+
    /**
     * Delete Data from this method.
     *
@@ -766,6 +811,12 @@ class ItemCRUD extends CI_Controller {
         $this->itemCRUD->delete_documento($id);
 
        return $this->listar_documentos();
+   }
+   public function delete_reclamacion($id)
+   {
+        $this->itemCRUD->delete_reclamacion($id);
+
+       return $this->listar_reclamaciones_ADMIN();
    }
 
    public function delete_convenio($id)

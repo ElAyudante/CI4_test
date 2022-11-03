@@ -43,7 +43,7 @@
 
 
                 <li data-bs-toggle="collapse" data-bs-target="#reclamaciones" class="collapsed">
-                    <a href="#reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones <span class="arrow"></span></a>
+                    <a href="<?php echo base_url().'/'; ?>lista_reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones <span class="arrow"></span></a>
                 </li>
 
                 <li data-bs-toggle="collapse" data-bs-target="#empleo" class="collapsed">
