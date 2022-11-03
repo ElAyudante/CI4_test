@@ -9,7 +9,7 @@
                     <a href="#colegiados"><i class="fas fa-users fa-lg me-2"></i> Colegiados<i class="arrow fas-fa-chevron-right"></i></a>
                 </li>
                 <ul class="sub-menu collapse" id="colegiados">
-                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create">Alta Colegiados</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create"><i class="fa-solid fa-graduation-cap"></i> Alta Colegiados</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD/pending">Altas Pendientes</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD">Lista Colegiados</a></li>
                 </ul>
@@ -17,7 +17,7 @@
                 <li data-bs-toggle="collapse" data-bs-target="#cursos" class="collapsed">
                     <a href="#cursos"><i class="far fa-calendar-check fa-lg"></i> Cursos/Eventos <span class="arrow"></span></a>
                 </li>  
-                <ul class="sub-menu collapse" id="service">
+                <ul class="sub-menu collapse" id="cursos">
                     <li><a href="<?php echo base_url().'/'; ?>alta_curso_evento">Alta Cursos/Eventos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta Cursos Ajenos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>cursos_CPLC">Lista Cursos CPLC</a></li>

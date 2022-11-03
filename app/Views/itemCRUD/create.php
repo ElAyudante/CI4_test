@@ -167,7 +167,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col">
-                <select id="provincia" class="form-control bg-transparent" name="provincia" required>
+                <select id="provincia" class="form-select bg-transparent" name="provincia" required>
                   <option disabled selected hidden value="">Selecciona una provincia</option>
                   <?php 
                     foreach ($sel_provincias as $sel_prov => $abreviatura) {
@@ -178,7 +178,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col">
-                <select id="comunidad" class="form-control bg-transparent" name="comunidad" required>
+                <select id="comunidad" class="form-select bg-transparent" name="comunidad" required>
                   <option disabled selected hidden value="">Comunidad autónoma</option>
                   <?php 
                     foreach ($sel_comunidades as $sel_com => $siglas) {
@@ -201,7 +201,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col">
-                <select id="lnacimiento" class="form-control bg-transparent" name="lnacimiento" required>
+                <select id="lnacimiento" class="form-select bg-transparent" name="lnacimiento" required>
                   <option disabled selected hidden value="">Lugar de nacimiento</option>
                   <?php 
                     foreach ($sel_provincias as $sel_prov => $abreviatura) {
