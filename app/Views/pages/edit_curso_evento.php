@@ -6,12 +6,12 @@
 
     <div class="junta">
 
-		<?php echo form_open('itemCRUD/store_curso_evento'); ?>
+		<?php echo form_open('itemCRUD/update_curso_evento'); ?>
 			<div class="row">
-			<h3 style="color: #004987; text-transform: uppercase; font-size:3em">Alta Cursos/Eventos</h3>
+			<h3 style="color: #004987; text-transform: uppercase; font-size:3em">Editar Cursos/Eventos</h3>
             <div class="col-md-3 mt-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso/Evento" autofocus>
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso/Evento" value="<?= $item->Nombre ?>" autofocus>
                 </div>
             </div>
             
@@ -29,135 +29,135 @@
 			<div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="descripcion" placeholder="Descripción del Curso/Evento" autofocus></textarea>
+						<textarea type="text" class="form-control" name="descripcion" placeholder="Descripción del Curso/Evento"  autofocus><?= $item->Descripcion ?></textarea>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="fecha" placeholder="Fecha" autofocus></textarea>
+						<input type="text" class="form-control" name="fecha" placeholder="Fecha" value="<?= $item->Fecha ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="formato" placeholder="Formato" autofocus></textarea>
+						<input type="text" class="form-control" name="formato" placeholder="Formato" value="<?= $item->Formato ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="duracion" placeholder="Duración" autofocus></textarea>
+						<input type="text" class="form-control" name="duracion" placeholder="Duración" value="<?= $item->Duracion ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="horarioInicio" placeholder="Horario Inicio" autofocus></textarea>
+						<input type="text" class="form-control" name="horarioInicio" placeholder="Horario Inicio" value="<?= $item->HorarioInicio ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="horarioFin" placeholder="Horario Fin" autofocus></textarea>
+						<input type="text" class="form-control" name="horarioFin" placeholder="Horario Fin" value="<?= $item->HorarioFin ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="dirigido" placeholder="Dirigido A" autofocus></textarea>
+						<input type="text" class="form-control" name="dirigido" placeholder="Dirigido A" value="<?= $item->Dirigido ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="precioColegiado" placeholder="Precio Colegiados" autofocus></textarea>
+						<input type="text" class="form-control" name="precioColegiado" placeholder="Precio Colegiados" value="<?= $item->PrecioColegiado ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="precioNoColegiado" placeholder="Precio No Colegiado" autofocus></textarea>
+						<input type="text" class="form-control" name="precioNoColegiado" placeholder="Precio No Colegiado" value="<?= $item->PrecioNoColegiado ?>" autofocus></input>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="titulo1" placeholder="Titulo 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="titulo1" placeholder="Titulo 1" autofocus><?= $item2->Titulo1 ?></textarea>
 					</div>
 				</div>
                 <div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="texto1" placeholder="Descripcion 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="texto1" placeholder="Descripcion 1" autofocus><?= $item2->Texto1 ?></textarea>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="titulo2" placeholder="Titulo 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="titulo2" placeholder="Titulo 1" autofocus><?= $item2->Titulo2 ?></textarea>
 					</div>
 				</div>
                 <div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="texto2" placeholder="Descripcion 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="texto2" placeholder="Descripcion 1" autofocus><?= $item2->Texto2 ?></textarea>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="titulo3" placeholder="Titulo 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="titulo3" placeholder="Titulo 1" autofocus><?= $item2->Titulo3 ?></textarea>
 					</div>
 				</div>
                 <div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="texto3" placeholder="Descripcion 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="texto3" placeholder="Descripcion 1" autofocus><?= $item2->Texto3 ?></textarea>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="titulo4" placeholder="Titulo 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="titulo4" placeholder="Titulo 1" autofocus><?= $item2->Titulo4 ?></textarea>
 					</div>
 				</div>
                 <div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="texto4" placeholder="Descripcion 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="texto4" placeholder="Descripcion 1" autofocus><?= $item2->Texto4 ?></textarea>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="titulo5" placeholder="Titulo 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="titulo5" placeholder="Titulo 1" autofocus><?= $item2->Titulo5 ?></textarea>
 					</div>
 				</div>
                 <div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="texto5" placeholder="Descripcion 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="texto5" placeholder="Descripcion 1" autofocus><?= $item2->Texto5 ?></textarea>
 					</div>
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="titulo6" placeholder="Titulo 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="titulo6" placeholder="Titulo 1" autofocus><?= $item2->Titulo6 ?></textarea>
 					</div>
 				</div>
                 <div class="col-md-6 mt-3">
 					<div class="form-group">
-						<textarea type="text" class="form-control" name="texto6" placeholder="Descripcion 1" autofocus></textarea>
+						<textarea type="text" class="form-control" name="texto6" placeholder="Descripcion 1" autofocus><?= $item2->Texto6 ?></textarea>
 					</div>
 				</div>
 			</div>
@@ -165,7 +165,7 @@
 
 			<div class="row">
 				<div class="col-md-3 mb-5">
-					<button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>
+					<button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
 				</div>
 			</div>
 		<?php echo form_close(); ?>

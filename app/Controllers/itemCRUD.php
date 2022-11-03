@@ -80,7 +80,7 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('documentos');
         $crud->setSubject('Documento', 'Documentos');
-        $crud->columns(['Nombre', 'Descripcion', 'Publico', 'Archivo']);
+        $crud->columns(['Nombre', 'descripcion', 'Publico', 'Archivo']);
 
         $crud->unsetBootstrap();
 
@@ -205,7 +205,7 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('cursos_eventos');
         $crud->setSubject('Cursos CPLC', 'Cursos CPLC');
-        $crud->columns(['Nombre', 'Descripcion', 'Fecha', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
+        $crud->columns(['Fecha', 'Nombre', 'Descripcion', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
 
         $crud->unsetBootstrap();
         $crud->unsetAdd();
@@ -521,18 +521,18 @@ class ItemCRUD extends CI_Controller {
             'fecha'  => 'required',
             'formato'  => 'required',
             'duracion'  => 'required',
-            'descripcion1'  => 'max_length[500]',
-            'descripcion2'  => 'max_length[500]',
-            'descripcion3'  => 'max_length[500]',
-            'descripcion4'  => 'max_length[500]',
-            'descripcion5'  => 'max_length[500]',
-            'descripcion6'  => 'max_length[500]',
-            'titulo1' => 'max_lenght[255]',
-            'titulo2' => 'max_lenght[255]',
-            'titulo3' => 'max_lenght[255]',
-            'titulo4' => 'max_lenght[255]',
-            'titulo5' => 'max_lenght[255]',
-            'titulo6' => 'max_lenght[255]'
+            'texto1'  => 'max_length[500]',
+            'texto2'  => 'max_length[500]',
+            'texto3'  => 'max_length[500]',
+            'texto4'  => 'max_length[500]',
+            'texto5'  => 'max_length[500]',
+            'texto6'  => 'max_length[500]',
+            'titulo1' => 'max_length[255]',
+            'titulo2' => 'max_length[255]',
+            'titulo3' => 'max_length[255]',
+            'titulo4' => 'max_length[255]',
+            'titulo5' => 'max_length[255]',
+            'titulo6' => 'max_length[255]'
 
         ])) {
             $model->insert_curso_evento([
@@ -557,16 +557,16 @@ class ItemCRUD extends CI_Controller {
                 'titulo4'  => $this->request->getPost('titulo4'),
                 'titulo5'  => $this->request->getPost('titulo5'),
                 'titulo6'  => $this->request->getPost('titulo6'),
-                'descripcion1'  => $this->request->getPost('descripcion1'),
-                'descripcion2'  => $this->request->getPost('descripcion2'),
-                'descripcion3'  => $this->request->getPost('descripcion3'),
-                'descripcion4'  => $this->request->getPost('descripcion4'),
-                'descripcion5'  => $this->request->getPost('descripcion5'),
-                'descripcion6'  => $this->request->getPost('descripcion6'),
+                'texto1'  => $this->request->getPost('texto1'),
+                'texto2'  => $this->request->getPost('texto2'),
+                'texto3'  => $this->request->getPost('texto3'),
+                'texto4'  => $this->request->getPost('texto4'),
+                'texto5'  => $this->request->getPost('texto5'),
+                'texto6'  => $this->request->getPost('texto6'),
             ]);
         }
 
-        return redirect()->to(base_url('lista_curso_CPLC'));
+        return redirect()->to(base_url('lista_cursos_CPLC'));
 
     }
 
@@ -601,7 +601,7 @@ class ItemCRUD extends CI_Controller {
             'email' => 'required|valid_email',
             'telefono' => 'required|numeric|max_length[9]',
             'asunto'  => 'required',
-            'descripcion'  => 'required'
+            'comentarios'  => 'required'
         ])) {
             $model->insert_reclamacion([
                 'nombre' => $this->request->getPost('nombre'),
@@ -717,6 +717,16 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
    }
 
+   public function edit_curso_evento($id)
+   {
+       $item = $this->itemCRUD->find_curso_evento($id);
+       $item2 = $this->itemCRUD->find_contenido_curso($id);
+
+       echo view('templates/header_admin');
+       echo view('pages/edit_curso_evento',array('item'=>$item, 'item2'=>$item2));
+       echo view('templates/footer');
+   }
+
 
    /**
     * Update Data from this method.
@@ -789,7 +799,7 @@ class ItemCRUD extends CI_Controller {
         $data = array(
 
 			'Nombre' => $this->input->post('nombre'),
-			'Descripcion' => $this->input->post('descripcion'),
+			'descripcion' => $this->input->post('descripcion'),
 			'Publico' => $this->input->post('publico'),
 			'Archivo' => $this->input->post('archivo')
 		);
@@ -877,6 +887,30 @@ class ItemCRUD extends CI_Controller {
         $this->itemCRUD->delete_convenio($id);
 
        return $this->listar_convenios();
+   }
+
+   public function delete_curso_CPLC($id)
+   {
+        $this->itemCRUD->delete_cursos_eventos($id);
+        $this->itemCRUD->delete_contenido_cursos($id);
+
+       return $this->listar_cursos_CPLC();
+   }
+
+   public function delete_curso_ajenos($id)
+   {
+        $this->itemCRUD->delete_cursos_eventos($id);
+        $this->itemCRUD->delete_contenido_cursos($id);
+
+       return $this->listar_cursos_ajenos();
+   }
+
+   public function delete_eventos($id)
+   {
+        $this->itemCRUD->delete_cursos_eventos($id);
+        $this->itemCRUD->delete_contenido_cursos($id);
+
+       return $this->listar_eventos();
    }
 
 

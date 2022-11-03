@@ -112,12 +112,12 @@ class ItemCRUDModel extends CI_Model{
             'Titulo4'  => $this->input->post('titulo4'),
             'Titulo5'  => $this->input->post('titulo5'),
             'Titulo6'  => $this->input->post('titulo6'),
-            'Descripcion1'  => $this->input->post('descripcion1'),
-            'Descripcion2'  => $this->input->post('descripcion2'),
-            'Descripcion3'  => $this->input->post('descripcion3'),
-            'Descripcion4'  => $this->input->post('descripcion4'),
-            'Descripcion5'  => $this->input->post('descripcion5'),
-            'Descripcion6'  => $this->input->post('descripcion6'),
+            'Texto1'  => $this->input->post('texto1'),
+            'Texto2'  => $this->input->post('texto2'),
+            'Texto3'  => $this->input->post('texto3'),
+            'Texto4'  => $this->input->post('texto4'),
+            'Texto5'  => $this->input->post('texto5'),
+            'Texto6'  => $this->input->post('texto6'),
 		);
 
 		return $this->db->insert('contenido_cursos', $data);
@@ -192,6 +192,13 @@ class ItemCRUDModel extends CI_Model{
 	public function find_convenio($id){
 		return $this->db->get_where('convenios', array('id' => $id))->row();
 	}
+	public function find_curso_evento($id){
+		return $this->db->get_where('cursos_eventos', array('id' => $id))->row();
+	}
+	public function find_contenido_curso($id){
+		return $this->db->get_where('contenido_cursos', array('id' => $id))->row();
+	}
+
 
 
 //DELETE
@@ -217,6 +224,15 @@ class ItemCRUDModel extends CI_Model{
     {
         return $this->db->delete('reclamaciones', array('Id' => $id));
     }
+	public function delete_cursos_eventos($id)
+    {
+        return $this->db->delete('cursos_eventos', array('Id' => $id));
+    }
+	public function delete_contenido_cursos($id)
+    {
+        return $this->db->delete('contenido_cursos', array('Id' => $id));
+    }
+
 	
 }
 ?>
