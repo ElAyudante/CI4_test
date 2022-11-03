@@ -244,7 +244,7 @@ class ItemCRUD extends CI_Controller {
 
         $crud->unsetBootstrap();
         $crud->unsetAdd();
-        $crud->where("cursos_eventos.Tipo = 'Evento'");
+        $crud->where("cursos_eventos.Tipo = 'Curso Ajeno'");
 
         $output = $crud->render();
         $titulo = array('titulo' => 'Lista Eventos (Admin)');
@@ -834,6 +834,46 @@ class ItemCRUD extends CI_Controller {
 
         $this->db->update('convenios', $data, 'id ='.$id);
         return redirect()->to(base_url('lista_convenios'));
+    }
+
+    public function update_curso_evento(){
+
+        $id = $_POST['id'];
+
+        $data = array(
+
+			'Nombre' => $this->input->post('nombre'),
+            'Descripcion'  => $this->input->post('descripcion'),
+            'Tipo'  => $this->input->post('tipoCurso'),
+            'Fecha'  => $this->input->post('fecha'),
+            'Formato'  => $this->input->post('formato'),
+            'Duracion'  => $this->input->post('duracion'),
+            'HorarioInicio'  => $this->input->post('horarioInicio'),
+            'HorarioFin'  => $this->input->post('horarioFin'),
+            'Dirigido'  => $this->input->post('dirigido'),
+            'PrecioColegiado'  => $this->input->post('precioColegiado'),
+            'PrecioNoColegiado'  => $this->input->post('precioNoColegiado')
+		);
+
+        $data_contenido = array(
+			'Titulo1'  => $this->input->post('titulo1'),
+            'Titulo2'  => $this->input->post('titulo2'),
+            'Titulo3'  => $this->input->post('titulo3'),
+            'Titulo4'  => $this->input->post('titulo4'),
+            'Titulo5'  => $this->input->post('titulo5'),
+            'Titulo6'  => $this->input->post('titulo6'),
+            'Texto1'  => $this->input->post('texto1'),
+            'Texto2'  => $this->input->post('texto2'),
+            'Texto3'  => $this->input->post('texto3'),
+            'Texto4'  => $this->input->post('texto4'),
+            'Texto5'  => $this->input->post('texto5'),
+            'Texto6'  => $this->input->post('texto6'),
+		);
+
+        $this->db->update('cursos_eventos', $data, 'id ='.$id);
+        $this->db->update('contenido_cursos', $data_contenido, 'id ='.$id);
+
+        return redirect()->to(base_url('lista_cursos_CPLC'));
     }
 
     public function responder_reclamacion(){
