@@ -193,10 +193,10 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     }
 
-   public function create_cursos()
+   public function create_curso_evento()
    {
       echo view('templates/header_admin');
-      echo view('App\Views\pages\alta_evento');
+      echo view('App\Views\pages\alta_curso_evento');
       echo view('templates/footer');   
    }
 
