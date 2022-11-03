@@ -263,7 +263,7 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
-                  <select id ="ejerciente" class="form-control bg-transparent" name="ejerciente">
+                  <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
                     <option disabled selected hidden value="" select>Tipo de colegiado</option>
                     <option value="1">Ejerciente</option>
                     <option value="0">No ejerciente</option>
