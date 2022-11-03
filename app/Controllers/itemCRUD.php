@@ -210,10 +210,10 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     }
 
-   public function create_cursos()
+   public function create_curso_evento()
    {
       echo view('templates/header_admin');
-      echo view('App\Views\pages\alta_evento');
+      echo view('App\Views\pages\alta_curso_evento');
       echo view('templates/footer');   
    }
 
@@ -349,17 +349,6 @@ class ItemCRUD extends CI_Controller {
         echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     }
-
-
-   public function index_sociedades()
-   {
-       $data['data'] = $this->itemCRUD->get_itemCRUDsociedades();
-
-       echo view('templates/header_admin');       
-       echo view('itemCRUD/list_sociedades',$data);
-       echo view('templates/footer');
-   }
-
 
    /**
     * Show Details this method.

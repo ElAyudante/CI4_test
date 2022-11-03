@@ -107,9 +107,8 @@
     $routes->get('itemCRUD/store_documento/edit/(:any)', 'itemCRUD::edit_documento/$1');
     $routes->get('itemCRUD/update_documento/edit/(:any)', 'itemCRUD::edit_documento/$1');
 
-    $routes->get('crear_curso_cpcl', 'itemCRUD::create_cursos');
-    $routes->get('cursos_CPLC', 'itemCRUD::listar_cursos_CPLC');
-    $routes->get('cursos_ajenos', 'itemCRUD::listar_cursos_ajenos');
+    $routes->get('alta_cursos_eventos', 'itemCRUD::create_curso_evento');
+
 
     $routes->get('paypal/success/(:any)', 'paypal::success/$1');
     $routes->get('(:any)', 'pages::view/$1');

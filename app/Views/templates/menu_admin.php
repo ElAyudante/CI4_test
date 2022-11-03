@@ -17,8 +17,8 @@
                 <li data-bs-toggle="collapse" data-bs-target="#cursos" class="collapsed">
                     <a href="#cursos"><i class="far fa-calendar-check fa-lg"></i> Cursos/Eventos <span class="arrow"></span></a>
                 </li>  
-                <ul class="sub-menu collapse" id="cursos">
-                    <li><a href="<?php echo base_url().'/'; ?>crear_curso_cpcl">Alta Cursos CPLC</a></li>
+                <ul class="sub-menu collapse" id="service">
+                    <li><a href="<?php echo base_url().'/'; ?>alta_curso_evento">Alta Cursos/Eventos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta Cursos Ajenos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>cursos_CPLC">Lista Cursos CPLC</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>cursos_ajenos">Lista Cursos Ajenos</a></li>
