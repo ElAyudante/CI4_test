@@ -112,6 +112,7 @@
     $routes->get('lista_cursos_ajenos', 'itemCRUD::listar_cursos_ajenos');
     $routes->get('lista_eventos', 'itemCRUD::listar_eventos');
     $routes->post('itemCRUD/store_curso_evento', 'itemCRUD::store_curso_evento');
+    $routes->post('itemCRUD/update_curso_evento', 'itemCRUD::update_curso_evento');
     $routes->get('lista_cursos_CPLC/delete/(:any)', 'itemCRUD::delete_curso_CPLC/$1');
     $routes->get('lista_cursos_CPLC/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
     $routes->get('lista_cursos_ajenos/delete/(:any)', 'itemCRUD::delete_curso_ajenos/$1');
