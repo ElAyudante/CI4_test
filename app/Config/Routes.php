@@ -108,6 +108,9 @@
     $routes->get('itemCRUD/update_documento/edit/(:any)', 'itemCRUD::edit_documento/$1');
 
     $routes->get('alta_cursos_eventos', 'itemCRUD::create_curso_evento');
+    $routes->get('lista_cursos_CPLC', 'itemCRUD::listar_cursos_CPLC');
+    $routes->get('lista_cursos_ajenos', 'itemCRUD::listar_cursos_ajenos');
+    $routes->get('lista_eventos', 'itemCRUD::listar_eventos');
 
 
     $routes->get('paypal/success/(:any)', 'paypal::success/$1');

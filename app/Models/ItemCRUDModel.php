@@ -86,6 +86,43 @@ class ItemCRUDModel extends CI_Model{
 		return $this->db->insert('ofertas_empleo', $data);
 	}
 
+	public function insert_curso_evento(){
+		$data = array(
+			'Nombre' => $this->input->post('nombre'),
+            'Descripcion'  => $this->input->post('descripcion'),
+            'Tipo'  => $this->input->post('tipoCurso'),
+            'Fecha'  => $this->input->post('fecha'),
+            'Formato'  => $this->input->post('formato'),
+            'Duracion'  => $this->input->post('duracion'),
+            'HorarioInicio'  => $this->input->post('horarioInicio'),
+            'HorarioFin'  => $this->input->post('horarioFin'),
+            'Dirigido'  => $this->input->post('dirigido'),
+            'PrecioColegiado'  => $this->input->post('precioColegiado'),
+            'PrecioNoColegiado'  => $this->input->post('precioNoColegiado')
+		);
+
+		return $this->db->insert('cursos_eventos', $data);
+	}
+
+	public function insert_contenido_curso(){
+		$data = array(
+			'Titulo1'  => $this->input->post('titulo1'),
+            'Titulo2'  => $this->input->post('titulo2'),
+            'Titulo3'  => $this->input->post('titulo3'),
+            'Titulo4'  => $this->input->post('titulo4'),
+            'Titulo5'  => $this->input->post('titulo5'),
+            'Titulo6'  => $this->input->post('titulo6'),
+            'Descripcion1'  => $this->input->post('descripcion1'),
+            'Descripcion2'  => $this->input->post('descripcion2'),
+            'Descripcion3'  => $this->input->post('descripcion3'),
+            'Descripcion4'  => $this->input->post('descripcion4'),
+            'Descripcion5'  => $this->input->post('descripcion5'),
+            'Descripcion6'  => $this->input->post('descripcion6'),
+		);
+
+		return $this->db->insert('contenido_cursos', $data);
+	}
+
 	public function insert_documento(){
 
 		$data = array(

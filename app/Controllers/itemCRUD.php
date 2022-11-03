@@ -203,32 +203,66 @@ class ItemCRUD extends CI_Controller {
    public function listar_cursos_CPLC(){
     
         $crud = new GroceryCrud();
-        $crud->setTable('eventos');
-        $crud->setSubject('Evento', 'Eventos');
-        $crud->columns(['Evento', 'Descripcion', 'ImporteColegiados', 'NoColegiados']);
+        $crud->setTable('cursos_eventos');
+        $crud->setSubject('Cursos CPLC', 'Cursos CPLC');
+        $crud->columns(['Nombre', 'Descripcion', 'Fecha', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
 
         $crud->unsetBootstrap();
+        $crud->unsetAdd();
+        $crud->where("cursos_eventos.Tipo = 'Curso CPLC'");
 
         $output = $crud->render();
+        $titulo = array('titulo' => 'Lista Cursos CPLC (Admin)');
 
+        $data = array_merge((array)$output, $titulo);
+    
+    
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_eventos',(array)$output);
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
    }
 
    public function listar_cursos_ajenos(){
         
         $crud = new GroceryCrud();
-        $crud->setTable('eventos_ajenos');
-        $crud->setSubject('Evento', 'Eventos');
-        $crud->columns(['Evento', 'Descripcion']);
+        $crud->setTable('cursos_eventos');
+        $crud->setSubject('Cursos Ajenos', 'Cursos Ajenos');
+        $crud->columns(['Nombre', 'Descripcion', 'Fecha', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
 
         $crud->unsetBootstrap();
+        $crud->unsetAdd();
+        $crud->where("cursos_eventos.Tipo = 'Curso Ajenos'");
 
         $output = $crud->render();
+        $titulo = array('titulo' => 'Lista Cursos Ajenos (Admin)');
+
+        $data = array_merge((array)$output, $titulo);
+
 
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_eventos_ajenos',(array)$output);
+        echo view('itemCRUD/list', $data);
+        echo view('templates/footer');
+    }
+
+    public function listar_eventos(){
+        
+        $crud = new GroceryCrud();
+        $crud->setTable('cursos_eventos');
+        $crud->setSubject('Eventos', 'Eventos');
+        $crud->columns(['Nombre', 'Descripcion', 'Fecha', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
+
+        $crud->unsetBootstrap();
+        $crud->unsetAdd();
+        $crud->where("cursos_eventos.Tipo = 'Evento'");
+
+        $output = $crud->render();
+        $titulo = array('titulo' => 'Lista Eventos (Admin)');
+
+        $data = array_merge((array)$output, $titulo);
+
+
+        echo view('templates/header_admin'); 
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     }
 
@@ -475,6 +509,65 @@ class ItemCRUD extends CI_Controller {
 
 
         return $this->listar_ofertas();
+    }
+
+    public function store_curso_evento(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'nombre' => 'required|min_length[3]|max_length[255]',
+            'descripcion'  => 'required|min_length[3]|max_length[500]',
+            'fecha'  => 'required',
+            'formato'  => 'required',
+            'duracion'  => 'required',
+            'descripcion1'  => 'max_length[500]',
+            'descripcion2'  => 'max_length[500]',
+            'descripcion3'  => 'max_length[500]',
+            'descripcion4'  => 'max_length[500]',
+            'descripcion5'  => 'max_length[500]',
+            'descripcion6'  => 'max_length[500]',
+            'titulo1' => 'max_lenght[255]',
+            'titulo2' => 'max_lenght[255]',
+            'titulo3' => 'max_lenght[255]',
+            'titulo4' => 'max_lenght[255]',
+            'titulo5' => 'max_lenght[255]',
+            'titulo6' => 'max_lenght[255]'
+
+        ])) {
+            $model->insert_curso_evento([
+                'nombre' => $this->request->getPost('nombre'),
+                'descripcion'  => $this->request->getPost('descripcion'),
+                'tipoCurso'  => $this->request->getPost('tipoCurso'),
+                'fecha'  => $this->request->getPost('fecha'),
+                'formato'  => $this->request->getPost('formato'),
+                'duracion'  => $this->request->getPost('duracion'),
+                'horarioInicio'  => $this->request->getPost('horarioInicio'),
+                'horarioFin'  => $this->request->getPost('horarioFin'),
+                'dirigido'  => $this->request->getPost('dirigido'),
+                'precioColegiado'  => $this->request->getPost('precioColegiado'),
+                'precioNoColegiado'  => $this->request->getPost('precioNoColegiado'),
+                
+            ]);
+
+            $model->insert_contenido_curso([
+                'titulo1'  => $this->request->getPost('titulo1'),
+                'titulo2'  => $this->request->getPost('titulo2'),
+                'titulo3'  => $this->request->getPost('titulo3'),
+                'titulo4'  => $this->request->getPost('titulo4'),
+                'titulo5'  => $this->request->getPost('titulo5'),
+                'titulo6'  => $this->request->getPost('titulo6'),
+                'descripcion1'  => $this->request->getPost('descripcion1'),
+                'descripcion2'  => $this->request->getPost('descripcion2'),
+                'descripcion3'  => $this->request->getPost('descripcion3'),
+                'descripcion4'  => $this->request->getPost('descripcion4'),
+                'descripcion5'  => $this->request->getPost('descripcion5'),
+                'descripcion6'  => $this->request->getPost('descripcion6'),
+            ]);
+        }
+
+        return redirect()->to(base_url('lista_curso_CPLC'));
+
     }
 
     public function store_convenio(){

@@ -6,7 +6,7 @@
 
     <div class="junta">
 
-		<?php echo form_open('itemCRUD/store_documento'); ?>
+		<?php echo form_open('itemCRUD/store_curso_evento'); ?>
 			<div class="row">
 			<h3 style="color: #004987; text-transform: uppercase; font-size:3em">Alta Cursos/Eventos</h3>
             <div class="col-md-3 mt-3">
@@ -18,11 +18,11 @@
             <div class="col-md-4">
                 <div class="form-group custom-control custom-radio text-uppercase pt-3">
                     <label style="color: #004987; font-weight:500;">Tipo:</label>
-                    <input type="radio" class="custom-control-input"value="Curso CPLC" name="cursoCPLC" id="publico1">
+                    <input type="radio" class="custom-control-input"value="Curso CPLC" name="tipoCurso" id="publico1">
                     <label class="custom-control-label" for="publico1"  style="color: #004987; font-weight:500;">Curso CPLC</label>
-                    <input type="radio" class="custom-control-input" value="Curso Ajeno"name="cursoAjeno" id="publico2">
+                    <input type="radio" class="custom-control-input" value="Curso Ajeno"name="tipoCurso" id="publico2">
                     <label class="custom-control-label" for="publico2"  style="color: #004987; font-weight:500;">Curso Ajeno</label>
-                    <input type="radio" class="custom-control-input"value="Evento" name="Evento" id="publico3">
+                    <input type="radio" class="custom-control-input"value="Evento" name="tipoCurso" id="publico3">
                     <label class="custom-control-label" for="publico3"  style="color: #004987; font-weight:500;">Evento</label>
                 </div>
             </div>
