@@ -42,7 +42,7 @@
                 </ul>
 
 
-                <li data-bs-toggle="collapse" data-bs-target="#reclamaciones" class="collapsed">
+                <li>
                     <a href="<?php echo base_url().'/'; ?>lista_reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones <span class="arrow"></span></a>
                 </li>
 
