@@ -229,7 +229,10 @@ class ItemCRUD extends CI_Controller {
         $crud->where("cursos_eventos.Tipo = 'Curso CPLC'");
 
         $output = $crud->render();
+        $titulo = array('titulo' => 'Lista Cursos CPLC (Admin)');
 
+        $data = array_merge((array)$output, $titulo);
+    
         echo view('templates/header_admin'); 
         echo view('App\Views\pages\lista_eventos',(array)$output);
         echo view('templates/footer');
