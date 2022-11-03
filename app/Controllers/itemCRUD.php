@@ -223,13 +223,17 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('eventos');
         $crud->setSubject('Evento', 'Eventos');
         $crud->columns(['Evento', 'Descripcion', 'ImporteColegiados', 'NoColegiados']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
 
         $output = $crud->render();
 
+        $titulo = array('titulo' => 'Listar Cursos CPLC (Admin)');
+        $data = array_merge((array)$output, $titulo);
+
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_eventos',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
    }
 
@@ -239,13 +243,17 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('eventos_ajenos');
         $crud->setSubject('Evento', 'Eventos');
         $crud->columns(['Evento', 'Descripcion']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
 
         $output = $crud->render();
 
+        $titulo = array('titulo' => 'Listar Cursos Externos (Admin)');
+        $data = array_merge((array)$output, $titulo);
+
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_eventos_ajenos',(array)$output);
+        echo view('itemCRUD/list',$data);
         echo view('templates/footer');
     }
 

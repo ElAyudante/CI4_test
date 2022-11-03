@@ -14,7 +14,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD">Lista Colegiados</a></li>
                 </ul>
 
-                <li data-toggle="collapse" data-target="#cursos" class="collapsed">
+                <li data-bs-toggle="collapse" data-bs-target="#cursos" class="collapsed">
                     <a href="#cursos"><i class="far fa-calendar-check fa-lg"></i> Cursos/Eventos <span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="cursos">

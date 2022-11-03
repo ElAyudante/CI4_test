@@ -1,23 +1,23 @@
-<head>
-    <?php 
-        foreach($css_files as $file): ?>
-            <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-    <?php endforeach; ?>
-</head>
+<section class="bg-gray">
+	<div class="container-fluid">
+        <div class="row">
 
-<section class="junta">
-  	<div class="col-lg-2 ps-0">
-        <?php echo view('templates/menu_admin'); ?>
-    </div>
-	
-	<div class="container junta" style="position: relative; top: -850px; left: 50px">
-		
-        <div> <?php echo $output; ?> </div>
-            <?php foreach($js_files as $file): ?>
-                <script src="<?php echo $file; ?>"></script>
-            <?php endforeach; ?>
+            <div class="col-lg-2 ps-0">
+                <?php echo view('templates/menu_admin'); ?>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="container p-5">
+                    <div>
+                        <div> <?php echo $output; ?> </div>
+                        <?php foreach($js_files as $file): ?>
+                            <script src="<?php echo $file; ?>"></script>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
 
+        </div>
 	</div>
-
 </section>
 
