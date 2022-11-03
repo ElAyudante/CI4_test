@@ -216,7 +216,6 @@ class ItemCRUD extends CI_Controller {
 
         $data = array_merge((array)$output, $titulo);
     
-    
         echo view('templates/header_admin'); 
         echo view('itemCRUD/list', $data);
         echo view('templates/footer');
