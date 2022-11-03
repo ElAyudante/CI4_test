@@ -86,6 +86,43 @@ class ItemCRUDModel extends CI_Model{
 		return $this->db->insert('ofertas_empleo', $data);
 	}
 
+	public function insert_curso_evento(){
+		$data = array(
+			'Nombre' => $this->input->post('nombre'),
+            'Descripcion'  => $this->input->post('descripcion'),
+            'Tipo'  => $this->input->post('tipoCurso'),
+            'Fecha'  => $this->input->post('fecha'),
+            'Formato'  => $this->input->post('formato'),
+            'Duracion'  => $this->input->post('duracion'),
+            'HorarioInicio'  => $this->input->post('horarioInicio'),
+            'HorarioFin'  => $this->input->post('horarioFin'),
+            'Dirigido'  => $this->input->post('dirigido'),
+            'PrecioColegiado'  => $this->input->post('precioColegiado'),
+            'PrecioNoColegiado'  => $this->input->post('precioNoColegiado')
+		);
+
+		return $this->db->insert('cursos_eventos', $data);
+	}
+
+	public function insert_contenido_curso(){
+		$data = array(
+			'Titulo1'  => $this->input->post('titulo1'),
+            'Titulo2'  => $this->input->post('titulo2'),
+            'Titulo3'  => $this->input->post('titulo3'),
+            'Titulo4'  => $this->input->post('titulo4'),
+            'Titulo5'  => $this->input->post('titulo5'),
+            'Titulo6'  => $this->input->post('titulo6'),
+            'Texto1'  => $this->input->post('texto1'),
+            'Texto2'  => $this->input->post('texto2'),
+            'Texto3'  => $this->input->post('texto3'),
+            'Texto4'  => $this->input->post('texto4'),
+            'Texto5'  => $this->input->post('texto5'),
+            'Texto6'  => $this->input->post('texto6'),
+		);
+
+		return $this->db->insert('contenido_cursos', $data);
+	}
+
 	public function insert_documento(){
 
 		$data = array(
@@ -155,6 +192,13 @@ class ItemCRUDModel extends CI_Model{
 	public function find_convenio($id){
 		return $this->db->get_where('convenios', array('id' => $id))->row();
 	}
+	public function find_curso_evento($id){
+		return $this->db->get_where('cursos_eventos', array('id' => $id))->row();
+	}
+	public function find_contenido_curso($id){
+		return $this->db->get_where('contenido_cursos', array('id' => $id))->row();
+	}
+
 
 
 //DELETE
@@ -180,6 +224,15 @@ class ItemCRUDModel extends CI_Model{
     {
         return $this->db->delete('reclamaciones', array('Id' => $id));
     }
+	public function delete_cursos_eventos($id)
+    {
+        return $this->db->delete('cursos_eventos', array('Id' => $id));
+    }
+	public function delete_contenido_cursos($id)
+    {
+        return $this->db->delete('contenido_cursos', array('Id' => $id));
+    }
+
 	
 }
 ?>

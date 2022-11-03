@@ -19,9 +19,9 @@
                 </li>  
                 <ul class="sub-menu collapse" id="cursos">
                     <li><a href="<?php echo base_url().'/'; ?>alta_curso_evento">Alta Cursos/Eventos</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>alta_evento_ajeno">Alta Cursos Ajenos</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>cursos_CPLC">Lista Cursos CPLC</a></li>
-                    <li><a href="<?php echo base_url().'/'; ?>cursos_ajenos">Lista Cursos Ajenos</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>lista_cursos_CPLC">Lista Cursos CPLC</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>lista_cursos_ajenos">Lista Cursos Ajenos</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>lista_eventos">Lista Eventos</a></li>
                 </ul>
 
 

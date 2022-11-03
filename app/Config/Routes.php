@@ -108,6 +108,16 @@
     $routes->get('itemCRUD/update_documento/edit/(:any)', 'itemCRUD::edit_documento/$1');
 
     $routes->get('alta_cursos_eventos', 'itemCRUD::create_curso_evento');
+    $routes->get('lista_cursos_CPLC', 'itemCRUD::listar_cursos_CPLC');
+    $routes->get('lista_cursos_ajenos', 'itemCRUD::listar_cursos_ajenos');
+    $routes->get('lista_eventos', 'itemCRUD::listar_eventos');
+    $routes->post('itemCRUD/store_curso_evento', 'itemCRUD::store_curso_evento');
+    $routes->get('lista_cursos_CPLC/delete/(:any)', 'itemCRUD::delete_curso_CPLC/$1');
+    $routes->get('lista_cursos_CPLC/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
+    $routes->get('lista_cursos_ajenos/delete/(:any)', 'itemCRUD::delete_curso_ajenos/$1');
+    $routes->get('lista_cursos_ajenos/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
+    $routes->get('lista_eventos/delete/(:any)', 'itemCRUD::delete_eventos/$1');
+    $routes->get('lista_eventos/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
 
 
     $routes->get('paypal/success/(:any)', 'paypal::success/$1');
