@@ -103,13 +103,14 @@ class ItemCRUDModel extends CI_Model{
 
 		$data = array(
 
-			//'Fecha' => Time::now(),
+			'Fecha' => date('Y-m-d'),
 			'Nombre' => $this->input->post('nombre'),
 			'Apellidos' => $this->input->post('apellidos'),
 			'Email' => $this->input->post('email'),
 			'Telefono' => $this->input->post('telefono'),
 			'Asunto' => $this->input->post('asunto'),
-			'Comentarios' => $this->input->post('comentarios')
+			'Comentarios' => $this->input->post('comentarios'),
+			'Estado' => 'Pendiente'
 		);
 
 		return $this->db->insert('reclamaciones', $data);
@@ -174,6 +175,10 @@ class ItemCRUDModel extends CI_Model{
 	public function delete_convenio($id)
     {
         return $this->db->delete('convenios', array('Id' => $id));
+    }
+	public function delete_reclamacion($id)
+    {
+        return $this->db->delete('reclamaciones', array('Id' => $id));
     }
 	
 }

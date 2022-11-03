@@ -43,7 +43,7 @@
 
 
                 <li data-toggle="collapse" data-target="#reclamaciones" class="collapsed">
-                    <a href="#reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Reclamaciones <span class="arrow"></span></a>
+                    <a href="<?php echo base_url().'/'; ?>lista_reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Reclamaciones <span class="arrow"></span></a>
                 </li>
 
                 <li data-toggle="collapse" data-target="#empleo" class="collapsed">
