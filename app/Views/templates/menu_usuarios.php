@@ -21,9 +21,14 @@
                     <li><a href="<?php echo base_url().'/'; ?>users/facturas">Facturas</a></li>
                 </ul>
 
-                <li data-bs-toggle="" data-target="#reclamaciones" class="">
-                    <a href="<?php echo base_url().'/'; ?>users/reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Mis Reclamaciones</span></a>
+
+                <li data-toggle="collapse" data-target="#reclamaciones" class="collapsed">
+                    <a href="#reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Mis Reclamaciones</span></a>
                 </li>
+                <ul class="sub-menu collapse" id="reclamaciones">
+                    <li><a href="<?php echo base_url('users/nueva_reclamacion') ?>">Nueva Reclamacion</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>users/reclamaciones">Mis reclamaciones</a></li>
+                </ul>
 
                 <li data-bs-toggle="" data-target="#empleo" class="">
                     <a href="<?php echo base_url().'/'; ?>users/empleo"><i class="fas fa-briefcase fa-lg"></i> Ofertas de Empleo</span></a>

@@ -48,6 +48,8 @@
     $routes->get('users/nueva_reclamacion', 'itemCRUD::nueva_reclamacion');
     $routes->post('users/crear_reclamacion', 'itemCRUD::crear_reclamacion');
     $routes->get('users/cambio_modalidad', 'itemCRUD::cambio_modalidad');
+    $routes->post('users/solicitar_cambio_modalidad', 'itemCRUD::tramitar_cambio_modalidad');
+    $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
     $routes->get('lista_reclamaciones/edit/(:any)', 'itemCRUD::edit_reclamacion/$1');
@@ -64,6 +66,8 @@
     $routes->get('cobros_realizados', 'itemCRUD::cobros_realizados');
     $routes->get('edit_cuotas', 'itemCRUD::edit_cuotas');
     $routes->post('itemCRUD/update_cuotas', 'itemCRUD::update_cuotas');
+    $routes->get('users/pagos_pendientes', 'itemCRUD::pagos_pendientes_usuarios');
+    $routes->get('users/facturas', 'itemCRUD::facturas_usuarios');
 
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
