@@ -39,7 +39,7 @@
     $routes->post('users/home', 'itemCRUD::home_login');
     $routes->get('users/logout', 'itemCRUD::logout');
     $routes->get('users/documentos', 'itemCRUD::listar_documentos_usuarios');
-    $routes->get('users/datos', 'itemCRUD::home_login');
+    $routes->get('users/datos', 'itemCRUD::mis_datos');
     $routes->get('users/documentos/(:any)', "itemCRUD::mostrar_documento/$1");
     $routes->get('users/empleo', 'itemCRUD::listar_empleos_usuarios');
     $routes->get('users/empleo/(:any)', "itemCRUD::mostrar_ofertas/$1");
@@ -47,6 +47,7 @@
     $routes->get('users/reclamaciones/(:any)', "itemCRUD::mostrar_reclamaciones/$1");
     $routes->get('users/nueva_reclamacion', 'itemCRUD::nueva_reclamacion');
     $routes->post('users/crear_reclamacion', 'itemCRUD::crear_reclamacion');
+    $routes->get('users/cambio_modalidad', 'itemCRUD::cambio_modalidad');
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
     $routes->get('lista_reclamaciones/edit/(:any)', 'itemCRUD::edit_reclamacion/$1');

@@ -15,9 +15,13 @@
 
 
 
-                <li data-toggle="" data-target="#documentos" class="">
-                    <a href="#documentos"><i class="fas fa-file-alt fa-lg"></i> Mis Facturas</span></a>
+                <li data-toggle="collapse" data-target="#cobros" class="collapsed">
+                    <a href="#cobros"><i class="fas fa-file-alt fa-lg"></i> Mis Pagos <i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                 </li>
+                <ul class="sub-menu collapse" id="cobros">
+                    <li><a href="<?php echo base_url().'/'; ?>users/pagos_pendientes">Pagos Pendientes</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>users/facturas">Facturas</a></li>
+                </ul>
 
 
                 <li data-toggle="" data-target="#reclamaciones" class="">
@@ -28,8 +32,8 @@
                     <a href="<?php echo base_url().'/'; ?>users/empleo"><i class="fas fa-briefcase fa-lg"></i> Ofertas de Empleo</span></a>
                 </li>
 
-                <li data-toggle="" data-target="#empleo" class="">
-                    <a href=""><i class="fas fa-briefcase fa-lg"></i> Cambio de Modalidad / Baja</span></a>
+                <li data-toggle="" data-target="#modalidad" class="">
+                    <a href="<?php echo base_url().'/'; ?>users/cambio_modalidad"><i class="fas fa-briefcase fa-lg"></i> Cambio de Modalidad / Baja</span></a>
                 </li>
 
             </ul>

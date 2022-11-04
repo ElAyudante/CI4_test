@@ -304,7 +304,7 @@ class ItemCRUD extends CI_Controller {
         $crud->setSubject('Oferta', 'Ofertas');
         $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto']);
 
-        $crud->where('Activo = 0');
+        $crud->where('Activo = 1');
         $crud->setActionButton('' ,'', function($row){
             return base_url().'/users/empleo/'.$row;
         });
@@ -407,6 +407,12 @@ class ItemCRUD extends CI_Controller {
    public function payment_advance(){
     echo view('templates/header');
     echo view('pages/payment_platform');
+    echo view('templates/footer');
+   }
+
+   public function mis_datos(){
+    echo view('templates/header_usuarios');
+    echo view('App\Views\pages\usuarios\home');
     echo view('templates/footer');
    }
 
@@ -1027,7 +1033,7 @@ class ItemCRUD extends CI_Controller {
 		if($data){
 			$this->session->set_userdata('user', $data);
 			$this->load->view('templates\header_usuarios');
-            $this->load->view('App\Views\pages\usuarios\home');
+            $this->load->view('App\Views\pages\usuarios\main_usuario');
             $this->load->view('templates\footer');
 		}
 		else{
@@ -1069,7 +1075,7 @@ class ItemCRUD extends CI_Controller {
 		//restrict users to go to home if not logged in
 		if($this->session->userdata('user')){
             $this->load->view('templates\header_usuarios');
-			$this->load->view('App\Views\pages\usuarios\home');
+			$this->load->view('App\Views\pages\usuarios\main_usuario');
             $this->load->view('templates\footer');
 		}
 		else{
