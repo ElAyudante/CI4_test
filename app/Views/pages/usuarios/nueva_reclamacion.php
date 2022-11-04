@@ -42,13 +42,13 @@
               <div class="col-md-3">
                     <div class="form-group">
                         <label for="telefono">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" value="">
+                        <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>">
                     </div>
             </div>
               <div class="col-md-3">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" value="">
+                        <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>">
                     </div>
               </div>
             </div>

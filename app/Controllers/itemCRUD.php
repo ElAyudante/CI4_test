@@ -288,7 +288,7 @@ class ItemCRUD extends CI_Controller {
         $crud->setSubject('Oferta', 'Ofertas');
         $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto']);
 
-        $crud->where('Activo = 0');
+        $crud->where('Activo = 1');
         $crud->setActionButton('' ,'', function($row){
             return base_url().'/users/empleo/'.$row;
         });
