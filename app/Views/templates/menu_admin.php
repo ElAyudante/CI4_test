@@ -1,10 +1,10 @@
 <aside class="sidebar">
     <div class="nav-side-menu">
         <div class="brand">Menú</div>
-        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <i class="fa fa-bars fa-2x toggle-btn" data-bs-toggle="collapse" data-target="#menu-content"></i>
+
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
-                
                 <li  data-bs-toggle="collapse" data-bs-target="#colegiados" class="collapsed active">
                     <a href="#colegiados"><i class="fas fa-users fa-lg me-2"></i> Colegiados <span class="arrow"></span></a></a>
                 </li>
@@ -43,7 +43,7 @@
 
 
                 <li>
-                    <a href="<?php echo base_url().'/'; ?>lista_reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones <span class="arrow"></span></a>
+                    <a href="<?php echo base_url().'/'; ?>lista_reclamaciones"><i class="fas fa-exclamation-triangle fa-lg me-2"></i> Reclamaciones</a>
                 </li>
 
                 <li data-bs-toggle="collapse" data-bs-target="#empleo" class="collapsed">

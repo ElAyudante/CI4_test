@@ -1,21 +1,19 @@
 <aside class="sidebar">
     <div class="nav-side-menu">
         <div class="brand">Menú</div>
-        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <i class="fa fa-bars fa-2x toggle-btn" data-bs-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
-                <li  data-toggle="" data-target="#colegiados" class="">
+                <li  data-bs-toggle="" data-bs-target="#colegiados" class="">
                     <a href="<?php echo base_url().'/'; ?>users/datos"><i class="fas fa-users fa-lg"></i> Mis Datos</i></a>
                 </li>
 
-                <li data-toggle="" data-target="#service" class="">
+                <li data-bs-toggle="" data-target="#service" class="">
                     <a href="<?php echo base_url().'/'; ?>users/documentos"><i class="far fa-calendar-check fa-lg"></i> Mis Documentos</span></a>
                 </li>  
 
-
-
-                <li data-toggle="collapse" data-target="#cobros" class="collapsed">
+                <li data-bs-toggle="collapse" data-target="#cobros" class="collapsed">
                     <a href="#cobros"><i class="fas fa-file-alt fa-lg"></i> Mis Pagos <i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                 </li>
                 <ul class="sub-menu collapse" id="cobros">
@@ -23,16 +21,15 @@
                     <li><a href="<?php echo base_url().'/'; ?>users/facturas">Facturas</a></li>
                 </ul>
 
-
-                <li data-toggle="" data-target="#reclamaciones" class="">
+                <li data-bs-toggle="" data-target="#reclamaciones" class="">
                     <a href="<?php echo base_url().'/'; ?>users/reclamaciones"><i class="fas fa-exclamation-triangle fa-lg"></i> Mis Reclamaciones</span></a>
                 </li>
 
-                <li data-toggle="" data-target="#empleo" class="">
+                <li data-bs-toggle="" data-target="#empleo" class="">
                     <a href="<?php echo base_url().'/'; ?>users/empleo"><i class="fas fa-briefcase fa-lg"></i> Ofertas de Empleo</span></a>
                 </li>
 
-                <li data-toggle="" data-target="#modalidad" class="">
+                <li data-bs-toggle="" data-target="#modalidad" class="">
                     <a href="<?php echo base_url().'/'; ?>users/cambio_modalidad"><i class="fas fa-briefcase fa-lg"></i> Cambio de Modalidad / Baja</span></a>
                 </li>
 

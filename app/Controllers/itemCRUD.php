@@ -82,13 +82,17 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('documentos');
         $crud->setSubject('Documento', 'Documentos');
         $crud->columns(['Nombre', 'descripcion', 'Publico', 'Archivo']);
+        $crud->unsetAdd();
 
         $crud->unsetBootstrap();
 
         $output = $crud->render();
 
+        $titulo = array('titulo' => 'Lista Documentos (Admin)');
+        $data = array_merge((array)$output, $titulo);
+
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_documentos',(array)$output);
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
    }
 
