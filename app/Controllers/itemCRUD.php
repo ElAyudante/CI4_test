@@ -170,6 +170,7 @@ class ItemCRUD extends CI_Controller {
     $crud->setTable('documentos');
     $crud->setSubject('Documento', 'Documentos');
     $crud->columns(['Nombre', 'Archivo']);
+    $crud->unsetAdd();
 
     $crud->where("documentos.Publico = '0'");
 
@@ -183,8 +184,11 @@ class ItemCRUD extends CI_Controller {
 
     $output = $crud->render();
 
+    $titulo = array('titulo' => 'Mis Documentos');
+    $data = array_merge((array)$output, $titulo);
+
     echo view('templates/header_usuarios'); 
-    echo view('App\Views\pages\usuarios\lista_documentos_usuarios',(array)$output);
+    echo view('App\Views\pages\usuarios\lista_documentos_usuarios',$data);
     echo view('templates/footer');
 }
 
