@@ -11,21 +11,6 @@
 <section class="bg-gray">
     <div class="container p-5 w-50 d-flex justify-content-center">
 
-        <?php if (validation_errors()) : ?>
-            <div class="col-md-12">
-                <div class="alert alert-danger" role="alert">
-                    <?= validation_errors() ?>
-                </div>
-            </div>
-        <?php endif; ?>
-
-        <?php if (isset($error)) : ?>
-            <div class="col-md-12">
-                <div class="alert alert-danger" role="alert">
-                    <?= $error ?>
-                </div>
-            </div>
-        <?php endif; ?>
 
         <div class="p-5 w-75">
 
