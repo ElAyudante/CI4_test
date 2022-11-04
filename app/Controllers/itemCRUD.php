@@ -53,12 +53,13 @@ class ItemCRUD extends CI_Controller {
 
 
 	    $output = $crud->render();
-
         $titulo = array('titulo' => 'Lista Colegiados (Admin)');
+
         $data = array_merge((array)$output, $titulo);
-;
+
+
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',$data);
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     
    }
@@ -80,19 +81,14 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('documentos');
         $crud->setSubject('Documento', 'Documentos');
-        $crud->columns(['Nombre', 'Descripcion', 'Publico', 'Archivo']);
-        $crud->unsetAdd();
+        $crud->columns(['Nombre', 'descripcion', 'Publico', 'Archivo']);
 
         $crud->unsetBootstrap();
-        
 
         $output = $crud->render();
 
-        $titulo = array('titulo' => 'Lista Documentos (Admin)');
-        $data = array_merge((array)$output, $titulo);
-        
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',$data);
+        echo view('App\Views\pages\lista_documentos',(array)$output);
         echo view('templates/footer');
    }
 
@@ -136,7 +132,7 @@ class ItemCRUD extends CI_Controller {
     $data = array_merge((array)$output, $titulo);
 
     echo view('templates/header_admin'); 
-    echo view('itemCRUD/list',$data);
+    echo view('itemCRUD/list', $data);
     echo view('templates/footer');
 }
 
@@ -158,7 +154,7 @@ class ItemCRUD extends CI_Controller {
         $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',$data);
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     }
 
@@ -201,8 +197,8 @@ class ItemCRUD extends CI_Controller {
 
 
 	    $output = $crud->render();
-        $titulo = array('titulo' => 'Altas Pendientes (Admin)');
 
+        $titulo = array('titulo' => 'Lista Colegiados Pendiente (Admin)');
         $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_admin'); 
@@ -220,46 +216,65 @@ class ItemCRUD extends CI_Controller {
    public function listar_cursos_CPLC(){
     
         $crud = new GroceryCrud();
-        $crud->setTable('eventos');
-        $crud->setSubject('Evento', 'Eventos');
-        $crud->columns(['Evento', 'Descripcion', 'ImporteColegiados', 'NoColegiados']);
+        $crud->setTable('cursos_eventos');
+        $crud->setSubject('Cursos CPLC', 'Cursos CPLC');
+        $crud->columns(['Fecha', 'Nombre', 'Descripcion', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
 
         $crud->unsetBootstrap();
         $crud->unsetAdd();
         $crud->where("cursos_eventos.Tipo = 'Curso CPLC'");
 
         $output = $crud->render();
-        $titulo = array('titulo' => 'Lista Cursos CPLC (Admin)');
 
+        $titulo = array('titulo' => 'Lista Cursos CPLC (Admin)');
         $data = array_merge((array)$output, $titulo);
     
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_eventos',(array)$output);
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
    }
 
    public function listar_cursos_ajenos(){
         
         $crud = new GroceryCrud();
-        $crud->setTable('eventos_ajenos');
-        $crud->setSubject('Evento', 'Eventos');
-        $crud->columns(['Evento', 'Descripcion']);
+        $crud->setTable('cursos_eventos');
+        $crud->setSubject('Cursos Ajenos', 'Cursos Ajenos');
+        $crud->columns(['Nombre', 'Descripcion', 'Fecha', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
 
         $crud->unsetBootstrap();
         $crud->unsetAdd();
         $crud->where("cursos_eventos.Tipo = 'Curso Ajeno'");
 
         $output = $crud->render();
-        $titulo = array('titulo' => 'Lista Eventos (Admin)');
+        $titulo = array('titulo' => 'Lista Cursos Ajenos (Admin)');
 
         $data = array_merge((array)$output, $titulo);
 
-
-        $titulo = array('titulo' => 'Listar Cursos Externos (Admin)');
-        $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_admin'); 
-        echo view('App\Views\pages\lista_eventos_ajenos',(array)$output);
+        echo view('itemCRUD/list', $data);
+        echo view('templates/footer');
+    }
+
+    public function listar_eventos(){
+        
+        $crud = new GroceryCrud();
+        $crud->setTable('cursos_eventos');
+        $crud->setSubject('Eventos', 'Eventos');
+        $crud->columns(['Nombre', 'Descripcion', 'Fecha', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
+
+        $crud->unsetBootstrap();
+        $crud->unsetAdd();
+        $crud->where("cursos_eventos.Tipo = 'Evento'");
+
+        $output = $crud->render();
+
+        $titulo = array('titulo' => 'Lista Eventos (Admin)');
+        $data = array_merge((array)$output, $titulo);
+
+
+        echo view('templates/header_admin'); 
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     }
 
@@ -270,7 +285,6 @@ class ItemCRUD extends CI_Controller {
         $crud->setSubject('Oferta', 'Ofertas');
         $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto', 'Activo']);
         $crud->unsetAdd();
-
         $crud->unsetBootstrap();
 
         $output = $crud->render();
@@ -279,7 +293,7 @@ class ItemCRUD extends CI_Controller {
         $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_admin'); 
-        echo view('itemCRUD/list',$data);
+        echo view('itemCRUD/list', $data);
         echo view('templates/footer');
     }
 

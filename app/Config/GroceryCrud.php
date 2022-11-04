@@ -19,7 +19,7 @@ class GroceryCrud
      * The default per page when a user firstly see a list page
      * @var int
      */
-    public $default_per_page = 10;
+    public $default_per_page = 25;
 
     /**
      * You can choose between 'ckeditor','tinymce' or 'markitup'

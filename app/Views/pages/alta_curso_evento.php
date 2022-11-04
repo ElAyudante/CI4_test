@@ -36,8 +36,8 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 						<div class="col">
 							<select id="formato" class="form-select bg-transparent" name="formato" required>
                   				<option disabled selected hidden value="">Selecciona un formato</option>
-								<option value="0">Online</option>
-								<option value="1">Presencial</option>
+								<option value="Online">Online</option>
+								<option value="Presencial">Presencial</option>
 							</select>
 						</div>
 
@@ -81,15 +81,15 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                             <div class="col text-uppercase d-flex align-items-center">
                                 <label class="fw-bold me-3">Tipo:</label>
                                 <div class="form-check form-check-inline me-2 mb-0">
-                                    <input class="form-check-input" type="radio" name="eventos" id="eventos1" value="1" checked>
+                                    <input class="form-check-input" type="radio" name="tipoCurso" id="eventos1" value="Curso CPLC" checked>
                                     <label class="form-check-label" for="eventos1">Curso CPLC</label>
                                 </div>
                                 <div class="form-check form-check-inline me-2 mb-0">
-                                    <input class="form-check-input" type="radio" name="eventos" id="eventos2" value="0">
+                                    <input class="form-check-input" type="radio" name="tipoCurso" id="eventos2" value="Curso Ajeno">
                                     <label class="form-check-label" for="eventos2">Curso Ajeno</label>
                                 </div>
 								<div class="form-check form-check-inline me-2 mb-0">
-                                    <input class="form-check-input" type="radio" name="eventos" id="eventos2" value="0">
+                                    <input class="form-check-input" type="radio" name="tipoCurso" id="eventos2" value="Evento">
                                     <label class="form-check-label" for="eventos2">Evento</label>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 								<div class="col">
 									<div class="form-group">
-										<textarea type="text" class="form-control" name="descripcion1" placeholder="Descripcion 1" autofocus></textarea>
+										<textarea type="text" class="form-control" name="texto1" placeholder="Descripcion 1" autofocus></textarea>
 									</div>
 								</div>
 
@@ -119,7 +119,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 								<div class="col">
 									<div class="form-group">
-										<textarea type="text" class="form-control" name="descripcion2" placeholder="Descripcion 2" autofocus></textarea>
+										<textarea type="text" class="form-control" name="texto2" placeholder="Descripcion 2" autofocus></textarea>
 									</div>
 								</div>
 
@@ -131,7 +131,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 								<div class="col">
 									<div class="form-group">
-										<textarea type="text" class="form-control" name="descripcion3" placeholder="Descripcion 3" autofocus></textarea>
+										<textarea type="text" class="form-control" name="texto3" placeholder="Descripcion 3" autofocus></textarea>
 									</div>
 								</div>
 
@@ -143,7 +143,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 								<div class="col">
 									<div class="form-group">
-										<textarea type="text" class="form-control" name="descripcion4" placeholder="Descripcion 4" autofocus></textarea>
+										<textarea type="text" class="form-control" name="texto4" placeholder="Descripcion 4" autofocus></textarea>
 									</div>
 								</div>
 
@@ -155,7 +155,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 								<div class="col">
 									<div class="form-group">
-										<textarea type="text" class="form-control" name="descripcion5" placeholder="Descripcion 5" autofocus></textarea>
+										<textarea type="text" class="form-control" name="texto5" placeholder="Descripcion 5" autofocus></textarea>
 									</div>
 								</div>
 
@@ -167,7 +167,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 								<div class="col">
 									<div class="form-group">
-										<textarea type="text" class="form-control" name="descripcion6" placeholder="Descripcion 6" autofocus></textarea>
+										<textarea type="text" class="form-control" name="texto6" placeholder="Descripcion 6" autofocus></textarea>
 									</div>
 								</div>
 							</div>
