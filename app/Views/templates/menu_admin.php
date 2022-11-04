@@ -6,10 +6,10 @@
             <ul id="menu-content" class="menu-content collapse out">
                 
                 <li  data-bs-toggle="collapse" data-bs-target="#colegiados" class="collapsed active">
-                    <a href="#colegiados"><i class="fas fa-users fa-lg me-2"></i> Colegiados<i class="arrow fas-fa-chevron-right"></i></a>
+                    <a href="#colegiados"><i class="fas fa-users fa-lg me-2"></i> Colegiados <span class="arrow"></span></a></a>
                 </li>
                 <ul class="sub-menu collapse" id="colegiados">
-                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create"><i class="fa-solid fa-graduation-cap"></i> Alta Colegiados</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create">Alta Colegiados</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD/pending">Altas Pendientes</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD">Lista Colegiados</a></li>
                 </ul>
@@ -63,9 +63,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>edit_cuotas">Importe Cuotas</a></li>
                 </ul>
 
-                <li data-bs-toggle="collapse" data-bs-target="#salir" class="collapsed">
-                    <a href="<?= base_url('users/logout/logout_success') ?>"><i class="fas fa-sign-out-alt fa-lg me-2"></i> Salir <span class="arrow"></span></a>
-     </ul>
+            </ul>
         </div>
     </div>
 </aside>
