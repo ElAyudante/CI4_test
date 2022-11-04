@@ -473,6 +473,12 @@ class ItemCRUD extends CI_Controller {
 
     }
 
+    public function cambio_modalidad(){
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\cambio_modalidad');
+        echo view('templates/footer');
+    }
+
     public function store_documento(){
 
         $model = model(ItemCRUDModel::class);

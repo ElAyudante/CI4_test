@@ -9,14 +9,6 @@
   	<div class="col-lg-2 ps-0">
         <?php echo view('templates/menu_usuarios'); ?>
     </div>
-
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-right">
-                <a class="btn btn-success" href="<?php echo base_url('users/nueva_reclamacion') ?>"> Nueva Reclamación</a>
-            </div>
-        </div>
-    </div>
 	
 	<div class="container junta" style="position: relative; top: -850px; left: 50px">
 		
