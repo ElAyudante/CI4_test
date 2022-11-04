@@ -198,6 +198,9 @@ class ItemCRUDModel extends CI_Model{
 	public function find_contenido_curso($id){
 		return $this->db->get_where('contenido_cursos', array('id' => $id))->row();
 	}
+	public function find_pagos_usuario($id){
+		return $this->db->get_where('pagos_pendientes', array('NumColegiado' => $id))->result_array();
+	}
 
 
 
