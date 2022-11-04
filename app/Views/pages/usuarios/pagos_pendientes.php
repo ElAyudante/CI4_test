@@ -1,7 +1,7 @@
 <?php
     $value= $_SESSION['user'];
 ?>
-<section class="bg-gray">
+<section class="bg-gray" style="height: 60vh">
   	<div class="container-fluid row">
 
 	  	<div class="col-lg-2 ps-0">

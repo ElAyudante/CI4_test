@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar" style="min-height: 60vh">
     <div class="nav-side-menu">
         <div class="brand">Menú</div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
