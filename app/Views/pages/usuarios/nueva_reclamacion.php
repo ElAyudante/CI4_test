@@ -22,25 +22,25 @@
               <div class="col">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus>
+                        <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus disabled>
                     </div>
               </div>
               <div class="col">
                   <div class="form-group">
                       <label for="apellidos">Apellidos</label>
-                      <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>">
+                      <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>" disabled>
                   </div>
               </div>
               <div class="col">
                   <div class="form-group">
                       <label for="telefono">Telefono</label>
-                      <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>">
+                      <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>" disabled>
                   </div>
               </div>
               <div class="col">
                   <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>">
+                      <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>" disabled>
                   </div>
               </div>
 
@@ -54,7 +54,7 @@
               <div class="col-lg-12">
                     <div class="form-group">
                         <label for="comentarios">Descripción</label>
-                        <input type="text" class="form-control bg-transparent" name="comentarios" value="" style="height:100px">
+                        <textarea type="text" class="form-control bg-transparent" name="comentarios" value="" style="height:100px"></textarea>
                     </div>
                 </div>
 

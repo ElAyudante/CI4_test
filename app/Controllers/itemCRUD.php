@@ -945,6 +945,18 @@ class ItemCRUD extends CI_Controller {
         return redirect()->to(base_url('lista_reclamaciones'));
     }
 
+    public function responder_reclamacion_usuario(){
+        $id = $_POST['Id'];
+
+        $data = array(
+            'Comentarios' =>$this->input->post('comentarios'),
+            'Estado' => 'Pendiente',
+        );
+
+        $this->db->update('reclamaciones', $data, 'Id ='.$id);
+        return redirect()->to(base_url('users/reclamaciones'));
+    }
+
    /**
     * Delete Data from this method.
     *

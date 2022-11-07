@@ -56,6 +56,7 @@
     $routes->get('lista_reclamaciones/edit/(:any)', 'itemCRUD::edit_reclamacion/$1');
     $routes->get('lista_reclamaciones/delete/(:any)', 'itemCRUD::delete_reclamacion/$1');
     $routes->post('itemCRUD/responder_reclamacion', 'itemCRUD::responder_reclamacion');
+    $routes->post('itemCRUD/responder_reclamacion_usuario', 'itemCRUD::responder_reclamacion_usuario');
 
 
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
