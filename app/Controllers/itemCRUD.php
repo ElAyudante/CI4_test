@@ -322,6 +322,7 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('reclamaciones');
         $crud->setSubject('Mis Reclamaciones', 'Mis Reclamaciones');
         $crud->columns(['Fecha', 'Asunto', 'Comentarios','MiRespuesta']);
+        $crud->unsetAdd();
 
         $value = $this->session->userdata('user');
         $email = $value['Email'];
@@ -335,9 +336,11 @@ class ItemCRUD extends CI_Controller {
         $crud->unsetEdit();
 
         $output = $crud->render();
+        $titulo = array('titulo' => 'Mis Reclamaciones (USUARIO)');
+        $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_usuarios'); 
-        echo view('App\Views\pages\usuarios\reclamaciones',(array)$output);
+        echo view('App\Views\pages\usuarios\lista_documentos_usuarios',$data);
         echo view('templates/footer');
     }
 

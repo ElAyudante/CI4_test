@@ -14,10 +14,12 @@
             </div>
         </div>
     </div>
-    <footer class="section bg-footer">
-        <div class="container text-center text-md-center mt-3">
+
+    <footer class="section bg-footer py-5">
+        <div class="container text-center">
             <div class="row row-cols-lg-4 g-5">
-                <div class="col mx-auto mb-4">
+
+                <div class="col">
                     <div class="mb-3">
                         <img class="img-fluid" id="imagenfooter" src="<?php echo base_url(),'/'; ?>assets/images/png/CPLC_IMAGOTIPO_VERT_BALNCO.png"></img>
                     </div>
@@ -25,7 +27,8 @@
                         <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid" id="imagensantander"src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
                     </div>
                 </div>
-                <div class="col mx-auto mb-4">
+
+                <div class="col">
                     <h6 class="fw-bold footer-heading text-uppercase text-white">Recursos</h6>
                     <ul class="list-unstyled footer-link mt-4">
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>home" target="_blank">Inicio</a></li>
@@ -34,7 +37,8 @@
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>forum/index" target="_blank">Foro</a></li>
                     </ul>
                 </div>
-                <div class="col mx-auto mb-4">
+                
+                <div class="col">
                     <h6 class="fw-bold footer-heading text-uppercase text-white">Ayuda</h6>
                     <ul class="list-unstyled footer-link mt-4">
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
@@ -44,7 +48,7 @@
                     </ul>
                 </div>
 
-                <div class="col mx-auto mb-4">
+                <div class="col">
                     <h6 class="fw-bold footer-heading text-uppercase text-white">Contáctanos</h6>
                     <ul class="list-unstyled footer-link mt-4">
                         <li><p class="contact-info mt-4 text-white">Nuestro número de teléfono:</p></li>
@@ -60,9 +64,10 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
-        <div class="text-center mt-5" id="pie">
+        <div class="text-center" id="pie">
             <p class="footer-alt mb-0 f-14 mt-5" id="copyimagen">&copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-light" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
         </div>
     </footer>

@@ -1,6 +1,7 @@
 <?php
     $value= $_SESSION['user'];
 ?>
+
 <section class="bg-gray">
   	<div class="container-fluid row">
 
@@ -12,7 +13,7 @@
         <?php foreach ($data as $oferta){
         ?>
 			<div class="contrainer p-5 col-lg-3" >
-				<h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0 text-center"><img style="width: 60px;" class="img-fluid">Oferta</h3>
+				<h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0 text-center">Oferta</h3>
 
                 <div class="d-flex flex-column justify-content-center form-border p-3 bg-white mb-0">
                     <p><b>Empresa: </b><?= $oferta['Empresa']?> </p>
