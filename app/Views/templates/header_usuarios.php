@@ -28,7 +28,7 @@
             <div class="container">
                 <!-- LOGOTIPO DEL NAVEGADOR -->
                 <a class="navbar-brand" href="<?php echo base_url(),'/'; ?>home">
-                    <img src="<?php echo base_url(),'/'; ?>assets/images/png/logo_header.png" style="height: 50;"></img>
+                    <img src="<?php echo base_url(),'/'; ?>assets/images/png/logo_header.png" style="height: 60;"></img>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                 <!-- MENÚ -->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown me-4">
                             <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>colegio" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EL COLEGIO</a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>juntagob">JUNTA DE GOBIERNO</a>
@@ -45,7 +45,7 @@
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">NOTICIAS</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown me-4">
                             <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>logopedas" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGOPEDAS</a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>acuerdos">ACUERDOS CON EMPRESAS</a>
@@ -54,7 +54,7 @@
                                 <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">VIDEONOTICIAS</a>-->
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown me-4">
                             <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>mantenimiento" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FORMACIÓN</a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>formacion">CURSOS CPLC</a>
