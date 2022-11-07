@@ -16,7 +16,9 @@
                                                 <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/images/png/curso-cplc-arasaac.jpg">
                                             </div>
                                         </div>
-                                        <div class="overlay-curso"></div>
+                                        <div class="overlay-curso">
+                                            
+                                        </div>
                                         <div class="content-curso">
                                             <h2 class="text-uppercase fw-bold cgray mt-0"><?php echo $item->Empresa; ?></h2>
                                         </div>
@@ -33,6 +35,7 @@
                                     <li><?php echo $item->Condiciones; ?></li>
                                     <li><?php echo $item->Contacto; ?></li>
                                 </ul>
+                                <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white" href="">Contactar</a></button>
                             </div>
                         </div>
                     </div>  

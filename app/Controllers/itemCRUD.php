@@ -123,8 +123,7 @@ class ItemCRUD extends CI_Controller {
     $crud = new GroceryCrud();
     $crud->setTable('pagos_pendientes');
     $crud->setSubject('Pagos Pendientes', 'Pagos');
-    $crud->columns(['Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
-    $crud->unsetAdd();
+    $crud->columns(['NumColegiado', 'Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
 
     $crud->unsetBootstrap();
     $crud->unsetEdit();
@@ -170,6 +169,7 @@ class ItemCRUD extends CI_Controller {
     $crud->setTable('documentos');
     $crud->setSubject('Documento', 'Documentos');
     $crud->columns(['Nombre', 'Archivo']);
+    $crud->unsetAdd();
 
     $crud->where("documentos.Publico = '0'");
 
@@ -183,8 +183,11 @@ class ItemCRUD extends CI_Controller {
 
     $output = $crud->render();
 
+    $titulo = array('titulo' => 'Mis Documentos');
+    $data = array_merge((array)$output, $titulo);
+
     echo view('templates/header_usuarios'); 
-    echo view('App\Views\pages\usuarios\lista_documentos_usuarios',(array)$output);
+    echo view('App\Views\pages\usuarios\lista_documentos_usuarios',$data);
     echo view('templates/footer');
 }
 
@@ -303,24 +306,11 @@ class ItemCRUD extends CI_Controller {
 
     public function listar_empleos_usuarios(){
 
-        $crud = new GroceryCrud();
-        $crud->setTable('ofertas_empleo');
-        $crud->setSubject('Oferta', 'Ofertas');
-        $crud->columns(['Empresa', 'Lugar', 'Ofrece', 'Condiciones' , 'Contacto']);
-
-        $crud->where('Activo = 1');
-        $crud->setActionButton('' ,'', function($row){
-            return base_url().'/users/empleo/'.$row;
-        });
-
-        $crud->unsetBootstrap();
-        $crud->unsetDelete();
-        $crud->unsetEdit();
-
-        $output = $crud->render();
+        $value = $_SESSION['user'];
+        $data = $this->db->get_where('ofertas_empleo', 'Activo = 1')->result_array();
 
         echo view('templates/header_usuarios'); 
-        echo view('App\Views\pages\usuarios\lista_ofertas_usuarios',(array)$output);
+        echo view('App\Views\pages\usuarios\lista_ofertas_usuarios',array('data'=>$data));
         echo view('templates/footer');
     }
 
@@ -374,6 +364,15 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     }
 
+    public function pagos_pendientes_usuarios(){
+
+        $value = $_SESSION['user'];
+        $data = $this->itemCRUD->find_pagos_usuario($value['Colegiado']);
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\pagos_pendientes', array('data' => $data));
+        echo view('templates/footer');
+    }
    /**
     * Show Details this method.
     *
@@ -491,6 +490,12 @@ class ItemCRUD extends CI_Controller {
         echo view('pages/alta_oferta_prueba');
         echo view('templates/footer');
 
+    }
+
+    public function cambio_modalidad(){
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\cambio_modalidad');
+        echo view('templates/footer');
     }
 
     public function store_documento(){
@@ -788,6 +793,7 @@ class ItemCRUD extends CI_Controller {
         $this->db->update('colegiados', $data, 'ID ='.$id);
 
         $data_pago = array(
+            'NumColegiado'=>$this->input-post('colegiado'),
             'Nombre'=>$this->input->post('nombre'),
             'Apellidos'=>$this->input->post('apellidos'),
             'Transaccion'=>'Cuota Alta',
