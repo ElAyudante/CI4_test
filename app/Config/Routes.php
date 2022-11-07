@@ -50,6 +50,7 @@
     $routes->get('users/cambio_modalidad', 'itemCRUD::cambio_modalidad');
     $routes->post('users/solicitar_cambio_modalidad', 'itemCRUD::tramitar_cambio_modalidad');
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
+    
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
     $routes->get('lista_reclamaciones/edit/(:any)', 'itemCRUD::edit_reclamacion/$1');
@@ -61,14 +62,16 @@
     $routes->post('users/admin/login', 'itemCRUD::admin_login');
     $routes->get('users/admin/logout', 'itemCRUD::admin_logout');
 
-    $routes->post('itemCRUD/payment_advance', 'itemCRUD::payment_advance');
+ 
     $routes->get('cobros_pendientes', 'itemCRUD::cobros_pendientes');
     $routes->get('cobros_realizados', 'itemCRUD::cobros_realizados');
     $routes->get('edit_cuotas', 'itemCRUD::edit_cuotas');
     $routes->post('itemCRUD/update_cuotas', 'itemCRUD::update_cuotas');
     $routes->get('users/pagos_pendientes', 'itemCRUD::pagos_pendientes_usuarios');
     $routes->get('users/facturas', 'itemCRUD::facturas_usuarios');
-
+    $routes->post('users/payment_platform/(:any)', 'itemCRUD::tramitar_pago');
+    $routes->get('users/tramitar_pago_ok/(:any)', 'itemCRUD::tramitar_pago_ok/$1');
+    $routes->get('users/pagos_realizados', 'itemCRUD::pagos_realizados_usuarios');
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');

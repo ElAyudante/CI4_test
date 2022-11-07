@@ -127,6 +127,7 @@ class ItemCRUD extends CI_Controller {
 
     $crud->unsetBootstrap();
     $crud->unsetEdit();
+    $crud->unsetAdd();
     $crud->where("pagos_pendientes.Estado = 'Pendiente'");
 
     $output = $crud->render();
@@ -144,12 +145,13 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('pagos_pendientes');
         $crud->setSubject('Pagos Pendientes', 'Pagos');
-        $crud->columns(['Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
+        $crud->columns(['Fecha', 'Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
         $crud->unsetAdd();
 
         $crud->unsetBootstrap();
         $crud->unsetEdit();
-        $crud->where("pagos_pendientes.Estado = 'Realizado'");
+        $crud->unsetDelete();
+        $crud->where("pagos_pendientes.Estado = 'Pagado'");
 
         $output = $crud->render();
 
@@ -407,10 +409,29 @@ class ItemCRUD extends CI_Controller {
     echo view('templates/footer'); 
    }
 
-   public function payment_advance(){
-    echo view('templates/header');
+   public function tramitar_pago(){
+    echo view('templates/header_usuarios');
     echo view('pages/payment_platform');
     echo view('templates/footer');
+   }
+
+   public function tramitar_pago_ok($id){
+
+    $data['Id'] = $id;
+    $data['Controller'] = $this;
+
+    echo view('templates/header_usuarios');
+    echo view('App\Views\pages\usuarios\tramitar_pago_ok',$data);
+    echo view('templates/footer');
+   }
+
+   public function verificar_pago($id){
+
+    $data = array(
+        'Fecha' => date('Y-m-d'),
+        'Estado' => 'Pagado'
+    );
+    $this->db->update('pagos_pendientes', $data, 'Id ='.$id);
    }
 
    public function mis_datos(){
