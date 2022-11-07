@@ -37,7 +37,7 @@
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>forum/index" target="_blank">Foro</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col">
                     <h6 class="fw-bold footer-heading text-uppercase text-white">Ayuda</h6>
                     <ul class="list-unstyled footer-link mt-4">
@@ -65,10 +65,11 @@
                     </div>
                 </div>
 
+                <div class="col-lg-12" id="pie">
+                    <p class="footer-alt mb-0 f-14 mt-5 text-end" id="copyimagen">&copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-white text-decoration-none" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
+                </div>
+
             </div>
-        </div>
-        <div class="text-center" id="pie">
-            <p class="footer-alt mb-0 f-14 mt-5" id="copyimagen">&copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-light" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
         </div>
     </footer>
 
