@@ -66,6 +66,10 @@ input::-webkit-inner-spin-button {
 .cards-curso{
   margin-top: -8em !important;
 }
+.cards-users-empleo{
+  border: 5px solid #004987 !important;
+  border-radius: 5px
+}
 .fs-7{
   font-size: 3rem !important;
 }

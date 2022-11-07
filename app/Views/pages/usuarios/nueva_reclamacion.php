@@ -1,8 +1,9 @@
 <?php
     $value = $_SESSION['user'];
+    $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
 ?>
 
-<section class="junta">
+<section class="bg-gray">
 
   <div class="container-fluid">
     <div class="row">
@@ -13,66 +14,55 @@
 
       <div class="col-lg-10">
         <div class="container p-5">
-
-          <?php echo form_open('users/crear_reclamacion'); ?>
+          <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Nueva Reclamación</h3>
+          <?php echo form_open('users/crear_reclamacion',$form_att); ?>
             <div class="row">
-              <?php
-                /*if ($this->session->flashdata('errors')){
-                  echo '<div class="alert alert-danger">';
-                  echo $this->session->flashdata('errors');
-                  echo "</div>";
-                }*/
-              ?>
-
-            <h3 style="color: #004987; text-transform: uppercase; font-size:3em">Nueva Reclamación</h3>
-
-            <div class="row">
-              <div class="col-md-3">
+            
+            <div class="row row-cols-4">
+              <div class="col">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus>
                     </div>
               </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="apellidos">Apellidos</label>
-                        <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>">
-                    </div>
+              <div class="col">
+                  <div class="form-group">
+                      <label for="apellidos">Apellidos</label>
+                      <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>">
+                  </div>
               </div>
-              <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="telefono">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>">
-                    </div>
-            </div>
-              <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>">
-                    </div>
+              <div class="col">
+                  <div class="form-group">
+                      <label for="telefono">Telefono</label>
+                      <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>">
+                  </div>
               </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
+              <div class="col">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>">
+                  </div>
+              </div>
+
+              <div class="col-lg-12">
                     <div class="form-group">
                         <label for="asunto">Asunto</label>
                         <input type="text" class="form-control bg-transparent" name="asunto" value="">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
+
+              <div class="col-lg-12">
                     <div class="form-group">
                         <label for="comentarios">Descripción</label>
                         <input type="text" class="form-control bg-transparent" name="comentarios" value="" style="height:100px">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Crear</button>
+
+              <div class="col">
+                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase mt-3">Crear</button>
               </div>
             </div>
+
           <?php echo form_close(); ?>
         </div>
       </div>
