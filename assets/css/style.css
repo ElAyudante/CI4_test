@@ -47,6 +47,11 @@
   border-color: #d3d3d3 !important;
 }
 /*==========================================*/
+.doc_user{
+  display: grid;
+  grid-template-rows: 2fr 3fr 1fr;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -65,13 +70,6 @@ input::-webkit-inner-spin-button {
 }
 .panel-heading{
   background-color: #004987 !important;
-}
-
-.documento-truncate{
-  width:250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .cards-curso{
   margin-top: -8em !important;

@@ -16,29 +16,33 @@
                     $name = $documento['Archivo'];
                 ?>
                     <div class="col">
-                                    <div class="card bg-transparent w-auto cards-users-empleo">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 d-flex justify-content-center">
-                                                <a href="" target="_blank" class="text-decoration-none">
-                                                    <img  class="img-fluid p-3 bg-white" src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png">
-                                                </a>
-                                            </div>
-                                            <div class="col-lg-8 d-flex align-items-center bg-white">
-                                                <div class="card-body">
-                                                    <h5 class="curso-tittle cblue text-uppercase mb-4 documento-truncate"><?= $documento['Nombre']?> </h5>
-                                                    <ul class="objetivos">
-                                                        <p><?= $documento['Descripcion']?> </p>
-                                                    </ul>
-                                                    <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/users/files/download/<?php echo $name ?>">Descargar</a></button>
-                                                </div>
-                                            </div>
+                        <div class="card bg-transparent w-auto cards-users-empleo">
+                            <div class="row g-0">
+                                <div class="col-lg-4 d-flex justify-content-center">
+                                    <a href="" target="_blank" class="text-decoration-none">
+                                        <img  class="img-fluid p-3 bg-white" src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png">
+                                    </a>
+                                </div>
+                                <div class="col-lg-8 bg-white">
+                                    <div class="card-body doc_user h-100">
+                                        <h5 class="fw-bold cblue text-uppercase"><?= $documento['Nombre']?> </h5>
+                                        <div>
+                                            <ul class="objetivos p-0">
+                                                <p><?= $documento['Descripcion']?> </p>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/users/files/download/<?php echo $name ?>">Descargar</a></button>
                                         </div>
                                     </div>
                                 </div>
-                    <?php }; ?>
-                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                <?php }; ?>
             </div>
-        
+        </div>
 
 	</div>
 </section>
