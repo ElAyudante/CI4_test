@@ -146,12 +146,16 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('pagos_pendientes');
         $crud->setSubject('Pagos Pendientes', 'Pagos');
-        $crud->columns(['Fecha', 'Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
+        $crud->columns(['Fecha', 'Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado', 'Factura']);
         
-        $crud->setActionButton('Factura' ,'', function($row){
+        $crud->setActionButton('Generar Factura' ,'', function($row){
             return base_url().'/admin/factura/'.$row;
         });
-
+        
+        $crud->callbackColumn('Factura', function($value){
+            return "<a href='" . base_url('files/download/'.$value) ."'>$value</a>";
+        });
+        
         $crud->unsetAdd();
         $crud->unsetBootstrap();
         $crud->unsetEdit();
@@ -306,29 +310,11 @@ class ItemCRUD extends CI_Controller {
 
     public function listar_reclamaciones(){
 
-        $crud = new GroceryCrud();
-        $crud->setTable('reclamaciones');
-        $crud->setSubject('Mis Reclamaciones', 'Mis Reclamaciones');
-        $crud->columns(['Fecha', 'Asunto', 'Comentarios','MiRespuesta']);
-        $crud->unsetAdd();
-
-        $value = $this->session->userdata('user');
-        $email = $value['Email'];
-        $crud->where("reclamaciones.Email='{$email}'");
-        $crud->setActionButton('' ,'', function($row){
-            return base_url().'/users/reclamaciones/'.$row;
-        });
-
-        $crud->unsetBootstrap();
-        $crud->unsetDelete();
-        $crud->unsetEdit();
-
-        $output = $crud->render();
-        $titulo = array('titulo' => 'Mis Reclamaciones (USUARIO)');
-        $data = array_merge((array)$output, $titulo);
+        $value = $_SESSION['user'];
+        $data = $this->itemCRUD->find_reclamaciones_usuario($value['Email']);
 
         echo view('templates/header_usuarios'); 
-        echo view('App\Views\pages\usuarios\reclamaciones',$data);
+        echo view('App\Views\pages\usuarios\reclamaciones',array('data'=>$data));
         echo view('templates/footer');
     }
 
@@ -364,6 +350,16 @@ class ItemCRUD extends CI_Controller {
 
         echo view('templates/header_usuarios');
         echo view('App\Views\pages\usuarios\pagos_pendientes', array('data' => $data));
+        echo view('templates/footer');
+    }
+
+    public function facturas_usuarios(){
+
+        $value = $_SESSION['user'];
+        $data = $this->itemCRUD->find_factura($value['Colegiado']);
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\facturas_usuarios', array('data' => $data));
         echo view('templates/footer');
     }
    /**

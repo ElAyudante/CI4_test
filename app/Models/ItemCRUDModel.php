@@ -217,6 +217,22 @@ class ItemCRUDModel extends CI_Model{
 	public function find_pagos_usuario_verificar($id){
 		return $this->db->get_where('pagos_pendientes', array('ID' => $id))->row();
 	}
+	public function find_reclamaciones_usuario($id){
+		$where_array = array(
+			'Email' => $id
+		);
+		return $this->db->order_by('Estado', 'DESC')->get_where('reclamaciones', $where_array)->result_array();
+	}
+
+	public function find_factura($id){
+		$where_array = array(
+			'NumColegiado' => $id,
+			'Estado' => 'Pagado',
+			'Factura !=' => 'NULL'
+
+		);
+		return $this->db->get_where('pagos_pendientes', $where_array)->result_array();
+	}
 
 
 
