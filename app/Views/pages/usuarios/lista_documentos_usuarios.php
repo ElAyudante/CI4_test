@@ -15,7 +15,6 @@
                 <?php foreach ($data as $documento){
                     $name = $documento['Archivo'];
                 ?>
-
                     <div class="col">
                                     <div class="card bg-transparent w-auto cards-users-empleo">
                                         <div class="row g-0">
