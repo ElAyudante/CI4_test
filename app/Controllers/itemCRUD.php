@@ -352,6 +352,16 @@ class ItemCRUD extends CI_Controller {
         echo view('App\Views\pages\usuarios\pagos_pendientes', array('data' => $data));
         echo view('templates/footer');
     }
+
+    public function facturas_usuarios(){
+
+        $value = $_SESSION['user'];
+        $data = $this->itemCRUD->find_factura($value['Colegiado']);
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\facturas_usuarios', array('data' => $data));
+        echo view('templates/footer');
+    }
    /**
     * Show Details this method.
     *
