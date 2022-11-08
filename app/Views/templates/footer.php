@@ -16,57 +16,70 @@
     </div>
 
     <footer class="section bg-footer py-5">
-        <div class="container text-center">
+        <div class="container">
             <div class="row row-cols-lg-4 g-5">
 
-                <div class="col">
-                    <div class="mb-3">
-                        <img class="img-fluid" id="imagenfooter" src="<?php echo base_url(),'/'; ?>assets/images/png/CPLC_IMAGOTIPO_VERT_BALNCO.png"></img>
-                    </div>
-                    <div class="">
-                        <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid" id="imagensantander"src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
+                <div class="col m-auto">
+                    <div class="d-flex justify-content-center p-5">
+                        <img class="img-fluid w-75" src="<?php echo base_url(),'/'; ?>assets/images/png/CPLC_IMAGOTIPO_VERT_BALNCO.png"></img>
                     </div>
                 </div>
 
-                <div class="col">
-                    <h6 class="fw-bold footer-heading text-uppercase text-white">Recursos</h6>
-                    <ul class="list-unstyled footer-link mt-4">
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>home" target="_blank">Inicio</a></li>
+                <div class="col m-auto">
+                    <h4 class="fw-bold footer-heading text-uppercase text-white">Recursos</h4>
+                    <ul class="list-unstyled footer-link">
+                        <!--<li><a class="text-white" href="<?php echo base_url(),'/'; ?>home" target="_blank">Inicio</a></li>
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>faq" target="_blank">FAQ</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>codigo" target="_blank">Código Deontológico</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>forum/index" target="_blank">Foro</a></li>
-                    </ul>
-                </div>
-
-                <div class="col">
-                    <h6 class="fw-bold footer-heading text-uppercase text-white">Ayuda</h6>
-                    <ul class="list-unstyled footer-link mt-4">
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>forum/index" target="_blank">Foro</a></li>-->
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/login" target="_blank">Accede</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">Política de Privacidad</a></li>
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>codigo" target="_blank">Código Deontológico</a></li>
                     </ul>
                 </div>
 
-                <div class="col">
-                    <h6 class="fw-bold footer-heading text-uppercase text-white">Contáctanos</h6>
-                    <ul class="list-unstyled footer-link mt-4">
-                        <li><p class="contact-info mt-4 text-white">Nuestro número de teléfono:</p></li>
-                        <li><a class="contact-info text-white" href="tel:+34942052099">942 052 099</a></li>
-                        <li><p class="contact-info mt-4 text-white">Otros métodos de contacto</p></li>
+                <div class="col m-auto">
+                    <h4 class="fw-bold footer-heading text-uppercase text-white">Contáctanos</h4>
+                    <ul class="list-unstyled footer-link">
+                        <li><a class="contact-info text-white" href="tel:+34942052099"><i class="fa-solid fa-phone-volume me-2"></i>942 052 099</a></li>
+                        <li><a class="contact-info text-white" href="mailto:colegio@logopedascantabria.org"><i class="fa-solid fa-envelope me-2"></i>colegio@logopedascantabria.org</a></li>
+                        <li><a class="contact-info text-white"href="https://goo.gl/maps/a8YW6QwVmth6W6Dq7" target="_blank"><i class="fa-solid fa-location-dot me-2"></i>Dirección física</a></li>
                     </ul>
-                    <div class="mt-5">
+                    <!--<div class="">
                         <ul class="list-inline">
                             <li><a href="https://es-es.facebook.com/colegiologopedascantabria/" target="_blank"><i class="fab facebook footer-social-icon fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="https://es.linkedin.com/in/colegio-logopedas-cantrabria-592675154" target="_blank"><i class="fab linkedin footer-social-icon fa-linkedin-in"></i></a></li>
                             <li class="list-inline-item"><a href="mailto:colegio@logopedascantabria.org" target="_blank"><i class="fas mail footer-social-icon fa-envelope"></i></a></li>
                             <li class="list-inline-item"><a href="https://goo.gl/maps/a8YW6QwVmth6W6Dq7" target="_blank"><i class="fas place footer-social-icon fa-location-arrow"></i></a></li>
                         </ul>
+                    </div>-->
+                </div>
+
+                <div class="col m-auto">
+                    <div class="d-flex justify-content-center">
+                        <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
+                    </div>
+                    <!--<h6 class="fw-bold footer-heading text-uppercase text-white">Ayuda</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/login" target="_blank">Accede</a></li>
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a></li>
+                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">Política de Privacidad</a></li>
+                    </ul>-->
+                </div>
+
+                <div class="col-lg-12 m-auto">
+                    <div class="d-flex align-items-center justify-content-center my-3">
+                        <p class="text-white mb-0 pe-2">Sigue nuestros contenidos de actualidad en:</p>
+                        <a href="https://es-es.facebook.com/colegiologopedascantabria/" target="_blank"><img class="me-2" src="assets/images/png/facebook.png"></a>
+                        <a href="https://es.linkedin.com/in/colegio-logopedas-cantrabria-592675154" target="_blank"><img class="" src="assets/images/png/linkedin.png"></a>
                     </div>
                 </div>
 
-                <div class="col-lg-12" id="pie">
-                    <p class="footer-alt mb-0 f-14 mt-5 text-end" id="copyimagen">&copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-white text-decoration-none" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
+                <div class="col-lg-12 d-flex justify-content-center m-auto">
+                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a> |</p>
+                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">&nbsp;Política de Privacidad</a> |</p>
+                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">&nbsp; SiteMap</a> |</p>
+                    <p class="mb-0">&nbsp; &copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-white text-decoration-none" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
                 </div>
 
             </div>
