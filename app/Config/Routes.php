@@ -51,8 +51,9 @@
     $routes->get('users/cambio_modalidad', 'itemCRUD::cambio_modalidad');
     $routes->post('users/solicitar_cambio_modalidad', 'itemCRUD::tramitar_cambio_modalidad');
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
+    $routes->get('users/mis_facturas', 'itemCRUD::facturas_usuarios');
 
-    $routes->get('users/files/download/(:any)', 'itemCRUD::download/$1');
+    $routes->get('files/download/(:any)', 'itemCRUD::download/$1');
     
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
