@@ -1,4 +1,5 @@
 <?php
+/*
   include_once 'api/apiRedsys.php'; 
 
   $miObj = new RedsysAPI; 
@@ -17,7 +18,9 @@
   if ($signatureCalculada === $signatureRecibida) { 
    $Controller->verificar_pago($Id);
    
+   
 }
+*/
 ?>
 
   <section class="bg-gray">

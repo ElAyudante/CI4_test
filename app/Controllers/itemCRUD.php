@@ -139,7 +139,7 @@ class ItemCRUD extends CI_Controller {
     echo view('templates/header_admin'); 
     echo view('itemCRUD/list', $data);
     echo view('templates/footer');
-}
+    }
 
     public function cobros_realizados(){
 
@@ -147,8 +147,12 @@ class ItemCRUD extends CI_Controller {
         $crud->setTable('pagos_pendientes');
         $crud->setSubject('Pagos Pendientes', 'Pagos');
         $crud->columns(['Fecha', 'Nombre', 'Apellidos', 'Transaccion', 'Cantidad', 'Estado']);
-        $crud->unsetAdd();
+        
+        $crud->setActionButton('Factura' ,'', function($row){
+            return base_url().'/admin/factura/'.$row;
+        });
 
+        $crud->unsetAdd();
         $crud->unsetBootstrap();
         $crud->unsetEdit();
         $crud->unsetDelete();
@@ -175,7 +179,7 @@ class ItemCRUD extends CI_Controller {
         echo view('App\Views\pages\usuarios\lista_documentos_usuarios',array('data'=>$data));
         echo view('templates/footer');
 
-}
+    }
 
     public function lista_colegiados_pending(){
         $crud = new GroceryCrud();
@@ -324,7 +328,7 @@ class ItemCRUD extends CI_Controller {
         $data = array_merge((array)$output, $titulo);
 
         echo view('templates/header_usuarios'); 
-        echo view('App\Views\pages\usuarios\lista_documentos_usuarios',$data);
+        echo view('App\Views\pages\usuarios\reclamaciones',$data);
         echo view('templates/footer');
     }
 
@@ -1027,7 +1031,7 @@ class ItemCRUD extends CI_Controller {
 		//restrict users to go back to login if session has been set
 		if($this->session->userdata('user')){
             $this->load->view('templates\header_usuarios');
-            $this->load->view('App\Views\pages\itemCRUD\list');
+            $this->load->view('App\Views\pages\usuarios\main_usuario');
             $this->load->view('templates\footer');
 		}
 		else{
@@ -1044,7 +1048,7 @@ class ItemCRUD extends CI_Controller {
  
 		//restrict users to go back to login if session has been set
 		if($this->session->userdata('admin')){
-            $this->load->view('templates\header_usuarios');
+            $this->load->view('templates\header_admin');
             $this->load->view('App\Views\pages\itemCRUD\list');
             $this->load->view('templates\footer');
 		}
@@ -1180,6 +1184,52 @@ class ItemCRUD extends CI_Controller {
         $file = 'assets/uploads/files/' . $fileInfo;
 
         return $this->response->download($file, NULL);
+    }
+
+    public function test_tramitar_pago(){
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\tramitar_pago_ok');
+        echo view('templates/footer');
+    }
+
+    public function siteMap(){
+        echo view('templates/header');
+        echo view('pages/siteMap');
+        echo view('templates/footer');
+    }
+
+    public function generar_factura($id){
+
+        $data = $this->db->get_where('pagos_pendientes', 'ID = '. $id)->row();
+        
+
+        echo view('templates/header_admin');
+        echo view('App\Views\pages\alta_factura', array('data' => $data));
+        echo view('templates/footer');
+    }
+
+    public function store_factura(){
+
+        $id = $_POST['id'];
+        $targetDir = "./assets/uploads/files/";
+        $fileName = basename($_FILES["archivo"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+        if(in_array($fileType, $allowTypes)){
+            // Upload file to server
+            if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
+                $data = array(
+
+                    'Factura' => $fileName
+                );
+            }
+        }
+
+		$this->db->update('pagos_pendientes', $data, 'ID ='. $id );
+
+        return redirect()->to(base_url('cobros_realizados'));
     }
 
 }

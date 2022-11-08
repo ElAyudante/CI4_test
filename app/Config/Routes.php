@@ -61,6 +61,8 @@
     $routes->post('itemCRUD/responder_reclamacion', 'itemCRUD::responder_reclamacion');
     $routes->post('itemCRUD/responder_reclamacion_usuario', 'itemCRUD::responder_reclamacion_usuario');
 
+    $routes->get('admin/factura/(:any)', 'itemCRUD::generar_factura/$1');
+    $routes->post('itemCRUD/store_factura', 'itemCRUD::store_factura');
 
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
     $routes->post('users/admin/login', 'itemCRUD::admin_login');
@@ -76,6 +78,8 @@
     $routes->post('users/payment_platform/(:any)', 'itemCRUD::tramitar_pago');
     $routes->get('users/tramitar_pago_ok/(:any)', 'itemCRUD::tramitar_pago_ok/$1');
     $routes->get('users/pagos_realizados', 'itemCRUD::pagos_realizados_usuarios');
+    $routes->get('users/test_tramitar_pago', 'itemCRUD::test_tramitar_pago');
+
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');
@@ -141,3 +145,6 @@
     $routes->get('(:any)/create_topic', 'forum::create_topic/$1');
     $routes->get('topic/(:any)/(:any)', 'forum::topic/$1/$2');
     $routes->get('(:any)/(:any)/reply', 'forum::create_post/$1/$2');
+
+    $routes->get('sitemap', 'itemCRUD::siteMap');
+  
