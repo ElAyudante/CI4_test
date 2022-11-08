@@ -125,12 +125,14 @@ class ItemCRUDModel extends CI_Model{
 
 	public function insert_documento(){
 
+
 		$data = array(
 
+			'Fecha' => date("Y-m-d H:i:s"),
 			'Nombre' => $this->input->post('nombre'),
 			'Descripcion' => $this->input->post('descripcion'),
-			'Publico' => $this->input->post('publico'),
-			'Archivo' => $this->input->post('archivo')
+			'Publico' => $this->input->post('archivos'),
+			'Archivo' => 'test'
 		);
 
 		return $this->db->insert('documentos', $data);

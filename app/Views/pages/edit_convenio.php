@@ -41,8 +41,9 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         </div>
 
                         <div class="col">
-                            <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
                         </div>
+                        <input name = "id" type = "hidden" value="<?php echo $item->id; ?>"> <!-- NO TOCAR -->
                     </div>
                     <?php echo form_close(); ?>
                 </div>

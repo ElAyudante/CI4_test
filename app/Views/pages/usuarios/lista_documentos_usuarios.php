@@ -1,75 +1,45 @@
 <?php
-$sel_comunidades =  array (
-    'Anadalucia' => 'Andalucia',
-    'Aragon' => 'Aragón',
-    'Asturias' => 'Asturias',
-    'Baleares' => 'Baleares',
-    'Canarias' => 'Canarias',
-    'Cantabria' => 'Cantabria',
-    'Castilla La Mancha' => 'Castilla La Mancha',
-    'Castilla Leon' => 'Catilla León',
-    'Cataluña' => 'Cataluña',
-    'Ceuta' => 'Ceuta',
-    'Comunidad Valenciana' => 'Comunidad Valenciana',
-    'Extremadura' => 'Extremadura',
-    'Galicia' => 'Galicia',
-    'La Rioja' => 'La Rioja',
-    'Madrid' => 'Madrid',
-    'Melilla' => 'Melilla',
-    'Navarra' => 'Navarra',
-    'Pais Vasco' => 'País Vasco',
-    'Murcia' => 'Región de Murcia'
-  )
+    $value= $_SESSION['user'];
 ?>
-<head>
-<?php 
-    foreach($css_files as $file): ?>
-        <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-    <?php endforeach; ?>
-</head>
-<body>
 
-<section class="bg-gray" >
+<section class="bg-gray">
+  	<div class="container-fluid row">
 
-    <div class="container-fluid">
-        <div class="row">
+	  	<div class="col-lg-2 ps-0">
+        	<?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
+		</div>
         
-            <div class="col-lg-2 ps-0">
-                <?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
-            </div>
 
-            <div class="col-lg-10">
-                <div class="container p-5">
-                    
+		<div class="col-lg-10 d-flex flex-row flex-wrap">
+            <div class="row row-cols-2 g-4 p-5">
+                <?php foreach ($data as $documento){
+                    $name = $documento['Archivo'];
+                ?>
 
-                    <div class="bg-white"> 
-                        <div class="d-flex bg-blue">
-                            <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><?php echo $titulo;?></h3>
-                            <div class="row pt-2 d-flex justify-content-end">
-                                <div class="col-lg-2 margin-tb d-flex flex-row">
-                                    <div class="">
-                                        <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
+                    <div class="col">
+                                    <div class="card bg-transparent w-auto cards-users-empleo">
+                                        <div class="row g-0">
+                                            <div class="col-lg-4 d-flex justify-content-center">
+                                                <a href="" target="_blank" class="text-decoration-none">
+                                                    <img  class="img-fluid p-3 bg-white" src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png">
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-8 d-flex align-items-center bg-white">
+                                                <div class="card-body">
+                                                    <h5 class="curso-tittle cblue text-uppercase mb-4 documento-truncate"><?= $documento['Nombre']?> </h5>
+                                                    <ul class="objetivos">
+                                                        <p><?= $documento['Descripcion']?> </p>
+                                                    </ul>
+                                                    <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/users/files/download/<?php echo $name ?>">Descargar</a></button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                <div class="">
-                                    <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
                                 </div>
-                            </div>
-
-
-                    </div>
-                        </div>
-                        
-
-                        <?php echo $output; ?> 
-                    </div>
-                    <?php foreach($js_files as $file): ?>
-                        <script src="<?php echo $file; ?>"></script>
-                    <?php endforeach; ?>
+                    <?php }; ?>
                 </div>
             </div>
+        
 
-        </div>
-    </div>
+	</div>
 </section>
-    
-</body>
