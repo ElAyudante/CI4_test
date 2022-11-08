@@ -42,7 +42,7 @@
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>juntagob">JUNTA DE GOBIERNO</a>
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>estatutos">ESTATUTOS</a>
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>codigo">CÓDIGO DEONTOLÓGICO</a>
-                                <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">NOTICIAS</a>
+                                <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">NOTICIAS</a>-->
                             </div>
                         </li>
                         <li class="nav-item dropdown me-4">
@@ -50,7 +50,7 @@
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>acuerdos">ACUERDOS CON EMPRESAS</a>
                                 <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>ofertas">OFERTAS</a>-->
-                                <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>users/login">FORO</a>
+                                <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>users/login">FORO</a>-->
                                 <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">VIDEONOTICIAS</a>-->
                             </div>
                         </li>
@@ -59,7 +59,7 @@
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>formacion">CURSOS CPLC</a>
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>otroscursos">OTROS CURSOS</a>
-                                <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">MÁSTER Y POSTGRADO</a>
+                                <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">MÁSTER Y POSTGRADO</a>-->
                             </div>
                         </li>
                         <li class="nav-item">

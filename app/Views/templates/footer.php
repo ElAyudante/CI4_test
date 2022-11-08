@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <div class="col m-auto">
+                <div class="col m-auto mb-3">
                     <h4 class="fw-bold footer-heading text-uppercase text-white">Recursos</h4>
                     <ul class="list-unstyled footer-link">
                         <!--<li><a class="text-white" href="<?php echo base_url(),'/'; ?>home" target="_blank">Inicio</a></li>
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
 
-                <div class="col m-auto">
+                <div class="col m-auto mb-3">
                     <h4 class="fw-bold footer-heading text-uppercase text-white">Contáctanos</h4>
                     <ul class="list-unstyled footer-link">
                         <li><a class="contact-info text-white" href="tel:+34942052099"><i class="fa-solid fa-phone-volume me-2"></i>942 052 099</a></li>
@@ -70,15 +70,15 @@
                 <div class="col-lg-12 m-auto">
                     <div class="d-flex align-items-center justify-content-center my-3">
                         <p class="text-white mb-0 pe-2">Sigue nuestros contenidos de actualidad en:</p>
-                        <a href="https://es-es.facebook.com/colegiologopedascantabria/" target="_blank"><img class="me-2" src="assets/images/png/facebook.png"></a>
-                        <a href="https://es.linkedin.com/in/colegio-logopedas-cantrabria-592675154" target="_blank"><img class="" src="assets/images/png/linkedin.png"></a>
+                        <a href="https://es-es.facebook.com/colegiologopedascantabria/" target="_blank"><img class="me-2" src="<?php echo base_url(),'/'; ?>assets/images/png/facebook.png"></a>
+                        <a href="https://es.linkedin.com/in/colegio-logopedas-cantrabria-592675154" target="_blank"><img src="<?php echo base_url(),'/'; ?>assets/images/png/linkedin.png"></a>
                     </div>
                 </div>
 
                 <div class="col-lg-12 d-flex justify-content-center m-auto">
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">&nbsp;Política de Privacidad</a> |</p>
-                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>sitemap" target="_blank">&nbsp; SiteMap</a> |</p>
+                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>sitemap" target="_blank">&nbsp; Mapa Web</a> |</p>
                     <p class="mb-0">&nbsp; &copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-white text-decoration-none" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
                 </div>
 
