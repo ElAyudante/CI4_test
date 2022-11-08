@@ -27,6 +27,7 @@ class ItemCRUD extends CI_Controller {
       $encrypter = \Config\Services::encrypter();
       $CI->load->model('ItemCRUDModel');
       $CI->load->library('pagination');
+      $this->load->helper('download');
 
       $this->itemCRUD = new \App\Models\ItemCRUDModel;
 
@@ -167,30 +168,13 @@ class ItemCRUD extends CI_Controller {
 
    public function listar_documentos_usuarios(){
 
-    $crud = new GroceryCrud();
-    $crud->setTable('documentos');
-    $crud->setSubject('Documento', 'Documentos');
-    $crud->columns(['Nombre', 'Archivo']);
-    $crud->unsetAdd();
+        $value = $_SESSION['user'];
+        $data = $this->db->order_by('Fecha', 'DESC')->get_where('documentos', 'Publico = publico')->result_array();
 
-    $crud->where("documentos.Publico = '0'");
+        echo view('templates/header_usuarios'); 
+        echo view('App\Views\pages\usuarios\lista_documentos_usuarios',array('data'=>$data));
+        echo view('templates/footer');
 
-
-    $crud->unsetBootstrap();
-    $crud->unsetDelete();
-    $crud->unsetEdit();
-    $crud->setActionButton('' ,'', function($row){
-        return base_url().'/users/documentos/'.$row;
-    });
-
-    $output = $crud->render();
-
-    $titulo = array('titulo' => 'Mis Documentos');
-    $data = array_merge((array)$output, $titulo);
-
-    echo view('templates/header_usuarios'); 
-    echo view('App\Views\pages\usuarios\lista_documentos_usuarios',$data);
-    echo view('templates/footer');
 }
 
     public function lista_colegiados_pending(){
@@ -524,22 +508,29 @@ class ItemCRUD extends CI_Controller {
 
     public function store_documento(){
 
-        $model = model(ItemCRUDModel::class);
+        $targetDir = "./assets/uploads/files/";
+        $fileName = basename($_FILES["archivo"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-        if ($this->request->getMethod() === 'post' && $this->validate([
-            'nombre' => 'required|min_length[3]|max_length[255]',
-            'publico'  => 'required',
-        ])) {
-            $model->insert_documento([
-                'nombre' => $this->request->getPost('nombre'),
-                'descripcion'  => $this->request->getPost('descripcion'),
-                'publico'  => $this->request->getPost('publico'),
-                'archivo'  => $this->request->getPost('archivo'),
-            ]);
+        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+        if(in_array($fileType, $allowTypes)){
+            // Upload file to server
+            if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
+                $data = array(
+
+                    'Fecha' => date("Y-m-d H:i:s"),
+                    'Nombre' => $this->input->post('nombre'),
+                    'Descripcion' => $this->input->post('descripcion'),
+                    'Publico' => $this->input->post('archivos'),
+                    'Archivo' => $fileName
+                );
+            }
         }
 
+		$this->db->insert('documentos', $data);
 
-        return $this->listar_documentos();
+        return redirect()->to(base_url('documentos'));
     }
 
     public function store_empleo(){
@@ -945,6 +936,18 @@ class ItemCRUD extends CI_Controller {
         return redirect()->to(base_url('lista_reclamaciones'));
     }
 
+    public function responder_reclamacion_usuario(){
+        $id = $_POST['Id'];
+
+        $data = array(
+            'Comentarios' =>$this->input->post('comentarios'),
+            'Estado' => 'Pendiente',
+        );
+
+        $this->db->update('reclamaciones', $data, 'Id ='.$id);
+        return redirect()->to(base_url('users/reclamaciones'));
+    }
+
    /**
     * Delete Data from this method.
     *
@@ -1168,4 +1171,15 @@ class ItemCRUD extends CI_Controller {
         $this->load->view('App\Views\pages\home');
         $this->load->view('templates\footer');
 	}
+
+    public function download($id){
+        $this->load->helper('download');
+
+        $fileInfo = $id;
+
+        $file = 'assets/uploads/files/' . $fileInfo;
+
+        return $this->response->download($file, NULL);
+    }
+
 }

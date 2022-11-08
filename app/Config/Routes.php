@@ -40,6 +40,7 @@
     $routes->get('users/logout', 'itemCRUD::logout');
     $routes->get('users/documentos', 'itemCRUD::listar_documentos_usuarios');
     $routes->get('users/datos', 'itemCRUD::mis_datos');
+    $routes->post('users/datos/(:any)','itemCRUD::update/$1');
     $routes->get('users/documentos/(:any)', "itemCRUD::mostrar_documento/$1");
     $routes->get('users/empleo', 'itemCRUD::listar_empleos_usuarios');
     $routes->get('users/empleo/(:any)', "itemCRUD::mostrar_ofertas/$1");
@@ -50,12 +51,15 @@
     $routes->get('users/cambio_modalidad', 'itemCRUD::cambio_modalidad');
     $routes->post('users/solicitar_cambio_modalidad', 'itemCRUD::tramitar_cambio_modalidad');
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
+
+    $routes->get('users/files/download/(:any)', 'itemCRUD::download/$1');
     
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
     $routes->get('lista_reclamaciones/edit/(:any)', 'itemCRUD::edit_reclamacion/$1');
     $routes->get('lista_reclamaciones/delete/(:any)', 'itemCRUD::delete_reclamacion/$1');
     $routes->post('itemCRUD/responder_reclamacion', 'itemCRUD::responder_reclamacion');
+    $routes->post('itemCRUD/responder_reclamacion_usuario', 'itemCRUD::responder_reclamacion_usuario');
 
 
     $routes->get('users/admin', 'itemCRUD::index_admin_login');

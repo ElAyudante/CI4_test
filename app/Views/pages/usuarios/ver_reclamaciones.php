@@ -1,42 +1,70 @@
-<section class="junta">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2 ps-0">
-                <?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
-            </div>
+<?php
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+?>
 
-            <div class="col-lg-10 mt-4">
-                <div class="container junta">
+<section class="bg-gray">
 
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Fecha Apertura:</strong>
-                                <?php echo $item->Fecha; ?>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Asunto:</strong>
-                                <?php echo $item->Asunto; ?>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Descripción:</strong>
-                                <?php echo $item->Comentarios; ?>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Respuesta:</strong>
-                                <?php echo $item->MiRespuesta; ?>
-                            </div>
-                        </div>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col-lg-2 ps-0">
+        <?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
+      </div>
+
+      <div class="col-lg-10">
+        <div class="container p-5">
+            <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Responder Reclamación</h3>
+            <?php echo form_open('/itemCRUD/responder_reclamacion_usuario', $form_att); ?>
+
+			<div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
+                
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" value="<?=$item->Nombre?>" autofocus disabled>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="apellidos" value="<?=$item->Apellidos?>" autofocus disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" value="<?=$item->Email?>" autofocus disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="asunto" value="<?=$item->Asunto?>" placeholder="Asunto" autofocus disabled>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <textarea type="text"  style="min-height: 300px" class="form-control" name="Comentarios"autofocus> <?= $item->Comentarios?></textarea>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <textarea type="text" style="min-height: 100px" oninput="auto_grow(this)" class="form-control h-100" name="mirespuesta" value="" autofocus disabled> <?=$item->MiRespuesta?> </textarea>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Responder</button>
+                </div>
+            
             </div>
+            <?php echo form_close(); ?>
         </div>
-    </div>
+	</div>
 </section>
+
+<script>
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight)+"px";
+    }
+
+</script>
