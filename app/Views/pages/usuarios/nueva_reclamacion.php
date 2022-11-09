@@ -22,25 +22,25 @@
               <div class="col">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus disabled>
+                        <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus readonly>
                     </div>
               </div>
               <div class="col">
                   <div class="form-group">
                       <label for="apellidos">Apellidos</label>
-                      <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>" disabled>
+                      <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>" readonly>
                   </div>
               </div>
               <div class="col">
                   <div class="form-group">
                       <label for="telefono">Telefono</label>
-                      <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>" disabled>
+                      <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>" readonly>
                   </div>
               </div>
               <div class="col">
                   <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>" disabled>
+                      <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>" readonly>
                   </div>
               </div>
 

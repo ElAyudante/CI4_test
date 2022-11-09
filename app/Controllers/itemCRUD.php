@@ -638,7 +638,6 @@ class ItemCRUD extends CI_Controller {
 
     public function crear_reclamacion(){
 
-        $model = model(ItemCRUDModel::class);
 
         if ($this->request->getMethod() === 'post' && $this->validate([
             'nombre' => 'required|min_length[3]|max_length[255]',
@@ -648,7 +647,7 @@ class ItemCRUD extends CI_Controller {
             'asunto'  => 'required',
             'comentarios'  => 'required'
         ])) {
-            $model->insert_reclamacion([
+            $this->itemCRUD->insert_reclamacion([
                 'nombre' => $this->request->getPost('nombre'),
                 'apellidos'  => $this->request->getPost('apellidos'),
                 'email' => $this->request->getPost('email'),
@@ -659,7 +658,7 @@ class ItemCRUD extends CI_Controller {
         }
 
 
-        return $this->listar_reclamaciones();
+        return redirect()->to(base_url('users/reclamaciones'));
     }
 
 
