@@ -1228,4 +1228,19 @@ class ItemCRUD extends CI_Controller {
         return redirect()->to(base_url('cobros_realizados'));
     }
 
+    public function tramitar_baja(){
+        
+        $datos = $_SESSION['user'];
+        $id = $datos['Id'];
+
+        $this->itemCRUD->delete_item($id);
+
+        return $this->logout();
+    }
+
+    public function tramitar_cambio_modalidad(){
+
+
+    }
+
 }

@@ -28,11 +28,11 @@
                                         <h5 class="fw-bold cblue text-uppercase"><?= $reclamacion['Asunto']?> </h5>
                                         <div>
                                             <ul class="objetivos p-0">
-                                                <p><?= $reclamacion['Estado']?> </p>
+                                                <p>Estado: <?= $reclamacion['Estado']?> </p>
                                             </ul>
                                         </div>
                                         <div>
-                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="">Responder</a></button>
+                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url('users/reclamaciones'). '/' .$reclamacion['Id']; ?>">Responder</a></button>
                                         </div>
                                     </div>
                                 </div>
@@ -42,6 +42,5 @@
                 <?php }; ?>
             </div>
         </div>
-
 	</div>
 </section>
