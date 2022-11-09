@@ -36,9 +36,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5">
+            <div class="col-lg-8 text-white mt-5 px-5">
                 <p>Logopedicum es tu portal de material terapéutico de confianza. Encontrarás variados recursos de terapia miofuncional, disfagia, lenguaje, dislexia, autismo, TDAH y psicomotricidad. También podrás acceder a formaciones y publicaciones especializadas.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>   <!-- SOLO PARA COLEGIADOS -->
                     </a>
@@ -60,7 +60,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
                 <p>Una cadena de hoteles de 4* y 5* estrellas pioneros en un nuevo concepto de turismo de lujo en el que buscan crear una huella imborrable en los clientes y entorno a través de experiencias memorables de bienestar, cultura, gastronomía y naturaleza. Poniendo en valor el compromiso con el patrimonio y las personas. Actuando en cada paso con alma sostenible.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
@@ -110,9 +110,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5">
+            <div class="col-lg-8 text-white mt-5 px-5">
                 <p>Búsqueda de Alquiler de Coches: Todos los Propietarios y Precios. Reserva tu coche de alquiler hasta un 60% más barato con HAPPYCAR. Servicio Gratuito. Barato. Flexible.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>   <!-- SOLO PARA COLEGIADOS -->
                     </a>
@@ -134,7 +134,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
                 <p>En Previsión Sanitaria Nacional llevan más de 90 años protegiendo a los profesionales universitarios, con seguros de vida, ahorro, inversión, RC o auto. Son una mutua sin ánimo de lucro que revierte sus beneficios en sus mutualistas.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
@@ -184,9 +184,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5">
+            <div class="col-lg-8 text-white mt-5 px-5">
                 <p>Compañía aseguradora líder especializada en los profesionales sanitarios. Comprometida con el sector desde 1965.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>   <!-- SOLO PARA COLEGIADOS -->
                     </a>
@@ -208,7 +208,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
                 <p>Venta online de dispositivos y material para el médico profesional. Envíos en 24/48 hs. Todas las especialidades sanitarias y los mejores precios. N.º de teléfono gratuito. Portes gratuitos. Presupuesto personalizado.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
@@ -258,9 +258,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5">
+            <div class="col-lg-8 text-white mt-5 px-5">
                 <p>ESPACIO ONDA es una plataforma digital online diseñado para poder ofrecerles un mejor y más avanzado servicio.  Con esta innovadora apuesta deseamos garantizar la continuidad de nuestros proyectos educativos asegurando su funcionalidad y la mejora continua de contenidos, así como ofrecer precios más accesibles y una operativa más flexible para el usuario.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>   <!-- SOLO PARA COLEGIADOS -->
                     </a>
@@ -282,7 +282,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
                 <p>Banco Santander, conocido comercialmente como Santander, es un banco español con domicilio social en Santander, Cantabria. Es una de las mayores y más importantes entidades financieras del mundo y sus principales mercados son España, Reino Unido, Portugal y Polonia en Europa; Estados Unidos y México en Norteamérica; y Brasil, Argentina, Uruguay, Colombia, Chile y Perú en América del sur.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
@@ -332,9 +332,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5">
+            <div class="col-lg-8 text-white mt-5 px-5">
                 <p>El complejo hotelero y termal de Puente Viesgo es una de las instalaciones más modernas y completas de su clase en la Cornisa Cantábrica, con sus instalaciones y servicios de lujo en un entorno de plena naturaleza.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
@@ -356,7 +356,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
                 <p>Joyería Javier ofrece una amplia gama de artículos de Joyería de alta calidad, en oro blanco, rosa y amarillo y platino; con brillantes, piedras preciosas (esmeraldas, rubís y zafiros) y semipreciosas (amatistas, citrinos, cuarzos, aguamarinas…), perlas australinas, de Tahití o cultivadas, procurando llegar a todos los públicos y ofreciendo siempre desde las piezas clásicas atemporales hasta las últimas tendencias, en cuanto a diseño e innovación.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
@@ -406,9 +406,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5">
+            <div class="col-lg-8 text-white mt-5 px-5">
                 <p>Diverlexia es un método de enseñanza de la lectura y la escritura, ideado por Carmen Silva, logopeda y maestra de audición y lenguaje, experta en neuropsicología educativa y en dificultades de aprendizaje y fundadora de ladislexia.net, plataforma con más de 6 millones de visitantes únicos.</p>
-                <div class="d-flex justify-content-lg-start justify-content-center pt-4">
+                <div class="d-flex justify-content-lg-center justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
                     </a>
