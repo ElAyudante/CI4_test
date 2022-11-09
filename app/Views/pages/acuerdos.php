@@ -59,7 +59,7 @@
     <div class="container container-curso">
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
-                <p>Una cadena de hoteles de 4* y 5* estrellas pioneros en un nuevo concepto de turismo de lujo en el que buscamos crear una huella imborrable en nuestros clientes y entorno a través de experiencias memorables de bienestar, cultura, gastronomía y naturaleza. Poniendo en valor el compromiso con el patrimonio y las personas. Actuando en cada paso con alma sostenible</p>
+                <p>Una cadena de hoteles de 4* y 5* estrellas pioneros en un nuevo concepto de turismo de lujo en el que buscan crear una huella imborrable en los clientes y entorno a través de experiencias memorables de bienestar, cultura, gastronomía y naturaleza. Poniendo en valor el compromiso con el patrimonio y las personas. Actuando en cada paso con alma sostenible.</p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
@@ -133,7 +133,7 @@
     <div class="container container-curso">
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
-                <p>En Previsión Sanitaria Nacional llevamos más de 90 años protegiendo a los profesionales universitarios, con seguros de vida, ahorro, inversión, RC o auto. Somos una mutua sin ánimo de lucro que revierte sus beneficios en sus mutualistas.</p>
+                <p>En Previsión Sanitaria Nacional llevan más de 90 años protegiendo a los profesionales universitarios, con seguros de vida, ahorro, inversión, RC o auto. Son una mutua sin ánimo de lucro que revierte sus beneficios en sus mutualistas.</p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>
@@ -185,7 +185,7 @@
                 </a>
             </div>
             <div class="col-lg-8 text-white mt-5">
-                <p>Compañía aseguradora líder especializada en los profesionales #sanitarios. Comprometida con el sector desde 1965.</p>
+                <p>Compañía aseguradora líder especializada en los profesionales sanitarios. Comprometida con el sector desde 1965.</p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>   <!-- SOLO PARA COLEGIADOS -->
@@ -207,7 +207,7 @@
     <div class="container container-curso">
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
-                <p>Venta online de dispositivos y material para el médico profesional. Enviamos en 24/48 hs. Todas las especialidades sanitarias y los mejores precios. ¡Clic aquí! Las Mejores Marcas. N.º de Teléfono Gratuito. Portes gratuitos. Presupuesto personalizado.</p>
+                <p>Venta online de dispositivos y material para el médico profesional. Envíos en 24/48 hs. Todas las especialidades sanitarias y los mejores precios. N.º de teléfono gratuito. Portes gratuitos. Presupuesto personalizado.</p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
                     <a href="<?php echo base_url(),'/'; ?>users/login" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">VER ACUERDO</button>

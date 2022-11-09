@@ -56,7 +56,7 @@
 
                 <div class="col m-auto">
                     <div class="d-flex justify-content-center">
-                        <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
+                        <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid w-75" src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
                     </div>
                     <!--<h6 class="fw-bold footer-heading text-uppercase text-white">Ayuda</h6>
                     <ul class="list-unstyled footer-link mt-4">

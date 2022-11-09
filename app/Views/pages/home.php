@@ -23,8 +23,8 @@
     <div class="container">
         <div class="row mt-3 mb-5">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4">
-                <h1 class="title-dkblue">¿Qué es la logopedia?</h1>
-                <p class="text-justify text-dkblue">La logopedia es la disciplina que engloba el estudio, prevención, detección, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación humana: alteraciones de la voz, de la audición, del habla, del lenguaje (oral, escrito, gestual); y de las funciones oro-faciales y deglutorias. La premisa principal del logopeda es rehabilitar, en la medida de lo posible, las funciones alteradas y, ayudándose de las preservadas, dotar al paciente de estrategias de uso de sus habilidades, intentando que aprenda a combinarlas de manera útil y funcional con vistas al manejo e interacción de estas durante la realización de las actividades de la vida diaria.</p>
+                <h1 class="title-dkblue mb-5">¿Qué es la logopedia?</h1>
+                <p class="text-justify text-dkblue">La logopedia es la disciplina que engloba el <b>estudio, prevención, detección, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación humana:</b> alteraciones de la voz, de la audición, del habla, del lenguaje (oral, escrito, gestual); y de las funciones oro-faciales y deglutorias. <b>La premisa principal del logopeda es rehabilitar, en la medida de lo posible, las funciones alteradas</b> y, ayudándose de las preservadas, dotar al paciente de estrategias de uso de sus habilidades, intentando que aprenda a combinarlas de manera útil y funcional con vistas al manejo e interacción de estas durante la realización de las actividades de la vida diaria.</p>
                 <div class="d-flex justify-content-center mt-5">
                     <a href="<?php echo base_url(),'/'; ?>faq" class="text-white" target="_blank">
                         <button type="button" class="btn btn-primary">MÁS INFO</button>
@@ -44,8 +44,8 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4" id="logo2">
-                <h1 class="title-dkblue">Exige logopedas colegiados</h1>
-                <p class="text-justify text-dkblue">El logopeda colegiado debe aportar su certificado oficial de formación específica en logopedia y es garantía de una buena práctica profesional. Está obligado a seguir fielmente el Código Deontológico del Consejo General de Colegios de Logopedas de España (CGCL), lo cual revierte directamente en la defensa de los derechos de las personas usuarias de los servicios de logopedia debido al alto nivel de ética profesional exigida por el CPLC. El 7 de octubre de 2004, el Parlamento de Cantabria aprueba por unanimidad la creación del Colegio Profesional de Logopedas en Cantabria. La ley de Cantabria 3/2004 obliga a la colegiación a todos aquellos profesionales que ejerzan la logopedia, tanto en ámbito público como privado, con el objetivo de regular las actividades de los logopedas de nuestra región.</p>
+                <h1 class="title-dkblue mb-5">Exige logopedas colegiados</h1>
+                <p class="text-justify text-dkblue"><b>El logopeda colegiado debe aportar su certificado oficial</b> de formación específica en logopedia y es garantía de una buena práctica profesional. <b>Está obligado a seguir fielmente el Código Deontológico del Consejo General de Colegios de Logopedas de España (CGCL)</b>, lo cual revierte directamente en la defensa de los derechos de las personas usuarias de los servicios de logopedia debido al alto nivel de ética profesional exigida por el CPLC. El 7 de octubre de 2004, <b>el Parlamento de Cantabria aprueba por unanimidad la creación del Colegio Profesional de Logopedas en Cantabria.</b> La ley de Cantabria 3/2004 obliga a la colegiación a todos aquellos profesionales que ejerzan la logopedia, tanto en ámbito público como privado, con el objetivo de regular las actividades de los logopedas de nuestra región.</p>
                 <div class="d-flex justify-content-center my-5">
                     <a href="<?php echo base_url(),'/'; ?>formacion" class="text-white" target="_blank">
                         <button class="btn btn-primary text-uppercase">FORMACIÓN</button>
@@ -61,8 +61,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 mt-4">
-                <h1 class="title-white">Nuestro colegio</h1>
-                <p class="text-justify text-white text-fff">El Colegio de Logopedas de Cantabria tiene como misión velar por la ética profesional y por el respeto de los derechos de los ciudadanos, ejercer la jurisdicción disciplinaria en materias profesionales y colegiales. El ejercicio del Colegio se basa en la participación activa como administración, siendo informador, representante, defensor, mediador y organizador en todas las labores que deban llevarse a cabo, haciendo su desarrollo sencillo, útil y adaptado a las necesidades de pacientes y profesionales en el sector de la logopedia. Dando a conocer la importancia de esta labor sanitaria, animando a los profesionales a colegiarse y a las personas a comprender qué es la logopedia y su importancia.</p>
+                <h1 class="title-white mb-5">Nuestro colegio</h1>
+                <p class="text-justify text-white text-fff">El Colegio de Logopedas de Cantabria tiene como misión velar por la ética profesional y por el respeto de los derechos de los ciudadanos, ejercer la jurisdicción disciplinaria en materias profesionales y colegiales. <b>El ejercicio del Colegio se basa en la participación activa como administración, siendo informador, representante, defensor, mediador y organizador en todas las labores que deban llevarse a cabo,</b> haciendo su desarrollo sencillo, útil y adaptado a las necesidades de pacientes y profesionales en el sector de la logopedia. Dando a conocer la importancia de esta labor sanitaria, animando a los profesionales a colegiarse y a las personas a comprender qué es la logopedia y su importancia.</p>
                 <div class="d-flex justify-content-center mt-5">
                     <a href="<?php echo base_url(),'/'; ?>juntagob" class="text-white" target="_blank">
                         <button class="btn btn-two">JUNTA</button>
@@ -83,7 +83,7 @@
                 
             </div>
             <div class="col m-auto">
-            <h1 class="title-dkblue">¿Por qué colegiarse?</h1>
+            <h1 class="title-dkblue mb-5">¿Por qué colegiarse?</h1>
             <p class="text-justify text-dkblue">La incorporación al Colegio Profesional de Logopedas de Cantabria es obligatoria para el ejercicio de la profesión de Logopeda, debiendo estarse a lo dispuesto en el Art. 17 de la Ley de Cantabria 1/2001, de 16 de marzo, de Colegios Profesionales de Cantabria, y de la Normativa Complementaria y de desarrollo de la misma.</p>
             <div class="d-flex justify-content-center mt-5">
                 <a href="<?php echo base_url(),'/'; ?>mantenimiento" class="text-white" target="_blank">
@@ -116,7 +116,7 @@
 <section class="p-5" id="eres">
     <div class="container">
             <h1 class="title-dkblue text-center">¿Eres logopeda?</h1>
-            <p class="text-center text-dkblue pt-4" id="texto-logopeda">En nuestra web encontrarás toda la información relevante sobre el Colegio, así como noticias relacionadas con nuestra profesión y cursos y formación que te mantendran al día y conectado a las últimas tendencias de nuestro sector.</p>
+            <p class="text-center text-dkblue pt-4" id="texto-logopeda">En nuestra web encontrarás toda la información relevante sobre el Colegio, así como noticias relacionadas con nuestra </br>profesión y cursos y formación que te mantendran al día y conectado a las últimas tendencias de nuestro sector.</p>
             <div class="d-flex justify-content-center text-center pt-4">
                 <a href="<?php echo base_url(),'/'; ?>codigo" class="text-white" target="_blank">
                     <button class="btn btn-primary mx-1">CÓDIGO</button>
