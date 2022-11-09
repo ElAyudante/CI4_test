@@ -153,6 +153,7 @@ class ItemCRUDModel extends CI_Model{
 		);
 
 		return $this->db->insert('reclamaciones', $data);
+
 	}
 
 	public function insert_convenio(){
@@ -231,7 +232,7 @@ class ItemCRUDModel extends CI_Model{
 			'Factura !=' => 'NULL'
 
 		);
-		return $this->db->get_where('pagos_pendientes', $where_array)->result_array();
+		return $this->db->order_by('Fecha', 'DESC')->get_where('pagos_pendientes', $where_array)->result_array();
 	}
 
 
