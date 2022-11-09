@@ -10,21 +10,21 @@
 		</div>
         
 
-		<div class="col-lg-10 d-flex flex-row flex-wrap">
-            <div class="row row-cols-2 g-4 p-5">
+		<div class="col-lg-10">
+            <div class="row row-cols-3 g-4 p-5">
                 <?php foreach ($data as $reclamacion){
                 ?>
                     <div class="col">
-                        <div class="card bg-transparent w-auto cards-users-empleo">
+                        <div class="card cards-users-empleo">
                             <div class="row g-0">
-                                <div class="col-lg-4 d-flex justify-content-center">
-                                    <a href="" target="_blank" class="text-decoration-none">
-                                        <img  class="img-fluid p-3 bg-white" src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png">
-                                    </a>
-                                    <h5 class="fw-bold cblue text-uppercase"><?= $reclamacion['Fecha']?> </h5>
+                                <div class="col-lg-4 m-auto">
+                                    <div class="text-center">
+                                        <img class="img-fluid" src="<?php echo base_url(),'/'; ?>/assets/images/png/reclamacion.gif">
+                                        <h4 class="fw-bold cblue text-uppercase"><?= $reclamacion['Fecha']?> </h4>
+                                    </div>
                                 </div>
-                                <div class="col-lg-8 bg-white">
-                                    <div class="card-body doc_user h-100">
+                                <div class="col-lg-8">
+                                    <div class="card-body doc_user h-100 text-center">
                                         <h5 class="fw-bold cblue text-uppercase"><?= $reclamacion['Asunto']?> </h5>
                                         <div>
                                             <ul class="objetivos p-0">
@@ -38,7 +38,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 <?php }; ?>
             </div>
