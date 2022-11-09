@@ -30,6 +30,9 @@
                     <li><a href="<?php echo base_url().'/'; ?>users/reclamaciones">Mis reclamaciones</a></li>
                 </ul>
 
+                <li data-bs-toggle="" data-target="#convenios" class="">
+                    <a href="<?php echo base_url().'/'; ?>users/convenios"><i class="fas fa-briefcase fa-lg me-2"></i> Convenios</span></a>
+                </li>
                 <li data-bs-toggle="" data-target="#empleo" class="">
                     <a href="<?php echo base_url().'/'; ?>users/empleo"><i class="fas fa-briefcase fa-lg me-2"></i> Ofertas de Empleo</span></a>
                 </li>

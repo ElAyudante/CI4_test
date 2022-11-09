@@ -1,5 +1,6 @@
 <?php
     $value= $_SESSION['user'];
+    $textBoton = 'Solicitar Cambio';
 ?>
 
 <section class="bg-gray">
@@ -13,14 +14,16 @@
 		<div class="col-lg-10">
             <div class="row row-cols-3 g-4 p-5">
                 <?php foreach ($data as $reclamacion){
+                    $date = $reclamacion['Fecha'];
+                    $fecha = date("d/m/Y", strtotime($date));
                 ?>
                     <div class="col">
-                        <div class="card cards-users-empleo">
+                        <div class="card cards-users-empleo" style="min-height: 280px; max-height:280px">
                             <div class="row g-0">
                                 <div class="col-lg-4 m-auto">
                                     <div class="text-center">
                                         <img class="img-fluid" src="<?php echo base_url(),'/'; ?>/assets/images/png/reclamacion.gif">
-                                        <h4 class="fw-bold cblue text-uppercase"><?= $reclamacion['Fecha']?> </h4>
+                                        <h4 class="fw-bold cblue text-uppercase"><?= $fecha?> </h4>
                                     </div>
                                 </div>
                                 <div class="col-lg-8">

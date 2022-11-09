@@ -501,8 +501,13 @@ class ItemCRUD extends CI_Controller {
     }
 
     public function cambio_modalidad(){
+
+        $data = array(
+            'textBoton' => 'Solicitar Cambio'
+        );
+
         echo view('templates/header_usuarios');
-        echo view('App\Views\pages\usuarios\cambio_modalidad');
+        echo view('App\Views\pages\usuarios\cambio_modalidad', $data);
         echo view('templates/footer');
     }
 
@@ -1239,7 +1244,69 @@ class ItemCRUD extends CI_Controller {
 
     public function tramitar_cambio_modalidad(){
 
+        $textBoton = array(
+            'textBoton' => 'Cambio Solicitado'
+        );
+
+        $modalidad = $_POST['ejerciente'];
+        $usuario = $_SESSION['user'];
+        
+        $modalidadActual = '';
+        switch($usuario['Ejerciente']){
+            case 0:
+                $modalidadActual = 'No Ejerciente';
+                break;
+            case 1: 
+                $modalidadActual = 'Ejerciente';
+                break;
+            case 2:
+                $modalidadActual = 'Jubilado';
+                break;
+            case 3:
+                $modalidadActual = 'Estudiante';
+                break;
+        };
+
+        $modalidadCambio = '';
+        switch($this->input->post('ejerciente')){
+            case 0:
+                $modalidadCambio = 'No Ejerciente';
+                break;
+            case 1: 
+                $modalidadCambio = 'Ejerciente';
+                break;
+            case 2:
+                $modalidadCambio = 'Jubilado';
+                break;
+            case 3:
+                $modalidadCambio = 'Estudiante';
+                break;
+        };
+
+        $data = array(
+            'NumColegiado' => $usuario['Colegiado'],
+            'Nombre' => $usuario['Nombre'],
+            'Apellidos' => $usuario['Apellidos'],
+            'Modalidad' => $modalidadActual,
+            'ModalidadCambio' => $modalidadCambio
+        );
+
+        $this->db->insert('cambio_modalidad', $data);
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\cambio_modalidad', $textBoton);
+        echo view('templates/footer');
 
     }
 
+    public function listar_convenios_usuarios(){
+        
+        
+        $data = $this->db->get('convenios')->result_array();
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\convenios', array('data' => $data));
+        echo view('templates/footer');    
+
+    }
 }
