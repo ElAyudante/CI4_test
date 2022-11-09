@@ -1317,4 +1317,20 @@ class ItemCRUD extends CI_Controller {
         echo view('App\Views\pages\usuarios\cursos', array('data' => $data));
         echo view('templates/footer');   
     }
+
+    public function listar_cursos_publico(){
+        $data = $this->db->get('cursos_eventos')->result_array();
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\formacion', array('data' => $data));
+        echo view('templates/footer');   
+    }
+
+    public function mostrar_cursos_publico($id){
+        $data = $this->db->get_where('cursos_eventos', 'Id ='.$id)->row();
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\formacion_detalle', array('data' => $data));
+        echo view('templates/footer');  
+    }
 }
