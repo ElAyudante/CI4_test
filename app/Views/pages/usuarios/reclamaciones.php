@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="card-body doc_user h-100 text-center">
-                                        <h5 class="fw-bold cblue text-uppercase"><?= $reclamacion['Asunto']?> </h5>
+                                        <h6 class="fw-bold cblue text-uppercase"><?= $reclamacion['Asunto']?> </h6>
                                         <div>
                                             <ul class="objetivos p-0">
                                                 <p>Estado: <?= $reclamacion['Estado']?> </p>
