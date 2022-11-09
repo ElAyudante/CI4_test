@@ -32,6 +32,8 @@
     */
 
     $routes->get('alta_nueva', 'itemCRUD::alta_nueva');
+    $routes->get('formacion', 'itemCRUD::listar_cursos_publico');
+    $routes->get('formacion/(:any)', 'itemCRUD::mostrar_cursos_publico/$1');
 
     $routes->get('users/index_login', 'itemCRUD::index_login');
     $routes->post('users/login', 'itemCRUD::login');
