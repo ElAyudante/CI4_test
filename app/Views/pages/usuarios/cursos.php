@@ -1,4 +1,4 @@
-<?php
+ <?php
     $value= $_SESSION['user'];
 ?>
 
@@ -15,26 +15,22 @@
                 <?php foreach ($data as $curso){
                 ?>
                     <div class="col">
-                        <div class="card bg-transparent w-auto cards-users-empleo">
+                        <div class="card cards-users-empleo">
                             <div class="row g-0">
-                                <div class="col-lg-4 d-flex justify-content-center">
-                                    <a href="" target="_blank" class="text-decoration-none">
-                                        <img  class="img-fluid p-3 bg-white" src="<?php echo base_url(),'/'; ?>assets/images/png/imago_twoblues.png">
-                                    </a>
+                                <div class="col-lg-4 m-auto">
+                                    <div class="text-center">
+                                        <img  class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/cursos.gif">
+                                        <h4 class="fw-bold cblue text-uppercase"><?= $curso['Fecha']?> </h4>
+                                    </div>
                                 </div>
-                                <div class="col-lg-8 bg-white">
-                                    <div class="card-body doc_user h-100">
+                                <div class="col-lg-8">
+                                    <div class="card-body doc_user h-100 text-center">
                                         <h5 class="fw-bold cblue text-uppercase"><?= $curso['Nombre']?> </h5>
-                                        <div>
-                                            <ul class="objetivos p-0">
-                                                <p><?= $curso['Descripcion']?> </p>
-                                                <p><?= $curso['Fecha']?> </p>
-                                                <p><?= $curso['Formato']?> </p>
-                                                <p><?= $curso['Duracion'] . ' horas'?> </p>
-                                                <p><?= $curso['HorarioInicio']?> </p>
-                                                <p><?= $curso['HorarioFin']?> </p>
-                                                <p><?= $curso['Descripcion']?> </p>
-                                            </ul>
+                                        <div class="row row-cols-lg-2">
+                                            <div class="col"><p><?= $curso['Formato']?> </p></div>
+                                            <div class="col"><p><?= $curso['Duracion'] . ' horas'?> </p></div>
+                                            <div class="col"><p><?= $curso['HorarioInicio']?> </p></div>
+                                            <div class="col"><p><?= $curso['HorarioFin']?> </p></div>
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="">Ver</a></button>

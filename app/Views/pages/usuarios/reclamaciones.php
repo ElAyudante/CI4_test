@@ -10,7 +10,6 @@
         	<?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
 		</div>
         
-
 		<div class="col-lg-10">
             <div class="row row-cols-3 g-4 p-5">
                 <?php foreach ($data as $reclamacion){
@@ -18,7 +17,7 @@
                     $fecha = date("d/m/Y", strtotime($date));
                 ?>
                     <div class="col">
-                        <div class="card cards-users-empleo" style="min-height: 280px; max-height:280px">
+                        <div class="card cards-users-empleo">
                             <div class="row g-0">
                                 <div class="col-lg-4 m-auto">
                                     <div class="text-center">
