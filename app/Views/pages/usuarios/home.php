@@ -86,7 +86,7 @@ $sel_comunidades =  array (
       <div class="col-lg-10">
         <div class="container p-5">
           <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Mis Datos Personales</h3>
-          <?php echo form_open('users/datos/'.$value['Id']); ?>
+          <?php echo form_open('users/update_datos/'.$value['Id']); ?>
           <div class="form-border p-3 bg-white mb-0">
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
               <div class="col">

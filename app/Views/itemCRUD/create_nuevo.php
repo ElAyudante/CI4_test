@@ -78,49 +78,49 @@ $sel_comunidades =  array (
 
 <section class="bg-gray">
   <div class="container p-5">
-    <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Alta colegiado</h3>
-    <?php echo form_open('/itemCRUD/payment_advance',$form_att); ?>
+    <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Formulario de Registro</h3>
+    <?php echo form_open('/tramitar_alta_nueva',$form_att); ?>
 
-      <div class="row row-cols-lg-4 g-lg-4 cblue">
-        <?php
-          /*if ($this->session->flashdata('errors')){
-            echo '<div class="alert alert-danger">';
-            echo $this->session->flashdata('errors');
-            echo "</div>";
-          }*/
-        ?>
+      <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
+
 
         <div class="col">
           <div class="form-group">
+            <strong>Nombre <span class="text-danger">*</span></strong>
             <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+          <strong>Apellidos <span class="text-danger">*</span></strong>
             <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+          <strong>DNI <span class="text-danger">*</span></strong>
             <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI" required>
           </div>
         </div>
         
         <div class="col">
           <div class="form-group">
+            <strong>Email <span class="text-danger">*</span></strong>
             <input type="text" class="form-control bg-transparent" name="email" placeholder="Email" required>
           </div>
         </div>
         
         <div class="col">
           <div class="form-group">
+            <strong>Teléfono <span class="text-danger">*</span></strong>
             <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono" required>
           </div>
         </div>
 
         <div class="col">
+          <strong>Lugar de Nacimiento <span class="text-danger">*</span></strong>
           <select id="lnacimiento" class="alta-cole form-select bg-transparent" name="lnacimiento" required>
             <option disabled selected hidden value="">Lugar de nacimiento</option>
             <?php 
@@ -132,31 +132,36 @@ $sel_comunidades =  array (
         </div>
 
         <div class="col">
+          <strong>Fecha de Nacimiento </strong>
           <div class="form-group" style="display:flex;">
-            <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-            <?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento" required'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?>          
+            
+            <input type="date" id="date" name="fnacimiento" class="form-control" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+            <strong>Dirección <span class="text-danger">*</span></strong>
             <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+            <strong>Código Postal <span class="text-danger">*</span></strong>
             <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+            <strong>Localidad <span class="text-danger">*</span></strong>
             <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad" required>
           </div>
         </div>
 
         <div class="col">
+          <strong>Provincia <span class="text-danger">*</span></strong>
           <select id="provincia" class="form-select bg-transparent" name="provincia" required>
             <option disabled selected hidden value="">Selecciona una provincia</option>
             <?php 
@@ -168,6 +173,7 @@ $sel_comunidades =  array (
         </div>
         
         <div class="col">
+          <strong>Comunidad Autónoma <span class="text-danger">*</span></strong>
           <select id="comunidad" class="form-select bg-transparent" name="comunidad" required>
             <option disabled selected hidden value="">Comunidad autónoma</option>
             <?php 
@@ -180,29 +186,34 @@ $sel_comunidades =  array (
 
         <div class="col">
           <div class="form-group">
+            <strong>Cuenta Bancaria <span class="text-danger">*</span></strong>
             <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+            <strong>Teléfono Trabajo <span class="text-danger">*</span></strong>
             <input type="number" class="form-control text-uppercase bg-transparent" name="tlftrabajo" placeholder="Teléfono del trabajo" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+            <strong>Lugar de Trabajo </strong>
             <input type="text" class="form-control text-uppercase bg-transparent" name="lugtrabajo" placeholder="¿Dónde trabajas?">
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+            <strong>Dirección de Trabajo</strong>
             <input type="text" class="form-control text-uppercase bg-transparent" name="dtrabajo" placeholder="Dirección del trabajo">
           </div>
         </div>
         
         <div class="col">
+          <strong>Localidad de Trabajo</strong>
           <div class="form-group">
             <input type="text" class="form-control text-uppercase bg-transparent" name="loctrabajo" placeholder="Localidad del trabajo">
           </div>
@@ -210,30 +221,35 @@ $sel_comunidades =  array (
 
         <div class="col">
           <div class="form-group">
+          <strong>Titulación <span class="text-danger">*</span></strong>
             <input type="text" class="form-control text-uppercase bg-transparent" name="titulacion" placeholder="Titulación" required>
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+          <strong>Especialidad</strong>
             <input type="text" class="form-control text-uppercase bg-transparent" name="especialidad" placeholder="Especialidad">
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+          <strong>Ámbito de Trabajo</strong>
             <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
           </div>
         </div>
         
         <div class="col">
           <div class="form-group">
+          <strong>Colegio de Origen</strong>
             <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen">
           </div>
         </div>
 
         <div class="col">
           <div class="form-group">
+          <strong>Nº Colegiado de Origen</strong>
             <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen">
           </div>
         </div>
@@ -265,17 +281,17 @@ $sel_comunidades =  array (
           </div>
         </div>
 
-        <div class="col">
+        <div class="col-lg-6">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">He leído y acepto las Condiciones</label>
+            <label class="form-check-label" for="invalidCheck">He leído y acepto las <a class="text-decoration-none cblue fw-bold" target="_blank" href="<?php echo base_url(),'/'; ?>privacidad">Políticas y Condiciones de Privacidad</a> </label>
             <div class="invalid-feedback">Debe estar de acuerdo antes de enviar.</div>
           </div>
         </div>
 
+
         <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
+        <div class="col"><p><span class="text-danger"> <strong>(*) Campos Obligatorios</strong></span> </p></div>
 
         <div class="col">
           <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Regístrate</button>
