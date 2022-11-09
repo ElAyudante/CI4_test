@@ -38,7 +38,7 @@
                             <div class="d-flex justify-content-center">
                                 <p class="mb-0 cblue fw-bold text-uppercase me-3">Solicitar cambio de modalidad a:</p>
                                 <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
-                                    <option value="" select>Tipo de colegiado</option>
+                                    <option select>Tipo de colegiado</option>
                                     <option value="1">Ejerciente</option>
                                     <option value="0">No ejerciente</option>
                                     <option value="2">Jubilado</option>
@@ -46,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="col-md d-flex justify-content-center mt-4">
-                                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto">Solicitar cambio</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto"><?= $textBoton ?></button>
                             </div>
                         </div>
                         

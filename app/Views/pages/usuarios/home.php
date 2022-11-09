@@ -92,31 +92,31 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group" style="display:flex;">
                   <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <input type="text" class="form-control" name="falta" value="<?php echo $value['FechaAlta']?>" autofocus disabled>          
+                  <input type="text" class="form-control" name="falta" value="<?php echo $value['FechaAlta']?>" autofocus readonly>          
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="colegiado" value="<?php echo $value['Colegiado']?>" autofocus disabled>
+                  <input type="text" class="form-control" name="colegiado" value="<?php echo $value['Colegiado']?>" autofocus readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="nombre" value="<?php echo $value['Nombre']?>" autofocus disabled>
+                  <input type="text" class="form-control" name="nombre" value="<?php echo $value['Nombre']?>" autofocus readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="apellidos" value="<?php echo $value['Apellidos']?>" disabled>
+                  <input type="text" class="form-control" name="apellidos" value="<?php echo $value['Apellidos']?>" readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control " name="usuario" value="<?php echo $value['NIF']?>" disabled>
+                  <input type="text" class="form-control " name="usuario" value="<?php echo $value['NIF']?>" readonly>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control " name="nif" value="<?php echo $value['NIF']?>" disabled>
+                  <input type="text" class="form-control " name="nif" value="<?php echo $value['NIF']?>" readonly>
                 </div>
               </div>
 
@@ -197,7 +197,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="form-group col">
-                <input class="form-control " value="<?php echo $value['LugarNacimiento']?>" disabled>
+                <input class="form-control " value="<?php echo $value['LugarNacimiento']?>" readonly>
               </div>
 
               <div class="col">
@@ -232,20 +232,20 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control " name="ncolegiado" value="<?php echo $value['NumColegiado']?>" disabled>
+                  <input type="number" class="form-control " name="ncolegiado" value="<?php echo $value['NumColegiado']?>" readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group" style="display:flex;">
                   <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <input type="text" class="form-control" name="fechanacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus disabled>           
+                  <input type="text" class="form-control" name="fechanacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus readonly>           
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <select id ="ejerciente" class="form-select " name="ejerciente" disabled>
+                  <select id ="ejerciente" class="form-select " name="ejerciente" readonly>
                     <option value="" select>
                       <?php
                         switch($value['Ejerciente']){

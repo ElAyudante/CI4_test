@@ -20,22 +20,22 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                 
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="nombre" value="<?=$item->Nombre?>" autofocus disabled>
+                        <input type="text" class="form-control" name="nombre" value="<?=$item->Nombre?>" autofocus readonly>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="apellidos" value="<?=$item->Apellidos?>" autofocus disabled>
+                        <input type="text" class="form-control" name="apellidos" value="<?=$item->Apellidos?>" autofocus readonly>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email" value="<?=$item->Email?>" autofocus disabled>
+                        <input type="text" class="form-control" name="email" value="<?=$item->Email?>" autofocus readonly>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="asunto" value="<?=$item->Asunto?>" placeholder="Asunto" autofocus disabled>
+                        <input type="text" class="form-control" name="asunto" value="<?=$item->Asunto?>" placeholder="Asunto" autofocus readonly>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <textarea type="text" style="min-height: 100px" oninput="auto_grow(this)" class="form-control h-100" name="mirespuesta" value="" autofocus disabled> <?=$item->MiRespuesta?> </textarea>
+                        <textarea type="text" style="min-height: 100px" oninput="auto_grow(this)" class="form-control h-100" name="mirespuesta" value="" autofocus readonly> <?=$item->MiRespuesta?> </textarea>
                     </div>
                 </div>
 

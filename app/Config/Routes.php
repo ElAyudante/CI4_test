@@ -48,6 +48,7 @@
     $routes->get('users/reclamaciones/(:any)', "itemCRUD::mostrar_reclamaciones/$1");
     $routes->get('users/nueva_reclamacion', 'itemCRUD::nueva_reclamacion');
     $routes->post('users/crear_reclamacion', 'itemCRUD::crear_reclamacion');
+    $routes->get('users/convenios', 'itemCRUD::listar_convenios_usuarios');
     $routes->get('users/cambio_modalidad', 'itemCRUD::cambio_modalidad');
     $routes->post('users/solicitar_cambio_modalidad', 'itemCRUD::tramitar_cambio_modalidad');
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
