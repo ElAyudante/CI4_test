@@ -14,26 +14,27 @@
         	<?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
 		</div>
         
-		<div class="col-lg-10 text-center d-flex flex-row ">
+		<div class="col-lg-10 text-center">
         <?php foreach ($data as $pago){
         ?>
-			<div class="contrainer p-5 ">
-            <h3 class="p-3 text-white text-uppercase fs-2 bg-blue  mb-0 text-center">Pago Realizado</h3>
-				<div class="row row-cols-1 needs-validation form-border p-3 bg-white mb-0">
-                    <div class="col">
+			<div class="row row-cols-4 g-4 p-5">
+                <div class="col">
+                    <h3 class="p-3 text-white text-uppercase fs-2 bg-blue mb-0 text-center">Pago Realizado</h3>
+                    <div class="form-border p-3 bg-white mb-0">
                         <p class="cblue text-uppercase"><b>Fecha: </b><?= $pago['Fecha']?> </p>
                         <p class="cblue text-uppercase"><b>Nº Colegiado: </b><?= $pago['NumColegiado']?> </p>
                         <p class="cblue text-uppercase"><b>Nombre: </b><?= $pago['Nombre']. ' '. $pago['Apellidos'] ?> </p>
                         <p class="cblue text-uppercase"><b>Transacción: </b><?= $pago['Transaccion']?> </p>
                         <p class="cblue text-uppercase"><b>Cantidad: </b><?= $pago['Cantidad']. ' Euros'?> </p>
-                    </div>
-                    <div class="">   
-                        <div class="col-md d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/files/download/<?php echo $pago['Factura'] ?>">Descargar Factura</a></button>
+                        <div class="">   
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/files/download/<?php echo $pago['Factura'] ?>">Descargar Factura</a></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-			</div>
+            </div>
+
             <?php }; ?>
 		</div>
 	</div>
