@@ -14,13 +14,14 @@
         	<?php echo view('templates/menu_usuarios'); ?> <!-- MENU ADMIN.PHP -->
 		</div>
         
-		<div class="col-lg-10 text-center d-flex flex-row">
+		<div class="col-lg-10 text-center d-flex flex-row ">
         <?php foreach ($data as $pago){
         ?>
-			<div class="contrainer p-5">
+			<div class="contrainer p-5 ">
             <h3 class="p-3 text-white text-uppercase fs-2 bg-blue  mb-0 text-center">Pago Realizado</h3>
-				<div class="row row-cols-1 ">
+				<div class="row row-cols-1 needs-validation form-border p-3 bg-white mb-0">
                     <div class="col">
+                        <p class="cblue text-uppercase"><b>Fecha: </b><?= $pago['Fecha']?> </p>
                         <p class="cblue text-uppercase"><b>Nº Colegiado: </b><?= $pago['NumColegiado']?> </p>
                         <p class="cblue text-uppercase"><b>Nombre: </b><?= $pago['Nombre']. ' '. $pago['Apellidos'] ?> </p>
                         <p class="cblue text-uppercase"><b>Transacción: </b><?= $pago['Transaccion']?> </p>
