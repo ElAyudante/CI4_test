@@ -21,7 +21,7 @@
         ?>
 			<div class="row row-cols-4 g-4 p-5">
                 <div class="col">
-                    <h3 class="p-3 text-white text-uppercase fs-2 bg-blue mb-0 text-center"><?= $fecha ?></h3>
+                    <h3 class="p-3 text-white text-uppercase fs-2 bg-blue mb-0 text-center"><i class="fa-solid fa-calendar me-3"></i><?= $fecha ?></h3>
                     <div class="form-border p-3 bg-white mb-0">
                         <p class="cblue text-uppercase"><b>Nº Colegiado: </b><?= $pago['NumColegiado']?> </p>
                         <p class="cblue text-uppercase"><b>Nombre: </b><?= $pago['Nombre']. ' '. $pago['Apellidos'] ?> </p>

@@ -17,7 +17,7 @@
                 <div class="col">
                     <h3 class="p-3 text-white text-uppercase fs-2 bg-blue mb-0 text-center"><?= $convenio['empresa']?> </h3>
                     <div class="form-border p-3 bg-white mb-0">
-                        <p class="cblue text-uppercase"><b>Codigo: </b><?= $convenio['codigo'] ?> </p>
+                        <p class="cblue text-uppercase"><b>Código: </b><?= $convenio['codigo'] ?> </p>
                         <p class="cblue text-uppercase"><?= $convenio['descripcion']?> </p>
                         <p class="cblue text-uppercase"><a href="<?= $convenio['web']?>"><?= $convenio['web']?> </a></p>
                         <div class="">   
