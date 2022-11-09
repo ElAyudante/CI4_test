@@ -7,7 +7,7 @@
     </div>
 </section>
 
-<section class="junta">
+<section class="bg-gray">
   <div class="container py-5">
     <div class="faq-content">
 
