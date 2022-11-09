@@ -13,6 +13,10 @@
                     <a href="<?php echo base_url().'/'; ?>users/documentos"><i class="far fa-calendar-check fa-lg me-2"></i> Mis Documentos</i></a>
                 </li>  
 
+                <li>
+                    <a href="<?php echo base_url().'/'; ?>users/mis_cursos"><i class="far fa-calendar-check fa-lg me-2"></i> Mis Cursos</i></a>
+                </li>  
+
                 <li data-bs-toggle="collapse" data-bs-target="#cobros" class="collapsed">
                     <a href="#cobros"><i class="fas fa-file-alt fa-lg me-2"></i> Mis Pagos <span class="arrow"></span></a>
                 </li>

@@ -3,10 +3,6 @@
 
     $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
 ?>
-<?php
-    include "api/apiRedsys.php";  
-    $miObj = new RedsysAPI;
-?>
 <section class="bg-gray" style="height: 80vh">
   	<div class="container-fluid row">
 
