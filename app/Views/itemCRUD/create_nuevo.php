@@ -186,8 +186,8 @@ $sel_comunidades =  array (
 
         <div class="col">
           <div class="form-group">
-            <strong>Cuenta Bancaria <span class="text-danger">*</span></strong>
-            <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC" required>
+            <strong>Cuenta Bancaria <span class="text-danger"></span></strong>
+            <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC" >
           </div>
         </div>
 

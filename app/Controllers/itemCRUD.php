@@ -643,6 +643,7 @@ class ItemCRUD extends CI_Controller {
 
     public function crear_reclamacion(){
 
+        $model = model(ItemCRUDModel::class);
 
         if ($this->request->getMethod() === 'post' && $this->validate([
             'nombre' => 'required|min_length[3]|max_length[255]',
@@ -812,11 +813,11 @@ class ItemCRUD extends CI_Controller {
         $this->db->update('colegiados', $data, 'ID ='.$id);
 
         $data_pago = array(
-            'NumColegiado'=>$this->input-post('colegiado'),
+            'NumColegiado'=>$this->input->post('colegiado'),
             'Nombre'=>$this->input->post('nombre'),
             'Apellidos'=>$this->input->post('apellidos'),
             'Transaccion'=>'Cuota Alta',
-            'Cantidad'=>$this->db->get_where('cuotas', array('ID' => '1')->row->Inscripcion),
+            'Cantidad'=>$this->db->get_where('cuotas', array('ID' => '1')->row(0,'Inscripcion')),
             'Estado'=>'Pendiente',
         );
 
@@ -1366,5 +1367,66 @@ class ItemCRUD extends CI_Controller {
         }
         echo view('App\Views\pages\registro_curso_publico',$data);
         echo view('templates/footer');  
+    }
+
+    public function tramitar_alta_nueva(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'nombre' => 'required|min_length[3]|max_length[255]',
+            'apellidos'  => 'required',
+            'nif'  => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'lnacimiento' => 'required',
+            'direccion' => 'required',
+            'cp' => 'required',
+            'localidad' => 'required',
+            'provincia' => 'required',
+            'comunidad' => 'required',
+            'tlftrabajo' => 'required',
+            'titulacion' => 'required'
+            
+        ])) {
+            $model->insert_item([
+                'nombre' => $this->request->getPost('nombre'),
+                'apellidos'  => $this->request->getPost('apellidos'),
+                'nif'  => $this->request->getPost('nif'),
+                'email'  => $this->request->getPost('email'),
+                'telefono'  => $this->request->getPost('telefono'),
+                'direccion'  => $this->request->getPost('direccion'),
+                'cp'  => $this->request->getPost('cp'),
+                'lnacimiento'  => $this->request->getPost('lnacimiento'),
+                'fnacimiento'  => $this->request->getPost('fnacimiento'),
+                'localidad'  => $this->request->getPost('localidad'),
+                'comunidad'  => $this->request->getPost('comunidad'),
+                'provincia'  => $this->request->getPost('provincia'),
+                'cuenta'  => $this->request->getPost('cuenta'),
+                'tlftrabajo'  => $this->request->getPost('tlftrabajo'),
+                'lugtrabajo'  => $this->request->getPost('lugtrabajo'),
+                'dtrabajo'  => $this->request->getPost('dtrabajo'),
+                'loctrabajo'  => $this->request->getPost('loctrabajo'),
+                'titulacion'  => $this->request->getPost('titulacion'),
+                'especialidad'  => $this->request->getPost('especialidad'),
+                'ambito'  => $this->request->getPost('ambito'),
+                'colegioorigen'  => $this->request->getPost('colegioorigen'),
+                'norigen'  => $this->request->getPost('norigen'),
+                'sectores'  => $this->request->getPost('sectores'),
+                'bolsa'  => $this->request->getPost('bolsa')
+
+            ]);
+
+            return redirect()->to(base_url('thank-you'));
+        } else {
+            return redirect()->to(base_url('home'));
+        }
+    }
+
+    public function thank_you(){
+
+        echo view('templates/header');
+        echo view('App\Views\pages\thank-you');
+        echo view('templates/footer');
     }
 }
