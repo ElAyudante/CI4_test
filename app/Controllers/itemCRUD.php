@@ -1515,4 +1515,81 @@ class ItemCRUD extends CI_Controller {
 
         return $this->db->insert('inscripciones_cursos', $data);
     }
+
+    public function faq(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\faq');
+        echo view('templates/footer');
+    }
+
+    public function juntagob(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\juntagob');
+        echo view('templates/footer');
+    }
+
+    public function estatutos(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\estatutos');
+        echo view('templates/footer');
+    }
+
+    public function codigo(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\codigo');
+        echo view('templates/footer');
+    }
+    public function acuerdos(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\acuerdos');
+        echo view('templates/footer');
+    }
+
+    public function otroscursos(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\otroscursos');
+        echo view('templates/footer');
+    }
 }

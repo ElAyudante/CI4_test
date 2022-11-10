@@ -41,6 +41,13 @@
     $routes->get('thank-you', 'itemCRUD::thank_you');
     $routes->get('users/tramitar_pago_curso_ok/(:any)', 'itemCRUD::tramitar_pago_curso_usuario/$1');
 
+    $routes->get('faq', 'itemCRUD::faq');
+    $routes->get('juntagob', 'itemCRUD::juntagob');
+    $routes->get('estatutos', 'itemCRUD::estatutos');
+    $routes->get('codigo', 'itemCRUD::codigo');
+    $routes->get('acuerdos', 'itemCRUD::acuerdos');
+    $routes->get('otroscursos', 'itemCRUD::otroscursos');
+
     $routes->get('users/index_login', 'itemCRUD::index_login');
     $routes->post('users/login', 'itemCRUD::login');
     $routes->get('users/home', 'itemCRUD::home_login');
