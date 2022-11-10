@@ -22,6 +22,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>lista_cursos_CPLC">Lista Cursos CPLC</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>lista_cursos_ajenos">Lista Cursos Ajenos</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>lista_eventos">Lista Eventos</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>inscripciones">Inscripciones</a></li>
                 </ul>
 
 

@@ -235,6 +235,28 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
    }
 
+   public function listar_inscripciones_cursos(){
+        
+    $crud = new GroceryCrud();
+    $crud->setTable('inscripciones_cursos');
+    $crud->setSubject('Inscripciones', 'Inscripciones');
+    $crud->columns(['Fecha', 'NumColegiado', 'Nombre', 'Apellidos', 'NombreCurso', 'Modalidad']);
+
+    $crud->unsetBootstrap();
+    $crud->unsetAdd();
+    $crud->unsetEdit();
+    $crud->unsetDelete();
+
+    $output = $crud->render();
+
+    $titulo = array('titulo' => 'Lista Inscripciones (Admin)');
+    $data = array_merge((array)$output, $titulo);
+
+    echo view('templates/header_admin'); 
+    echo view('itemCRUD/list', $data);
+    echo view('templates/footer');
+   }
+
    public function listar_cursos_ajenos(){
         
         $crud = new GroceryCrud();
@@ -1449,5 +1471,48 @@ class ItemCRUD extends CI_Controller {
         }
         echo view('App\Views\pages\home');
         echo view('templates/footer');
+    }
+
+    public function tramitar_pago_curso_usuario($id){
+
+        $data['Id'] = $id;
+        $data['Controller'] = $this;
+
+    echo view('templates/header_usuarios');
+    echo view('App\Views\pages\usuarios\tramitar_pago_curso_ok',$data);
+    echo view('templates/footer');
+    }
+
+    public function verificar_pago_curso($id, $user){
+
+        $curso = $this->db->get_where('cursos_eventos', 'Id =' .$id)->row_array();
+        $nombreCurso = $curso['Nombre'];
+        $modalidad = '';
+        switch($user['Ejerciente']){
+            case 0:
+                $modalidad = 'No Ejerciente';
+                break;
+            case 1: 
+                $modalidad = 'Ejerciente';
+                break;
+            case 2:
+                $modalidad = 'Jubilado';
+                break;
+            case 3:
+                $modalidad = 'Estudiante';
+                break;
+        };
+
+        $data = array(
+            'Fecha' => date('Y-m-d'),
+            'NumColegiado' => $user['Colegiado'],
+            'Nombre' => $user['Nombre'],
+            'Apellidos' => $user['Apellidos'],
+            'NombreCurso' => $nombreCurso,
+            'Modalidad' => $modalidad,
+            'IdCurso' => $id
+        );
+
+        return $this->db->insert('inscripciones_cursos', $data);
     }
 }
