@@ -31,11 +31,11 @@ class Database extends Config
      * @var array
      */
     public $default = [
-	'DSN' => 'port=3306',
+	    'DSN' => 'port=3306',
         'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '', 
-	'database' => 'logopedas',
+	    'username' => 'root',
+	    'password' => 'root', 
+	    'database' => 'logopedas',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
