@@ -44,8 +44,8 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         <div class="col">
                             <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>
                         </div>
-                <?php echo form_close(); ?>
-            </div>
+                    <?php echo form_close(); ?>
+                </div>
             
         </div>
     </div>
