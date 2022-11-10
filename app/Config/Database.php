@@ -34,7 +34,7 @@ class Database extends Config
 	'DSN' => 'port=3306',
         'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'root', 
+	'password' => '', 
 	'database' => 'logopedas',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
