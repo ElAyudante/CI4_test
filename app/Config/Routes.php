@@ -39,6 +39,7 @@
     $routes->get('registro_curso/(:any)', 'itemCRUD::registro_curso_publico/$1');
     $routes->post('users/registro_curso_usuario', 'itemCRUD::registro_curso_usuario');
     $routes->get('thank-you', 'itemCRUD::thank_you');
+    $routes->get('users/tramitar_pago_curso_ok/(:any)', 'itemCRUD::tramitar_pago_curso_usuario/$1');
 
     $routes->get('users/index_login', 'itemCRUD::index_login');
     $routes->post('users/login', 'itemCRUD::login');
@@ -135,7 +136,7 @@
     $routes->get('itemCRUD/store_documento/edit/(:any)', 'itemCRUD::edit_documento/$1');
     $routes->get('itemCRUD/update_documento/edit/(:any)', 'itemCRUD::edit_documento/$1');
 
-    $routes->get('alta_cursos_eventos', 'itemCRUD::create_curso_evento');
+    $routes->get('alta_curso_evento', 'itemCRUD::create_curso_evento');
     $routes->get('lista_cursos_CPLC', 'itemCRUD::listar_cursos_CPLC');
     $routes->get('lista_cursos_ajenos', 'itemCRUD::listar_cursos_ajenos');
     $routes->get('lista_eventos', 'itemCRUD::listar_eventos');
@@ -147,6 +148,7 @@
     $routes->get('lista_cursos_ajenos/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
     $routes->get('lista_eventos/delete/(:any)', 'itemCRUD::delete_eventos/$1');
     $routes->get('lista_eventos/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
+    $routes->get('inscripciones', 'itemCRUD::listar_inscripciones_cursos');
 
     $routes->get('sitemap', 'itemCRUD::siteMap');
   
