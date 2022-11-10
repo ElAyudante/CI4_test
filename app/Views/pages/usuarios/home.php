@@ -121,14 +121,22 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col">
-                <div class="form-group">
-                  <input type="password" class="form-control" name="pass" value="<?php echo $value['Pass']?>">
+                <div class="form-group d-flex">
+                  <input id="password" type="password" class="form-control" name="pass" value="<?php echo $value['Pass']?>">
+                      <span class="input-group-text" onclick="password_show_hide();">
+                        <i class="fas fa-eye" id="show_eye"></i>
+                        <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                      </span>
                 </div>
               </div>
 
               <div class="col">
-                <div class="form-group">
-                  <input type="password" class="form-control" name="confirm_pass" placeholder="Confirmar Contraseña">
+                <div class="form-group d-flex">
+                  <input id="confirm_password" type="password" class="form-control" name="confirm_pass" placeholder="Confirmar Contraseña">
+                      <span class="input-group-text" onclick="password_show_hide_confirm();">
+                        <i class="fas fa-eye" id="show_eye_confirm"></i>
+                        <i class="fas fa-eye-slash d-none" id="hide_eye_confirm"></i>
+                      </span>
                 </div>
               </div>
 
@@ -299,3 +307,37 @@ $sel_comunidades =  array (
 		</div>
 	</div>
 </section>
+
+<script>
+  function password_show_hide() {
+  var x = document.getElementById("password");
+  var show_eye = document.getElementById("show_eye");
+  var hide_eye = document.getElementById("hide_eye");
+  hide_eye.classList.remove("d-none");
+  if (x.type === "password") {
+    x.type = "text";
+    show_eye.style.display = "none";
+    hide_eye.style.display = "block";
+  } else {
+    x.type = "password";
+    show_eye.style.display = "block";
+    hide_eye.style.display = "none";
+  }
+}
+
+function password_show_hide_confirm() {
+  var x = document.getElementById("confirm_password");
+  var show_eye = document.getElementById("show_eye_confirm");
+  var hide_eye = document.getElementById("hide_eye_confirm");
+  hide_eye.classList.remove("d-none");
+  if (x.type === "password") {
+    x.type = "text";
+    show_eye.style.display = "none";
+    hide_eye.style.display = "block";
+  } else {
+    x.type = "password";
+    show_eye.style.display = "block";
+    hide_eye.style.display = "none";
+  }
+}
+</script>

@@ -31,6 +31,7 @@
     $routes->get('users/profile/edit', 'users::edit');
     */
 
+    $routes->get('home', 'itemCRUD::home');
     $routes->get('alta_nueva', 'itemCRUD::alta_nueva');
     $routes->get('formacion', 'itemCRUD::listar_cursos_publico');
     $routes->post('tramitar_alta_nueva', 'itemCRUD::tramitar_alta_nueva');
@@ -79,6 +80,7 @@
 
  
     $routes->get('cobros_pendientes', 'itemCRUD::cobros_pendientes');
+    $routes->get('cobros_pendientes/delete/(:any)', 'itemCRUD::delete_cobro_pendiente/$1');
     $routes->get('cobros_realizados', 'itemCRUD::cobros_realizados');
     $routes->get('edit_cuotas', 'itemCRUD::edit_cuotas');
     $routes->post('itemCRUD/update_cuotas', 'itemCRUD::update_cuotas');
@@ -88,6 +90,7 @@
     $routes->get('users/tramitar_pago_ok/(:any)', 'itemCRUD::tramitar_pago_ok/$1');
     $routes->get('users/pagos_realizados', 'itemCRUD::pagos_realizados_usuarios');
     $routes->get('users/test_tramitar_pago', 'itemCRUD::test_tramitar_pago');
+
 
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
@@ -144,16 +147,6 @@
     $routes->get('lista_cursos_ajenos/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
     $routes->get('lista_eventos/delete/(:any)', 'itemCRUD::delete_eventos/$1');
     $routes->get('lista_eventos/edit/(:any)', 'itemCRUD::edit_curso_evento/$1');
-
-
-    $routes->get('paypal/success/(:any)', 'paypal::success/$1');
-    $routes->get('(:any)', 'pages::view/$1');
-
-    $routes->get('create_forum', 'forum::create_forum');
-    $routes->get('topic/create', 'forum::create_topic');
-    $routes->get('(:any)/create_topic', 'forum::create_topic/$1');
-    $routes->get('topic/(:any)/(:any)', 'forum::topic/$1/$2');
-    $routes->get('(:any)/(:any)/reply', 'forum::create_post/$1/$2');
 
     $routes->get('sitemap', 'itemCRUD::siteMap');
   

@@ -418,7 +418,7 @@ class ItemCRUD extends CI_Controller {
         'Fecha' => date('Y-m-d'),
         'Estado' => 'Pagado'
     );
-    $this->db->update('pagos_pendientes', $data, 'Id ='.$id);
+    return $this->db->update('pagos_pendientes', $data, 'Id ='.$id);
    }
 
    public function mis_datos(){
@@ -811,13 +811,14 @@ class ItemCRUD extends CI_Controller {
 		);
 
         $this->db->update('colegiados', $data, 'ID ='.$id);
+        $cuota = $this->db->get_where('cuotas', 'ID = 1')->row_array();
 
         $data_pago = array(
             'NumColegiado'=>$this->input->post('colegiado'),
             'Nombre'=>$this->input->post('nombre'),
             'Apellidos'=>$this->input->post('apellidos'),
             'Transaccion'=>'Cuota Alta',
-            'Cantidad'=>$this->db->get_where('cuotas', array('ID' => '1')->row(0,'Inscripcion')),
+            'Cantidad'=>$cuota['Inscripcion'],
             'Estado'=>'Pendiente',
         );
 
@@ -1014,6 +1015,13 @@ class ItemCRUD extends CI_Controller {
         $this->itemCRUD->delete_contenido_cursos($id);
 
        return $this->listar_eventos();
+   }
+
+   public function delete_cobro_pendiente($id){
+
+        $this->itemCRUD->delete_pago_pendiente($id);
+
+        return $this->cobros_pendientes();
    }
 
 
@@ -1427,6 +1435,19 @@ class ItemCRUD extends CI_Controller {
 
         echo view('templates/header');
         echo view('App\Views\pages\thank-you');
+        echo view('templates/footer');
+    }
+
+    public function home() {
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\home');
         echo view('templates/footer');
     }
 }

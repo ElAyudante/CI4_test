@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center text-white">
             <div class="col-md-12" id="texto-cabecera">
-                <h1 class="mb-3 title-main align-middle text-uppercase">Acceso Administrador</h1>
+                <h1 class="mb-3 title-main align-middle text-uppercase">Acceso Administración</h1>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
       
 
         <div class="p-5 w-75">
-        <h3 class="py-4 px-5 text-white text-uppercase fs-2 bg-blue fw-bold mb-0 text-center"><i class="bi bi-person-circle"></i> Colegiados Admin</h3>
+        <h3 class="py-4 px-5 text-white text-uppercase fs-2 bg-blue fw-bold mb-0 text-center"><i class="bi bi-person-circle"></i> ACCESO ADMINISTRACIÓN</h3>
             
         <form class="form-border p-5 bg-white mb-0 text-center" method="POST" action="<?php echo base_url(); ?>/users/admin/login">
             <div class="d-flex align-items-center mb-4">

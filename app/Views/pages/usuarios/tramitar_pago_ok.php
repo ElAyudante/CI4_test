@@ -1,7 +1,7 @@
 <?php
 
 $value= $_SESSION['user'];
-/*
+
   include_once 'api/apiRedsys.php'; 
 
   $miObj = new RedsysAPI; 
@@ -22,7 +22,7 @@ $value= $_SESSION['user'];
    
    
 }
-*/
+
 ?>
 
   <section class="bg-gray">
@@ -38,7 +38,7 @@ $value= $_SESSION['user'];
           <div class="form-border p-3 bg-white mb-0">
               <img class="img-fluid w-25" src="<?php echo base_url(),'/'; ?>/assets/images/png/verificado.gif">
               <p class="cblue fw-bold text-uppercase">Se ha realizado el pago correctamente.</p>
-              <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase text-white"><a class="text-white text-decoration-none" href="<?php echo base_url('users/pagos_realizados'); ?>">Volver</a></button>
+              <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase text-white"><a class="text-white text-decoration-none" href="<?php echo base_url('users/home'); ?>">Volver</a></button>
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@
                                             <div class="col"><p><?= $curso['HorarioFin']?> </p></div>
                                         </div>
                                         <div>
-                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="">Ver</a></button>
+                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url('formacion'). '/' . $curso['Id'] ?>">Ver</a></button>
                                         </div>
                                     </div>
                                 </div>
