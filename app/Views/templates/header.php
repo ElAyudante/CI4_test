@@ -79,7 +79,7 @@
                                 <button type="button" class="btn btn-header">ACCESO</button>
                             </a>
                             <a href="<?php echo base_url(),'/'; ?>users/admin" class="alineadobotonmenu" target="">
-                                <button type="button" class="btn btn-header"><i class="bi bi-shield-lock-fill"></i></button>
+                                <button type="button" class="btn btn-header btn-lg"><i class="bi bi-shield-lock-fill"></i></button>
                             </a>
                             
                         <?php endif; ?>
