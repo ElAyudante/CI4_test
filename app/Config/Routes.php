@@ -31,6 +31,7 @@
     $routes->get('users/profile/edit', 'users::edit');
     */
 
+    $routes->get('home', 'itemCRUD::home');
     $routes->get('alta_nueva', 'itemCRUD::alta_nueva');
     $routes->get('formacion', 'itemCRUD::listar_cursos_publico');
     $routes->post('tramitar_alta_nueva', 'itemCRUD::tramitar_alta_nueva');

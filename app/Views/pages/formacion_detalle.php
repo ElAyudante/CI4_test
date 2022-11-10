@@ -107,7 +107,7 @@
                 <div class="card h-100">
                     <div class="text-center">
                         <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-hand-holding-dollar me-3"></i>Precio</h2></div>
-                        <h3 class="px-5">Colegiados: <?= $curso->PrecioColegiado ?> euros<br>No colegiados: <?= $curso->PrecioNoColegiado ?> euros</h3>
+                        <h3 class="px-5">Colegiados: <?= $curso->PrecioColegiado ?> euros<br>No colegiados: <?= $curso->PrecioNoColegiado ?> euros<br>Estudiantes: <?= $curso->PrecioEstudiante ?> euros</h3>
                     </div>
                 </div>
             </div>
