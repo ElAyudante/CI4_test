@@ -2,9 +2,9 @@
 $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
 ?>
 
-<section class="bg-gray">
+<section class="bg-gray" style="height: 60vh;">
   <div class="container-fluid">
-        <div class="row">
+        <div class="row h-100">
         
             <div class="col-lg-2 ps-0">
                 <?php echo view('templates/menu_admin'); ?> <!-- MENU ADMIN.PHP -->
