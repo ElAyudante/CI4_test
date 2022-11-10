@@ -1,6 +1,19 @@
 <?php
+
+    if(isset($_SESSION['user'])){
+        $registrado = $_SESSION['user'];
+    } else {
+        $registrado = NULL;
+    }
+    if(isset($_SESSION['admin'])){
+        $admin = $_SESSION['admin'];
+    } else {
+        $admin = NULL;
+    }
     $date = $curso->Fecha;
     $fecha = date("d/m/Y", strtotime($date));
+
+
 ?>
 <!-------------------------- NUEVO -------------------------->
 <section class="container">
@@ -32,9 +45,15 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-8 text-white mt-5 pb-5" style="min-height:400px">
-                <div>
+            <div class="col-lg-8 text-white mt-5 pb-5" >
+                <div style="min-height:200px">
                     <p><?= $curso->Descripcion ?></p>
+                </div>
+                <div>
+                    <a href="<?php echo base_url('registro_curso') . '/' . $curso->Id ?>" class="text-white">
+                        <button class="btn btn-primary text-uppercase">APUNTATE</button>
+                    </a>
+
                 </div>
             </div>
         </div>

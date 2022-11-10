@@ -1321,7 +1321,13 @@ class ItemCRUD extends CI_Controller {
     public function listar_cursos_publico(){
         $data = $this->db->get('cursos_eventos')->result_array();
 
-        echo view('templates/header_usuarios');
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
         echo view('App\Views\pages\formacion', array('data' => $data));
         echo view('templates/footer');   
     }
@@ -1332,9 +1338,33 @@ class ItemCRUD extends CI_Controller {
             'detalles' => $this->db->get_where('contenido_cursos', 'Id ='. $id)->row()
         );
         
-
-        echo view('templates/header_usuarios');
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        
         echo view('App\Views\pages\formacion_detalle',$data);
+        echo view('templates/footer');  
+    }
+
+    public function registro_curso_publico($id){
+        
+
+        $data = array(
+            'curso' => $this->db->get_where('cursos_eventos', 'Id ='.$id)->row()
+        );
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\registro_curso_publico',$data);
         echo view('templates/footer');  
     }
 }

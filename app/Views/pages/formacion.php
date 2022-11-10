@@ -25,7 +25,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-4 text-white mt-5">
                 
-                <a href="<?php echo base_url(),'/'; ?>formacion_detalle" target="_blank" class="text-decoration-none">
+                <a href="<?php echo base_url(),'/'; ?>formacion_detalle" class="text-decoration-none">
                     <div class="cards-curso m-auto">
                         <div class="imgBx-curso">
                             <div>
@@ -43,7 +43,7 @@
                 <h3 class="section-subheading curso-tittle text-uppercase" style="margin-top: -3.6em !important; margin-bottom:1em; min-height: 84px"><?= $curso['Nombre'] ?></h3>
                 <p style="min-height: 120px"><?= $curso['Descripcion'] ?></p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
-                    <a href="<?= base_url('formacion'). '/'.$curso['Id']; ?>" class="text-white" target="_blank">
+                    <a href="<?= base_url('formacion'). '/'.$curso['Id']; ?>" class="text-white">
                         <button class="btn btn-primary text-uppercase">VER CURSO</button>
                     </a>
                 </div>
@@ -65,13 +65,13 @@
                 <h3 style="margin-top: -3.6em !important; margin-bottom:1em; min-height:84px" class="section-subheading curso-tittle-blanco text-uppercase"><?= $curso['Nombre'] ?></h3>
                 <p style="min-height: 120px"><?= $curso['Descripcion'] ?></p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
-                    <a href="<?= base_url('formacion'). '/'.$curso['Id']; ?>" class="text-white" target="_blank">
+                    <a href="<?= base_url('formacion'). '/'.$curso['Id']; ?>" class="text-white" >
                         <button class="btn btn-primary text-uppercase">VER CURSO</button>
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 text-white mt-5 order-lg-2 order-1">
-                <a href="<?= base_url('formacion/').$curso['Id']; ?>" target="_blank" class="text-decoration-none">
+                <a href="<?= base_url('formacion/').$curso['Id']; ?>"  class="text-decoration-none">
                     <div class="cards-curso m-auto">
                         <div class="imgBx-curso">
                             <div>
