@@ -255,6 +255,11 @@ class ItemCRUDModel extends CI_Model{
         return $this->db->delete('contenido_cursos', array('Id' => $id));
     }
 
+	public function delete_pago_pendiente($id)
+    {
+        return $this->db->delete('pagos_pendientes', array('Id' => $id));
+    }
+
 	
 }
 ?>

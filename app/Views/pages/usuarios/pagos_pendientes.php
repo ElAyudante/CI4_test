@@ -16,11 +16,19 @@
         
 		<div class="col-lg-10 text-center d-flex flex-row">
 
+        <?php 
+            if(empty($data)){
+
+            
+        ?>
             <div class="container p-5 d-flex align-items-center w-50">
                 <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><img style="width: 60px;" class="img-fluid me-3" src="<?php echo base_url(),'/'; ?>/assets/images/png/logo_white.svg">Actualmente no tiene  pagos pendientes a su nombre</h3>
             </div>
 
-        <?php foreach ($data as $pago){
+        <?php 
+            } else {
+        
+        foreach ($data as $pago){
             // Valores de entrada que no hemos cmbiado para ningun ejemplo
                 $fuc="036421808";
                 $terminal="1";
@@ -74,7 +82,7 @@
 
                 </div>
 			</div>
-            <?php }; ?>
+            <?php }}; ?>
 		</div>
 	</div>
 </section>

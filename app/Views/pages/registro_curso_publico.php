@@ -99,7 +99,7 @@ if(isset($registrado)){
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
                 <div class="col-lg-12">
                     <strong>Curso</strong>
-                    <input type="text" class="form-control" name="numColegiado" value="<?= $curso->Nombre ?>" autofocus readonly required>
+                    <input type="text" class="form-control" name="nombreCurso" value="<?= $curso->Nombre ?>" autofocus readonly required>
                 </div>
                 <div class="col">
                     <div class="form-group">
@@ -157,7 +157,7 @@ if(isset($registrado)){
                 <div class="col">
                     <div class="form-group">
                         <strong>Importe <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control bg-transparent" name="comunidad" value="<?= $precio . ' Euros' ?>" readonly required>
+                        <input type="text" class="form-control bg-transparent" name="importe" value="<?= $precio . ' Euros' ?>" readonly required>
                     </div>
                 </div>
 
@@ -179,7 +179,7 @@ if(isset($registrado)){
                 <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
                     <div class="col-lg-12">
                         <strong>Curso </strong>
-                        <input type="text" class="form-control" name="numColegiado" value="<?= $curso->Nombre ?>" autofocus readonly required>
+                        <input type="text" class="form-control" name="nombreCurso" value="<?= $curso->Nombre ?>" autofocus readonly required>
                     </div>
                     <div class="col">
                         <div class="form-group">
@@ -238,7 +238,7 @@ if(isset($registrado)){
                     <div class="col">
                         <div class="form-group">
                             <strong>Importe <span class="text-danger">*</span></strong>
-                            <input type="text" class="form-control bg-transparent" name="comunidad" value="Sin Coste" readonly required>
+                            <input type="text" class="form-control bg-transparent" name="importe" value="Sin Coste" readonly required>
                         </div>
                     </div>
 
@@ -291,15 +291,12 @@ if(isset($registrado)){
                 $request = "";
                 $params = $miObj->createMerchantParameters();
                 $signature = $miObj->createMerchantSignature($kc);
-
-                
-                
             ?>
 
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
                 <div class="col-lg-12">
                     <strong>Curso</strong>
-                    <input type="text" class="form-control" name="numColegiado" value="<?= $curso->Nombre ?>" autofocus  required>
+                    <input type="text" class="form-control" name="Nombre" value="<?= $curso->Nombre ?>" autofocus  required>
                 </div>
                 <div class="col">
                     <div class="form-group">
@@ -378,7 +375,7 @@ if(isset($registrado)){
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
                 <div class="col-lg-12">
                     <strong>Curso </strong>
-                    <input type="text" class="form-control" name="numColegiado" value="<?= $curso->Nombre ?>" autofocus readonly  required>
+                    <input type="text" class="form-control" name="nombreCurso" value="<?= $curso->Nombre ?>" autofocus readonly  required>
                 </div>
                 <div class="col">
                     <div class="form-group">
