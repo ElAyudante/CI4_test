@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12 d-flex justify-content-center m-auto">
+                <div class="col-lg-12 d-flex justify-content-center text-white m-auto">
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">&nbsp;Política de Privacidad</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>sitemap" target="_blank">&nbsp; Mapa Web</a> |</p>

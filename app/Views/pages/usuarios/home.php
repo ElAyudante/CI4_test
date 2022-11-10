@@ -77,7 +77,7 @@ $sel_comunidades =  array (
 
 <section class="bg-gray">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row h-auto">
 
       <div class="col-lg-2 ps-0">
         <?php echo view('templates/menu_usuarios'); ?> 

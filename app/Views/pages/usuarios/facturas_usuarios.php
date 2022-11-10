@@ -7,7 +7,7 @@
     include "api/apiRedsys.php";  
     $miObj = new RedsysAPI;
 ?>
-<section class="bg-gray" style="height: 80vh">
+<section class="bg-gray">
   	<div class="container-fluid row">
 
 	  	<div class="col-lg-2 ps-0">
