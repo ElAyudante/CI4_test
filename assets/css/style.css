@@ -47,6 +47,11 @@
   border-color: #d3d3d3 !important;
 }
 /*==========================================*/
+.table-curso{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .text-justify{
   text-align: justify;
 }
