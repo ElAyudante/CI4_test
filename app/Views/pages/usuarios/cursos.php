@@ -13,6 +13,8 @@
 		<div class="col-lg-10 d-flex flex-row flex-wrap">
             <div class="row row-cols-2 g-4 p-5">
                 <?php foreach ($data as $curso){
+                    $date = $curso['Fecha'];
+                    $fecha = date("d/m/Y", strtotime($date));
                 ?>
                     <div class="col">
                         <div class="card cards-users-empleo">
@@ -20,7 +22,7 @@
                                 <div class="col-lg-4 m-auto">
                                     <div class="text-center">
                                         <img  class="img-fluid" src="<?php echo base_url(),'/'; ?>assets/images/png/cursos.gif">
-                                        <h4 class="fw-bold cblue text-uppercase"><?= $curso['Fecha']?> </h4>
+                                        <h4 class="fw-bold cblue text-uppercase"><?= $fecha?> </h4>
                                     </div>
                                 </div>
                                 <div class="col-lg-8">
