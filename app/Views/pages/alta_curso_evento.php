@@ -29,7 +29,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
 						<div class="col">
 							<div class="form-group">
-								<input type="text" class="form-control" name="fecha" placeholder="Fecha (dd/mm/yyyy)" autofocus></input>
+								<input type="date" class="form-control" name="fecha" autofocus></input>
 							</div>
 						</div>
 						

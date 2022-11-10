@@ -14,6 +14,7 @@
             <div class="row row-cols-2 g-4 p-5">
                 <?php foreach ($data as $documento){
                     $name = $documento['Archivo'];
+                    
                 ?>
                     <div class="col">
                         <div class="card bg-transparent w-auto cards-users-empleo">
