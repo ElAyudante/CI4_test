@@ -37,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
                         <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>colegio" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EL COLEGIO</a>
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EL COLEGIO</a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>juntagob">JUNTA DE GOBIERNO</a>
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>estatutos">ESTATUTOS</a>
@@ -46,7 +46,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>logopedas" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGOPEDAS</a>
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGOPEDAS</a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>acuerdos">ACUERDOS CON EMPRESAS</a>
                                 <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>ofertas">OFERTAS</a>-->
@@ -55,7 +55,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle" href="<?php echo base_url(),'/'; ?>mantenimiento" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FORMACIÓN</a>
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FORMACIÓN</a>
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>formacion">CURSOS CPLC</a>
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>otroscursos">OTROS CURSOS</a>
