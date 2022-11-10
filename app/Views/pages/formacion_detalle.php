@@ -39,7 +39,7 @@
                         </div>
                         <div class="overlay-curso"></div>
                         <div class="content-curso">
-                            <h2 class="text-uppercase fw-bold cgray mt-0"><?= $curso->Nombre ?></h2>
+                            <h3 class="text-uppercase fw-bold cgray mt-0"><?= $curso->Nombre ?></h3>
 
                         </div>
                     </div>
@@ -66,7 +66,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-calendar-days me-3"></i>Fecha</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h3 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-calendar-days me-3"></i>Fecha</h3></div>
                         <h3 class="px-5"><?= $fecha ?></h3>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-chalkboard-user me-3"></i>Formato</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h3 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-chalkboard-user me-3"></i>Formato</h3></div>
                         <h3 class="px-5"><?= $curso->Formato ?></h3>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-hourglass-start me-3"></i>Duración</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h3 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-hourglass-start me-3"></i>Duración</h3></div>
                         <h3 class="px-5"><?= $curso->Duracion ?> horas</h3>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-clock me-3"></i>Horario</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h3 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-clock me-3"></i>Horario</h3></div>
                         <h3 class="px-5"><?= $curso->HorarioInicio ?> - <?= $curso->HorarioFin ?></h3>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-people-group me-3"></i>Dirigido a</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h3 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-people-group me-3"></i>Dirigido a</h3></div>
                         <h3 class="px-5"><?= $curso->Dirigido ?></h3>
                     </div>
                 </div>
@@ -122,35 +122,38 @@
 
 <section class="curso-azul">
     <div class="container text-white">
-        <div class="row py-5">
-            <div class="col-6">
-                <div>
-                    <h3 class="fw-bold"><?= $detalles->Titulo1 ?></h3>
-                    <h4><?= $detalles->Texto1 ?></h4>
-                </div>
-                <div>
-                    <h3 class="fw-bold"><?= $detalles->Titulo3 ?></h3>
-                    <h4><?= $detalles->Texto3 ?></h4>    
-                </div>
-                <div>
-                    <h3 class="fw-bold"><?= $detalles->Titulo5 ?></h3>
-                    <h4><?= $detalles->Texto5 ?></h4>    
-                </div>
+        <div class="row row-cols-2 py-5 align-items-center">
+
+            <div class="col">
+                <h3 class="fw-bold"><?= $detalles->Titulo1 ?></h3>
+                <h6><?= $detalles->Texto1 ?></h6>
             </div>
-            <div class="col-6">
-                <div>
-                    <h3 class="fw-bold"><?= $detalles->Titulo2 ?></h3>
-                    <h4><?= $detalles->Texto2 ?></h4>    
-                </div>
-                <div>
-                    <h3 class="fw-bold"><?= $detalles->Titulo4 ?></h3>
-                    <h4><?= $detalles->Texto4 ?></h4>    
-                </div>
-                <div>
-                    <h3 class="fw-bold"><?= $detalles->Titulo6 ?></h3>
-                    <h4><?= $detalles->Texto6 ?></h4>    
-                </div>
+
+            <div class="col">
+                <h3 class="fw-bold"><?= $detalles->Titulo3 ?></h3>
+                <h6><?= $detalles->Texto3 ?></h6>    
             </div>
+
+            <div class="col">
+                <h3 class="fw-bold"><?= $detalles->Titulo5 ?></h3>
+                <h6><?= $detalles->Texto5 ?></h6>    
+            </div>
+
+            <div class="col">
+                <h3 class="fw-bold"><?= $detalles->Titulo2 ?></h3>
+                <h6><?= $detalles->Texto2 ?></h6>    
+            </div>
+
+            <div class="col">
+                <h3 class="fw-bold"><?= $detalles->Titulo4 ?></h3>
+                <h6><?= $detalles->Texto4 ?></h6>    
+            </div>
+
+            <div class="col">
+                <h3 class="fw-bold"><?= $detalles->Titulo6 ?></h3>
+                <h6><?= $detalles->Texto6 ?></h6>    
+            </div>
+
         </div>
     </div>
 </section>
