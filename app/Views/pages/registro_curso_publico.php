@@ -1,5 +1,5 @@
 <?php
-$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+$form_att=["class"=> "form-border p-3 bg-white mb-0", ""=>'',];
 if(isset($_SESSION['user'])){
     $registrado = $_SESSION['user'];
 } else {
@@ -37,7 +37,6 @@ if(isset($registrado)){
                 'Pais Vasco' => 'País Vasco',
                 'Murcia' => 'Región de Murcia'
               )
-              ?>
 ?>
 
 <section class="bg-gray">
@@ -173,80 +172,83 @@ if(isset($registrado)){
 
             </div>
             <?php echo form_close(); ?>
+
+        
         <?php } elseif (isset($_SESSION['user']) && $precio == '0'){ ?>
             <?php echo form_open('users/registro_curso_usuario',$form_att); ?>
-            <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
-                <div class="col-lg-12">
-                    <strong>Curso </strong>
-                    <input type="text" class="form-control" name="numColegiado" value="<?= $curso->Nombre ?>" autofocus readonly required>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <strong>Nº Colegiado <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control" name="numColegiado" value="<?= $registrado['Colegiado'] ?>" autofocus readonly required>
+                <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
+                    <div class="col-lg-12">
+                        <strong>Curso </strong>
+                        <input type="text" class="form-control" name="numColegiado" value="<?= $curso->Nombre ?>" autofocus readonly required>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <strong>Nombre <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control" name="nombre" value="<?= $registrado['Nombre'] ?>" autofocus readonly required>
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Nº Colegiado <span class="text-danger">*</span></strong>
+                            <input type="text" class="form-control" name="numColegiado" value="<?= $registrado['Colegiado'] ?>" autofocus readonly required>
+                        </div>
                     </div>
-                </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="validationCustom01" class="form-label">Nombre</label>
+                            <!--<strong>Nombre <span class="text-danger">*</span></strong>-->
+                            <input type="text" class="form-control" id="validationCustom01" name="nombre" value="<?= $registrado['Nombre'] ?>" autofocus readonly required>
+                        </div>
+                    </div>
+                        
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Apellidos <span class="text-danger">*</span></strong>
+                            <input type="text" class="form-control" name="apellidos" value="<?= $registrado['Apellidos'] ?>" readonly required>
+                        </div>
+                    </div>
+                        
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>DNI <span class="text-danger">*</span></strong>
+                            <input type="text" class="form-control bg-transparent" name="nif" value="<?= $registrado['NIF'] ?>" readonly required>
+                        </div>
+                    </div>
+
                     
-                <div class="col">
-                    <div class="form-group">
-                        <strong>Apellidos <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control" name="apellidos" value="<?= $registrado['Apellidos'] ?>" readonly required>
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Email <span class="text-danger">*</span></strong>
+                            <input type="text" class="form-control bg-transparent" name="email" value="<?= $registrado['Email'] ?>" readonly required>
+                        </div>
                     </div>
-                </div>
-                    
-                <div class="col">
-                    <div class="form-group">
-                        <strong>DNI <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control bg-transparent" name="nif" value="<?= $registrado['NIF'] ?>" readonly required>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Teléfono <span class="text-danger">*</span></strong>
+                            <input type="number" class="form-control bg-transparent" name="telefono" value="<?= $registrado['Telefono'] ?>" readonly required>
+                        </div>
                     </div>
-                </div>
-
-                
-                <div class="col">
-                    <div class="form-group">
-                        <strong>Email <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control bg-transparent" name="email" value="<?= $registrado['Email'] ?>" readonly required>
+                        
+                    <div class="col">
+                        <strong>Comunidad Autónoma <span class="text-danger">*</span></strong>
+                        <select id="comunidad" class="form-select bg-transparent" name="comunidad" value="<?= $registrado['Comunidad'] ?>" required>
+                            <option disabled selected hidden value="">Comunidad autónoma</option>
+                            <?php 
+                            foreach ($sel_comunidades as $sel_com => $siglas) {
+                                echo '<option value="' . $sel_com . '">' . $siglas .'</option>';
+                            }
+                            ?>
+                        </select>
                     </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <strong>Teléfono <span class="text-danger">*</span></strong>
-                        <input type="number" class="form-control bg-transparent" name="telefono" value="<?= $registrado['Telefono'] ?>" readonly required>
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Importe <span class="text-danger">*</span></strong>
+                            <input type="text" class="form-control bg-transparent" name="comunidad" value="Sin Coste" readonly required>
+                        </div>
                     </div>
-                </div>
-                    
-                <div class="col">
-                    <strong>Comunidad Autónoma <span class="text-danger">*</span></strong>
-                    <select id="comunidad" class="form-select bg-transparent" name="comunidad" value="<?= $registrado['Comunidad'] ?>" required>
-                        <option disabled selected hidden value="">Comunidad autónoma</option>
-                        <?php 
-                        foreach ($sel_comunidades as $sel_com => $siglas) {
-                            echo '<option value="' . $sel_com . '">' . $siglas .'</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <strong>Importe <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control bg-transparent" name="comunidad" value="Sin Coste" readonly required>
+
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Inscribirse</button>
                     </div>
+
+                    <div class="col"><p><span class="text-danger"> <strong>(*) Campos Obligatorios</strong></span> </p></div>
+
                 </div>
-
-                <div class="col">
-                    <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Inscribirse</button>
-                </div>
-
-                <div class="col"><p><span class="text-danger"> <strong>(*) Campos Obligatorios</strong></span> </p></div>
-
-            </div>
             <?php echo form_close() ?>
         <?php } ?>
 
@@ -370,6 +372,7 @@ if(isset($registrado)){
 
             </div>
             <?php echo form_close(); ?>
+
         <?php } elseif (is_null($registrado) && $curso->PrecioNoColegiado == '0'){ ?>
             <?php echo form_open('public/registro_curso_public',$form_att); ?>
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">

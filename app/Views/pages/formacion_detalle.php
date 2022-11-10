@@ -62,27 +62,27 @@
 
 <section class="banner-curso">
     <div class="container pt-5">
-        <div class="row row-cols-lg-3" >
-            <div class="col pb-5">
+        <div class="row row-cols-lg-3 g-4" >
+            <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3">Fecha</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-calendar-days me-3"></i>Fecha</h2></div>
                         <h3 class="px-5"><?= $fecha ?></h3>
                     </div>
                 </div>
             </div>
-            <div class="col pb-5">
+            <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3">Formato</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-chalkboard-user me-3"></i>Formato</h2></div>
                         <h3 class="px-5"><?= $curso->Formato ?></h3>
                     </div>
                 </div>
             </div>
-            <div class="col pb-5">
+            <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3">Duración</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-hourglass-start me-3"></i>Duración</h2></div>
                         <h3 class="px-5"><?= $curso->Duracion ?> horas</h3>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3">Horario</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-clock me-3"></i>Horario</h2></div>
                         <h3 class="px-5"><?= $curso->HorarioInicio ?> - <?= $curso->HorarioFin ?></h3>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3">Dirigido a</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-people-group me-3"></i>Dirigido a</h2></div>
                         <h3 class="px-5"><?= $curso->Dirigido ?></h3>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="text-center">
-                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3">Precio</h2></div>
+                        <div class="text-uppercase bg-blue text-white"><h2 class="h-auto d-inline-block my-3 fw-bold"><i class="fa-solid fa-hand-holding-dollar me-3"></i>Precio</h2></div>
                         <h3 class="px-5">Colegiados: <?= $curso->PrecioColegiado ?> euros<br>No colegiados: <?= $curso->PrecioNoColegiado ?> euros</h3>
                     </div>
                 </div>

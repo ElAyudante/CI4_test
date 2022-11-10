@@ -11,7 +11,7 @@
         
 
 		<div class="col-lg-10 d-flex flex-row flex-wrap">
-            <div class="row row-cols-2 g-4 p-5">
+            <div class="row row-cols-3 g-4 p-5">
                 <?php foreach ($data as $curso){
                     $date = $curso['Fecha'];
                     $fecha = date("d/m/Y", strtotime($date));
@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="card-body doc_user h-100 text-center">
-                                        <h5 class="fw-bold cblue text-uppercase"><?= $curso['Nombre']?> </h5>
+                                        <h6 class="fw-bold cblue text-uppercase"><?= $curso['Nombre']?> </h6>
                                         <div class="row row-cols-lg-2">
                                             <div class="col"><p><?= $curso['Formato']?> </p></div>
                                             <div class="col"><p><?= $curso['Duracion'] . ' horas'?> </p></div>
