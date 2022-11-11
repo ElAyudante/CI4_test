@@ -28,7 +28,7 @@
                     <div class="col list-group capitulo m-auto">
                         <a href="#capitulo6" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VI</a>
                         <a href="#capitulo7" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VII</a>
-                        <a href="#capitulo8" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VII</a>
+                        <a href="#capitulo8" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VIII</a>
                         <a href="#capitulo9" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo IX</a>
                     </div>
                 </div>
