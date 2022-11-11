@@ -14,6 +14,9 @@
 .cgray{
   color: #eeeeee !important;
 }
+.cwhite{
+  color: #fff;
+}
 /*================= BACKGROUND =================*/
 .bg-footer {
   background-image: linear-gradient(#004987, #00a0df ); 
@@ -23,6 +26,9 @@
 }
 .bg-blue2{
   background-color: #004987 !important;
+}
+.bg-blue3{
+  background-color: #00609f !important;
 }
 .bg-blue-opacity{
   background-color: rgba(0, 73, 135, 0.6) !important;
@@ -101,14 +107,13 @@ input::-webkit-inner-spin-button {
 .m-obj{
   margin-bottom: -6px !important
 }
-.articulo, .capitulo{
+.capitulo{
   background-color: transparent;
   border: none;
   border-radius: 0;
 }
-.articulo:hover, .capitulo:hover{
-  background-color: white !important;
-  font-weight: 600;
+.articulo a:hover, .capitulo a:hover{
+  font-weight: bold;
   color: #004987 !important;
 }
 .estatuto-pdf:hover{
@@ -130,12 +135,12 @@ input::-webkit-inner-spin-button {
 .dropdown-menu{
   border-top: 3px solid #00a0df;
 }
-.junta-derecha .list-group-item{
+.bg-blue3 .list-group-item{
   background-color: transparent !important;
   color: #fff;
   border-color: white
 }
-.junta-izquierda .list-group-item{
+.list-group-item{
   background-color: transparent !important;
   border-color:#004987;
   color: #004987;

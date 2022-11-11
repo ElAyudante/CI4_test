@@ -7,38 +7,38 @@
     </div>
 </section>
 
-<section class="junta">
+<section>
 
     <section class="junta-competencias px-5 pt-5">
         <div class="container">
-            <h3 class="section-subheading text-muted competencias">Nuestras competencias</h3>
-            <ol class="mt-4 cblue1 ps-5 ajuste">
-                <li class="ps-lg-5">Cumplir y hacer cumplir los acuerdos de la Asamblea o Junta General, los Estatutos y la legislación vigente que afecte al Colegio.</li>
-                <li>Decidir sobre las solicitudes de colegiación.</li>
-                <li class="ps-lg-5">Proponer la cuantía de las cuotas ordinarias y extraordinarias y formular balances, cuentas, inventario, memoria anual y planes de actuación para someterlos a la Asamblea o Junta.</li>
-                <li>Defender los intereses profesionales de los colegiados, ostentado en su ámbito la plena representación del Colegio, sin perjuicio de la delegación de todas o partes de sus facultades.</li>
-                <li class="ps-lg-5">Acordar y aplicar, de conformidad con estos Estatutos y el reglamento disciplinario, las sanciones que procedan.</li>
-                <li>Ejercer cuantas funciones correspondan al Colegio, siempre que no estén expresamente reservadas a la Asamblea o Junta General, desarrollando, en su caso, las líneas generales que ésta señale.</li>
-                <li class="ps-lg-5">Imponer, previa instrucción del expediente oportuno, las sanciones disciplinarias que correspondan.</li>
-                <li>Crear o reestructurar las comisiones o grupos de trabajo necesarias para el mejor cumplimiento de las funciones colegiales.</li>
-                <li class="ps-lg-5">Fijar la fecha de celebración de las Asamblea o Juntas Ordinarias y Extraordinarias.</li>
+            <h1 class="fw-bold text-uppercase cblue">Nuestras Competencias</h1>
+            <ol class="mt-4 cblue ps-5 ajuste g-1">
+                <li class="ps-lg-5 fs-6 d-flex align-items-center pb-2">Cumplir y hacer cumplir los acuerdos de la Asamblea o Junta General, los Estatutos y la legislación vigente que afecte al Colegio.</li>
+                <li class="fs-6 d-flex align-items-center pb-2">Decidir sobre las solicitudes de colegiación.</li>
+                <li class="ps-lg-5 fs-6 d-flex align-items-center pb-3">Proponer la cuantía de las cuotas ordinarias y extraordinarias y formular balances, cuentas, inventario, memoria anual y planes de actuación para someterlos a la Asamblea o Junta.</li>
+                <li class="fs-6 d-flex align-items-center pb-3">Defender los intereses profesionales de los colegiados, ostentado en su ámbito la plena representación del Colegio, sin perjuicio de la delegación de todas o partes de sus facultades.</li>
+                <li class="ps-lg-5 fs-6 d-flex align-items-center pb-2">Acordar y aplicar, de conformidad con estos Estatutos y el reglamento disciplinario, las sanciones que procedan.</li>
+                <li class="fs-6 d-flex align-items-center pb-2">Ejercer cuantas funciones correspondan al Colegio, siempre que no estén expresamente reservadas a la Asamblea o Junta General, desarrollando, en su caso, las líneas generales que ésta señale.</li>
+                <li class="ps-lg-5 fs-6 d-flex align-items-center pb-2">Imponer, previa instrucción del expediente oportuno, las sanciones disciplinarias que correspondan.</li>
+                <li class="fs-6 d-flex align-items-center pb-2">Crear o reestructurar las comisiones o grupos de trabajo necesarias para el mejor cumplimiento de las funciones colegiales.</li>
+                <li class="ps-lg-5 fs-6 d-flex align-items-center">Fijar la fecha de celebración de las Asamblea o Juntas Ordinarias y Extraordinarias.</li>
             </ol>
             <div class="row">
                 <div class="col-lg-5"></div>
                 <div class="col-lg-7 col-md-2 col-sm-2 decana mt-5 texto-junta">
                     <h3 class="section-subheading titulo-junta">DECANA</h3>
                     <h3 class="section-subheading nombre-junta">Laura Fernández-Victorio Alonso</h3>
-                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.3em;">FUNCIONES</h3>
+                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.25em;">FUNCIONES</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="junta-derecha">
+    <section class="bg-blue3">
         <div class="container">
             <div class="row row-cols-lg-2">
                 <div class="col-lg-5 col-md-6 text-white mt-5">
-                    <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/laura.jpg">
+                    <img class="img-fluid img-junta border border-5 border-white" src="<?php echo base_url(),'/'; ?>assets/images/junta/laura.jpg">
                 </div>
                 <div class="col-lg-7 col-md-6 text-white mt-5">
                     <h3 class="section-subheading fw-bold text-white fs-7 d-block d-lg-none ps-4">FUNCIONES</h3>
@@ -59,7 +59,7 @@
                 <div class="col-lg-7 decana mt-5 texto-junta-blanco">
                     <h3 class="section-subheading titulo-junta-blanco">VICEDECANA</h3>
                     <h3 class="section-subheading nombre-junta-blanco">Milagros Matarazzo Zinoni</h3>
-                    <h3 class="section-subheading fw-bold text-white fs-7 d-lg-block d-none" style="margin-bottom: -0.16em;">FUNCIONES</h3>
+                    <h3 class="section-subheading fw-bold text-white fs-7 d-lg-block d-none" style="margin-bottom: -0.3em;">FUNCIONES</h3>
                 </div>
                 <div class="col-lg-5"></div>
             </div>
@@ -76,7 +76,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-5 col-md-6 text-white mt-5 order-lg-2 order-1">
-                    <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/mili.jpg">
+                    <img class="img-fluid img-junta border border-5 border-white" src="<?php echo base_url(),'/'; ?>assets/images/junta/mili.jpg">
                 </div>
             </div>
             <div class="row order-lg-2">
@@ -84,17 +84,17 @@
                 <div class="col-lg-7 mt-5 mb-3">
                     <h3 class="section-subheading titulo-junta">SECRETARIA</h3>
                     <h3 class="section-subheading nombre-junta">Marta Teresa Candela de Aroca</h3>
-                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.65em;">FUNCIONES</h3>
+                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.6em;">FUNCIONES</h3>
                 </div>
             </div>
         </div>
     </section>        
 
-    <section class="junta-derecha">
+    <section class="bg-blue3">
         <div class="container">
             <div class="row row-cols-lg-2">
                 <div class="col-lg-5 col-md-6 text-white mt-5">
-                    <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/marta.jpg">
+                    <img class="img-fluid img-junta border border-5 border-white" src="<?php echo base_url(),'/'; ?>assets/images/junta/marta.jpg">
                 </div>
                 <div class="col-lg-7 col-md-6 text-white mt-5">
                     <h3 class="section-subheading fw-bold text-white fs-7 d-block d-lg-none ps-4">FUNCIONES</h3>
@@ -116,7 +116,7 @@
                     <div class="col-lg-7 decana mt-5 texto-junta-blanco">
                         <h3 class="section-subheading titulo-junta-blanco">TESORERA</h3>
                         <h3 class="section-subheading nombre-junta-blanco">Bianka González Crespo</h3>
-                        <h3 class="section-subheading fw-bold text-white fs-7 d-lg-block d-none" style="margin-bottom: -0.16em;">FUNCIONES</h3>
+                        <h3 class="section-subheading fw-bold text-white fs-7 d-lg-block d-none" style="margin-bottom: -0.3em;">FUNCIONES</h3>
                     </div>
                     <div class="col-lg-5"></div>
                 </div>
@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="col-lg-5 col-md-6 text-white mt-5 order-lg-2 order-1">
-                    <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/bianka.jpg">
+                    <img class="img-fluid img-junta border border-5 border-white" src="<?php echo base_url(),'/'; ?>assets/images/junta/bianka.jpg">
                 </div>
             </div>
             <div class="row order-lg-2">
@@ -144,17 +144,17 @@
                 <div class="col-lg-7 col-md-2 col-sm-2 decana mt-5 texto-junta mb-3">
                     <h3 class="section-subheading titulo-junta">VOCALES</h3>
                     <h3 class="section-subheading nombre-junta">Marina Terán Cruz & Carmen Gainza Brandariz</h3>
-                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.65em;">FUNCIONES</h3>
+                    <h3 class="section-subheading fw-bold cblue fs-7 d-lg-block d-none" style="margin-bottom: -0.6em;">FUNCIONES</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="junta-derecha">
+    <section class="bg-blue3">
         <div class="container">
             <div class="row row-cols-lg-2">
                 <div class="col-lg-5 col-md-6 text-white mt-5">
-                    <img class="img-fluid img-junta" src="<?php echo base_url(),'/'; ?>assets/images/junta/marina-carmen.jpg">
+                    <img class="img-fluid img-junta border border-5 border-white" src="<?php echo base_url(),'/'; ?>assets/images/junta/marina-carmen.jpg">
                 </div>
                 <div class="col-lg-7 col-md-6 text-white mt-5">
                     <h3 class="section-subheading fw-bold text-white fs-7 d-block d-lg-none ps-4">FUNCIONES</h3>
@@ -168,9 +168,9 @@
 
     <section class="p-5">
         <div class="container">
-            <div class="text-center fw-bold fs-7 clblue">
-                <p>Ahora que nos conoces</p>
-                <p>¿A qué esperas para colegiarte?</p>
+            <div class="text-center text-uppercase cblue">
+                <h1 class="fw-bold cblue">Ahora que nos conoces</h1>
+                <h1 class="fw-bold cblue">¿A qué esperas para colegiarte?</h1>
                 <div class="d-flex justify-content-center mt-5">
                     <a href="<?php echo base_url(),'/'; ?>users/register" class="text-white" target="_blank">
                         <button type="button" class="btn btn-primary">COLEGIARSE</button>

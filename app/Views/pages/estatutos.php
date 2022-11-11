@@ -9,27 +9,31 @@
 
 <section class="px-5 pt-5 pb-lg-0 pb-5">
     <div class="container">
-        <div class="row row-cols-lg-2">
+        <blockquote class="blockquote fs-5 cblue1 borderclblue d-lg-block d-none text-justify">
+            <p>* El Consejo General de Colegios de Logopedas (de ahora en adelante "CGCL"), en ejercicio de sus funciones, considera necesario garantizar un alto nivel de ética profesional de los profesionales logopedas, no sólo por la dignificación y notoriedad de la profesión, sino también por la defensa de los derechos de los usuarios de la logopedia.</p>
+            <p>* Las infracciones al <a class="text-decoration-none cblue fw-bold text-uppercase" href="<?php echo base_url(),'/'; ?>codigo">Código Deontológico</a> quedan sujetas a las normas disciplinarias previstas por la ley, por los Estatutos del CGCL y por los Estatutos de los Colegios Profesionales que integran el Consejo.</p>
+        </blockquote>
+        <div class="row row-cols-lg-2 pt-lg-5">
             <div class="col d-lg-block d-none">
-                <a class="cblue indice fs-1 text-uppercase text-decoration-none fw-bold">Índice</a>
-                <div class="row row-cols-lg-2">
-                    <div class="col list-group w-auto pe-5">
-                        <a href="#capitulo1" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo I</a>
-                        <a href="#capitulo2" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo II</a>
-                        <a href="#capitulo3" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo III</a>
-                        <a href="#capitulo4" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo IV</a>
-                        <a href="#capitulo5" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo V</a>
+                <a class="cblue indice text-uppercase text-decoration-none"><h2 class="fw-bold mb-4"><i class="fa-solid fa-gavel fa-lg me-3"></i>Índice</h2></a>
+                <div class="row row-cols-lg-2 text-center">
+                    <div class="col list-group capitulo">
+                        <a href="#capitulo1" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo I</a>
+                        <a href="#capitulo2" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo II</a>
+                        <a href="#capitulo3" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo III</a>
+                        <a href="#capitulo4" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo IV</a>
+                        <a href="#capitulo5" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo V</a>
                         
                     </div>
-                    <div class="col list-group w-auto">
-                        <a href="#capitulo6" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo VI</a>
-                        <a href="#capitulo7" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo VII</a>
-                        <a href="#capitulo8" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo VII</a>
-                        <a href="#capitulo9" class="list-group-item list-group-item-action cblue fs-4 capitulo text-uppercase">Capítulo IX</a>
+                    <div class="col list-group capitulo m-auto">
+                        <a href="#capitulo6" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VI</a>
+                        <a href="#capitulo7" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VII</a>
+                        <a href="#capitulo8" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo VII</a>
+                        <a href="#capitulo9" class="list-group-item list-group-item-action cblue fs-4 text-uppercase d-flex align-items-center justify-content-center border border-0"><i class="fa-sharp fa-solid fa-angle-right me-2 fs-5"></i>Capítulo IX</a>
                     </div>
                 </div>
             </div>
-            <div class="col p-0">
+            <div class="col p-0 m-auto d-flex justify-content-center">
                 <a class="estatuto-pdf" href="<?php echo base_url(),'/'; ?>assets/downloads/estatutoscplc.pdf" target="_blank"><img src="<?php echo base_url(),'/'; ?>assets/images/png/estatutoslink.gif"></img></a>              
             </div>
         </div>

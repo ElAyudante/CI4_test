@@ -113,7 +113,7 @@
 </section>
 
 <!-- SECCIÓN ERES LOGOPEDA -->
-<section class="p-5" id="eres">
+<section class="p-5">
     <div class="container">
             <h1 class="title-dkblue text-center">¿Eres logopeda?</h1>
             <p class="text-center text-dkblue pt-4" id="texto-logopeda">En nuestra web encontrarás toda la información relevante sobre el Colegio, así como noticias relacionadas con nuestra </br>profesión y cursos y formación que te mantendran al día y conectado a las últimas tendencias de nuestro sector.</p>
