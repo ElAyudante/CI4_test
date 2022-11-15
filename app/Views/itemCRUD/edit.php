@@ -19,7 +19,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                 <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
                     <div class="col">
                         <div class="form-group">
-                            <strong>Fecha Alta:</strong>
+                            <strong>Fecha de Alta:</strong>
                             <input type="date" name="falta" class="form-control" value="<?php echo $item->FechaAlta; ?>" >
                         </div>
                     </div>
@@ -40,57 +40,8 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
                     <div class="col">
                         <div class="form-group">
-                            <strong>Nif:</strong>
+                            <strong>DNI:</strong>
                             <input type="text" name="nif" class="form-control" value="<?php echo $item->NIF; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Dirección:</strong>
-                            <input type="text" name="direccion" class="form-control" value="<?php echo $item->Direccion; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Localidad:</strong>
-                            <input type="text" name="localidad" class="form-control" value="<?php echo $item->Localidad; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Código Postal:</strong>
-                            <input type="text" name="cp" class="form-control" value="<?php echo $item->CP; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Provincia:</strong>
-                            <input type="text" name="provincia" class="form-control" value="<?php echo $item->Provincia; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Comunidad:</strong>
-                            <input type="text" name="comunidad" class="form-control" value="<?php echo $item->Comunidad; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Teléfono:</strong>
-                            <input type="text" name="telefono" class="form-control" value="<?php echo $item->Telefono; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Móvil:</strong>
-                            <input type="text" name="movil" class="form-control" value="<?php echo $item->Movil; ?>">
                         </div>
                     </div>
 
@@ -98,6 +49,13 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         <div class="form-group">
                             <strong>Email:</strong>
                             <input type="text" name="email" class="form-control" value="<?php echo $item->Email; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Teléfono:</strong>
+                            <input type="text" name="telefono" class="form-control" value="<?php echo $item->Telefono; ?>">
                         </div>
                     </div>
 
@@ -117,17 +75,52 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
                     <div class="col">
                         <div class="form-group">
-                            <strong>Cuenta Bancaria:</strong>
-                            <input type="text" name="cuenta" class="form-control" value="<?php echo $item->CuentaBancaria; ?>" disabled>
+                            <strong>Dirección:</strong>
+                            <input type="text" name="direccion" class="form-control" value="<?php echo $item->Direccion; ?>">
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-group">
+                            <strong>Código Postal:</strong>
+                            <input type="text" name="cp" class="form-control" value="<?php echo $item->CP; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Localidad:</strong>
+                            <input type="text" name="localidad" class="form-control" value="<?php echo $item->Localidad; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Provincia:</strong>
+                            <input type="text" name="provincia" class="form-control" value="<?php echo $item->Provincia; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Comunidad Autónoma:</strong>
+                            <input type="text" name="comunidad" class="form-control" value="<?php echo $item->Comunidad; ?>">
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Cuenta Bancaria:</strong>
+                            <input type="text" name="cuenta" class="form-control" value="<?php echo $item->CuentaBancaria; ?>" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="form-group">
                             <strong>Teléfono de trabajo:</strong>
                             <input type="text" name="tlftrabajo" class="form-control" value="<?php echo $item->TelefonoTrabajo; ?>">
                         </div>
-                    </div>
+                    </div>                    
 
                     <div class="col">
                         <div class="form-group">
@@ -159,8 +152,22 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
                     <div class="col">
                         <div class="form-group">
-                            <strong>Ejerciente:</strong>
-                            <input type="text" name="ejerciente" class="form-control" value="<?php 
+                            <strong>Especialidad:</strong>
+                            <input type="text" name="especialidad" class="form-control" value="<?php echo $item->Especialidad; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Ámbito de Trabajo:</strong>
+                            <input type="text" name="ambito" class="form-control" value="<?php echo $item->AmbitoTrabajo; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Modalidad:</strong>
+                            <select type="text" name="ejerciente" class="form-select" value="<?php 
                                 switch ($item->Ejerciente) {
                                     case '0':
                                         echo('No ejerciente');
@@ -179,34 +186,25 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                                         break;
                                 }
                             ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Especialidad:</strong>
-                            <input type="text" name="especialidad" class="form-control" value="<?php echo $item->Especialidad; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
-                            <strong>Ámbito de Trabajo:</strong>
-                            <input type="text" name="ambito" class="form-control" value="<?php echo $item->AmbitoTrabajo; ?>">
+                                <option value="1">Ejerciente</option>
+                                <option value="0">No ejerciente</option>
+                                <option value="2">Jubilado</option>
+                                <option value="3">Estudiante</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-group">
                         <strong>Sector:</strong>
-                            <select id ="ejerciente" class="form-control bg-transparent" name="ejerciente">
+                            <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
                                 <option value="1" select>Público</option>
                                 <option value="0">Privado</option>
                             </select>
                         </div>
                     </div>
                     
-                    <div class="col-md-3">
+                    <div class="col-lg-12">
                         <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
                     </div>
 		        <?php echo form_close(); ?>

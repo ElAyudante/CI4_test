@@ -93,215 +93,213 @@ $sel_comunidades =  array (
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
 
             <div class="col">
-                <div class="form-group">
-                  <strong>Fecha de Alta <span class="text-danger">*</span></strong>
-                  <input type="date" class="form-control" name="fechaAlta"  autofocus required>
-                </div>
+              <div class="form-group">
+                <strong>Fecha de Alta <span class="text-danger">*</span></strong>
+                <input type="date" class="form-control" name="fechaAlta"  autofocus required>
               </div>
+            </div>
 
-              <div class="col">
-                <div class="form-group">
-                  <strong>Nombre <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus required>
-                </div>
+            <div class="col">
+              <div class="form-group">
+                <strong>Nombre <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus required>
               </div>
+            </div>
 
-              <div class="col">
-                <div class="form-group">
-                <strong>Apellidos <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
-                </div>
+            <div class="col">
+              <div class="form-group">
+              <strong>Apellidos <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
               </div>
+            </div>
 
-              <div class="col">
-                <div class="form-group">
-                <strong>DNI <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI" required>
-                </div>
+            <div class="col">
+              <div class="form-group">
+              <strong>DNI <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI" required>
               </div>
+            </div>
 
-              <div class="col">
-                <div class="form-group">
-                  <strong>Email <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control bg-transparent" name="email" placeholder="Email" required>
-                </div>
+            <div class="col">
+              <div class="form-group">
+                <strong>Email <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control bg-transparent" name="email" placeholder="Email" required>
               </div>
+            </div>
 
-              <div class="col">
-                <div class="form-group">
-                  <strong>Teléfono <span class="text-danger">*</span></strong>
-                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono" required>
-                </div>
+            <div class="col">
+              <div class="form-group">
+                <strong>Teléfono <span class="text-danger">*</span></strong>
+                <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono" required>
               </div>
+            </div>
 
-              <div class="col">
-                <strong>Lugar de Nacimiento <span class="text-danger">*</span></strong>
-                <select id="lnacimiento" class="alta-cole form-select bg-transparent" name="lnacimiento" required>
-                  <option disabled selected hidden value="">Lugar de nacimiento</option>
-                  <?php 
-                    foreach ($sel_provincias as $sel_prov => $abreviatura) {
-                      echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
-                    }
-                    ?>
+            <div class="col">
+              <strong>Lugar de Nacimiento <span class="text-danger">*</span></strong>
+              <select id="lnacimiento" class="alta-cole form-select bg-transparent" name="lnacimiento" required>
+                <option disabled selected hidden value="">Lugar de nacimiento</option>
+                <?php 
+                  foreach ($sel_provincias as $sel_prov => $abreviatura) {
+                    echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
+                  }
+                  ?>
+              </select>
+            </div>
+
+            <div class="col">
+              <strong>Fecha de Nacimiento </strong>
+              <div class="form-group" style="display:flex;">
+                
+                <input type="date" id="date" name="fnacimiento" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Dirección <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Código Postal <span class="text-danger">*</span></strong>
+                <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Localidad <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <strong>Provincia <span class="text-danger">*</span></strong>
+              <select id="provincia" class="form-select bg-transparent" name="provincia" required>
+                <option disabled selected hidden value="">Selecciona una provincia</option>
+                <?php 
+                  foreach ($sel_provincias as $sel_prov => $abreviatura) {
+                    echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
+                  }
+                  ?>
+              </select>
+            </div>
+
+            <div class="col">
+              <strong>Comunidad Autónoma <span class="text-danger">*</span></strong>
+              <select id="comunidad" class="form-select bg-transparent" name="comunidad" required>
+                <option disabled selected hidden value="">Comunidad autónoma</option>
+                <?php 
+                  foreach ($sel_comunidades as $sel_com => $siglas) {
+                    echo '<option value="' . $sel_com . '">' . $siglas .'</option>';
+                  }
+                  ?>
+              </select>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Cuenta Bancaria <span class="text-danger"></span></strong>
+                <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC" >
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Teléfono de Trabajo <span class="text-danger">*</span></strong>
+                <input type="number" class="form-control text-uppercase bg-transparent" name="tlftrabajo" placeholder="Teléfono del trabajo" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Lugar de Trabajo </strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="lugtrabajo" placeholder="¿Dónde trabajas?">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <strong>Dirección de Trabajo</strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="dtrabajo" placeholder="Dirección del trabajo">
+              </div>
+            </div>
+
+            <div class="col">
+              <strong>Localidad de Trabajo</strong>
+              <div class="form-group">
+                <input type="text" class="form-control text-uppercase bg-transparent" name="loctrabajo" placeholder="Localidad del trabajo">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+              <strong>Titulación <span class="text-danger">*</span></strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="titulacion" placeholder="Titulación" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+              <strong>Especialidad</strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="especialidad" placeholder="Especialidad">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+              <strong>Ámbito de Trabajo</strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+              <strong>Modalidad</strong>
+                <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
+                  <option disabled selected hidden value="" select>Tipo de colegiado</option>
+                  <option value="1">Ejerciente</option>
+                  <option value="0">No ejerciente</option>
+                  <option value="2">Jubilado</option>
+                  <option value="3">Estudiante</option>
                 </select>
               </div>
+            </div>
 
-              <div class="col">
-                <strong>Fecha de Nacimiento </strong>
-                <div class="form-group" style="display:flex;">
-                  
-                  <input type="date" id="date" name="fnacimiento" class="form-control" required>
-                </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+              <strong>Observaciones</strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="observacion" placeholder="Observaciones">
               </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Dirección <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Código Postal <span class="text-danger">*</span></strong>
-                  <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Localidad <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <strong>Provincia <span class="text-danger">*</span></strong>
-                <select id="provincia" class="form-select bg-transparent" name="provincia" required>
-                  <option disabled selected hidden value="">Selecciona una provincia</option>
-                  <?php 
-                    foreach ($sel_provincias as $sel_prov => $abreviatura) {
-                      echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
-                    }
-                    ?>
-                </select>
-              </div>
-
-              <div class="col">
-                <strong>Comunidad Autónoma <span class="text-danger">*</span></strong>
-                <select id="comunidad" class="form-select bg-transparent" name="comunidad" required>
-                  <option disabled selected hidden value="">Comunidad autónoma</option>
-                  <?php 
-                    foreach ($sel_comunidades as $sel_com => $siglas) {
-                      echo '<option value="' . $sel_com . '">' . $siglas .'</option>';
-                    }
-                    ?>
-                </select>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Cuenta Bancaria <span class="text-danger"></span></strong>
-                  <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC" >
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Teléfono Trabajo <span class="text-danger">*</span></strong>
-                  <input type="number" class="form-control text-uppercase bg-transparent" name="tlftrabajo" placeholder="Teléfono del trabajo" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Lugar de Trabajo </strong>
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="lugtrabajo" placeholder="¿Dónde trabajas?">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <strong>Dirección de Trabajo</strong>
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="dtrabajo" placeholder="Dirección del trabajo">
-                </div>
-              </div>
-
-              <div class="col">
-                <strong>Localidad de Trabajo</strong>
-                <div class="form-group">
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="loctrabajo" placeholder="Localidad del trabajo">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                <strong>Titulación <span class="text-danger">*</span></strong>
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="titulacion" placeholder="Titulación" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                <strong>Especialidad</strong>
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="especialidad" placeholder="Especialidad">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                <strong>Ámbito de Trabajo</strong>
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                <strong>Modalidad</strong>
-                  <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
-                    <option disabled selected hidden value="" select>Tipo de colegiado</option>
-                    <option value="1">Ejerciente</option>
-                    <option value="0">No ejerciente</option>
-                    <option value="2">Jubilado</option>
-                    <option value="3">Estudiante</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="form-group">
-                <strong>Observaciones</strong>
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="observacion" placeholder="Observaciones">
-                </div>
-              </div>
+            </div>
 
               
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">Sector</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="sectores" id="sector1" value="publico" checked>
-                  <label class="form-check-label" for="sector1">Público</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="sectores" id="sector2" value="privado">
-                  <label class="form-check-label" for="sector2">Privado</label>
-                </div>
+            <div class="col text-uppercase d-flex align-items-center">
+              <label class="fw-bold me-3">Sector</label>
+              <div class="form-check form-check-inline me-2 mb-0">
+                <input class="form-check-input" type="radio" name="sectores" id="sector1" value="publico" checked>
+                <label class="form-check-label" for="sector1">Público</label>
               </div>
-
-
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">Bolsa de trabajo</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="bolsa" id="bolsa1" value="1" checked>
-                  <label class="form-check-label" for="bolsa1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="bolsa" id="bolsa2" value="0">
-                  <label class="form-check-label" for="bolsa2">No</label>
-                </div>
+              <div class="form-check form-check-inline me-0 mb-0">
+                <input class="form-check-input" type="radio" name="sectores" id="sector2" value="privado">
+                <label class="form-check-label" for="sector2">Privado</label>
               </div>
+            </div>
+
+
+            <div class="col text-uppercase d-flex align-items-center">
+              <label class="fw-bold me-3">Bolsa de trabajo</label>
+              <div class="form-check form-check-inline me-2 mb-0">
+                <input class="form-check-input" type="radio" name="bolsa" id="bolsa1" value="1" checked>
+                <label class="form-check-label" for="bolsa1">Sí</label>
+              </div>
+              <div class="form-check form-check-inline me-0 mb-0">
+                <input class="form-check-input" type="radio" name="bolsa" id="bolsa2" value="0">
+                <label class="form-check-label" for="bolsa2">No</label>
+              </div>
+            </div>
               <div class="col"></div>
               <div class="col"></div>
 
@@ -311,6 +309,7 @@ $sel_comunidades =  array (
                   <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
                 </div>
               </div>
+
               <div class="col"></div>
               <div class="col"></div>
               <div class="col"></div>
@@ -349,6 +348,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col" id="foto_titulacion" style="display: none">
+
               <div class="form-group">
               <strong>Adjuntar TItulación</strong>
                 <input type="file" class="form-control bg-transparent" name="foto_titulacion" >
@@ -358,13 +358,12 @@ $sel_comunidades =  array (
               <div class="col" id="foto_justificante" style="display: none">
 
               <div class="form-group">
-              <strong>Adjuntar Documento Baja</strong>
-                <input type="file" class="form-control bg-transparent" name="foto_justificante" >
-              </div>
+                <strong>Adjuntar Documento Baja</strong>
+                  <input type="file" class="form-control bg-transparent" name="foto_justificante" >
+                </div>
               </div>
 
-              <div class="col-lg-12"></div>
-              <div class="col">
+              <div class="col-lg-12">
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>
               </div>
 
