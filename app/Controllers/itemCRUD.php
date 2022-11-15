@@ -46,9 +46,37 @@ class ItemCRUD extends CI_Controller {
 
 	    $crud->setTable('colegiados');
         $crud->setSubject('Colegiado', 'Colegiados');
-        $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
+        $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad', 'Ejerciente', 'Activo', 'Observaciones']);
         $crud->unsetAdd();
 
+        $crud->callbackColumn(
+            'Ejerciente', function($value){
+                switch($value){
+                    case 0:
+                        return $value = 'No Ejerciente';
+                    case 1:
+                        return $value = 'Ejerciente';
+                    case 2: 
+                        return $value = 'Jubilado';
+                    case 3:
+                        return $value = 'Estdiante';
+                    default:
+                        return $value = 'Sin Especificar';
+                }
+            }
+        );
+        $crud->callbackColumn(
+            'Activo', function($value){
+                switch($value){
+                    case 0:
+                        return $value = 'En Activo';
+                    case 1:
+                        return $value = 'Baja';
+                    default:
+                        return $value = 'Sin Especificar';
+                }
+            }
+        );
         $crud->unsetBootstrap();
         $crud->where("(Colegiado IS NOT NULL)");
 
@@ -513,6 +541,7 @@ class ItemCRUD extends CI_Controller {
 
         }
     }
+
     
     public function register_empleo(){
 
@@ -1420,6 +1449,61 @@ class ItemCRUD extends CI_Controller {
             
         ])) {
             $model->insert_item([
+                'nombre' => $this->request->getPost('nombre'),
+                'apellidos'  => $this->request->getPost('apellidos'),
+                'nif'  => $this->request->getPost('nif'),
+                'email'  => $this->request->getPost('email'),
+                'telefono'  => $this->request->getPost('telefono'),
+                'direccion'  => $this->request->getPost('direccion'),
+                'cp'  => $this->request->getPost('cp'),
+                'lnacimiento'  => $this->request->getPost('lnacimiento'),
+                'fnacimiento'  => $this->request->getPost('fnacimiento'),
+                'localidad'  => $this->request->getPost('localidad'),
+                'comunidad'  => $this->request->getPost('comunidad'),
+                'provincia'  => $this->request->getPost('provincia'),
+                'cuenta'  => $this->request->getPost('cuenta'),
+                'tlftrabajo'  => $this->request->getPost('tlftrabajo'),
+                'lugtrabajo'  => $this->request->getPost('lugtrabajo'),
+                'dtrabajo'  => $this->request->getPost('dtrabajo'),
+                'loctrabajo'  => $this->request->getPost('loctrabajo'),
+                'titulacion'  => $this->request->getPost('titulacion'),
+                'especialidad'  => $this->request->getPost('especialidad'),
+                'ambito'  => $this->request->getPost('ambito'),
+                'colegioorigen'  => $this->request->getPost('colegioorigen'),
+                'norigen'  => $this->request->getPost('norigen'),
+                'sectores'  => $this->request->getPost('sectores'),
+                'bolsa'  => $this->request->getPost('bolsa')
+
+            ]);
+
+            return redirect()->to(base_url('thank-you'));
+        } else {
+            return redirect()->to(base_url('home'));
+        }
+    }
+
+    public function store_admin(){
+
+        $model = model(ItemCRUDModel::class);
+
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'nombre' => 'required|min_length[3]|max_length[255]',
+            'apellidos'  => 'required',
+            'nif'  => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'lnacimiento' => 'required',
+            'direccion' => 'required',
+            'cp' => 'required',
+            'localidad' => 'required',
+            'provincia' => 'required',
+            'comunidad' => 'required',
+            'tlftrabajo' => 'required',
+            'titulacion' => 'required'
+            
+        ])) {
+            $model->insert_item([
+                'fechaAlta' => $this->request->getPost('fechaAlta'),
                 'nombre' => $this->request->getPost('nombre'),
                 'apellidos'  => $this->request->getPost('apellidos'),
                 'nif'  => $this->request->getPost('nif'),

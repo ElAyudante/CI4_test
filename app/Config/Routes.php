@@ -99,7 +99,8 @@
     $routes->get('users/pagos_realizados', 'itemCRUD::pagos_realizados_usuarios');
     $routes->get('users/test_tramitar_pago', 'itemCRUD::test_tramitar_pago');
 
-
+    $routes->get('itemCRUD/export_excel', 'itemCRUD::export_excel');
+    $routes->get('itemCRUD/export_pdf', 'itemCRUD::export_pdf');
 
     $routes->get('crear_oferta', 'itemCRUD::register_empleo');
     $routes->get('lista_oferta', 'itemCRUD::listar_ofertas');

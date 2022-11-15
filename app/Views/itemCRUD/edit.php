@@ -20,7 +20,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                     <div class="col">
                         <div class="form-group">
                             <strong>Fecha Alta:</strong>
-                            <input type="text" name="falta" class="form-control" value="<?php echo $item->FechaAlta; ?>" disabled>
+                            <input type="date" name="falta" class="form-control" value="<?php echo $item->FechaAlta; ?>" >
                         </div>
                     </div>
 

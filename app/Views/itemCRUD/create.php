@@ -88,85 +88,95 @@ $sel_comunidades =  array (
       <div class="col-lg-10">
         <div class="container p-5">
           <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Alta colegiado (ADMIN)</h3>
-          <?php echo form_open('/itemCRUD/store', $form_att); ?>
+          <?php echo form_open('/itemCRUD/store_admin', $form_att); ?>
             
-            <div class="row row-cols-lg-4 g-lg-4 cblue">
-              <?php
-                /*if ($this->session->flashdata('errors')){
-                  echo '<div class="alert alert-danger">';
-                  echo $this->session->flashdata('errors');
-                  echo "</div>";
-                }*/
-              ?>
-            
-              <div class="col">
-                <div class="form-group" style="display:flex;">
-                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <?php $attributes = 'id="falta" name="falta" class="form-control" placeholder="Fecha de alta"'; echo form_input('falta', set_value('falta'), $attributes); ?>           
+            <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
+
+            <div class="col">
+                <div class="form-group">
+                  <strong>Fecha de Alta <span class="text-danger">*</span></strong>
+                  <input type="date" class="form-control" name="fechaAlta"  autofocus required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Nombre <span class="text-danger">*</span></strong>
                   <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                <strong>Apellidos <span class="text-danger">*</span></strong>
                   <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="usuario" placeholder="Usuario" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <input type="password" class="form-control bg-transparent" name="pass" placeholder="Contraseña" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <input type="password" class="form-control bg-transparent" name="confirm_pass" placeholder="Confirma contraseña" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
+                <strong>DNI <span class="text-danger">*</span></strong>
                   <input type="text" class="form-control bg-transparent" name="nif" placeholder="DNI" required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Email <span class="text-danger">*</span></strong>
                   <input type="text" class="form-control bg-transparent" name="email" placeholder="Email" required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Teléfono <span class="text-danger">*</span></strong>
+                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono" required>
+                </div>
+              </div>
+
+              <div class="col">
+                <strong>Lugar de Nacimiento <span class="text-danger">*</span></strong>
+                <select id="lnacimiento" class="alta-cole form-select bg-transparent" name="lnacimiento" required>
+                  <option disabled selected hidden value="">Lugar de nacimiento</option>
+                  <?php 
+                    foreach ($sel_provincias as $sel_prov => $abreviatura) {
+                      echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
+                    }
+                    ?>
+                </select>
+              </div>
+
+              <div class="col">
+                <strong>Fecha de Nacimiento </strong>
+                <div class="form-group" style="display:flex;">
+                  
+                  <input type="date" id="date" name="fnacimiento" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <strong>Dirección <span class="text-danger">*</span></strong>
                   <input type="text" class="form-control bg-transparent" name="direccion" placeholder="Dirección" required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
+                  <strong>Código Postal <span class="text-danger">*</span></strong>
                   <input type="number" class="form-control bg-transparent" name="cp" placeholder="CP" required>
                 </div>
               </div>
 
               <div class="col">
+                <div class="form-group">
+                  <strong>Localidad <span class="text-danger">*</span></strong>
+                  <input type="text" class="form-control bg-transparent" name="localidad" placeholder="Localidad" required>
+                </div>
+              </div>
+
+              <div class="col">
+                <strong>Provincia <span class="text-danger">*</span></strong>
                 <select id="provincia" class="form-select bg-transparent" name="provincia" required>
                   <option disabled selected hidden value="">Selecciona una provincia</option>
                   <?php 
@@ -178,6 +188,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col">
+                <strong>Comunidad Autónoma <span class="text-danger">*</span></strong>
                 <select id="comunidad" class="form-select bg-transparent" name="comunidad" required>
                   <option disabled selected hidden value="">Comunidad autónoma</option>
                   <?php 
@@ -190,59 +201,34 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="telefono" placeholder="Teléfono" required>
-                </div>
-              </div>
-              
-              <div class="col">
-                <div class="form-group">
-                  <input type="number" class="form-control bg-transparent" name="movil" placeholder="Móvil" required>
-                </div>
-              </div>
-
-              <div class="col">
-                <select id="lnacimiento" class="form-select bg-transparent" name="lnacimiento" required>
-                  <option disabled selected hidden value="">Lugar de nacimiento</option>
-                  <?php 
-                    foreach ($sel_provincias as $sel_prov => $abreviatura) {
-                      echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
-                    }
-                    ?>
-                </select>
-              </div>
-
-              <div class="col">
-                <div class="form-group" style="display:flex;">
-                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <?php $attributes = 'id="fnacimiento" name="fnacimiento" class="form-control" placeholder="Fecha de nacimiento"'; echo form_input('fnacimiento', set_value('fnacimiento'), $attributes); ?>          
+                  <strong>Cuenta Bancaria <span class="text-danger"></span></strong>
+                  <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC" >
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control text-uppercase bg-transparent" name="cuenta" placeholder="Número de CC">
+                  <strong>Teléfono Trabajo <span class="text-danger">*</span></strong>
+                  <input type="number" class="form-control text-uppercase bg-transparent" name="tlftrabajo" placeholder="Teléfono del trabajo" required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control text-uppercase bg-transparent" name="tlftrabajo" placeholder="Teléfono del trabajo">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
+                  <strong>Lugar de Trabajo </strong>
                   <input type="text" class="form-control text-uppercase bg-transparent" name="lugtrabajo" placeholder="¿Dónde trabajas?">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Dirección de Trabajo</strong>
                   <input type="text" class="form-control text-uppercase bg-transparent" name="dtrabajo" placeholder="Dirección del trabajo">
                 </div>
               </div>
 
               <div class="col">
+                <strong>Localidad de Trabajo</strong>
                 <div class="form-group">
                   <input type="text" class="form-control text-uppercase bg-transparent" name="loctrabajo" placeholder="Localidad del trabajo">
                 </div>
@@ -250,19 +236,28 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
-                  <input type="number" class="form-control text-uppercase bg-transparent" name="ncolegiado" placeholder="Número de colegiado">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group" style="display:flex;">
-                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <?php $attributes = 'id="fexpiracion" name="fexpiracion" class="form-control" placeholder="Fecha de caducidad"'; echo form_input('fexpiracion', set_value('fexpiracion'), $attributes); ?>           
+                <strong>Titulación <span class="text-danger">*</span></strong>
+                  <input type="text" class="form-control text-uppercase bg-transparent" name="titulacion" placeholder="Titulación" required>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                <strong>Especialidad</strong>
+                  <input type="text" class="form-control text-uppercase bg-transparent" name="especialidad" placeholder="Especialidad">
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                <strong>Ámbito de Trabajo</strong>
+                  <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                <strong>Modalidad</strong>
                   <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
                     <option disabled selected hidden value="" select>Tipo de colegiado</option>
                     <option value="1">Ejerciente</option>
@@ -273,92 +268,13 @@ $sel_comunidades =  array (
                 </div>
               </div>
 
-              <div class="col">
+              <div class="col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="titulacion" placeholder="Titulación">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="especialidad" placeholder="Especialidad">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen">
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
+                <strong>Observaciones</strong>
                   <input type="text" class="form-control text-uppercase bg-transparent" name="observacion" placeholder="Observaciones">
                 </div>
               </div>
 
-              <div class="col">
-                <div class="form-group">
-                  <select id ="cuota" name="cuota" class="form-control bg-transparent">
-                    <option value="" select>Asignar 1ª cuota</option>
-                    <option value="1">2 SEM 2021</option>
-                    <option value="0">1er semestre 2021</option>
-                    <option value="2">2 SEM 2020</option>
-                    <option value="3">1er semestre 2021</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">Paga inscripción</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="inscription" id="inscription1" value="1" checked>
-                  <label class="form-check-label" for="inscription1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="inscription" id="inscription2" value="0">
-                  <label class="form-check-label" for="inscription2">No</label>
-                </div>
-              </div>
-
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">¿Publicidad?</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="publicity" id="publicity1" value="1" checked>
-                  <label class="form-check-label" for="publicity1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="publicity" id="publicity2" value="0">
-                  <label class="form-check-label" for="publicity2">No</label>
-                </div>
-              </div>
-
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">Email de bienvenida</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="welcome" id="welcome1" value="1" checked>
-                  <label class="form-check-label" for="welcome1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="welcome" id="welcome2" value="0">
-                  <label class="form-check-label" for="welcome2">No</label>
-                </div>
-              </div>
               
               <div class="col text-uppercase d-flex align-items-center">
                 <label class="fw-bold me-3">Sector</label>
@@ -373,31 +289,6 @@ $sel_comunidades =  array (
                 </div>
               </div>
 
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">Solicita habilitación</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="hability" id="hability1" value="1" checked>
-                  <label class="form-check-label" for="hability1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="hability" id="hability2" value="0">
-                  <label class="form-check-label" for="hability2">No</label>
-                </div>
-              </div>
-
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">Logopeda diplomado</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="diplomado" id="diplomado1" value="1" checked>
-                  <label class="form-check-label" for="diplomado1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="diplomado" id="diplomado2" value="0">
-                  <label class="form-check-label" for="diplomado2">No</label>
-                </div>
-              </div>
 
               <div class="col text-uppercase d-flex align-items-center">
                 <label class="fw-bold me-3">Bolsa de trabajo</label>
@@ -411,31 +302,68 @@ $sel_comunidades =  array (
                   <label class="form-check-label" for="bolsa2">No</label>
                 </div>
               </div>
-
-              <div class="col text-uppercase d-flex align-items-center">
-                <label class="fw-bold me-3">¿Está colegiado?</label>
-                <div class="form-check form-check-inline me-2 mb-0">
-                  <input class="form-check-input" type="radio" name="user" id="user1" value="1" checked>
-                  <label class="form-check-label" for="user1">Sí</label>
-                </div>
-
-                <div class="form-check form-check-inline me-0 mb-0">
-                  <input class="form-check-input" type="radio" name="user" id="user2" value="0">
-                  <label class="form-check-label" for="user2">No</label>
-                </div>
-              </div>
+              <div class="col"></div>
+              <div class="col"></div>
 
               <div class="col text-uppercase">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick = "check();">
                   <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
+                </div>
+              </div>
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+
+              <div class="col" id='colegioOrigen' style="display: none">
+                <div class="form-group">
+                <strong>Colegio de Origen</strong>
+                  <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen" >
+                </div>
+              </div>
+
+              <div class="col" id="numOrigen" style="display: none">
+                <div class="form-group">
+                <strong>Nº Colegiado de Origen</strong>
+                  <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen" >
                 </div>
               </div>
 
               <div class="col"></div>
               <div class="col"></div>
-              <div class="col"></div>
 
+              <div class="col-lg-12"></div>
+
+              <div class="col" id="foto" style="display: none">
+              <div class="form-group">
+              <strong>Adjuntar Foto</strong>
+                <input type="file" class="form-control bg-transparent" name="foto"  >
+              </div>
+              </div>
+
+              <div class="col" id="foto_dni" style="display: none">
+              <div class="form-group">
+              <strong>Adjuntar DNI</strong>
+                <input type="file" class="form-control bg-transparent" name="foto_dni" >
+              </div>
+              </div>
+
+              <div class="col" id="foto_titulacion" style="display: none">
+              <div class="form-group">
+              <strong>Adjuntar TItulación</strong>
+                <input type="file" class="form-control bg-transparent" name="foto_titulacion" >
+              </div>
+              </div>
+
+              <div class="col" id="foto_justificante" style="display: none">
+
+              <div class="form-group">
+              <strong>Adjuntar Documento Baja</strong>
+                <input type="file" class="form-control bg-transparent" name="foto_justificante" >
+              </div>
+              </div>
+
+              <div class="col-lg-12"></div>
               <div class="col">
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Dar de alta</button>
               </div>
@@ -468,6 +396,50 @@ $sel_comunidades =  array (
       }, false)
     })
   })()
+
+  var menu = document.getElementById("ejerciente");
+  menu.addEventListener("change", generateData);
+  var foto = document.getElementById('foto');
+  var foto_dni = document.getElementById('foto_dni');
+  var foto_titulo = document.getElementById('foto_titulacion');
+  var foto_justificante = document.getElementById('foto_justificante');
+  var checkbox = document.getElementById('flexCheckDefault');
+  var numOrigen = document.getElementById('numOrigen');
+  var colegioOrigen = document.getElementById('colegioOrigen');
+
+  function generateData(event) {
+    if (menu.value == '1') {
+      foto.style.display = 'block';
+      foto_dni.style.display = 'block';
+      foto_titulo.style.display = 'block';
+      foto_justificante.style.display = 'none';
+    } else if (menu.value == '0') {
+      foto.style.display = 'block';
+      foto_dni.style.display = 'block';
+      foto_titulo.style.display = 'block';
+      foto_justificante.style.display = 'block';
+    } else if (menu.value == '2') {
+      foto.style.display = 'block';
+      foto_dni.style.display = 'block';
+      foto_titulo.style.display = 'block';
+      foto_justificante.style.display = 'block';
+    } else if (menu.value == '3') {
+      foto.style.display = 'none';
+      foto_dni.style.display = 'none';
+      foto_titulo.style.display = 'none';
+      foto_justificante.style.display = 'none';
+    }
+  }
+
+  function check(){
+    if(checkbox.checked == true){
+      numOrigen.style.display = 'block';
+      colegioOrigen.style.display = 'block';
+    } else {
+      numOrigen.style.display = 'none';
+      colegioOrigen.style.display = 'none';
+    }
+  }
 </script>
 
 <script type="text/javascript">

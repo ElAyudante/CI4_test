@@ -48,10 +48,10 @@ $sel_comunidades =  array (
                             <div class="row pt-2 d-flex justify-content-end">
                                 <div class="col-lg-2 margin-tb d-flex flex-row">
                                     <div class="">
-                                        <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> Excel</a>
+                                        <a class="btn btn-success" href="<?php echo base_url('itemCRUD/export_excel') ?>"> Excel</a>
                                     </div>
                                 <div class="">
-                                    <a class="btn btn-success" href="<?php echo base_url('itemCRUD/create') ?>"> PDF</a>
+                                    <a class="btn btn-success" href="<?php echo base_url('itemCRUD/export_pdf') ?>"> PDF</a>
                                 </div>
                             </div>
 
