@@ -36,6 +36,10 @@
 .bg-gray{
   background-color: #eeeeee !important;
 }
+.bg-light {
+  background-image: linear-gradient(to right, #004987, #00a0df ); 
+  background-size: cover;
+}
 /*================= BORDERS =================*/
 .bordercblue{
   border-color: #004987 !important;
@@ -153,25 +157,23 @@ input::-webkit-inner-spin-button {
   z-index: 999;
 }
 
-.bg-light {
-  background-image: linear-gradient(to right, #004987, #00a0df ); 
-  background-size: cover;
-}
-
 .btn-primary {
-  /*background-image: linear-gradient(to right, #004987, #00a0df );*/
   background-color: #004987;
   border-color: #004987 !important;
   font-weight: bold;
   width: 150px;
 }
-
 .btn-primary:hover {
-  /*background-image: linear-gradient(to right, #004987, #00a0df );*/
-  background-color: #00a0df;
+  background-color: #00a0df !important;
   border-color: #00a0df !important;
   font-weight: bold;
+}
 
+.btn-bgblue:hover {
+  background-color: #00a0df !important;
+  border-color: #00a0df !important;
+  color: #fff !important;
+  font-weight: bold;
 }
 
 .btn-two{

@@ -20,7 +20,7 @@
     if($llave == true){
 ?>
 
-<section class="junta-derecha" style="padding-bottom: 8em">
+<section class="bg-blue3" style="padding-bottom: 8em">
     <div class="container container-curso">
         <div class="row row-cols-lg-2">
             <div class="col-lg-4 text-white mt-5">
@@ -41,10 +41,10 @@
             </div>
             <div class="col-lg-8 text-white mt-5">
                 <h3 class="section-subheading curso-tittle text-uppercase" style="margin-top: -3.6em !important; margin-bottom:1em; min-height: 84px"><?= $curso['Nombre'] ?></h3>
-                <p style="min-height: 120px"><?= $curso['Descripcion'] ?></p>
+                <p class="text-justify" style="min-height: 120px"><?= $curso['Descripcion'] ?></p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
                     <a href="<?= base_url('formacion'). '/'.$curso['Id']; ?>" class="text-white">
-                        <button class="btn btn-primary text-uppercase">VER CURSO</button>
+                        <button class="btn bg-white border border-white text-uppercase btn-bgblue fw-bold cblue" style="width: 150px;">VER CURSO</button>
                     </a>
                 </div>
             </div>
@@ -63,7 +63,7 @@
         <div class="row row-cols-lg-2">
             <div class="col-lg-8 mt-5 order-lg-1 order-2">
                 <h3 style="margin-top: -3.6em !important; margin-bottom:1em; min-height:84px" class="section-subheading curso-tittle-blanco text-uppercase"><?= $curso['Nombre'] ?></h3>
-                <p style="min-height: 120px"><?= $curso['Descripcion'] ?></p>
+                <p class="text-justify" style="min-height: 120px"><?= $curso['Descripcion'] ?></p>
                 <div class="d-flex justify-content-lg-start justify-content-center pt-4">
                     <a href="<?= base_url('formacion'). '/'.$curso['Id']; ?>" class="text-white" >
                         <button class="btn btn-primary text-uppercase">VER CURSO</button>
