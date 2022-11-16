@@ -180,6 +180,8 @@ if(isset($registrado)){
                     <div class="col-lg-12">
                         <strong>Curso </strong>
                         <input type="text" class="form-control" name="nombreCurso" value="<?= $curso->Nombre ?>" autofocus readonly required>
+                        <input type="hidden" class="form-control" name="idCurso" value="<?= $curso->Id ?>">
+                        <input type="hidden" class="form-control" name="ejerciente" value="<?= $registrado['Ejerciente'] ?>">
                     </div>
                     <div class="col">
                         <div class="form-group">
@@ -189,7 +191,7 @@ if(isset($registrado)){
                     </div>
                     <div class="col">
                         <div class="form-group">
-                            <label for="validationCustom01" class="form-label">Nombre</label>
+                            <strong>Nombre <span class="text-danger">*</span></strong>
                             <!--<strong>Nombre <span class="text-danger">*</span></strong>-->
                             <input type="text" class="form-control" id="validationCustom01" name="nombre" value="<?= $registrado['Nombre'] ?>" autofocus readonly required>
                         </div>
@@ -255,7 +257,7 @@ if(isset($registrado)){
         <!-- Formularios No Registrados --> 
 
         <?php if(is_null($registrado) && $curso->PrecioNoColegiado > '0'){ ?>
-            <?php echo form_open('https://sis-t.redsys.es:25443/sis/realizarPago',$form_att); 
+            <?php echo form_open('#',$form_att); 
                 
                 include "usuarios/api/apiRedsys.php";  
                 $miObj = new RedsysAPI;
@@ -296,7 +298,7 @@ if(isset($registrado)){
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
                 <div class="col-lg-12">
                     <strong>Curso</strong>
-                    <input type="text" class="form-control" name="Nombre" value="<?= $curso->Nombre ?>" autofocus  required>
+                    <input type="text" class="form-control" name="nombreCurso" value="<?= $curso->Nombre ?>" autofocus  required>
                 </div>
                 <div class="col">
                     <div class="form-group">
@@ -376,11 +378,12 @@ if(isset($registrado)){
                 <div class="col-lg-12">
                     <strong>Curso </strong>
                     <input type="text" class="form-control" name="nombreCurso" value="<?= $curso->Nombre ?>" autofocus readonly  required>
+                    <input type="hidden" class="form-control" name="idCurso" value="<?= $curso->Id ?>">
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <strong>Nº Colegiado <span class="text-danger">*</span></strong>
-                        <input type="text" class="form-control" name="numColegiado"  autofocus  required>
+                        <input type="text" class="form-control" name="numColegiado"  autofocus  disabled>
                     </div>
                 </div>
                 <div class="col">

@@ -1567,11 +1567,84 @@ class ItemCRUD extends CI_Controller {
     echo view('templates/footer');
     }
 
+    public function registro_curso_usuario(){
+
+        $curso = $this->db->get_where('cursos_eventos', 'Id =' .$_POST['idCurso'])->row_array();
+        $nombreCurso = $curso['Nombre'];
+        $modalidad = '';
+        switch($_POST['ejerciente']){
+            case 0:
+                $modalidad = 'No Ejerciente';
+                break;
+            case 1: 
+                $modalidad = 'Ejerciente';
+                break;
+            case 2:
+                $modalidad = 'Jubilado';
+                break;
+            case 3:
+                $modalidad = 'Estudiante';
+                break;
+        };
+
+        $data = array(
+            'Fecha' => date('Y-m-d'),
+            'NumColegiado' => $_POST['numColegiado'],
+            'Nombre' => $_POST['nombre'],
+            'Apellidos' => $_POST['apellidos'],
+            'NombreCurso' => $nombreCurso,
+            'Modalidad' => $modalidad,
+            'IdCurso' => $_POST['idCurso'],
+            'Importe' => 'Gratis',
+            'EstadoPago' => 'Gratis'
+        );
+
+        $this->db->insert('inscripciones_cursos', $data);
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\registro_curso_ok');
+        echo view('templates/footer');
+    }
+
+    public function registro_curso_public(){
+
+
+        $curso = $this->db->get_where('cursos_eventos', 'Id =' .$_POST['idCurso'])->row_array();
+        $nombreCurso = $curso['Nombre'];
+        $modalidad = 'No Colegiado';
+
+        $data = array(
+            'Fecha' => date('Y-m-d'),
+            'NumColegiado' => '',
+            'Nombre' => $_POST['nombre'],
+            'Apellidos' => $_POST['apellidos'],
+            'NombreCurso' => $nombreCurso,
+            'Modalidad' => $modalidad,
+            'IdCurso' => $_POST['idCurso'],
+            'Importe' => 'Gratis',
+            'EstadoPago' => 'Gratis'
+        );
+
+        $this->db->insert('inscripciones_cursos', $data);
+
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\registro_curso_ok');
+        echo view('templates/footer');
+    }
+
     public function verificar_pago_curso($id, $user){
 
         $curso = $this->db->get_where('cursos_eventos', 'Id =' .$id)->row_array();
         $nombreCurso = $curso['Nombre'];
         $modalidad = '';
+        $precio = '';
+        switch($user['Ejerciente']){
+            case 3:
+                $precio = $curso['PrecioEstudiante'];
+                break;
+            default:
+                $precio = $curso['PrecioColegiado'];
+            }
         switch($user['Ejerciente']){
             case 0:
                 $modalidad = 'No Ejerciente';
@@ -1594,7 +1667,9 @@ class ItemCRUD extends CI_Controller {
             'Apellidos' => $user['Apellidos'],
             'NombreCurso' => $nombreCurso,
             'Modalidad' => $modalidad,
-            'IdCurso' => $id
+            'IdCurso' => $id,
+            'Importe' => $precio,
+            'EstadoPago' => 'Pagado'
         );
 
         return $this->db->insert('inscripciones_cursos', $data);
@@ -1675,5 +1750,9 @@ class ItemCRUD extends CI_Controller {
         }
         echo view('App\Views\pages\otroscursos');
         echo view('templates/footer');
+    }
+
+    public function test_email(){
+        echo view ('App\Views\pages\email_plantilla');
     }
 }

@@ -41,6 +41,10 @@
     $routes->get('thank-you', 'itemCRUD::thank_you');
     $routes->get('users/tramitar_pago_curso_ok/(:any)', 'itemCRUD::tramitar_pago_curso_usuario/$1');
 
+    $routes->post('public/registro_curso_public', 'itemCRUD::registro_curso_public');
+
+    $routes->get('email_plantilla', 'itemCRUD::test_email');
+
     $routes->get('faq', 'itemCRUD::faq');
     $routes->get('juntagob', 'itemCRUD::juntagob');
     $routes->get('estatutos', 'itemCRUD::estatutos');
