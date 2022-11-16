@@ -1,28 +1,6 @@
 <?php
 
 $value= $_SESSION['user'];
-
-  include_once 'api/apiRedsys.php'; 
-
-  $miObj = new RedsysAPI; 
-  
-  $version = $_GET["Ds_SignatureVersion"]; 
-  $params = $_GET["Ds_MerchantParameters"]; 
-  $signatureRecibida = $_GET["Ds_Signature"]; 
-
-  $decodec = $miObj->decodeMerchantParameters($params); 
-
-  $codigoRespuesta = $miObj->getParameter("Ds_Response"); 
-
-  $claveModuloAdmin = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; 
-  $signatureCalculada = $miObj->createMerchantSignatureNotif($claveModuloAdmin, $params); 
-
-  if ($signatureCalculada === $signatureRecibida) { 
-   $Controller->verificar_pago_curso($Id, $value);
-   
-   
-}
-
 ?>
 
   <section class="bg-gray">
