@@ -23,7 +23,7 @@
 </head>
 
     <!-- Navigation-->
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
                 <!-- LOGOTIPO DEL NAVEGADOR -->
