@@ -639,7 +639,6 @@ a.test:nth-child(odd) {
   color: #00a0df;
 }
 .presentacion {
-  width: 100%;
   background-image: url('http://logopedascantabria.org/assets/images/png/Inicio/Recurso 6.png');
   background-size: cover;
   background-repeat: no-repeat;
