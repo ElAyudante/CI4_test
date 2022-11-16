@@ -15,39 +15,39 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 			<h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Editar Tasas/Cuotas</h3>
           	<?php echo form_open('/itemCRUD/update_cuotas', $form_att) ?>
 
-            <div class="row row-cols-lg-2 g-lg-4 cblue">
+            <div class="row row-cols-lg-2 g-lg-4 cblue text-uppercase">
 
 				<div class="col">
 					<div class="form-group">
-						<label for="inscripcion">Tasa Inscripción:</label>
+						<strong for="inscripcion">Tasa Inscripción:</strong>
 						<input type="text" class="form-control" name="inscripcion" value="<?=$item->Inscripcion;?>" autofocus>
 					</div>
 				</div>
 
 				<div class="col">
 					<div class="form-group">
-						<label for="ejerciente">Cuota Ejerciente:</label>
+						<strong for="ejerciente">Cuota Ejerciente:</strong>
 						<input type="text" class="form-control" name="ejerciente" value="<?=$item->Ordinaria;?>" autofocus>
 					</div>
 				</div>
 
 				<div class="col">
 					<div class="form-group">
-						<label for="noEjerciente">Cuota No Ejerciente:</label>
+						<strong for="noEjerciente">Cuota No Ejerciente:</strong>
 						<input type="text" class="form-control" name="noEjerciente" value="<?=$item->NoEjerciente;?>" autofocus>
 					</div>
 				</div>
 
 				<div class="col">
 					<div class="form-group">
-						<label for="estudiantes">Cuota Estudiante:</label>
+						<strong for="estudiantes">Cuota Estudiante:</strong>
 						<input type="text" class="form-control" name="estudiantes" value="<?=$item->Estudiantes;?>" autofocus>
 					</div>
               	</div>
 
 			  	<div class="col">
                 	<div class="form-group">
-						<label for="jubilados">Cuota Jubilado:</label>
+						<strong for="jubilados">Cuota Jubilado:</strong>
 						<input type="text" class="form-control" name="jubilados" value="<?=$item->Jubilados;?>" autofocus>
 					</div>
                 </div>

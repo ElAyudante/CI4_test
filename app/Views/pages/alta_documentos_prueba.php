@@ -16,35 +16,33 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                     <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Alta documento (admin)</h3>
                     <?php echo form_open('itemCRUD/store_documento', $form_att); ?>
                     
-                        <div class="row row-cols-lg-2 g-lg-4 cblue">
+                        <div class="row row-cols-lg-2 g-lg-4 cblue text-uppercase">
                         
                             <div class="col">
                                 <div class="form-group">
+                                    <strong>Nombre del Documento:</strong>
                                     <input type="text" class="form-control" name="nombre" placeholder="Nombre del documento" autofocus>
                                 </div>
                             </div>
                         
                             <div class="col d-flex align-items-center justify-content-center">
                                 <div class="form-group custom-control custom-radio text-uppercase pt-3">
-                                    <label class="fw-bold me-3">Tipo de archivo</label>
+                                    <label class="fw-bold me-3">Sector</label>
 
                                     <div class="form-check form-check-inline me-2 mb-0">
                                         <input class="form-check-input" type="radio" name="archivos" id="archivos1" value="publico" checked>
                                         <label class="form-check-label" for="archivos1">Público</label>
                                     </div>
                                     <div class="form-check form-check-inline me-2 mb-0">
-                                        <input class="form-check-input" type="radio" name="archivos" id="archivos2" value="privado" checked>
+                                        <input class="form-check-input" type="radio" name="archivos" id="archivos2" value="privado">
                                         <label class="form-check-label" for="archivos2">Privado</label>
-                                    </div>
-                                    <div class="form-check form-check-inline me-2 mb-0">
-                                        <input class="form-check-input" type="radio" name="archivos" id="archivos3" value="convenio" checked>
-                                        <label class="form-check-label" for="archivos3">Convenio</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
+                                    <strong>Descripción del Documento:</strong>
                                     <textarea type="text" class="form-control" name="descripcion" placeholder="Descripción del documento" autofocus></textarea>
                                 </div>
                             </div>

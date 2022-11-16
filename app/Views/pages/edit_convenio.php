@@ -18,24 +18,28 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                     
                         <div class="col">
                             <div class="form-group">
+                                <strong>Nombre de la Empresa:</strong>
                                 <input type="text" class="form-control" name="empresa" value="<?=$item->empresa?>" autofocus>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="form-group">
+                                <strong>Website de la Empresa:</strong>
                                 <input type="text" class="form-control" name="web" value="<?=$item->web?>" autofocus>
                             </div>
                         </div>
                         
                         <div class="col">
                             <div class="form-group">
+                                <strong>Código Promocional:</strong>
                                 <input type="text" class="form-control" name="codigo" value="<?=$item->codigo?>" autofocus>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="form-group">
+                                <strong>Descripción de la Oferta:</strong>
                                 <textarea type="text" class="form-control" name="descripcion" autofocus><?=$item->descripcion?></textarea>
                             </div>
                         </div>

@@ -20,33 +20,39 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                 
                 <div class="col">
                     <div class="form-group">
+                        <strong>Nombre:</strong>
                         <input type="text" class="form-control" name="nombre" value="<?=$item->Nombre?>" autofocus disabled>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
+                        <strong>Apellidos:</strong>
                         <input type="text" class="form-control" name="apellidos" value="<?=$item->Apellidos?>" autofocus disabled>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
+                        <strong>Email:</strong>
                         <input type="text" class="form-control" name="email" value="<?=$item->Email?>" autofocus disabled>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
+                        <strong>Asunto:</strong>
                         <input type="text" class="form-control" name="asunto" value="<?=$item->Asunto?>" placeholder="Asunto" autofocus disabled>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="form-group">
+                        <strong>Mensaje:</strong>
                         <textarea type="text"  style="min-height: 300px" class="form-control" name="Comentarios"autofocus disabled> <?= $item->Comentarios?></textarea>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="form-group">
+                        <strong>Respuesta:</strong>
                         <textarea type="text" style="min-height: 100px" oninput="auto_grow(this)" class="form-control h-100" name="mirespuesta" value="" autofocus> <?=$item->MiRespuesta?> </textarea>
                     </div>
                 </div>

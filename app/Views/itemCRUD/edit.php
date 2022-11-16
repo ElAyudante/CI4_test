@@ -166,7 +166,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
                     <div class="col">
                         <div class="form-group">
-                            <strong>Modalidad:</strong>
+                            <strong>Categoría:</strong>
                             <select type="text" name="ejerciente" class="form-select" value="<?php 
                                 switch ($item->Ejerciente) {
                                     case '0':
@@ -185,7 +185,42 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                                         echo('Tipo de colegiado');
                                         break;
                                 }
-                            ?>">
+                            ?>" >
+                                <option disabled selected hidden value="<?php 
+                                switch ($item->Ejerciente) {
+                                    case '0':
+                                        echo('No ejerciente');
+                                        break;
+                                    case '1':
+                                        echo('Ejerciente');
+                                        break;
+                                    case '2':
+                                        echo('Jubilado');
+                                        break;
+                                    case '3':
+                                        echo('Estudiante');
+                                        break;                            
+                                    default:
+                                        echo('Tipo de colegiado');
+                                        break;
+                                }?>"><?php 
+                                switch ($item->Ejerciente) {
+                                    case '0':
+                                        echo('No ejerciente');
+                                        break;
+                                    case '1':
+                                        echo('Ejerciente');
+                                        break;
+                                    case '2':
+                                        echo('Jubilado');
+                                        break;
+                                    case '3':
+                                        echo('Estudiante');
+                                        break;                            
+                                    default:
+                                        echo('Tipo de colegiado');
+                                        break;
+                                }?></option>
                                 <option value="1">Ejerciente</option>
                                 <option value="0">No ejerciente</option>
                                 <option value="2">Jubilado</option>
