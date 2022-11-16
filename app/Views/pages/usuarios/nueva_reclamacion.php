@@ -16,44 +16,44 @@
         <div class="container p-5">
           <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Nueva Reclamación</h3>
           <?php echo form_open('users/crear_reclamacion',$form_att); ?>
-            <div class="row">
             
-            <div class="row row-cols-4">
+            <div class="row row-cols-lg-4 g-lg-4 text-uppercase cblue">
+
               <div class="col">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="<?= $value['Nombre'] ?>" autofocus readonly>
+                        <strong for="nombre">Nombre:</strong>
+                        <input type="text" class="form-control bg-gray" name="nombre" value="<?= $value['Nombre'] ?>" autofocus readonly>
                     </div>
               </div>
               <div class="col">
                   <div class="form-group">
-                      <label for="apellidos">Apellidos</label>
-                      <input type="text" class="form-control" name="apellidos" value="<?= $value['Apellidos'] ?>" readonly>
+                      <strong for="apellidos">Apellidos:</strong>
+                      <input type="text" class="form-control bg-gray" name="apellidos" value="<?= $value['Apellidos'] ?>" readonly>
                   </div>
               </div>
               <div class="col">
                   <div class="form-group">
-                      <label for="telefono">Telefono</label>
-                      <input type="text" class="form-control" name="telefono" value="<?= $value['Telefono'] ?>" readonly>
+                      <strong for="telefono">Teléfono:</strong>
+                      <input type="text" class="form-control bg-gray" name="telefono" value="<?= $value['Telefono'] ?>" readonly>
                   </div>
               </div>
               <div class="col">
                   <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="text" class="form-control" name="email" value="<?= $value['Email'] ?>" readonly>
+                      <strong for="email">Email:</strong>
+                      <input type="text" class="form-control bg-gray" name="email" value="<?= $value['Email'] ?>" readonly>
                   </div>
               </div>
 
               <div class="col-lg-12">
                     <div class="form-group">
-                        <label for="asunto">Asunto</label>
+                        <strong for="asunto">Asunto:</strong>
                         <input type="text" class="form-control bg-transparent" name="asunto" value="">
                     </div>
                 </div>
 
               <div class="col-lg-12">
                     <div class="form-group">
-                        <label for="comentarios">Descripción</label>
+                        <strong for="comentarios">Descripción:</strong>
                         <textarea type="text" class="form-control bg-transparent" name="comentarios" value="" style="height:100px"></textarea>
                     </div>
                 </div>

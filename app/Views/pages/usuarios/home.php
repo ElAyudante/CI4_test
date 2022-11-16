@@ -90,87 +90,106 @@ $sel_comunidades =  array (
           <div class="form-border p-3 bg-white mb-0">
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
               <div class="col">
-                <div class="form-group" style="display:flex;">
-                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <input type="text" class="form-control bg-gray" name="falta" value="<?php echo $value['FechaAlta']?>" autofocus readonly>          
+                <div class="form-group">
+                  <strong>Fecha de Alta:</strong>
+                  <div class="d-flex">
+                    <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
+                    <input type="text" class="form-control bg-gray" name="falta" value="<?php echo $value['FechaAlta']?>" autofocus readonly>
+                  </div>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Nº Colegiado:</strong>
                   <input type="text" class="form-control bg-gray" name="colegiado" value="<?php echo $value['Colegiado']?>" autofocus readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Nombre:</strong>
                   <input type="text" class="form-control bg-gray" name="nombre" value="<?php echo $value['Nombre']?>" autofocus readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Apellidos:</strong>
                   <input type="text" class="form-control bg-gray" name="apellidos" value="<?php echo $value['Apellidos']?>" readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Usuario:</strong>
                   <input type="text" class="form-control bg-gray" name="usuario" value="<?php echo $value['NIF']?>" readonly>
                 </div>
               </div>
 
               <div class="col">
-                <div class="form-group d-flex">
-                  <input id="password" type="password" class="form-control" name="pass" value="<?php echo $value['Pass']?>">
-                      <span class="input-group-text" onclick="password_show_hide();">
-                        <i class="fas fa-eye" id="show_eye"></i>
-                        <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
-                      </span>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group d-flex">
-                  <input id="confirm_password" type="password" class="form-control" name="confirm_pass" placeholder="Confirmar Contraseña">
-                      <span class="input-group-text" onclick="password_show_hide_confirm();">
-                        <i class="fas fa-eye" id="show_eye_confirm"></i>
-                        <i class="fas fa-eye-slash d-none" id="hide_eye_confirm"></i>
-                      </span>
+                <div class="form-group">
+                  <strong>Password:</strong>
+                  <div class="d-flex">
+                    <input id="password" type="password" class="form-control" name="pass" value="<?php echo $value['Pass']?>">
+                    <span class="input-group-text" onclick="password_show_hide();">
+                      <i class="fas fa-eye" id="show_eye"></i>
+                      <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                    </span>
+                  </div>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Confirmar Password:</strong>
+                  <div class="d-flex">
+                    <input id="confirm_password" type="password" class="form-control" name="confirm_pass" placeholder="Confirmar Contraseña">
+                    <span class="input-group-text" onclick="password_show_hide_confirm();">
+                      <i class="fas fa-eye" id="show_eye_confirm"></i>
+                      <i class="fas fa-eye-slash d-none" id="hide_eye_confirm"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <strong>DNI:</strong>
                   <input type="text" class="form-control bg-gray" name="nif" value="<?php echo $value['NIF']?>" readonly>
                 </div>
               </div>
 
               <div class="col-md-8">
                 <div class="form-group">
+                  <strong>EMAIL:</strong>
                   <input type="text" class="form-control" name="email" value="<?php echo $value['Email']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Dirección:</strong>
                   <input type="text" class="form-control" name="direccion" value="<?php echo $value['Direccion']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Localidad:</strong>
                   <input type="text" class="form-control" name="localidad" value="<?php echo $value['Localidad']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Código Postal:</strong>
                   <input type="number" class="form-control" name="cp" value="<?php echo $value['CP']?>">
                 </div>
               </div>
 
               <div class="form-group col">
+                <strong>Provincia:</strong>
                 <select id="provincia" class="form-select " name="provincia">
                   <option selected value="<?php echo $value['Provincia']?>"><?php echo $value['Provincia']?></option>
                   <?php 
@@ -182,6 +201,7 @@ $sel_comunidades =  array (
               </div>
 
               <div class="form-group col">
+                <strong>Comunidad Autónoma:</strong>
                 <select id="comunidad" class="form-select " name="comunidad">
                   <option selected value="<?php echo $value['Comunidad']?>"><?php echo $value['Comunidad']?></option>
                   <?php 
@@ -194,65 +214,71 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Teléfono:</strong>
                   <input type="number" class="form-control" name="telefono" value="<?php echo $value['Telefono']?>">
                 </div>
               </div>
 
-              <div class="col">
-                <div class="form-group">
-                  <input type="number" class="form-control" name="movil" value="<?php echo $value['Movil']?>">
-                </div>
-              </div>
-
               <div class="form-group col">
+                <strong>Lugar de Nacimiento:</strong>
                 <input class="form-control bg-gray" value="<?php echo $value['LugarNacimiento']?>" readonly>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Cuenta Bancaria:</strong>
                   <input type="number" class="form-control" name="cuenta" value="<?php echo $value['CuentaBancaria']?>" placeholder="Cuenta Bancaria">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Teléfono de Trabajo:</strong>
                   <input type="number" class="form-control" name="tlftrabajo" value="<?php echo $value['TelefonoTrabajo']?>" placeholder="Teléfono Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Lugar de Trabajo:</strong>
                   <input type="text" class="form-control" name="lugtrabajo" value="<?php echo $value['LugarTrabajo']?>" placeholder="Lugar Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Dirección de Trabajo:</strong>
                   <input type="text" class="form-control" name="dtrabajo" value="<?php echo $value['DireccionTrabajo']?>" placeholder="Dirección Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Localidad de Trabajo:</strong>
                   <input type="text" class="form-control" name="loctrabajo" value="<?php echo $value['LocalidadTrabajo']?>" placeholder="Localidad Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Nº Colegiado de Origen:</strong>
                   <input type="number" class="form-control bg-gray" name="ncolegiado" value="<?php echo $value['NumColegiado']?>" readonly>
                 </div>
               </div>
 
               <div class="col">
-                <div class="form-group" style="display:flex;">
-                  <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                  <input type="text" class="form-control bg-gray" name="fechanacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus readonly>           
+                <div class="form-group">
+                  <strong>Fecha de Nacimiento:</strong>
+                  <div class="d-flex">
+                    <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
+                    <input type="text" class="form-control bg-gray" name="fechanacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus readonly>
+                  </div>      
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Categoría:</strong>
                   <select id ="ejerciente" class="form-select bg-gray" name="ejerciente" readonly>
                     <option value="">
                       <?php
@@ -278,23 +304,26 @@ $sel_comunidades =  array (
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Titulación:</strong>
                   <input type="text" class="form-control" name="titulacion" value="<?php echo $value['Titulacion']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Especialidad:</strong>
                   <input type="text" class="form-control" name="especialidad" value="<?php echo $value['Especialidad']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
+                  <strong>Ámbito de Trabajo:</strong>
                   <input type="text" class="form-control" name="ambito" value="<?php echo $value['AmbitoTrabajo']?>">
                 </div>
               </div>
 
-              <div class="col">
+              <div class="col-lg-12">
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
               </div>
 

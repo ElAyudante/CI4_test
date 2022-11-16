@@ -29,10 +29,10 @@
                                     <div class="card-body doc_user h-100 text-center">
                                         <h6 class="fw-bold cblue text-uppercase"><?= $curso['Nombre']?> </h6>
                                         <div class="row row-cols-lg-2">
-                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-chalkboard-user me-2"></i><p class="mb-0"><?= $curso['Formato']?> </p></div>
-                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-hourglass-end me-2"></i><p class="mb-0"><?= $curso['Duracion'] . ' horas'?> </p></div>
-                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-clock me-2"></i><p class="mb-0"><?= $curso['HorarioInicio']?> </p></div>
-                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-clock me-2"></i><p class="mb-0"><?= $curso['HorarioFin']?> </p></div>
+                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-chalkboard-user cblue me-2"></i><p class="mb-0"><?= $curso['Formato']?> </p></div>
+                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-hourglass-end cblue me-2"></i><p class="mb-0"><?= $curso['Duracion'] . ' horas'?> </p></div>
+                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-clock cblue me-2"></i><p class="mb-0"><?= $curso['HorarioInicio']?> </p></div>
+                                            <div class="col d-flex align-items-center"><i class="fa-solid fa-clock cblue me-2"></i><p class="mb-0"><?= $curso['HorarioFin']?> </p></div>
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url('formacion'). '/' . $curso['Id'] ?>">Ver</a></button>
