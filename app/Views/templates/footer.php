@@ -28,9 +28,6 @@
                 <div class="col m-auto mb-3">
                     <h4 class="fw-bold footer-heading text-uppercase text-white">Recursos</h4>
                     <ul class="list-unstyled footer-link">
-                        <!--<li><a class="text-white" href="<?php echo base_url(),'/'; ?>home" target="_blank">Inicio</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>faq" target="_blank">FAQ</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>forum/index" target="_blank">Foro</a></li>-->
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/login" target="_blank">Accede</a></li>
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
                         <li><a class="text-white" href="<?php echo base_url(),'/'; ?>codigo" target="_blank">Código Deontológico</a></li>
@@ -44,27 +41,12 @@
                         <li><a class="contact-info text-white" href="mailto:colegio@logopedascantabria.org"><i class="fa-solid fa-envelope me-2"></i>colegio@logopedascantabria.org</a></li>
                         <li><a class="contact-info text-white"href="https://goo.gl/maps/a8YW6QwVmth6W6Dq7" target="_blank"><i class="fa-solid fa-location-dot me-2"></i>Dirección física</a></li>
                     </ul>
-                    <!--<div class="">
-                        <ul class="list-inline">
-                            <li><a href="https://es-es.facebook.com/colegiologopedascantabria/" target="_blank"><i class="fab facebook footer-social-icon fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="https://es.linkedin.com/in/colegio-logopedas-cantrabria-592675154" target="_blank"><i class="fab linkedin footer-social-icon fa-linkedin-in"></i></a></li>
-                            <li class="list-inline-item"><a href="mailto:colegio@logopedascantabria.org" target="_blank"><i class="fas mail footer-social-icon fa-envelope"></i></a></li>
-                            <li class="list-inline-item"><a href="https://goo.gl/maps/a8YW6QwVmth6W6Dq7" target="_blank"><i class="fas place footer-social-icon fa-location-arrow"></i></a></li>
-                        </ul>
-                    </div>-->
                 </div>
 
                 <div class="col m-auto">
                     <div class="d-flex justify-content-center">
                         <a href="https://santanderapunto.es/" target="_blank"><img class="img-fluid w-75" src="<?php echo base_url(),'/'; ?>assets/images/png/santander.png"></img></a>
                     </div>
-                    <!--<h6 class="fw-bold footer-heading text-uppercase text-white">Ayuda</h6>
-                    <ul class="list-unstyled footer-link mt-4">
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/register" target="_blank">Date de alta</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>users/login" target="_blank">Accede</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a></li>
-                        <li><a class="text-white" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">Política de Privacidad</a></li>
-                    </ul>-->
                 </div>
 
                 <div class="col-lg-12 m-auto">

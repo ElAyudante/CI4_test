@@ -356,9 +356,8 @@ $sel_comunidades =  array (
               </div>
 
               <div class="col" id="foto_justificante" style="display: none">
-
-              <div class="form-group">
-                <strong>Adjuntar Documento Baja</strong>
+                <div class="form-group">
+                  <strong>Adjuntar Documento Baja</strong>
                   <input type="file" class="form-control bg-transparent" name="foto_justificante" >
                 </div>
               </div>
