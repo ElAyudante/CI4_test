@@ -21,6 +21,14 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         <div class="form-group">
                             <strong>Fecha de Alta:</strong>
                             <input type="date" name="falta" class="form-control" value="<?php echo $item->FechaAlta; ?>" >
+                            <input type="hidden" name="Id" class="form-control" value="<?php echo $item->Id; ?>" >
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <strong>Nº de Colegiado:</strong>
+                            <input type="text" name="ncolegiado" class="form-control" value="<?php echo $item->Colegiado; ?>">
                         </div>
                     </div>
 
@@ -49,6 +57,26 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         <div class="form-group">
                             <strong>Email:</strong>
                             <input type="text" name="email" class="form-control" value="<?php echo $item->Email; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                        <strong>Usuario:</strong>
+                        <input type="text" class="form-control" name="usuario" value="<?php echo $item->Usuario?>">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                        <strong>Password:</strong>
+                        <div class="d-flex">
+                            <input id="password" type="password" class="form-control" name="pass" value="<?php echo $item->Pass?>">
+                            <span class="input-group-text" onclick="password_show_hide();">
+                            <i class="fas fa-eye" id="show_eye"></i>
+                            <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                            </span>
+                        </div>
                         </div>
                     </div>
 
@@ -145,13 +173,6 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 
                     <div class="col">
                         <div class="form-group">
-                            <strong>Nº de Colegiado:</strong>
-                            <input type="text" name="ncolegiado" class="form-control" value="<?php echo $item->Colegiado; ?>">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-group">
                             <strong>Especialidad:</strong>
                             <input type="text" name="especialidad" class="form-control" value="<?php echo $item->Especialidad; ?>">
                         </div>
@@ -161,6 +182,20 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         <div class="form-group">
                             <strong>Ámbito de Trabajo:</strong>
                             <input type="text" name="ambito" class="form-control" value="<?php echo $item->AmbitoTrabajo; ?>">
+                        </div>
+                    </div>
+
+                    <div class="col" id='colegioOrigen'>
+                        <div class="form-group">
+                        <strong>Colegio de Origen</strong>
+                        <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" value="<?php echo $item->ColegioOrigen; ?>" placeholder="Colegio de origen" >
+                        </div>
+                    </div>
+
+                    <div class="col" id="numOrigen">
+                        <div class="form-group">
+                        <strong>Nº Colegiado de Origen</strong>
+                        <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" value="<?php echo $item->NumColegiado; ?>" placeholder="Nº Colegiado de origen" >
                         </div>
                     </div>
 
@@ -232,7 +267,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                     <div class="col">
                         <div class="form-group">
                         <strong>Sector:</strong>
-                            <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
+                            <select id ="sectores" class="form-select bg-transparent" name="sectores">
                                 <option value="1" select>Público</option>
                                 <option value="0">Privado</option>
                             </select>
@@ -250,3 +285,23 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
         </div>
 	</div>
 </section>
+
+
+
+<script>
+  function password_show_hide() {
+  var x = document.getElementById("password");
+  var show_eye = document.getElementById("show_eye");
+  var hide_eye = document.getElementById("hide_eye");
+  hide_eye.classList.remove("d-none");
+  if (x.type === "password") {
+    x.type = "text";
+    show_eye.style.display = "none";
+    hide_eye.style.display = "block";
+  } else {
+    x.type = "password";
+    show_eye.style.display = "block";
+    hide_eye.style.display = "none";
+  }
+}
+</script>

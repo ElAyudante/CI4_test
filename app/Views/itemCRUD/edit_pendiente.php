@@ -15,10 +15,16 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0 text-upperc
                     <?php echo form_open('itemCRUD/update_pendiente/'.$item->Id, $form_att); ?>
 
                         <div class="row row-cols-lg-4 g-lg-4 cblue">
-                            <div class="col-lg-12">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <strong>Nº Colegiado:</strong>
                                     <input type="text" name="colegiado" class="form-control" value="<?php echo $item->Colegiado; ?>">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <strong>Importe:</strong>
+                                    <input type="number" name="importe" class="form-control">
                                 </div>
                             </div>
                             <div class="col">
@@ -63,6 +69,28 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0 text-upperc
                                         }
                                     ?>" readonly>
                                 </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <strong>Traslado</strong>
+                                    <input type="text" name="traslado" class="form-control bg-gray" value="<?php echo $item->Trasladado; ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <strong>Nº Colegiado de Origen:</strong>
+                                    <input type="text" name="colegioOrigen" class="form-control bg-gray" value="<?php echo $item->NumColegiado; ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <strong>Colegio de Origen:</strong>
+                                    <input type="text" name="numOrigen" class="form-control bg-gray" value="<?php echo $item->ColegioOrigen; ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col">
+
                             </div>
 
                             <div class="col">

@@ -130,6 +130,7 @@
     $routes->get('itemCRUD/(:num)', "itemCRUD");
     $routes->get('itemCRUDShow/(:any)', "itemCRUD::show/$1");
     $routes->get('itemCRUD/create', "itemCRUD::create");
+    $routes->post('itemCRUD/store_admin', 'itemCRUD::store_admin');
     $routes->get('itemCRUD/edit/(:any)', "itemCRUD::edit/$1");
     $routes->get('itemCRUD/pending/edit/(:any)', "itemCRUD::edit_pendiente/$1");
     $routes->get('itemCRUD/pending/delete/(:any)', "itemCRUD::delete/$1");

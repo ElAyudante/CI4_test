@@ -1,5 +1,5 @@
 <?php
-$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'', "enctype" => "multipart/form-data"];
 
 $sel_provincias = array (
   'Alava' => 'Alava',
@@ -259,7 +259,7 @@ $sel_comunidades =  array (
               <div class="form-group">
               <strong>Categoría</strong>
                 <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
-                  <option disabled selected hidden value="" select>Tipo de colegiado</option>
+                  <option disabled selected hidden value="">Tipo de colegiado</option>
                   <option value="1">Ejerciente</option>
                   <option value="0">No ejerciente</option>
                   <option value="2">Jubilado</option>
@@ -271,7 +271,7 @@ $sel_comunidades =  array (
             <div class="col-lg-6">
               <div class="form-group">
               <strong>Observaciones</strong>
-                <input type="text" class="form-control text-uppercase bg-transparent" name="observacion" placeholder="Observaciones">
+                <input type="text" class="form-control text-uppercase bg-transparent" name="observaciones" placeholder="Observaciones">
               </div>
             </div>
 
@@ -305,7 +305,7 @@ $sel_comunidades =  array (
 
               <div class="col text-uppercase">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick = "check();">
+                  <input class="form-check-input" type="checkbox" value="Sí" id="flexCheckDefault" onclick = "check();" name="traslado">
                   <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
                 </div>
               </div>
@@ -351,7 +351,7 @@ $sel_comunidades =  array (
 
               <div class="form-group">
               <strong>Adjuntar TItulación</strong>
-                <input type="file" class="form-control bg-transparent" name="foto_titulacion" >
+                <input type="file" class="form-control bg-transparent" name="foto_titulo" >
               </div>
               </div>
 

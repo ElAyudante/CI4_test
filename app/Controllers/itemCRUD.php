@@ -59,7 +59,7 @@ class ItemCRUD extends CI_Controller {
                     case 2: 
                         return $value = 'Jubilado';
                     case 3:
-                        return $value = 'Estdiante';
+                        return $value = 'Estudiante';
                     default:
                         return $value = 'Sin Especificar';
                 }
@@ -68,9 +68,9 @@ class ItemCRUD extends CI_Controller {
         $crud->callbackColumn(
             'Activo', function($value){
                 switch($value){
-                    case 0:
-                        return $value = 'En Activo';
                     case 1:
+                        return $value = 'En Activo';
+                    case 0:
                         return $value = 'Baja';
                     default:
                         return $value = 'Sin Especificar';
@@ -218,7 +218,8 @@ class ItemCRUD extends CI_Controller {
 
 	    $crud->setTable('colegiados');
         $crud->setSubject('Colegiado', 'Colegiados');
-        $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad']);
+        $crud->columns(['Colegiado','Nombre','Apellidos','NIF','Comunidad', 'Trasladado']);
+        $crud->displayAs('Trasladado', 'Traslado');
         $crud->unsetAdd();
 
         $crud->unsetBootstrap();
@@ -268,7 +269,7 @@ class ItemCRUD extends CI_Controller {
     $crud = new GroceryCrud();
     $crud->setTable('inscripciones_cursos');
     $crud->setSubject('Inscripciones', 'Inscripciones');
-    $crud->columns(['Fecha', 'NumColegiado', 'Nombre', 'Apellidos', 'NombreCurso', 'Modalidad']);
+    $crud->columns(['Fecha', 'NumColegiado', 'Nombre', 'Apellidos', 'NombreCurso', 'Modalidad', 'Importe', 'EstadoPago']);
 
     $crud->unsetBootstrap();
     $crud->unsetAdd();
@@ -835,18 +836,63 @@ class ItemCRUD extends CI_Controller {
     * @return Response
    */
    public function update($id) {
+    $model = model(ItemCRUDModel::class);
+
+    if ($this->request->getMethod() === 'post' && $this->validate([
+        'nombre' => 'required|min_length[3]|max_length[255]',
+        'apellidos'  => 'required',
+        'nif'  => 'required',
+        'email' => 'required',
+        'telefono' => 'required',
+        'lnacimiento' => 'required',
+        'direccion' => 'required',
+        'cp' => 'required',
+        'localidad' => 'required',
+        'provincia' => 'required',
+        'comunidad' => 'required',
+        'tlftrabajo' => 'required',
+        'titulacion' => 'required'
         
-        $this->form_validation->set_rules('email', 'Email', 'valid_email');
-        $this->form_validation->set_rules('cuentabancaria', 'Cuentabancaria', 'trim');
+    ])) {
 
-        if ($this->form_validation->run() == FALSE){
-            $this->session->set_flashdata('errors', validation_errors());
-            return redirect()->to(base_url('itemCRUD/edit/'.$id));
-        }else{ 
-          $this->itemCRUD->update_item($id);
-          return redirect()->to(base_url('itemCRUD'));
-        }
+        $model->update_admin([
+            'fechaAlta' => $this->request->getPost('falta'),
+            'numColegiado' => $this->request->getPost('ncolegiado'),
+            'nombre' => $this->request->getPost('nombre'),
+            'apellidos'  => $this->request->getPost('apellidos'),
+            'nif'  => $this->request->getPost('nif'),
+            'email'  => $this->request->getPost('email'),
+            'telefono'  => $this->request->getPost('telefono'),
+            'lnacimiento'  => $this->request->getPost('lnacimiento'),
+            'fnacimiento'  => $this->request->getPost('fnacimiento'),
+            'direccion'  => $this->request->getPost('direccion'),
+            'cp'  => $this->request->getPost('cp'),
+            'localidad'  => $this->request->getPost('localidad'),
+            'comunidad'  => $this->request->getPost('comunidad'),
+            'provincia'  => $this->request->getPost('provincia'),
+            'cuenta'  => $this->request->getPost('cuenta'),
+            'tlftrabajo'  => $this->request->getPost('tlftrabajo'),
+            'lugtrabajo'  => $this->request->getPost('lugtrabajo'),
+            'dtrabajo'  => $this->request->getPost('dtrabajo'),
+            'loctrabajo'  => $this->request->getPost('loctrabajo'),
+            'especialidad'  => $this->request->getPost('especialidad'),
+            'ambito'  => $this->request->getPost('ambito'),
+            'ejerciente' => $this->request->getPost('ejerciente'),
+            'titulacion'  => $this->request->getPost('titulacion'),
+            'colegioorigen'  => $this->request->getPost('colegioorigen'),
+            'norigen'  => $this->request->getPost('norigen'),
+            'sectores'  => $this->request->getPost('sectores'),
+            'usuario' => $this->request->getPost('usuario'),
+            'pass' => $this->request->getPost('pass'),
+            'Id' => $this->request->getPost('Id')
 
+        ]);
+
+        return redirect()->to(base_url('itemCRUD'));
+    } else {
+        return redirect()->to(base_url('itemCRUD/edit/'.$item->Id));
+    }
+        
     }
 
     public function update_pendiente(){
@@ -861,15 +907,14 @@ class ItemCRUD extends CI_Controller {
 
 		);
 
-        $this->db->update('colegiados', $data, 'ID ='.$id);
-        $cuota = $this->db->get_where('cuotas', 'ID = 1')->row_array();
+        $this->db->update('colegiados', $data, 'Id ='.$id);
 
         $data_pago = array(
             'NumColegiado'=>$this->input->post('colegiado'),
             'Nombre'=>$this->input->post('nombre'),
             'Apellidos'=>$this->input->post('apellidos'),
             'Transaccion'=>'Cuota Alta',
-            'Cantidad'=>$cuota['Inscripcion'],
+            'Cantidad'=>$this->input->post('importe'),
             'Estado'=>'Pendiente',
         );
 
@@ -1448,6 +1493,69 @@ class ItemCRUD extends CI_Controller {
             'titulacion' => 'required'
             
         ])) {
+
+            $targetDir = "./assets/uploads/files/";
+            $fileNameFoto = basename($_FILES["foto"]["name"]);
+            $fileNameDNI = basename($_FILES['foto_dni']['name']);
+            $fileNameTitulo = basename($_FILES['foto_titulo']['name']);
+            $fileNameJustificante = basename($_FILES['foto_justificante']['name']);
+
+            $targetFilePath = $targetDir . $fileNameFoto;
+            $targetFilePathDNI = $targetDir . $fileNameDNI;
+            $targetFilePathTitulo = $targetDir . $fileNameTitulo;
+            $targetFilePathJustificante = $targetDir . $fileNameJustificante;
+
+            $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+            $fileTypeDNI = pathinfo($targetFilePathDNI,PATHINFO_EXTENSION);
+            $fileTypeTitulo = pathinfo($targetFilePathTitulo,PATHINFO_EXTENSION);
+            $fileTypeJustificante = pathinfo($targetFilePathJustificante,PATHINFO_EXTENSION);
+
+            $allowTypes = array('jpg','png','jpeg','pdf');
+            if(in_array($fileType, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFilePath)){
+                    $data = array(
+
+                        'Foto' => $fileNameFoto
+                    );
+                }
+            }
+            if(in_array($fileTypeDNI, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto_dni"]["tmp_name"], $targetFilePathDNI)){
+                    $data = array(
+                        'DNI' => $this->input->post('nif'),
+                        'Foto' => $fileNameFoto,
+                        'FotoDNI' => $fileNameDNI
+                    );
+                }
+            }
+            if(in_array($fileTypeTitulo, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto_titulo"]["tmp_name"], $targetFilePathTitulo)){
+                    $data = array(
+                        'DNI' => $this->input->post('nif'),
+                        'Foto' => $fileNameFoto,
+                        'FotoDNI' => $fileNameDNI,
+                        'FotoTitulo' => $fileNameTitulo
+                    );
+                }
+            }
+            if(in_array($fileTypeJustificante, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto_justificante"]["tmp_name"], $targetFilePathJustificante)){
+                    $data = array(
+                        'DNI' => $this->input->post('nif'),
+                        'Foto' => $fileNameFoto,
+                        'FotoDNI' => $fileNameDNI,
+                        'FotoTitulo' => $fileNameTitulo,
+                        'FotoBaja' => $fileNameJustificante
+                    );
+                }
+            }
+
+            $this->db->insert('colegiados_adjunto', $data);
+
             $model->insert_item([
                 'nombre' => $this->request->getPost('nombre'),
                 'apellidos'  => $this->request->getPost('apellidos'),
@@ -1469,9 +1577,11 @@ class ItemCRUD extends CI_Controller {
                 'titulacion'  => $this->request->getPost('titulacion'),
                 'especialidad'  => $this->request->getPost('especialidad'),
                 'ambito'  => $this->request->getPost('ambito'),
+                'ejerciente' => $this->request->getPost('ejerciente'),
                 'colegioorigen'  => $this->request->getPost('colegioorigen'),
                 'norigen'  => $this->request->getPost('norigen'),
                 'sectores'  => $this->request->getPost('sectores'),
+                'traslado' => $this->request->getPost('traslado'),
                 'bolsa'  => $this->request->getPost('bolsa')
 
             ]);
@@ -1502,6 +1612,70 @@ class ItemCRUD extends CI_Controller {
             'titulacion' => 'required'
             
         ])) {
+ 
+            $targetDir = "./assets/uploads/files/";
+            $fileNameFoto = basename($_FILES["foto"]["name"]);
+            $fileNameDNI = basename($_FILES['foto_dni']['name']);
+            $fileNameTitulo = basename($_FILES['foto_titulo']['name']);
+            $fileNameJustificante = basename($_FILES['foto_justificante']['name']);
+
+            $targetFilePath = $targetDir . $fileNameFoto;
+            $targetFilePathDNI = $targetDir . $fileNameDNI;
+            $targetFilePathTitulo = $targetDir . $fileNameTitulo;
+            $targetFilePathJustificante = $targetDir . $fileNameJustificante;
+
+            $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+            $fileTypeDNI = pathinfo($targetFilePathDNI,PATHINFO_EXTENSION);
+            $fileTypeTitulo = pathinfo($targetFilePathTitulo,PATHINFO_EXTENSION);
+            $fileTypeJustificante = pathinfo($targetFilePathJustificante,PATHINFO_EXTENSION);
+
+            $allowTypes = array('jpg','png','jpeg','pdf');
+            if(in_array($fileType, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFilePath)){
+                    $data = array(
+
+                        'Foto' => $fileNameFoto
+                    );
+                }
+            }
+            if(in_array($fileTypeDNI, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto_dni"]["tmp_name"], $targetFilePathDNI)){
+                    $data = array(
+                        'DNI' => $this->input->post('nif'),
+                        'Foto' => $fileNameFoto,
+                        'FotoDNI' => $fileNameDNI
+                    );
+                }
+            }
+            if(in_array($fileTypeTitulo, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto_titulo"]["tmp_name"], $targetFilePathTitulo)){
+                    $data = array(
+                        'DNI' => $this->input->post('nif'),
+                        'Foto' => $fileNameFoto,
+                        'FotoDNI' => $fileNameDNI,
+                        'FotoTitulo' => $fileNameTitulo
+                    );
+                }
+            }
+            if(in_array($fileTypeJustificante, $allowTypes)){
+                // Upload file to server
+                if(move_uploaded_file($_FILES["foto_justificante"]["tmp_name"], $targetFilePathJustificante)){
+                    $data = array(
+                        'DNI' => $this->input->post('nif'),
+                        'Foto' => $fileNameFoto,
+                        'FotoDNI' => $fileNameDNI,
+                        'FotoTitulo' => $fileNameTitulo,
+                        'FotoBaja' => $fileNameJustificante
+                    );
+                }
+            }
+
+            $this->db->insert('colegiados_adjunto', $data);
+
+
             $model->insert_item([
                 'fechaAlta' => $this->request->getPost('fechaAlta'),
                 'nombre' => $this->request->getPost('nombre'),
@@ -1527,13 +1701,14 @@ class ItemCRUD extends CI_Controller {
                 'colegioorigen'  => $this->request->getPost('colegioorigen'),
                 'norigen'  => $this->request->getPost('norigen'),
                 'sectores'  => $this->request->getPost('sectores'),
-                'bolsa'  => $this->request->getPost('bolsa')
-
+                'bolsa'  => $this->request->getPost('bolsa'),
+                'ejerciente' => $this->request->getPost('ejerciente'),
+                'observaciones' => $this->request->getPost('observaciones'),
             ]);
 
-            return redirect()->to(base_url('thank-you'));
+            return redirect()->to(base_url('itemCRUD'));
         } else {
-            return redirect()->to(base_url('home'));
+            return redirect()->to(base_url('itemCRUD/create'));
         }
     }
 
