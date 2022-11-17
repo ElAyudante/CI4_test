@@ -239,21 +239,20 @@ $sel_comunidades =  array (
             <input type="text" class="form-control text-uppercase bg-transparent" name="ambito" placeholder="Ámbito de trabajo">
           </div>
         </div>
-        
-        <div class="col">
-          <div class="form-group">
-          <strong>Colegio de Origen</strong>
-            <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen">
-          </div>
-        </div>
 
         <div class="col">
           <div class="form-group">
-          <strong>Nº Colegiado de Origen</strong>
-            <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen">
+          <strong>Categoría</strong>
+            <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
+              <option disabled selected hidden value="" select>Tipo de colegiado</option>
+              <option value="1">Ejerciente</option>
+              <option value="0">No ejerciente</option>
+              <option value="2">Jubilado</option>
+              <option value="3">Estudiante</option>
+            </select>
           </div>
         </div>
-        
+                
         <div class="col text-uppercase d-flex align-items-center">
           <label class="fw-bold me-3">Sector</label>
           <div class="form-check form-check-inline me-2 mb-0">
@@ -269,15 +268,65 @@ $sel_comunidades =  array (
 
         <div class="col text-uppercase d-flex align-items-center">
           <label class="fw-bold me-3">Bolsa de trabajo</label>
-
           <div class="form-check form-check-inline me-2 mb-0">
             <input class="form-check-input" type="radio" name="bolsa" id="bolsa1" value="1" checked>
             <label class="form-check-label" for="bolsa1">Sí</label>
           </div>
-
           <div class="form-check form-check-inline me-0 mb-0">
             <input class="form-check-input" type="radio" name="bolsa" id="bolsa2" value="0">
             <label class="form-check-label" for="bolsa2">No</label>
+          </div>
+        </div>
+
+        <div class="col text-uppercase d-flex align-items-center">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick = "check();">
+            <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
+          </div>
+        </div>
+            
+        <div class="col" id='colegioOrigen' style="display: none">
+          <div class="form-group">
+          <strong>Colegio de Origen</strong>
+            <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen">
+          </div>
+        </div>
+
+        <div class="col" id="numOrigen" style="display: none">
+          <div class="form-group">
+          <strong>Nº Colegiado de Origen</strong>
+            <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen">
+          </div>
+        </div>
+
+        <div class="col-lg-12"></div>
+
+        <div class="col" id="foto" style="display: none">
+          <div class="form-group">
+          <strong>Adjuntar Foto</strong>
+            <input type="file" class="form-control bg-transparent" name="foto"  >
+          </div>
+        </div>
+
+        <div class="col" id="foto_dni" style="display: none">
+        <div class="form-group">
+        <strong>Adjuntar DNI</strong>
+          <input type="file" class="form-control bg-transparent" name="foto_dni" >
+        </div>
+        </div>
+
+        <div class="col" id="foto_titulacion" style="display: none">
+
+        <div class="form-group">
+        <strong>Adjuntar TItulación</strong>
+          <input type="file" class="form-control bg-transparent" name="foto_titulacion" >
+        </div>
+        </div>
+
+        <div class="col" id="foto_justificante" style="display: none">
+          <div class="form-group">
+            <strong>Adjuntar Documento Baja</strong>
+            <input type="file" class="form-control bg-transparent" name="foto_justificante" >
           </div>
         </div>
 
@@ -320,6 +369,51 @@ $sel_comunidades =  array (
       }, false)
     })
   })()
+
+  var menu = document.getElementById("ejerciente");
+  menu.addEventListener("change", generateData);
+  var foto = document.getElementById('foto');
+  var foto_dni = document.getElementById('foto_dni');
+  var foto_titulo = document.getElementById('foto_titulacion');
+  var foto_justificante = document.getElementById('foto_justificante');
+  var checkbox = document.getElementById('flexCheckDefault');
+  var numOrigen = document.getElementById('numOrigen');
+  var colegioOrigen = document.getElementById('colegioOrigen');
+
+  function generateData(event) {
+    if (menu.value == '1') {
+      foto.style.display = 'block';
+      foto_dni.style.display = 'block';
+      foto_titulo.style.display = 'block';
+      foto_justificante.style.display = 'none';
+    } else if (menu.value == '0') {
+      foto.style.display = 'block';
+      foto_dni.style.display = 'block';
+      foto_titulo.style.display = 'block';
+      foto_justificante.style.display = 'block';
+    } else if (menu.value == '2') {
+      foto.style.display = 'block';
+      foto_dni.style.display = 'block';
+      foto_titulo.style.display = 'block';
+      foto_justificante.style.display = 'block';
+    } else if (menu.value == '3') {
+      foto.style.display = 'none';
+      foto_dni.style.display = 'none';
+      foto_titulo.style.display = 'none';
+      foto_justificante.style.display = 'none';
+    }
+  }
+
+  function check(){
+    if(checkbox.checked == true){
+      numOrigen.style.display = 'block';
+      colegioOrigen.style.display = 'block';
+    } else {
+      numOrigen.style.display = 'none';
+      colegioOrigen.style.display = 'none';
+    }
+  }
+
 </script>
 
 <script type="text/javascript">
