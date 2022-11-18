@@ -1,5 +1,5 @@
 <body>
-    <div id="cookieNotice" class="light display-right" style="display: none;">
+    <!--<div id="cookieNotice" class="light display-right" style="display: none;">
         <div id="closeIcon" class="displa-right" style="display: none;">
         </div>
         <div class="title-wrap">
@@ -10,10 +10,11 @@
                 <p>Este sitio web utiliza cookies o tecnologías similares para mejorar su experiencia de navegación y brindar recomendaciones personalizadas. Si continúa utilizando nuestro sitio web, acepta nuestra <a style="color:#115cfa;" href="<?php echo base_url(),'/'; ?>privacidad">Política de Privacidad</a></p>
                 <div class="btn-wrap">
                     <button class="btn-primary text-white" onclick="acceptCookieConsent();">Aceptar</button>
+                    <a href="#remove_cookies" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;"><button id="remove_cookies" class="btn-primary text-white">Rechazar</button></a>
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <footer class="section bg-footer py-5">
         <div class="container">
@@ -68,12 +69,16 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=es&theme=flying&customize=1&tracking=1&thirdparty=1&always=1&refreshPage=1&showNoConsent=1&hideDetailsBtn=1&showPolicyLink=1&privacyPage=privacidad"></script>
     <script type="text/javascript" src="<?php echo base_url('public/assets/grocery_crud/themes/bootstrap-v4/js/bootstrap/bootstrap.bundle.min.js')?>"></script>
     <script type="text/javascript" src="<?php echo base_url('public/assets/grocery_crud/themes/bootstrap-v4/js/bootstrap/bootstrap.min.js')?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     
     <script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url('assets/js/cookie_consent.js'); ?>"></script>
+    
+    
+
     <a href="javascript:void(0);" id="scroll" title="Ir arriba" style="display: none;">Top<span></span></a>
 </body>
 
