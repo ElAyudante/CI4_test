@@ -57,6 +57,18 @@
   border-color: #d3d3d3 !important;
 }
 /*==========================================*/
+div #cookie-bar{
+  opacity: 0.92 !important;
+  background-color: #004987 !important;
+}
+#cookie-bar a{
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  color: white !important;
+}
+#cookie-bar-button{
+  background-color: #00DB2E !important;
+}
 .table-curso{
   display: grid;
   grid-template-rows: 1fr 1fr;
