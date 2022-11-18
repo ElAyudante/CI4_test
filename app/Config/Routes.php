@@ -51,6 +51,11 @@
     $routes->get('codigo', 'itemCRUD::codigo');
     $routes->get('acuerdos', 'itemCRUD::acuerdos');
     $routes->get('otroscursos', 'itemCRUD::otroscursos');
+    $routes->get('privacidad', 'itemCRUD::privacidad');
+    $routes->get('aviso', 'itemCRUD::avisos');
+
+    $routes->get('mandar_correo', 'itemCRUD::mandar_correo');
+
 
     $routes->get('users/index_login', 'itemCRUD::index_login');
     $routes->post('users/login', 'itemCRUD::login');

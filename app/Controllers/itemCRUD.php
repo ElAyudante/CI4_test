@@ -30,8 +30,35 @@ class ItemCRUD extends CI_Controller {
       $this->load->helper('download');
 
       $this->itemCRUD = new \App\Models\ItemCRUDModel;
+      $email = \Config\Services::email();
 
       
+   }
+
+   public function send_mail(){
+
+    $correo = $this->db->get('test_emails')->result_array();
+    $arrayCorreo = array();
+    foreach($correo as $direccion){
+        $arrayCorreo[] = $direccion->Email;
+    }
+
+    $email->setFrom('adrian@elayudante.es', 'Adrian Bedia');
+    $email->setTo($arrayCorreo);
+    $email->setCC('another@another-example.com');
+    $email->setBCC('them@their-example.com');
+    
+    $email->setSubject('Email Test');
+    $email->setMessage('Testing the email class.');
+    
+    return $email->send();
+   }
+
+
+   public function mandar_correo(){
+
+    send_mail();
+    return redirect()->back();
    }
 
 
@@ -1911,6 +1938,32 @@ class ItemCRUD extends CI_Controller {
             echo view('templates/header');
         }
         echo view('App\Views\pages\acuerdos');
+        echo view('templates/footer');
+    }
+
+    public function privacidad(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\privacidad');
+        echo view('templates/footer');
+    }
+
+    public function avisos(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\aviso');
         echo view('templates/footer');
     }
 

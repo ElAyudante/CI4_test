@@ -59,6 +59,7 @@
                             <div class="dropdown-menu py-0" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>formacion">CURSOS CPLC</a>
                                 <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>otroscursos">OTROS CURSOS</a>
+                                <a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>bono_formacion">CURSOS BONO</a>
                                 <!--<a class="dropdown-item p-3" href="<?php echo base_url(),'/'; ?>mantenimiento">MÁSTER Y POSTGRADO</a>-->
                             </div>
                         </li>
