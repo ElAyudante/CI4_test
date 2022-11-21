@@ -37,7 +37,7 @@
             </div>
 
         </div>
-        <div class="footer-letter bg-footer p-5">
+        <div class="footer-letter bg-footer p-4">
             <div class="d-flex align-items-center justify-content-center my-3">
                 <p class="text-white mb-0 pe-2">Sigue nuestros contenidos de actualidad en:</p>
                 <a href="https://es-es.facebook.com/colegiologopedascantabria/" target="_blank"><img class="me-2" src="https://localhost/logopedas_test_CI4/assets/images/png/facebook.png"></a>
