@@ -60,6 +60,7 @@
 
                 <div class="col-lg-12 d-flex justify-content-center text-white m-auto">
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a> |</p>
+                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>cookies" target="_blank">&nbsp;Política de Cookies</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">&nbsp;Política de Privacidad</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>sitemap" target="_blank">&nbsp; Mapa Web</a> |</p>
                     <p class="mb-0">&nbsp; &copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-white text-decoration-none" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>

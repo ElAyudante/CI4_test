@@ -245,7 +245,7 @@
                 </div>
                 <div class="col-12 col-lg-8 d-flex align-items-center">
                     <div class="card-body">
-                        <form class="p-3 p-lg-5 cblue">
+                        <form class="p-3 p-lg-5 cblue needs-validation" novalidate>
                             <div class="text-center">
                                 <h1>Contacta con Nosotros</h1>
                             </div>
@@ -275,6 +275,16 @@
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Mensaje</label>
                                 <div class="col">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">Soy mayor de 14 y he leído y acepto la <a class="text-decoration-none cblue fw-bold text-uppercase" href="<?php echo base_url(),'/'; ?>privacidad">Política de privacidad</a></label>
+                                <div class="invalid-feedback">
+                                    Debe estar de acuerdo antes de enviar.
+                                </div>
                                 </div>
                             </div>
 
