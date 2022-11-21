@@ -24,7 +24,7 @@
 </head>
 <body>
     <section class="letter container p-5 w-50">
-        <div class="header-letter bg-blue d-flex justify-content-center p-5">
+        <div class="header-letter bg-blue d-flex justify-content-center p-4">
             <img src="<?=base_url(),'/'?>assets/images/png/logo_header.png" class="img-fluid" style="height:100px">
         </div>
         <div class="body-letter bg-gray text-justify p-5">

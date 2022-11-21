@@ -281,7 +281,7 @@
                             <div class="col-12">
                                 <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                <label class="form-check-label" for="invalidCheck">Soy mayor de 14 y he leído y acepto la <a class="text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad">Política de privacidad</a></label>
+                                <label class="form-check-label" for="invalidCheck">Soy mayor de 14 y he leído y acepto la <a class="text-decoration-none cblue fw-bold text-uppercase" href="<?php echo base_url(),'/'; ?>privacidad">Política de privacidad</a></label>
                                 <div class="invalid-feedback">
                                     Debe estar de acuerdo antes de enviar.
                                 </div>
