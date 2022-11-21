@@ -28,37 +28,49 @@ class ItemCRUD extends CI_Controller {
       $CI->load->model('ItemCRUDModel');
       $CI->load->library('pagination');
       $this->load->helper('download');
+      $this->load->library('email'); 
 
       $this->itemCRUD = new \App\Models\ItemCRUDModel;
-      $email = \Config\Services::email();
 
       
    }
 
-   public function send_mail(){
 
-    $correo = $this->db->get('test_emails')->result_array();
+   public function mandar_correo($database){
+
+    $this->load->library('email');  
+    $config['protocol']    = 'smtp';
+    $config['smtp_host']    = '';
+    $config['smtp_port']    = '';
+    $config['smtp_timeout'] = '';
+    $config['smtp_user']    = '';
+    $config['smtp_pass']    = '';
+    $config['charset']    = 'utf-8';
+    $config['newline']    = "\r\n";
+    $config['mailtype'] = 'html';
+
+    $this->email->initialize($config);
+
+    $correo = $this->db->get($database)->result_array();
     $arrayCorreo = array();
     foreach($correo as $direccion){
-        $arrayCorreo[] = $direccion->Email;
+        $arrayCorreo[] = $direccion['Email'];
     }
 
-    $email->setFrom('adrian@elayudante.es', 'Adrian Bedia');
-    $email->setTo($arrayCorreo);
-    $email->setCC('another@another-example.com');
-    $email->setBCC('them@their-example.com');
+    $this->email->from('');
+    $this->email->to($arrayCorreo);
+
+    $this->email->subject('Email Test');
+    $this->email->message('Testing the email class.');
     
-    $email->setSubject('Email Test');
-    $email->setMessage('Testing the email class.');
+    if($this->email->send()){
+        echo $this->email->print_debugger(); 
+    } else {
+        echo $this->email->print_debugger();
+    }
+
     
-    return $email->send();
-   }
-
-
-   public function mandar_correo(){
-
-    send_mail();
-    return redirect()->back();
+    
    }
 
 

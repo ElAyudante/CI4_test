@@ -1,3 +1,4 @@
+
 <?php
 $sel_comunidades =  array (
     'Anadalucia' => 'Andalucia',
@@ -63,7 +64,9 @@ $sel_comunidades =  array (
                         <?php echo $output; ?> 
                     </div>
                     <?php foreach($js_files as $file): ?>
-                        <script src="<?php echo $file; ?>"></script>
+                        <script src="<?php echo $file; ?>">
+                            
+                        </script>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -73,3 +76,4 @@ $sel_comunidades =  array (
 </section>
     
 </body>
+
