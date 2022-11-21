@@ -40,26 +40,19 @@ $sel_comunidades =  array (
 
             <div class="col-lg-10">
                 <div class="container p-5">
-                    
-
                     <div class="bg-white"> 
                         <div class="d-flex bg-blue">
                             <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><?php echo $titulo;?></h3>
-                            <div class="row pt-2 d-flex justify-content-end">
-                                <div class="col-lg-2 margin-tb d-flex flex-row">
-                                    <div class="">
-                                        <a class="btn btn-success" href="<?php echo base_url('itemCRUD/export_excel') ?>"> Excel</a>
-                                    </div>
-                                <div class="">
-                                    <a class="btn btn-success" href="<?php echo base_url('itemCRUD/export_pdf') ?>"> PDF</a>
+                            <div class="d-flex align-items-center ms-auto pe-5 text-uppercase">
+                                <div class="me-3">
+                                    <a class="btn bg-gray cblue fw-bold d-flex align-items-center" href="<?php echo base_url('itemCRUD/export_excel') ?>"><i class="bi bi-file-earmark-arrow-down fs-3 me-2"></i>Excel</a>
+                                </div>
+                                <div>
+                                    <a class="btn bg-gray cblue fw-bold d-flex align-items-center" href="<?php echo base_url('itemCRUD/export_pdf') ?>"><i class="bi bi-file-earmark-arrow-down fs-3 me-2"></i>PDF</a>
                                 </div>
                             </div>
-
-
-                    </div>
                         </div>
                         
-
                         <?php echo $output; ?> 
                     </div>
                     <?php foreach($js_files as $file): ?>
