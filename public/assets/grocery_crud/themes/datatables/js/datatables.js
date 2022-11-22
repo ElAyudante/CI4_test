@@ -25,7 +25,7 @@ function error_message(message) {
 
 var use_storage = supports_html5_storage();
 
-var aButtons = ['copy', 'pdf'];
+var aButtons = [];
 var mColumns = [];
 
 $(document).ready(function() {

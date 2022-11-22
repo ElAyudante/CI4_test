@@ -46,10 +46,10 @@ $sel_comunidades =  array (
                             <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><?php echo $titulo;?></h3>
                             <div class="d-flex align-items-center ms-auto pe-5 text-uppercase">
                                 <div class="me-3">
-                                    <a class="btn bg-gray cblue fw-bold d-flex align-items-center" href="<?php echo base_url('itemCRUD/export_excel') ?>"><i class="bi bi-file-earmark-arrow-down fs-3 me-2"></i>Excel</a>
+                                    <a class="btn bg-gray cblue fw-bold d-flex align-items-center" onclick="exportReportToExcel(this)"><i class="bi bi-file-earmark-arrow-down fs-3 me-2"></i>Excel</a>
                                 </div>
                                 <div>
-                                    <a class="btn bg-gray cblue fw-bold d-flex align-items-center" href="<?php echo base_url('itemCRUD/export_pdf') ?>"><i class="bi bi-file-earmark-arrow-down fs-3 me-2"></i>PDF</a>
+                                    <a class="btn bg-gray cblue fw-bold d-flex align-items-center" href="<?php echo base_url() . '/'. 'itemCRUD/export_pdf'?>"><i class="bi bi-file-earmark-arrow-down fs-3 me-2"></i>PDF</a>
                                 </div>
                             </div>
                         </div>
@@ -70,3 +70,14 @@ $sel_comunidades =  array (
     
 </body>
 
+<script>
+    function exportReportToExcel() {
+  let table = document.getElementsByClassName("groceryCrudTable");
+    TableToExcel.convert(table[0], {
+        name: `export_excel.xlsx`,
+        sheet: {
+        name: 'Sheet 1'
+        }
+    });
+    }
+</script>

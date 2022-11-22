@@ -3,6 +3,8 @@ namespace App\Controllers;
 use Kenjis\CI3Compatible\Core\CI_Controller; 
 use App\Libraries\GroceryCrud;
 use CodeIgniter\I18n\Time;
+use App\Controllers\api\fpdf\fpdf;
+use App\Controllers\PDF_Label;
 
 class ItemCRUD extends CI_Controller {
 
@@ -81,6 +83,10 @@ class ItemCRUD extends CI_Controller {
    */
    public function lista_colegiados()
    {
+
+        $query = $this->db->query("SELECT Nombre, Apellidos, Provincia, Localidad, Direccion, CP FROM colegiados ORDER BY Nombre ASC");
+        $colegiados['Colegiados'] = $query->result_array();
+
 	    $crud = new GroceryCrud();
 
 	    $crud->setTable('colegiados');
@@ -115,7 +121,8 @@ class ItemCRUD extends CI_Controller {
                         return $value = 'Sin Especificar';
                 }
             }
-        );
+        );         
+
         $crud->unsetBootstrap();
         $crud->where("(Colegiado IS NOT NULL)");
 
@@ -123,7 +130,7 @@ class ItemCRUD extends CI_Controller {
 	    $output = $crud->render();
         $titulo = array('titulo' => 'Lista Colegiados (Admin)');
 
-        $data = array_merge((array)$output, $titulo);
+        $data = array_merge((array)$output, $titulo, $colegiados);
 
 
         echo view('templates/header_admin'); 
@@ -2007,5 +2014,27 @@ class ItemCRUD extends CI_Controller {
 
     public function test_email(){
         echo view ('App\Views\pages\email_plantilla');
+    }
+
+    public function export_pdf(){
+
+        $query = $this->db->query("SELECT Nombre, Apellidos, Provincia, Localidad, Direccion, CP FROM colegiados WHERE Ejerciente='1'");
+        $colegiados = $query->result_array();
+
+        require('PDF_Label.php');
+
+        $pdf = new PDF_Label('L7163');
+
+        $pdf->AddPage();
+
+        // Print labels
+        foreach($colegiados as $colegiado) {
+            $text = sprintf("%s %s\n%s\n%s %s, %s", $colegiado['Nombre'], $colegiado['Apellidos'], $colegiado['Direccion'], $colegiado['CP'], $colegiado['Localidad'], $colegiado['Provincia']);
+            $pdf->Add_Label($text);
+        }
+
+        $pdf->Output();
+        exit;
+    
     }
 }
