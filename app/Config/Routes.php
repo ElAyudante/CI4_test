@@ -85,6 +85,7 @@
     $routes->get('files/facturas/download/(:any)', 'itemCRUD::download_facturas/$1');
     $routes->get('files/documentos/download/(:any)', 'itemCRUD::download_documentos/$1');
     $routes->get('files/cursos/download/(:any)', 'itemCRUD::download_cursos/$1');
+    $routes->get('files/cambios/(:any)/download/(:any)', 'itemCRUD::download_cambios/$1/$2');
     
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
@@ -98,9 +99,9 @@
 
     $routes->get('users/admin', 'itemCRUD::index_admin_login');
     $routes->post('users/admin/login', 'itemCRUD::admin_login');
+    $routes->get('users/admin/login', 'itemCRUD::admin_login');
     $routes->get('users/admin/logout', 'itemCRUD::admin_logout');
 
- 
     $routes->get('cobros_pendientes', 'itemCRUD::cobros_pendientes');
     $routes->get('cobros_pendientes/delete/(:any)', 'itemCRUD::delete_cobro_pendiente/$1');
     $routes->get('cobros_realizados', 'itemCRUD::cobros_realizados');

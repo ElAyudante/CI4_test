@@ -155,6 +155,9 @@ class ItemCRUD extends CI_Controller {
         $crud->setActionButton('Aceptar' ,'', function($row, $value){
             return base_url().'/itemCRUD/admin/aceptar_cambio/'.$row . '/'. $value->NumColegiado;
         });
+        $crud->callbackColumn('Adjunto', function($row, $value){
+            return "<a href='" . base_url('files/cambios/'. $value->NumColegiado . '/' . 'download/'.$row) ."'>$row</a>";
+        });
         $crud->unsetEdit();
         $crud->unsetBootstrap();
         $crud->unsetAdd();
@@ -1305,9 +1308,15 @@ class ItemCRUD extends CI_Controller {
 		//load session library
 		$this->load->library('session');
  
-		$usuario = $_POST['usuario'];
-		$password = $_POST['password'];
- 
+        if(isset($_SESSION['admin'])){
+            $datos = $_SESSION['admin'];
+            $usuario = $datos['username'];
+            $password = $datos['password'];
+        } else{
+		    $usuario = $_POST['usuario'];
+		    $password = $_POST['password'];
+        }
+
 		$data = $this->itemCRUD->login_admin($usuario, $password);
  
 		if($data){
@@ -1323,6 +1332,13 @@ class ItemCRUD extends CI_Controller {
 			$this->session->set_flashdata('error','Invalid login. User not found');
 		} 
 	}
+
+    public function admin_zona(){
+
+        $this->load->view('templates\header_admin');
+        $this->load->view('App\Views\pages\main');
+        $this->load->view('templates\footer');
+    }
  
  
 	public function home_login(){
@@ -1418,6 +1434,17 @@ class ItemCRUD extends CI_Controller {
         $fileInfo = $id;
 
         $file = 'assets/uploads/files/cursos/' . $fileInfo;
+
+        return $this->response->download($file, NULL);
+    }
+
+    public function download_cambios($id, $archivo){
+        $this->load->helper('download');
+
+        $folder = $id;
+        $fileInfo = $archivo;
+
+        $file = 'assets/uploads/files/cambios/' . $folder . '/' . $fileInfo;
 
         return $this->response->download($file, NULL);
     }
@@ -1519,20 +1546,33 @@ class ItemCRUD extends CI_Controller {
                 break;
         };
 
-        $data = array(
-            'NumColegiado' => $usuario['Colegiado'],
-            'Nombre' => $usuario['Nombre'],
-            'Apellidos' => $usuario['Apellidos'],
-            'Modalidad' => $modalidadActual,
-            'ModalidadCambio' => $modalidadCambio
-        );
+        mkdir("./assets/uploads/files/cambios/" . $usuario['Colegiado']);
+        $targetDir = "./assets/uploads/files/cambios/" . $usuario['Colegiado'] . '/';
+        $fileName = basename($_FILES["archivo"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+        $allowTypes = array('jpg','png','jpeg','pdf', 'JPG', 'PNG', 'JPEG');
+        if(in_array($fileType, $allowTypes)){
+            if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
+                $data = array(
+                    'NumColegiado' => $usuario['Colegiado'],
+                    'Nombre' => $usuario['Nombre'],
+                    'Apellidos' => $usuario['Apellidos'],
+                    'Modalidad' => $modalidadActual,
+                    'ModalidadCambio' => $modalidadCambio,
+                    'Adjunto' => $fileName
+                );
+            }
+        }
+        
 
         $this->db->insert('cambio_modalidad', $data);
 
         echo view('templates/header_usuarios');
         echo view('App\Views\pages\usuarios\cambio_modalidad', $textBoton);
         echo view('templates/footer');
-
+        
     }
 
     public function listar_convenios_usuarios(){
@@ -2172,6 +2212,7 @@ class ItemCRUD extends CI_Controller {
             'Ejerciente' => $cambio
         );
         $this->db->update('colegiados', $data, 'Colegiado =' .$idColegiado);
+        $this->db->delete('cambio_modalidad', 'NumColegiado =' .$idColegiado);
 
         return $this->lista_cambios_modalidad();
     }

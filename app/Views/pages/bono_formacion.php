@@ -55,7 +55,7 @@
 
 
 <?php 
-    }else{
+    //}else{
 ?>
 
 <section class="junta-izquierda" style="padding-bottom: 8em">
@@ -75,12 +75,12 @@
                     <div class="cards-curso m-auto">
                         <div class="imgBx-curso">
                             <div>
-                                <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/uploads/files/cursos/<?php echo ?>"> <!--- $curso['Archivo'] --->
+                                <img style="height:350px;" src=""> <!--- $curso['Archivo'] --->
                             </div>
                         </div>
                         <div class="overlay-curso"></div>
                         <div class="content-curso">
-                            <h2 class="text-uppercase fw-bold cgray mt-0"><?= ?></h2> <!--- $curso['Nombre'] --->
+                            <h2 class="text-uppercase fw-bold cgray mt-0"></h2> <!--- $curso['Nombre'] --->
                         </div>
                     </div>
                 </a>
@@ -90,7 +90,8 @@
 </section>
 
 <?php
+/*
     }
     $llave = !$llave;
-} ?>
+} */?>
 

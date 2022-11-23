@@ -29,7 +29,7 @@
                     <div class="cards-curso m-auto">
                         <div class="imgBx-curso">
                             <div>
-                                <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/uploads/files/cursos/<?php echo $curso['Archivo']?>">
+                                <img style="height:350px; width:250px" src="<?php echo base_url(),'/'; ?>assets/uploads/files/cursos/<?php echo $curso['Archivo']?>">
                             </div>
                         </div>
                         <div class="overlay-curso"></div>
@@ -75,7 +75,7 @@
                     <div class="cards-curso m-auto">
                         <div class="imgBx-curso">
                             <div>
-                                <img style="height:350px;" src="<?php echo base_url(),'/'; ?>assets/uploads/files/cursos/<?php echo $curso['Archivo']?>">
+                                <img style="height:350px;width:250px" src="<?php echo base_url(),'/'; ?>assets/uploads/files/cursos/<?php echo $curso['Archivo']?>">
                             </div>
                         </div>
                         <div class="overlay-curso"></div>
