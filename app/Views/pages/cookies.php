@@ -1,5 +1,5 @@
 <div class="container py-5">
-    <img class="img-fluid w-100" src="<?php echo base_url(),'/'; ?>assets/images/png/aviso-header.png"></img> <!-- Falta Header de Cookies-->
+    <img class="img-fluid w-100" src="<?php echo base_url(),'/'; ?>assets/images/png/cookies-header.png"></img> <!-- Falta Header de Cookies-->
     <div class="text-justify mt-5">
 
         <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico le informamos de que este sitio web, al igual que la mayoría de los sitios en Internet, usa Cookies para mejorar y optimizar la experiencia del usuario. A continuación encontrará información detallada sobre qué son las “Cookies”, qué tipología utiliza este sitio web, cómo cambiar la configuración de sus cookies, y qué ocurre si deshabilita las Cookies.</p>
