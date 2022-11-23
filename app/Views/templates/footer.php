@@ -1,21 +1,4 @@
 <body>
-    <!--<div id="cookieNotice" class="light display-right" style="display: none;">
-        <div id="closeIcon" class="displa-right" style="display: none;">
-        </div>
-        <div class="title-wrap">
-            <h4>Consentimiento de Cookies</h4>
-        </div>
-        <div class="content-wrap">
-            <div class="msg-wrap">
-                <p>Este sitio web utiliza cookies o tecnologías similares para mejorar su experiencia de navegación y brindar recomendaciones personalizadas. Si continúa utilizando nuestro sitio web, acepta nuestra <a style="color:#115cfa;" href="<?php echo base_url(),'/'; ?>privacidad">Política de Privacidad</a></p>
-                <div class="btn-wrap">
-                    <button class="btn-primary text-white" onclick="acceptCookieConsent();">Aceptar</button>
-                    <a href="#remove_cookies" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;"><button id="remove_cookies" class="btn-primary text-white">Rechazar</button></a>
-                </div>
-            </div>
-        </div>
-    </div>-->
-
     <footer class="section bg-footer py-5">
         <div class="container">
             <div class="row row-cols-lg-4 g-5">
@@ -62,6 +45,7 @@
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>aviso" target="_blank">Aviso Legal</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>cookies" target="_blank">&nbsp;Política de Cookies</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">&nbsp;Política de Privacidad</a> |</p>
+                    <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>rat" target="_blank">&nbsp;Registro de Actividades de Tratamiento</a> |</p>
                     <p class="mb-0"><a class="text-white text-decoration-none" href="<?php echo base_url(),'/'; ?>sitemap" target="_blank">&nbsp; Mapa Web</a> |</p>
                     <p class="mb-0">&nbsp; &copy; <?php echo date("Y"); ?> Desarrollado por <a class="text-white text-decoration-none" href="https://www.elayudante.es/" target="_blank">ElAyudante</a></p>
                 </div>
