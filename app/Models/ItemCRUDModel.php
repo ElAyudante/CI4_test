@@ -264,6 +264,10 @@ class ItemCRUDModel extends CI_Model{
         return $this->db->delete('pagos_pendientes', array('Id' => $id));
     }
 
+	public function delete_cambio_modalidad($id){
+		return $this->db->delete('cambio_modalidad', array('Id' => $id));
+	}
+
 	public function update_admin(){
 
 		$id = $this->input->post('Id');

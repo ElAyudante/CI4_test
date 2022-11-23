@@ -138,6 +138,38 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     
    }
+
+   public function lista_cambios_modalidad(){
+
+        $crud = new GroceryCrud();
+
+        $crud->setTable('cambio_modalidad');
+        $crud->setSubject('Cambios', 'Cambio');
+        $crud->columns(['NumColegiado','Nombre','Apellidos','Modalidad', 'ModalidadCambio', 'Adjunto']);
+
+        $crud->displayAs(array(
+            'NumColegiado' => 'Numero',
+            'Modalidad' => 'Actual',
+            'ModalidadCambio' => 'Solicitada'
+        ));
+        $crud->setActionButton('Aceptar' ,'', function($row, $value){
+            return base_url().'/itemCRUD/admin/aceptar_cambio/'.$row . '/'. $value->NumColegiado;
+        });
+        $crud->unsetEdit();
+        $crud->unsetBootstrap();
+        $crud->unsetAdd();
+
+        $output = $crud->render();
+
+        $titulo = array('titulo' => 'Cambios de Modalidad Pendientes');
+        $data = array_merge((array)$output, $titulo);
+
+
+        echo view('templates/header_admin'); 
+        echo view('itemCRUD/list', $data);
+        echo view('templates/footer');
+   }
+
    public function create_documentos()
    {
       echo view('templates/header_admin');
@@ -294,7 +326,7 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('cursos_eventos');
         $crud->setSubject('Cursos CPLC', 'Cursos CPLC');
-        $crud->columns(['Fecha', 'Nombre', 'Descripcion', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado', 'Archivo']);
+        $crud->columns(['Fecha', 'Nombre', 'Descripcion', 'Formato', 'PrecioColegiado', 'PrecioNoColegiado', 'Archivo']);
 
         $crud->displayAs(array(
             'PrecioColegiado' => 'Colegiado',
@@ -304,6 +336,16 @@ class ItemCRUD extends CI_Controller {
 
         $crud->callbackColumn('Archivo', function($value){
             return "<a href='" . base_url('files/cursos/download/'.$value) ."'>$value</a>";
+        });
+
+        $crud->callbackColumn('Duracion', function($value){
+            return $value . ' horas';
+        });
+        $crud->callbackColumn('PrecioColegiado', function($value){
+            return $value . ' Euros';
+        });
+        $crud->callbackColumn('PrecioNoColegiado', function($value){
+            return $value . ' Euros';
         });
         $crud->unsetBootstrap();
         $crud->unsetAdd();
@@ -970,6 +1012,24 @@ class ItemCRUD extends CI_Controller {
 
         $id = $_POST['id'];
 
+        $targetDir = "./assets/uploads/files/documentos/";
+        $fileName = basename($_FILES["archivo"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+        if(in_array($fileType, $allowTypes)){
+            // Upload file to server
+            if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
+                $data = array(
+
+                    'Archivo' => $fileName
+                );
+            }
+        }
+
+		$this->db->update('documentos', $data,  'ID ='.$id);
+
         $data = array(
 
 			'Nombre' => $this->input->post('nombre'),
@@ -1163,6 +1223,12 @@ class ItemCRUD extends CI_Controller {
         $this->itemCRUD->delete_pago_pendiente($id);
 
         return $this->cobros_pendientes();
+   }
+
+   public function delete_cambio_modalidad($id){
+        $this->itemCRUD->delete_cambio_modalidad($id);
+
+        return $this->lista_cambios_modalidad();
    }
 
 
@@ -2068,5 +2134,33 @@ class ItemCRUD extends CI_Controller {
         }
         echo view('App\Views\pages\bono_formacion');
         echo view('templates/footer');
+    }
+
+    public function aceptar_cambio($id, $idColegiado){
+
+        $datoCambio = $this->db->get_where('cambio_modalidad', 'Id ='.$id)->row();
+        $cambio = NULL;
+        switch($datoCambio->ModalidadCambio){
+            case 'Ejerciente':
+                $cambio = '1';
+                break;
+            case 'No Ejerciente':
+                $cambio = '0';
+                break;
+            case 'Jubilado':
+                $cambio = '2';
+                break;
+            case 'Estudiante':
+                $cambio = '3';
+                break;
+        }
+        var_dump($datoCambio->ModalidadCambio);
+
+        $data = array(
+            'Ejerciente' => $cambio
+        );
+        $this->db->update('colegiados', $data, 'Colegiado =' .$idColegiado);
+
+        return $this->lista_cambios_modalidad();
     }
 }

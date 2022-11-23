@@ -12,6 +12,7 @@
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD/create">Alta Colegiados</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD/pending">Altas Pendientes</a></li>
                     <li><a href="<?php echo base_url().'/'; ?>itemCRUD">Lista Colegiados</a></li>
+                    <li><a href="<?php echo base_url().'/'; ?>itemCRUD/cambios_modalidad">Cambios Modalidad</a></li>
                 </ul>
 
                 <li data-bs-toggle="collapse" data-bs-target="#cursos" class="collapsed">
