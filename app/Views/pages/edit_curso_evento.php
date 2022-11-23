@@ -1,5 +1,5 @@
 <?php
-$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'', "enctype" => "multipart/form-data"];
 ?>
 
 <section class="bg-gray">
@@ -88,8 +88,14 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 								<input type="text" class="form-control" name="precioNoColegiado" placeholder="Precio No Colegiado" value="<?= $item->PrecioNoColegiado ?>" autofocus></input>
 							</div>
 						</div>
+						<div class="col">
+							<div class="form-group">
+								<strong>Portada:</strong>
+								<input class="form-control" type="file" id="formFile" name="archivo" value="<?php $item->Archivo ?>">
+							</div>
+						</div>
 
-						<div class="col-lg-6 d-flex align-items-center">
+						<div class="col-lg-7 d-flex align-items-center">
 							<div class="col text-uppercase d-flex align-items-center">
 								<label class="fw-bold me-3">Tipo:</label>
 								<div class="form-check form-check-inline me-2 mb-0">
@@ -104,8 +110,14 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 									<input class="form-check-input" type="radio" name="tipoCurso" id="eventos2" value="Evento" <?php ($item->Tipo == 'Evento') ? "checked" : "";  ?>>
 									<label class="form-check-label" for="eventos2">Evento</label>
 								</div>
+								<div class="form-check form-check-inline me-3 mb-0">
+                                    <input class="form-check-input" type="radio" name="tipoCurso" id="eventos4" value="Bono Formacion">
+                                    <label class="form-check-label" for="eventos4">Bono Formacion</label>
+                                </div>
 							</div>
 						</div>
+
+						
 
 						<div class="col-lg-12">
 							<div  class="col-lg-12 fw-bold my-4">Contenido del Curso/evento:</div>

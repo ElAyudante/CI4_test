@@ -42,6 +42,7 @@
     $routes->get('users/tramitar_pago_curso_ok/(:any)', 'itemCRUD::tramitar_pago_curso_usuario/$1');
 
     $routes->post('public/registro_curso_public', 'itemCRUD::registro_curso_public');
+    $routes->get('bono_formacion', 'itemCRUD::bono_formacion');
 
     $routes->get('email_plantilla', 'itemCRUD::test_email');
 
@@ -81,7 +82,9 @@
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
     $routes->get('users/mis_facturas', 'itemCRUD::facturas_usuarios');
 
-    $routes->get('files/download/(:any)', 'itemCRUD::download/$1');
+    $routes->get('files/facturas/download/(:any)', 'itemCRUD::download_facturas/$1');
+    $routes->get('files/documentos/download/(:any)', 'itemCRUD::download_documentos/$1');
+    $routes->get('files/cursos/download/(:any)', 'itemCRUD::download_cursos/$1');
     
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');

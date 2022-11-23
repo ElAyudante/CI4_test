@@ -3,6 +3,8 @@ namespace App\Controllers;
 use Kenjis\CI3Compatible\Core\CI_Controller; 
 use App\Libraries\GroceryCrud;
 use CodeIgniter\I18n\Time;
+use App\Controllers\api\fpdf\fpdf;
+use App\Controllers\PDF_Label;
 
 class ItemCRUD extends CI_Controller {
 
@@ -28,37 +30,49 @@ class ItemCRUD extends CI_Controller {
       $CI->load->model('ItemCRUDModel');
       $CI->load->library('pagination');
       $this->load->helper('download');
+      $this->load->library('email'); 
 
       $this->itemCRUD = new \App\Models\ItemCRUDModel;
-      $email = \Config\Services::email();
 
       
    }
 
-   public function send_mail(){
 
-    $correo = $this->db->get('test_emails')->result_array();
+   public function mandar_correo($database){
+
+    $this->load->library('email');  
+    $config['protocol']    = 'smtp';
+    $config['smtp_host']    = '';
+    $config['smtp_port']    = '';
+    $config['smtp_timeout'] = '';
+    $config['smtp_user']    = '';
+    $config['smtp_pass']    = '';
+    $config['charset']    = 'utf-8';
+    $config['newline']    = "\r\n";
+    $config['mailtype'] = 'html';
+
+    $this->email->initialize($config);
+
+    $correo = $this->db->get($database)->result_array();
     $arrayCorreo = array();
     foreach($correo as $direccion){
-        $arrayCorreo[] = $direccion->Email;
+        $arrayCorreo[] = $direccion['Email'];
     }
 
-    $email->setFrom('adrian@elayudante.es', 'Adrian Bedia');
-    $email->setTo($arrayCorreo);
-    $email->setCC('another@another-example.com');
-    $email->setBCC('them@their-example.com');
+    $this->email->from('');
+    $this->email->to($arrayCorreo);
+
+    $this->email->subject('Email Test');
+    $this->email->message('Testing the email class.');
     
-    $email->setSubject('Email Test');
-    $email->setMessage('Testing the email class.');
+    if($this->email->send()){
+        echo $this->email->print_debugger(); 
+    } else {
+        echo $this->email->print_debugger();
+    }
+
     
-    return $email->send();
-   }
-
-
-   public function mandar_correo(){
-
-    send_mail();
-    return redirect()->back();
+    
    }
 
 
@@ -69,6 +83,10 @@ class ItemCRUD extends CI_Controller {
    */
    public function lista_colegiados()
    {
+
+        $query = $this->db->query("SELECT Nombre, Apellidos, Provincia, Localidad, Direccion, CP FROM colegiados ORDER BY Nombre ASC");
+        $colegiados['Colegiados'] = $query->result_array();
+
 	    $crud = new GroceryCrud();
 
 	    $crud->setTable('colegiados');
@@ -103,7 +121,8 @@ class ItemCRUD extends CI_Controller {
                         return $value = 'Sin Especificar';
                 }
             }
-        );
+        );         
+
         $crud->unsetBootstrap();
         $crud->where("(Colegiado IS NOT NULL)");
 
@@ -111,7 +130,7 @@ class ItemCRUD extends CI_Controller {
 	    $output = $crud->render();
         $titulo = array('titulo' => 'Lista Colegiados (Admin)');
 
-        $data = array_merge((array)$output, $titulo);
+        $data = array_merge((array)$output, $titulo, $colegiados);
 
 
         echo view('templates/header_admin'); 
@@ -208,7 +227,7 @@ class ItemCRUD extends CI_Controller {
         });
         
         $crud->callbackColumn('Factura', function($value){
-            return "<a href='" . base_url('files/download/'.$value) ."'>$value</a>";
+            return "<a href='" . base_url('files/facturas/download/'.$value) ."'>$value</a>";
         });
         
         $crud->unsetAdd();
@@ -275,8 +294,17 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('cursos_eventos');
         $crud->setSubject('Cursos CPLC', 'Cursos CPLC');
-        $crud->columns(['Fecha', 'Nombre', 'Descripcion', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado']);
+        $crud->columns(['Fecha', 'Nombre', 'Descripcion', 'Formato', 'Duracion', 'Dirigido', 'PrecioColegiado', 'PrecioNoColegiado', 'Archivo']);
 
+        $crud->displayAs(array(
+            'PrecioColegiado' => 'Colegiado',
+            'PrecioNoColegiado' => 'No Colegiado',
+            'Archivo' => 'Portada'
+        ));
+
+        $crud->callbackColumn('Archivo', function($value){
+            return "<a href='" . base_url('files/cursos/download/'.$value) ."'>$value</a>";
+        });
         $crud->unsetBootstrap();
         $crud->unsetAdd();
         $crud->where("cursos_eventos.Tipo = 'Curso CPLC'");
@@ -523,52 +551,6 @@ class ItemCRUD extends CI_Controller {
     *
     * @return Response
    */
-   public function store() {
-
-    
-    $this->form_validation->set_rules('fecha_alta', 'FechaAlta', 'required');
-    $this->form_validation->set_rules('nombre', 'Nombre', 'required');
-    $this->form_validation->set_rules('apellidos', 'Apellidos', 'required');
-    $this->form_validation->set_rules('nif', 'NIF', 'required|alpha_numeric');
-    $this->form_validation->set_rules('usuario', 'Usuario', 'required|is_unique[colegiados.usuario]');
-    $this->form_validation->set_rules('pass', 'Pass', 'required');
-    $this->form_validation->set_rules('confirm_pass', 'Confirmpass', 'required|matches[pass]');
-    $this->form_validation->set_rules('direccion', 'Direccion', 'required');
-    $this->form_validation->set_rules('localidad', 'Localidad', 'required');
-    $this->form_validation->set_rules('cp', 'CP', 'required|numeric');
-    $this->form_validation->set_rules('provincia', 'Provincia', 'required');
-    $this->form_validation->set_rules('comunidad', 'Comunidad', 'required');
-    $this->form_validation->set_rules('telefono', 'Telefono', 'required|max_length[12]');
-    $this->form_validation->set_rules('movil', 'Movil', 'max_length[12]');
-    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[colegiados.email]');
-    $this->form_validation->set_rules('lugarnacimiento', 'Lugarnacimiento', 'required');
-    $this->form_validation->set_rules('fechanacimiento', 'Fechanacimiento', 'required');
-    $this->form_validation->set_rules('cuentabancaria', 'Cuenta', 'required|numeric|max_length[24]');
-    $this->form_validation->set_rules('colegiado', 'Colegiado', 'required');
-    $this->form_validation->set_rules('caducidadcarnet', 'CaducidadCarnet', 'required');
-    $this->form_validation->set_rules('ejerciente', 'Ejerciente', 'required');
-    $this->form_validation->set_rules('titulacion', 'Titulacion', 'required');
-    $this->form_validation->set_rules('solicitahabilitacion', 'Solicitahabilitacion', 'required');
-    $this->form_validation->set_rules('diplomaturalogopedia', 'Diplomaturalogopedia', 'required');
-    $this->form_validation->set_rules('altabolsatrabajo', 'Altabolsatrabajo', 'required');
-    $this->form_validation->set_rules('inscripcion', 'Inscripcion', 'required');
-    $this->form_validation->set_rules('publicidad', 'Publicidad', 'required');
-    $this->form_validation->set_rules('bienvenida', 'Bienvenida', 'required');
-    $this->form_validation->set_rules('activo', 'Activo', 'required');
-
-
-       if ($this->form_validation->run() == FALSE){
-
-           $this->session->set_flashdata('errors', validation_errors());
-           return redirect()->to(base_url('itemCRUD/create'));
-
-        } else {
-
-            $this->itemCRUD->insert_item();
-            return redirect()->to(base_url('itemCRUD'));
-
-        }
-    }
 
     
     public function register_empleo(){
@@ -592,7 +574,7 @@ class ItemCRUD extends CI_Controller {
 
     public function store_documento(){
 
-        $targetDir = "./assets/uploads/files/";
+        $targetDir = "./assets/uploads/files/documentos/";
         $fileName = basename($_FILES["archivo"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
@@ -643,6 +625,23 @@ class ItemCRUD extends CI_Controller {
     public function store_curso_evento(){
 
         $model = model(ItemCRUDModel::class);
+
+        $targetDir = "./assets/uploads/files/cursos/";
+        $fileName = basename($_FILES["archivo"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+        $allowTypes = array('jpg','png','jpeg','pdf');
+        if(in_array($fileType, $allowTypes)){
+            if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
+                $imagen = array(
+                    
+                    'Archivo' => $fileName
+                );
+            }
+        }
+
+		$this->db->insert('cursos_eventos', $imagen);
 
         if ($this->request->getMethod() === 'post' && $this->validate([
             'nombre' => 'required|min_length[3]|max_length[255]',
@@ -1017,6 +1016,25 @@ class ItemCRUD extends CI_Controller {
 
         $id = $_POST['id'];
 
+        $model = model(ItemCRUDModel::class);
+
+        $targetDir = "./assets/uploads/files/cursos/";
+        $fileName = basename($_FILES["archivo"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+        $allowTypes = array('jpg','png','jpeg','pdf');
+        if(in_array($fileType, $allowTypes)){
+            if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
+                $imagen = array(
+                    
+                    'Archivo' => $fileName
+                );
+            }
+        }
+
+		$this->db->update('cursos_eventos', $imagen, 'id ='.$id);
+
         $data = array(
 
 			'Nombre' => $this->input->post('nombre'),
@@ -1308,12 +1326,32 @@ class ItemCRUD extends CI_Controller {
         $this->load->view('templates\footer');
 	}
 
-    public function download($id){
+    public function download_documentos($id){
         $this->load->helper('download');
 
         $fileInfo = $id;
 
-        $file = 'assets/uploads/files/' . $fileInfo;
+        $file = 'assets/uploads/files/documentos/' . $fileInfo;
+
+        return $this->response->download($file, NULL);
+    }
+
+    public function download_facturas($id){
+        $this->load->helper('download');
+
+        $fileInfo = $id;
+
+        $file = 'assets/uploads/files/facturas/' . $fileInfo;
+
+        return $this->response->download($file, NULL);
+    }
+
+    public function download_cursos($id){
+        $this->load->helper('download');
+
+        $fileInfo = $id;
+
+        $file = 'assets/uploads/files/cursos/' . $fileInfo;
 
         return $this->response->download($file, NULL);
     }
@@ -1343,7 +1381,7 @@ class ItemCRUD extends CI_Controller {
     public function store_factura(){
 
         $id = $_POST['id'];
-        $targetDir = "./assets/uploads/files/";
+        $targetDir = "./assets/uploads/files/facturas/";
         $fileName = basename($_FILES["archivo"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
@@ -2008,5 +2046,40 @@ class ItemCRUD extends CI_Controller {
 
     public function test_email(){
         echo view ('App\Views\pages\email_plantilla');
+    }
+
+    public function export_pdf(){
+
+        $query = $this->db->query("SELECT Nombre, Apellidos, Provincia, Localidad, Direccion, CP FROM colegiados WHERE Ejerciente='1'");
+        $colegiados = $query->result_array();
+
+        require('PDF_Label.php');
+
+        $pdf = new PDF_Label('L7163');
+
+        $pdf->AddPage();
+
+        // Print labels
+        foreach($colegiados as $colegiado) {
+            $text = sprintf("%s %s\n%s\n%s %s, %s", $colegiado['Nombre'], $colegiado['Apellidos'], $colegiado['Direccion'], $colegiado['CP'], $colegiado['Localidad'], $colegiado['Provincia']);
+            $pdf->Add_Label($text);
+        }
+
+        $pdf->Output();
+        exit;
+    
+    }
+
+    public function bono_formacion() {
+        
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\bono_formacion');
+        echo view('templates/footer');
     }
 }

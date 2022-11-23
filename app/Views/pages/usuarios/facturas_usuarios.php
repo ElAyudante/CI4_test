@@ -29,7 +29,7 @@
                         <p class="cblue text-uppercase"><b>Cantidad: </b><?= $pago['Cantidad']. ' Euros'?> </p>
                         <div class="">   
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/files/download/<?php echo $pago['Factura'] ?>">Descargar Factura</a></button>
+                                <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/files/facturas/download/<?php echo $pago['Factura'] ?>">Descargar Factura</a></button>
                             </div>
                         </div>
                     </div>

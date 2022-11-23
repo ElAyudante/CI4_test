@@ -273,6 +273,11 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                             </select>
                         </div>
                     </div>
+
+                    <div class="col-lg-12">
+                        <strong>Observaciones:</strong>
+                        <textarea name="observaciones" id="observaciones" class="form-select bg-transparent"><?php echo $item->Observaciones ?></textarea>
+                    </div>
                     
                     <div class="col-lg-12">
                         <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
