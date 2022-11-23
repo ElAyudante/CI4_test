@@ -42,6 +42,7 @@
     $routes->get('users/tramitar_pago_curso_ok/(:any)', 'itemCRUD::tramitar_pago_curso_usuario/$1');
 
     $routes->post('public/registro_curso_public', 'itemCRUD::registro_curso_public');
+    $routes->get('bono_formacion', 'itemCRUD::bono_formacion');
 
     $routes->get('email_plantilla', 'itemCRUD::test_email');
 

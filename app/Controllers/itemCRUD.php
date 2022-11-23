@@ -2037,4 +2037,17 @@ class ItemCRUD extends CI_Controller {
         exit;
     
     }
+
+    public function bono_formacion() {
+        
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\bono_formacion');
+        echo view('templates/footer');
+    }
 }
