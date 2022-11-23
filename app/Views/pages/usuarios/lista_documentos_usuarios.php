@@ -33,7 +33,7 @@
                                             </ul>
                                         </div>
                                         <div>
-                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/files/download/<?php echo $name ?>">Descargar</a></button>
+                                            <button type="button" class="btn btn-primary btn-block btn-acceso text-uppercase"><a class="text-white text-decoration-none" href="<?php echo base_url(); ?>/files/documentos/download/<?php echo $name ?>">Descargar</a></button>
                                         </div>
                                     </div>
                                 </div>

@@ -81,7 +81,9 @@
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
     $routes->get('users/mis_facturas', 'itemCRUD::facturas_usuarios');
 
-    $routes->get('files/download/(:any)', 'itemCRUD::download/$1');
+    $routes->get('files/facturas/download/(:any)', 'itemCRUD::download_facturas/$1');
+    $routes->get('files/documentos/download/(:any)', 'itemCRUD::download_documentos/$1');
+    $routes->get('files/cursos/download/(:any)', 'itemCRUD::download_cursos/$1');
     
 
     $routes->get('lista_reclamaciones', 'itemCRUD::listar_reclamaciones_ADMIN');
