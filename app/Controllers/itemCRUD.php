@@ -2167,7 +2167,6 @@ class ItemCRUD extends CI_Controller {
                 $cambio = '3';
                 break;
         }
-        var_dump($datoCambio->ModalidadCambio);
 
         $data = array(
             'Ejerciente' => $cambio

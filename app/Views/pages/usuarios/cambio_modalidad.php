@@ -1,5 +1,6 @@
 <?php
     $value= $_SESSION['user'];
+    $form_att = [ "enctype" => "multipart/form-data"]
 ?>
 <section class="bg-gray">
   	<div class="container-fluid row">
@@ -32,7 +33,7 @@
                                 }
                             ?></b></p>
                         </div>
-                        <?php echo form_open('/users/solicitar_cambio_modalidad'); ?>
+                        <?php echo form_open('/users/solicitar_cambio_modalidad', $form_att); ?>
 
                         <div class="form-border p-3 bg-white mb-0">
                             <div class="d-flex justify-content-center">
@@ -45,6 +46,9 @@
                                     <option value="3">Estudiante</option>
                                 </select>
                             </div>
+                            <div class="col d-flex align-items-center justify-content-center mb-2 mt-4">
+							<input type="file" class="form-control bg-transparent" name="archivo">
+						</div>
                             <div class="col-md d-flex justify-content-center mt-4">
                                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto"><?= $textBoton ?></button>
                             </div>
@@ -57,13 +61,15 @@
                         <div>
                             <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Solicitud de Baja</h3>
                             <div class="d-flex justify-content-center">
-                                <?php echo form_open('/users/solicitar_baja'); ?>
+                                <?php echo form_open('/users/solicitar_baja', $form_att); ?>
 
                                 <div class="d-flex flex-column justify-content-center form-border p-3 bg-white mb-0">
                                     <div class="d-flex flex-row justify-content-center text-uppercase cblue fw-bold">
                                         <p class="mb-0">¿Deseas solicitar la dada de baja del Colegio Profesional de Logopedas de Cantabria?</p> 
-                                        
                                     </div>
+                                    <div class="col d-flex align-items-center justify-content-center mt-4">
+							        <input type="file" class="form-control bg-transparent" name="archivo">
+						</div>
                                     <div class="col-md d-flex justify-content-center mt-4">
                                         <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase w-auto">Solicitar Baja</button>
                                     </div>
