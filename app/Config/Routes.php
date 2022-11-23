@@ -55,6 +55,7 @@
     $routes->get('privacidad', 'itemCRUD::privacidad');
     $routes->get('aviso', 'itemCRUD::avisos');
     $routes->get('cookies', 'itemCRUD::cookies');
+    $routes->get('rat', 'itemCRUD::rat');
 
     $routes->get('mandar_correo', 'itemCRUD::mandar_correo');
 

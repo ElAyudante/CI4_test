@@ -2084,6 +2084,19 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/footer');
     }
 
+    public function rat(){
+
+        if($this->session->userdata('user')){
+            echo view('templates/header_usuarios');
+        }elseif($this->session->userdata('admin')){
+            echo view('templates/header_admin');
+        } else {
+            echo view('templates/header');
+        }
+        echo view('App\Views\pages\rat');
+        echo view('templates/footer');
+    }
+
     public function otroscursos(){
 
         if($this->session->userdata('user')){
