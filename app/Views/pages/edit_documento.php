@@ -1,5 +1,5 @@
 <?php
-$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'', "enctype" => "multipart/form-data"];
 ?>
 
 <section class="bg-gray">

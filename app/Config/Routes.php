@@ -147,6 +147,9 @@
     $routes->post('itemCRUD/update/(:any)', "itemCRUD::update/$1");
     $routes->post('itemCRUD/update_pendiente/(:any)', "itemCRUD::update_pendiente/$1");
     $routes->get('itemCRUD/delete/(:any)', "itemCRUD::delete/$1");
+    $routes->get('itemCRUD/cambios_modalidad', 'itemCRUD::lista_cambios_modalidad');
+    $routes->get('itemCRUD/cambios_modalidad/delete/(:any)', 'itemCRUD::delete_cambio_modalidad/$1');
+    $routes->get('itemCRUD/admin/aceptar_cambio/(:any)/(:any)', 'itemCRUD::aceptar_cambio/$1/$2');
 
     $routes->get('crear_documentos', 'itemCRUD::create_documentos');
     $routes->get('documentos', 'itemCRUD::listar_documentos');
