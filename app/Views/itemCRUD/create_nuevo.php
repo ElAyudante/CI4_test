@@ -280,7 +280,8 @@ $sel_comunidades =  array (
 
         <div class="col text-uppercase d-flex align-items-center">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick = "check();">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick = "check();"
+            +>
             <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
           </div>
         </div>
@@ -306,7 +307,7 @@ $sel_comunidades =  array (
         
         <div class="col" id="foto" style="display: none">
           <div class="form-group">
-          <strong>Adjuntar Foto</strong>
+            <strong>Adjuntar Foto</strong>
             <input type="file" class="form-control bg-transparent" name="foto"  required>
           </div>
         </div>
