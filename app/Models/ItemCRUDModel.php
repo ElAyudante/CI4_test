@@ -17,10 +17,10 @@ class ItemCRUDModel extends CI_Model{
 		$data = $this->db->get_where('colegiados', array('Usuario' => $usuario))->row_array();
 		$hashed_password = $data['Pass'];
 		if(password_verify($pass, $hashed_password)){
-			$query = $this->db->get_where('colegiados', array('Usuario'=>$usuario, 'Pass'=>$pass));
-			return 'Pass Correcta';
+			$query = $this->db->get_where('colegiados', array('Usuario'=>$usuario));
+			return $query->row_array();
 		} else {
-			return 'Pass Incorrecta';
+			return NULL;
 		}
 		
 		

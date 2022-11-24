@@ -1296,22 +1296,20 @@ class ItemCRUD extends CI_Controller {
 		$data = $this->itemCRUD->login($nif, $password);
  
 		if($data){
-            /*
+            
 			$this->session->set_userdata('user', $data);
 			$this->load->view('templates\header_usuarios');
             $this->load->view('App\Views\pages\usuarios\main_usuario');
             $this->load->view('templates\footer');
-            */
-            var_dump($data);
 		}
 		else{
-            /*
+            
 			$this->load->view('templates\header');
-            $this->load->view('App\Views\pages\usuarios\index_login');
+            $this->load->view('App\Views\pages\usuarios\login');
             $this->load->view('templates\footer');
-			$this->session->set_flashdata('error','Invalid login. User not found');
-            */
-            var_dump($data);
+            $session = session();
+			$session->setFlashdata('error','Buenas');
+
 		} 
 	}
 
