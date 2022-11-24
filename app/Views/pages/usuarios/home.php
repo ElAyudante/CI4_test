@@ -127,7 +127,7 @@ $sel_comunidades =  array (
                 </div>
               </div>
 
-              <div class="col">
+              <!--<div class="col">
                 <div class="form-group">
                   <strong>Password:</strong>
                   <div class="d-flex">
@@ -151,7 +151,7 @@ $sel_comunidades =  array (
                     </span>
                   </div>
                 </div>
-              </div>
+              </div>-->
 
               <div class="col">
                 <div class="form-group">
