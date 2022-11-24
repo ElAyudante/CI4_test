@@ -970,11 +970,16 @@ class ItemCRUD extends CI_Controller {
 
         $id = $_POST['id'];
 
+        $password = 'temp';
+        //$this->password_generate(9). '\n';
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+
         $data = array(
 
 			'Colegiado' => $this->input->post('colegiado'),
             'Usuario' => $this->input->post('nif'),
-            'Pass' => 'temp'
+            'Pass' => $hashed_password
 
 		);
 
@@ -1291,16 +1296,22 @@ class ItemCRUD extends CI_Controller {
 		$data = $this->itemCRUD->login($nif, $password);
  
 		if($data){
+            /*
 			$this->session->set_userdata('user', $data);
 			$this->load->view('templates\header_usuarios');
             $this->load->view('App\Views\pages\usuarios\main_usuario');
             $this->load->view('templates\footer');
+            */
+            var_dump($data);
 		}
 		else{
+            /*
 			$this->load->view('templates\header');
             $this->load->view('App\Views\pages\usuarios\index_login');
             $this->load->view('templates\footer');
 			$this->session->set_flashdata('error','Invalid login. User not found');
+            */
+            var_dump($data);
 		} 
 	}
 
@@ -1667,7 +1678,10 @@ class ItemCRUD extends CI_Controller {
             
         ])) {
 
-            $targetDir = "./assets/uploads/files/";
+            if(!is_dir("./assets/uploads/files/altas/" . $_POST['nif'])){
+                mkdir("./assets/uploads/files/altas/" . $_POST['nif']);
+            }
+            $targetDir = "./assets/uploads/files/altas/" . $_POST['nif']. '/';
             $fileNameFoto = basename($_FILES["foto"]["name"]);
             $fileNameDNI = basename($_FILES['foto_dni']['name']);
             $fileNameTitulo = basename($_FILES['foto_titulo']['name']);
@@ -1683,7 +1697,7 @@ class ItemCRUD extends CI_Controller {
             $fileTypeTitulo = pathinfo($targetFilePathTitulo,PATHINFO_EXTENSION);
             $fileTypeJustificante = pathinfo($targetFilePathJustificante,PATHINFO_EXTENSION);
 
-            $allowTypes = array('jpg','png','jpeg','pdf');
+            $allowTypes = array('jpg','png','jpeg','pdf', 'JPG', 'JPEG', 'PNG');
             if(in_array($fileType, $allowTypes)){
                 // Upload file to server
                 if(move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFilePath)){
@@ -2217,5 +2231,11 @@ class ItemCRUD extends CI_Controller {
         $this->db->delete('cambio_modalidad', 'NumColegiado =' .$idColegiado);
 
         return $this->lista_cambios_modalidad();
+    }
+
+    public function password_generate($chars) {
+
+        $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+        return substr(str_shuffle($data), 0, $chars);
     }
 }
