@@ -322,7 +322,7 @@ $sel_comunidades =  array (
 
         <div class="form-group">
         <strong>Adjuntar TItulación</strong>
-          <input type="file" class="form-control bg-transparent" name="foto_titulacion" required>
+          <input type="file" class="form-control bg-transparent" name="foto_titulo" required>
         </div>
         </div>
 
