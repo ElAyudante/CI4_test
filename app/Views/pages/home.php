@@ -235,66 +235,52 @@
 
 <!-- SECCIÓN CONTACTO -->
 <section class="octavobloque py-5">
-    <div class="container">
+    <div class="container px-lg-5">
         <!--<script type="text/javascript" src="https://form.jotform.com/jsform/212343600643041"></script>-->
 
         <div class="card">
             <div class="row mx-0">
                 <div class="d-lg-block d-none col-lg-4">
-                    <img src="<?php echo base_url(),'/'; ?>assets/images/png/img-form.svg" class="img-fluid rounded-start h-100" alt="...">
+                    <img src="<?php echo base_url(),'/'; ?>assets/images/png/img-form.svg" class="img-fluid" alt="...">
                 </div>
                 <div class="col-12 col-lg-8 d-flex align-items-center">
-                    <div class="card-body">
-                        <form class="p-3 p-lg-5 cblue needs-validation" novalidate>
+                    <div class="card-body px-lg-5">
+                        <form class="p-3 p-lg-5 cblue m-auto needs-validation" novalidate>
                             <div class="text-center">
-                                <h1>Contacta con Nosotros</h1>
-                            </div>
-
-                            <div>
+                                <h1 class="text-uppercase fw-bold">Contacta con Nosotros</h1>
                                 <hr>
                             </div>
-
-                            <div class="row mb-3 ">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="row rows-cols-lg-2 g-4">
+                                <!--<label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>-->
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" required>
+                                    <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" id="staticEmail" required>
                                 </div>
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" required>
                                 </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-lg-12">
+                                    <!--<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>-->
+                                    <input type="email" class="form-control" placeholder="Email" id="inputEmail3" required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <!--<label for="inputEmail3" class="col-sm-2 col-form-label">Mensaje</label>-->
+                                    <textarea class="form-control" placeholder="Mensaje" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        <label class="form-check-label" for="invalidCheck">Soy mayor de 14 y he leído y acepto la <a class="text-decoration-none cblue fw-bold text-uppercase" href="<?php echo base_url(),'/'; ?>privacidad" target="_blank">Política de privacidad</a></label>
+                                        <div class="invalid-feedback">
+                                            Debe estar de acuerdo antes de enviar.
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col">
-                                <input type="email" class="form-control" id="inputEmail3">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary text-uppercase">Enviar</button>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Mensaje</label>
-                                <div class="col">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                <label class="form-check-label" for="invalidCheck">Soy mayor de 14 y he leído y acepto la <a class="text-decoration-none cblue fw-bold text-uppercase" href="<?php echo base_url(),'/'; ?>privacidad">Política de privacidad</a></label>
-                                <div class="invalid-feedback">
-                                    Debe estar de acuerdo antes de enviar.
-                                </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <hr>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary text-uppercase">Enviar</button>
-                            </div>
-                            
                         </form>
                     </div>
                 </div>
@@ -304,9 +290,9 @@
 
 <section  class="m-5">
     <div class="container">
-            <a href="https://www.amaseguros.com/?utm_source=Referral&utm_medium=Web_Colegios&utm_campaign=Colegio_Logopedas&utm_content=Cantabria&utm_term" target="_blank">
-                <img src="<?php echo base_url(),'/'; ?>assets/images/png/banner_ama.gif" alt="banner de ama" class="img-fluid my-5">
-            </a>
+        <a href="https://www.amaseguros.com/?utm_source=Referral&utm_medium=Web_Colegios&utm_campaign=Colegio_Logopedas&utm_content=Cantabria&utm_term" target="_blank">
+            <img src="<?php echo base_url(),'/'; ?>assets/images/png/banner_ama.gif" alt="banner de ama" class="img-fluid my-5">
+        </a>
     </div>
     <div class="container">
         <a href="#" target="_blank">

@@ -243,7 +243,7 @@ $sel_comunidades =  array (
         <div class="col">
           <div class="form-group">
           <strong>Categoría</strong>
-            <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente">
+            <select id ="ejerciente" class="form-select bg-transparent" name="ejerciente" required>
               <option disabled selected hidden value="" select>Tipo de colegiado</option>
               <option value="1">Ejerciente</option>
               <option value="0">No ejerciente</option>
@@ -284,34 +284,37 @@ $sel_comunidades =  array (
             <label class="form-check-label fw-bold me-3" for="flexCheckDefault">Traslado</label>
           </div>
         </div>
-            
-        <div class="col" id='colegioOrigen' style="display: none">
-          <div class="form-group">
-          <strong>Colegio de Origen</strong>
-            <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen">
+
+        <div class="col-lg-12">
+          <div class="row rows-cols-lg-4 g-lg-4">
+            <div class="col" id='colegioOrigen' style="display: none">
+              <div class="form-group">
+              <strong>Colegio de Origen</strong>
+                <input type="text" class="form-control text-uppercase bg-transparent" name="colegioorigen" placeholder="Colegio de origen" required>
+              </div>
+            </div>
+            <div class="col" id="numOrigen" style="display: none">
+              <div class="form-group">
+              <strong>Nº Colegiado de Origen</strong>
+                <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen" required>
+              </div>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
           </div>
-        </div>
-
-        <div class="col" id="numOrigen" style="display: none">
-          <div class="form-group">
-          <strong>Nº Colegiado de Origen</strong>
-            <input type="number" class="form-control text-uppercase bg-transparent" name="norigen" placeholder="Nº Colegiado de origen">
-          </div>
-        </div>
-
-        <div class="col-lg-12"></div>
-
+        </div>    
+        
         <div class="col" id="foto" style="display: none">
           <div class="form-group">
           <strong>Adjuntar Foto</strong>
-            <input type="file" class="form-control bg-transparent" name="foto"  >
+            <input type="file" class="form-control bg-transparent" name="foto"  required>
           </div>
         </div>
 
         <div class="col" id="foto_dni" style="display: none">
         <div class="form-group">
         <strong>Adjuntar DNI</strong>
-          <input type="file" class="form-control bg-transparent" name="foto_dni" >
+          <input type="file" class="form-control bg-transparent" name="foto_dni" required>
         </div>
         </div>
 
@@ -319,14 +322,14 @@ $sel_comunidades =  array (
 
         <div class="form-group">
         <strong>Adjuntar TItulación</strong>
-          <input type="file" class="form-control bg-transparent" name="foto_titulo" >
+          <input type="file" class="form-control bg-transparent" name="foto_titulacion" required>
         </div>
         </div>
 
         <div class="col" id="foto_justificante" style="display: none">
           <div class="form-group">
             <strong>Adjuntar Documento Baja</strong>
-            <input type="file" class="form-control bg-transparent" name="foto_justificante" >
+            <input type="file" class="form-control bg-transparent" name="foto_justificante" required>
           </div>
         </div>
 
@@ -351,25 +354,7 @@ $sel_comunidades =  array (
   </div>
 </section>
 <script>
-  (() => {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-
+  
   var menu = document.getElementById("ejerciente");
   menu.addEventListener("change", generateData);
   var foto = document.getElementById('foto');
