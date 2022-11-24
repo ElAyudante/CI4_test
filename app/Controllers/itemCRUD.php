@@ -1268,7 +1268,7 @@ class ItemCRUD extends CI_Controller {
 		//restrict users to go back to login if session has been set
 		if($this->session->userdata('admin')){
             $this->load->view('templates\header_admin');
-            $this->load->view('App\Views\pages\itemCRUD\list');
+            $this->load->view('App\Views\pages\main');
             $this->load->view('templates\footer');
 		}
 		else{
@@ -1545,8 +1545,10 @@ class ItemCRUD extends CI_Controller {
                 $modalidadCambio = 'Estudiante';
                 break;
         };
-
-        mkdir("./assets/uploads/files/cambios/" . $usuario['Colegiado']);
+        if(!is_dir("./assets/uploads/files/cambios/" . $usuario['Colegiado'])){
+           mkdir("./assets/uploads/files/cambios/" . $usuario['Colegiado']); 
+        }
+        
         $targetDir = "./assets/uploads/files/cambios/" . $usuario['Colegiado'] . '/';
         $fileName = basename($_FILES["archivo"]["name"]);
         $targetFilePath = $targetDir . $fileName;
