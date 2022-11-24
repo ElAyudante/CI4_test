@@ -5,9 +5,14 @@
 
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                    <a href="<?php echo base_url().'/'; ?>users/datos"><i class="fa-solid fa-address-card fa-lg me-3"></i>Mis Datos</a>
+
+                <li data-bs-toggle="collapse" data-bs-target="#user" class="collapsed">
+                    <a href="#user"><i class="fa-solid fa-address-card fa-lg me-3"></i>Perfil de Usuario<span class="arrow"></span></a>
                 </li>
+                <ul class="sub-menu collapse" id="user">
+                    <li><a href="<?php echo base_url().'/'; ?>users/datos">Mis Datos</a></li>
+                    <li><a href="<?php echo base_url(),'/'; ?>users/seguridad_privacidad">Seguridad</a></li>
+                </ul>
 
                 <li>
                     <a href="<?php echo base_url().'/'; ?>users/documentos"><i class="far fa-calendar-check fa-lg me-3"></i>Mis Documentos</a>
