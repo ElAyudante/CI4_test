@@ -13,10 +13,7 @@
 
         <div class="alert alert-danger" role="alert">
             <?php 
-                $session = session();
-                $error = $session->getFlashdata('error'); 
-                var_dump($error);
-                var_dump('error aqui');
+            
             ?>
         </div>
 

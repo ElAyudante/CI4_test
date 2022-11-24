@@ -81,6 +81,7 @@
     $routes->post('users/solicitar_cambio_modalidad', 'itemCRUD::tramitar_cambio_modalidad');
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
     $routes->get('users/mis_facturas', 'itemCRUD::facturas_usuarios');
+    $routes->get('users/seguridad_privacidad', 'itemCRUD::seguridad_usuarios');
 
     $routes->get('files/facturas/download/(:any)', 'itemCRUD::download_facturas/$1');
     $routes->get('files/documentos/download/(:any)', 'itemCRUD::download_documentos/$1');

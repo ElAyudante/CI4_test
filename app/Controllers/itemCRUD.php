@@ -1307,9 +1307,7 @@ class ItemCRUD extends CI_Controller {
 			$this->load->view('templates\header');
             $this->load->view('App\Views\pages\usuarios\login');
             $this->load->view('templates\footer');
-            $session = session();
-			$session->setFlashdata('error','Buenas');
-
+            $this->session->flashdata('error', 'hola');
 		} 
 	}
 
@@ -2236,4 +2234,10 @@ class ItemCRUD extends CI_Controller {
         $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
         return substr(str_shuffle($data), 0, $chars);
     }
+
+    public function seguridad_usuarios(){
+        echo view('templates/header_usuarios');
+        echo view('App\Views\pages\usuarios\seguridad');
+        echo view('templates/footer');
+    }   
 }
