@@ -1,3 +1,4 @@
+<?php $session = \Config\Services::session();  ?>
 <section class="presentacion p-5 text-lg-start text-center d-flex align-items-center" style="height: 300">
     <div class="container">
         <div class="row align-items-center text-white">
@@ -13,6 +14,14 @@
       
 
         <div class="p-5 w-75">
+
+        <?php if($session->getFlashdata('error') !== null){ 
+        ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $session->getFlashdata('error');  ?>
+            </div>
+
+        <?php }?>
         <h3 class="py-4 px-5 text-white text-uppercase fs-2 bg-blue fw-bold mb-0 text-center"><i class="bi bi-person-circle"></i> ACCESO ADMINISTRACIÓN</h3>
             
         <form class="form-border p-5 bg-white mb-0 text-center" method="POST" action="<?php echo base_url(); ?>/users/admin/login">

@@ -1288,7 +1288,7 @@ class ItemCRUD extends CI_Controller {
  
 	public function login(){
 		//load session library
-		$this->load->library('session');
+		$session = \Config\Services::session();
  
 		$nif = $_POST['nif'];
 		$password = $_POST['pass'];
@@ -1303,17 +1303,18 @@ class ItemCRUD extends CI_Controller {
             $this->load->view('templates\footer');
 		}
 		else{
-            
+
+            $session->setFlashdata('error', 'Usuario o Contraseña Incorrectos.');
 			$this->load->view('templates\header');
             $this->load->view('App\Views\pages\usuarios\login');
             $this->load->view('templates\footer');
-            $this->session->flashdata('error', 'hola');
+            
 		} 
 	}
 
     public function admin_login(){
 		//load session library
-		$this->load->library('session');
+		$session = \Config\Services::session();
  
         if(isset($_SESSION['admin'])){
             $datos = $_SESSION['admin'];
@@ -1333,10 +1334,10 @@ class ItemCRUD extends CI_Controller {
             $this->load->view('templates\footer');
 		}
 		else{
+            $session->setFlashdata('error', 'Usuario o Contraseña Incorrectos.');
 			$this->load->view('templates\header');
             $this->load->view('App\Views\pages\admin');
             $this->load->view('templates\footer');
-			$this->session->set_flashdata('error','Invalid login. User not found');
 		} 
 	}
 
