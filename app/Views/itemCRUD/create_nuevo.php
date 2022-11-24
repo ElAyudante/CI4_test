@@ -1,5 +1,5 @@
 <?php
-$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'',];
+$form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalidate"=>'', "enctype" => "multipart/form-data"];
 
 $sel_provincias = array (
   'Alava' => 'Alava',
@@ -323,7 +323,7 @@ $sel_comunidades =  array (
 
         <div class="form-group">
         <strong>Adjuntar TItulación</strong>
-          <input type="file" class="form-control bg-transparent" name="foto_titulacion" required>
+          <input type="file" class="form-control bg-transparent" name="foto_titulo" required>
         </div>
         </div>
 

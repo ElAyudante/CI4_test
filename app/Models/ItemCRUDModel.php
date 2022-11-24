@@ -13,8 +13,17 @@ class ItemCRUDModel extends CI_Model{
 
 
 	public function login($usuario, $pass){
-		$query = $this->db->get_where('colegiados', array('Usuario'=>$usuario, 'Pass'=>$pass));
-		return $query->row_array();
+
+		$data = $this->db->get_where('colegiados', array('Usuario' => $usuario))->row_array();
+		$hashed_password = $data['Pass'];
+		if(password_verify($pass, $hashed_password)){
+			$query = $this->db->get_where('colegiados', array('Usuario'=>$usuario, 'Pass'=>$pass));
+			return 'Pass Correcta';
+		} else {
+			return 'Pass Incorrecta';
+		}
+		
+		
 	}
 
 	public function login_admin($usuario, $pass){
