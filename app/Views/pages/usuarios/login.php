@@ -33,7 +33,7 @@
                     <input class="form-control" placeholder="Password" type="password" name="pass" required>
                 </div>              
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase mb-3">Login</button>
-                <p class="text-muted mb-0"><a style="text-decoration:none" href="<?php echo base_url('request_new_password') ?>">¿Olvidaste tu contraseña?</a> </p>
+                <p class="text-muted mb-0"><a style="text-decoration:none" href="<?php echo base_url('request_nueva_password') ?>">¿Olvidaste tu contraseña?</a> </p>
             </form>
             
         </div>
