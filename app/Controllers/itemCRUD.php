@@ -81,8 +81,6 @@ class ItemCRUD extends CI_Controller {
     $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4), true));
 
     $email->send();
-
-    return redirect()->
     
    }
 

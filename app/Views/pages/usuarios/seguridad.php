@@ -1,13 +1,3 @@
-<? 
-//COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO 
-if (!$_SESSION['valido'] || $_SESSION['valido']=="false") { 
-    //si no existe, envio a la p�gina de autentificacion 
-    header("Location: index.php"); 
-    //ademas salgo de este script 
-    exit(); 
-}
-?> 
-
 <section class="bg-gray">
 	<div class="container-fluid">
 		<div class="row h-auto">
@@ -20,7 +10,7 @@ if (!$_SESSION['valido'] || $_SESSION['valido']=="false") {
         <div class="container p-5">
           <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Cambiar Contraseña</h3>
 
-          <?php echo form_open(); ?>
+          <?php echo form_open('users/request_password_submit'); ?>
           <div class="form-border p-3 bg-white mb-0">
             
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">

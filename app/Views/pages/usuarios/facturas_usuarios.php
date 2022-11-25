@@ -15,7 +15,18 @@
 		</div>
         
 		<div class="col-lg-10 text-center">
-        <?php foreach ($data as $pago){
+        <?php if(empty($data)){
+
+            
+        ?>
+            <div class="container p-5 d-flex align-items-center w-50">
+                <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0"><img style="width: 60px;" class="img-fluid me-3" src="<?php echo base_url(),'/'; ?>/assets/images/png/logo_white.svg">Actualmente no tiene facturas a su nombre</h3>
+            </div>
+
+        <?php 
+            } else {
+        
+        foreach ($data as $pago){
             $date = $pago['Fecha'];
             $fecha = date("d/m/Y", strtotime($date));
         ?>
@@ -36,7 +47,7 @@
                 </div>
             </div>
 
-            <?php }; ?>
+            <?php }}; ?>
 		</div>
 	</div>
 </section>
