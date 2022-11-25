@@ -58,6 +58,7 @@
     $routes->get('rat', 'itemCRUD::rat');
 
     $routes->get('mandar_correo', 'itemCRUD::mandar_correo');
+    $routes->get('request_new_password', 'itemCRUD::request_nueva_password');
 
 
     $routes->get('users/index_login', 'itemCRUD::index_login');

@@ -66,10 +66,10 @@ class ItemCRUD extends CI_Controller {
     
     $email->initialize($config);
 
-    $email->setFrom('adrian@elayudante.es', 'Colegio de Logopedas de Cantabria');
+    $email->setFrom('noreply@colegiologopedas.org', 'Colegio de Logopedas de Cantabria');
     $email->setTo($correos);
-    $email->setSubject('Nueva/o ' . $msg . ' disponible.');
-    $email->setReplyTo('');
+    $email->setSubject('Nuevo contenido disponible | Colegio de Logopedas de Cantabria');
+
 
     $email->attach($filename, 'inline');
     $email->attach($filename2, 'inline');
@@ -91,7 +91,8 @@ class ItemCRUD extends CI_Controller {
     $email = \Config\Services::email();  
     $numero = $data;
     //$database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
-    $database = $this->db->get('test_emails')->result_array();
+    $usuario = $this->db->get_where('colegiados', 'Colegiado =' . $numero)->row_array();
+    $nombre = $usuario['Nombre'] . ' ' . $usuario['Apellidos'];
     $correos = array();
     foreach($database as $cliente){
         $correos[] = $cliente['Email'];
@@ -115,7 +116,7 @@ class ItemCRUD extends CI_Controller {
     $email->initialize($config);
 
     $email->setFrom('adrian@elayudante.es', 'Colegio de Logopedas de Cantabria');
-    $email->setTo($correos);
+    $email->setTo('adrian@elayudante.es');
     $email->setSubject('Nº Colegiado: ' . $numero . ' ha actualizado sus datos personales.');
     $email->setReplyTo('');
 
@@ -128,7 +129,7 @@ class ItemCRUD extends CI_Controller {
     $cid3 = $email->setAttachmentCID($filename3);
     $cid4 = $email->setAttachmentCID($filename4);
 
-    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $msg), true));
+    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $nombre), true));
 
     $email->send();
     
@@ -704,7 +705,7 @@ class ItemCRUD extends CI_Controller {
         }
 
 		$this->db->insert('documentos', $data);
-        $this->mandar_correo_usuarios('Documento');
+        $this->mandar_correo_usuarios('Se ha añadido un nuevo Documento a tu área personal');
 
         return redirect()->to(base_url('documentos'));
     }
@@ -728,7 +729,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
-        $this->mandar_correo_usuarios('Oferta de Empleo');
+        $this->mandar_correo_usuarios('Se ha añadido una nueva Oferta de Empleo a tu área personal');
         return $this->listar_ofertas();
     }
 
@@ -804,7 +805,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
-        $this->mandar_correo_usuarios('Curso');
+        $this->mandar_correo_usuarios('Se ha añadido un nuevo Curso al área pública');
         return redirect()->to(base_url('lista_cursos_CPLC'));
 
     }
@@ -827,7 +828,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
-        $this->mandar_correo_usuarios('un nuevo Convenio');
+        $this->mandar_correo_usuarios('Se ha añadido un nuevo Convenio a tu área personal');
         return redirect()->to(base_url('lista_convenios'));
     }
 
@@ -1063,8 +1064,11 @@ class ItemCRUD extends CI_Controller {
 
 		);
 
+        $numero = $this->input->post('ncolegiado');
+
 		if($this->db->update('colegiados', $data, 'Id ='. $id)){
             $session->setFlashdata('cambio', 'Datos modificados satisfactoriamente.');
+            $this->mandar_correo_admin($numero);
             return  redirect()->to(base_url('users/datos'));
         } else {
             $session->setFlashdata('cambio', 'Datos modificados satisfactoriamente.');
@@ -2350,4 +2354,10 @@ class ItemCRUD extends CI_Controller {
         echo view('App\Views\pages\usuarios\seguridad');
         echo view('templates/footer');
     }   
+
+    public function request_nueva_password(){
+        echo view('templates/header');
+        echo view('App\Views\pages\request_nueva_password');
+        echo view('templates/footer');
+    }
 }
