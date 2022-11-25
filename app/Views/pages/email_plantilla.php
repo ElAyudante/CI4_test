@@ -28,7 +28,7 @@
             <img src="cid:<?= $cid2 ?>" class="img-fluid" style="height:100px">
         </div>
         <div class="body-letter bg-gray text-justify p-5">
-            <h2 class="text-uppercase fw-bold mb-4"><img src="cid:<?= $cid ?>" style="height:40px" alt="">Se añadió un nuevo Pokemon <img src="cid:<?= $cid ?>" style="height:40px" alt=""></h2>
+            <h2 class="text-uppercase fw-bold mb-4"><img src="cid:<?= $cid ?>" style="height:40px" alt="">Se añadió <?php echo $msg ?> <img src="cid:<?= $cid ?>" style="height:40px" alt=""></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue ex, viverra nec sapien sit amet, ultrices maximus eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent felis metus, congue suscipit hendrerit molestie, ultrices a ligula. Fusce scelerisque elit leo. Quisque a fermentum libero. Praesent mattis accumsan eros et bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin viverra accumsan nibh, quis porta dui ultricies finibus. Cras in tincidunt justo. Morbi ac nunc vestibulum, tempor lectus sed, tempor leo. Maecenas sagittis enim id est porta iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             <div class="d-flex justify-content-center mt-5">
                 <a href="<?php echo base_url(),'/'; ?>users/index_login" class="text-white" target="_blank">
