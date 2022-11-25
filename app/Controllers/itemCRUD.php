@@ -38,40 +38,51 @@ class ItemCRUD extends CI_Controller {
    }
 
 
-   public function mandar_correo($database){
+   public function mandar_correo(){
 
-    $this->load->library('email');  
+    $email = \Config\Services::email();  
+    $database = $this->db->get('test_emails')->result_array();
+    $correos = array();
+    foreach($database as $cliente){
+        $correos[] = $cliente['Email'];
+    }
+
+    $filename = './public/assets/imgs/pokeball.png';
+    $filename2 = './public/assets/imgs/logo_header.png';
+    $filename3 = './public/assets/imgs/facebook.png';
+    $filename4 = './public/assets/imgs/linkedin.png';
+    
     $config['protocol']    = 'smtp';
-    $config['smtp_host']    = '';
-    $config['smtp_port']    = '';
-    $config['smtp_timeout'] = '';
-    $config['smtp_user']    = '';
-    $config['smtp_pass']    = '';
+    $config['SMTPHost']    = 'dns10356.phdns19.es';
+    $config['SMTPPort']    = '465';
+    $config['SMTPUser']    = 'adrian@elayudante.es';
+    $config['SMTPPass']    = '&p07A7av0';
     $config['charset']    = 'utf-8';
     $config['newline']    = "\r\n";
-    $config['mailtype'] = 'html';
-
-    $this->email->initialize($config);
-
-    $correo = $this->db->get($database)->result_array();
-    $arrayCorreo = array();
-    foreach($correo as $direccion){
-        $arrayCorreo[] = $direccion['Email'];
-    }
-
-    $this->email->from('');
-    $this->email->to($arrayCorreo);
-
-    $this->email->subject('Email Test');
-    $this->email->message('Testing the email class.');
+    $config['mailType'] = 'html';
+    $config['SMTPCrypto'] = 'ssl';
     
-    if($this->email->send()){
-        echo $this->email->print_debugger(); 
-    } else {
-        echo $this->email->print_debugger();
-    }
+    $email->initialize($config);
 
-    
+    $email->setFrom('adrian@elayudante.es', 'Adrian');
+    $email->setTo($correos);
+
+    $email->attach($filename, 'inline');
+    $email->attach($filename2, 'inline');
+    $email->attach($filename3, 'inline');
+    $email->attach($filename4, 'inline');
+    $cid = $email->setAttachmentCID($filename);
+    $cid2 = $email->setAttachmentCID($filename2);
+    $cid3 = $email->setAttachmentCID($filename3);
+    $cid4 = $email->setAttachmentCID($filename4);
+
+
+    $email->setSubject('Email Test');
+    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4), true));
+
+    $email->send();
+
+    return redirect()->
     
    }
 
