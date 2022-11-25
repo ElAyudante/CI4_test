@@ -29,10 +29,10 @@
             <img src="cid:<?= $cid2 ?>" class="img-fluid" style="height:100px; max-width: 100%;">
         </div>
         <div class="bg-gray text-justify p-5" style="background-color: #eeeeee !important; text-align: justify; padding: 3rem!important;">
-            <h1 class="text-uppercase fw-bold mb-4" style="text-align: center; font-size: 2rem; font-family: 'Roboto', sans-serif; text-transform: uppercase!important; font-weight: 700!important; margin-bottom: 1.5rem!important;"><img src="cid:<?= $cid ?>" style="height:40px" alt="">El Usuario <?= $msg ?> ha actualizado sus datos personales<img src="cid:<?= $cid ?>" style="height:40px" alt=""></h1>
+            <h1 class="text-uppercase fw-bold mb-4" style="text-align: center; font-size: 2rem; font-family: 'Roboto', sans-serif; text-transform: uppercase!important; font-weight: 700!important; margin-bottom: 1.5rem!important;">El Usuario <?= $msg ?> ha actualizado sus datos personales</h1>
             <!--<p style="font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 1rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue ex, viverra nec sapien sit amet, ultrices maximus eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent felis metus, congue suscipit hendrerit molestie, ultrices a ligula. Fusce scelerisque elit leo. Quisque a fermentum libero. Praesent mattis accumsan eros et bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin viverra accumsan nibh, quis porta dui ultricies finibus. Cras in tincidunt justo. Morbi ac nunc vestibulum, tempor lectus sed, tempor leo. Maecenas sagittis enim id est porta iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>-->
             <div class="d-flex justify-content-center mt-5" style="display: flex!important; justify-content: center!important; margin-top: 3rem!important;">
-                <a href="<?php echo base_url(),'/'; ?>users/index_login" target="_blank">
+                <a href="<?php echo base_url(),'/'; ?>users/admin" target="_blank">
                     <button class="btn btn-primary text-uppercase" style="border-radius: 0.375rem; border-width: 1px; padding: 0.375rem 0.75rem; color: white; text-transform: uppercase!important; background-color: #004987; border-color: #004987 !important; font-weight: 900; width: 150px;">Log in</button>
                 </a>                    
             </div>

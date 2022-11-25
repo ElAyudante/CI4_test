@@ -93,10 +93,6 @@ class ItemCRUD extends CI_Controller {
     //$database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
     $usuario = $this->db->get_where('colegiados', 'Colegiado =' . $numero)->row_array();
     $nombre = $usuario['Nombre'] . ' ' . $usuario['Apellidos'];
-    $correos = array();
-    foreach($database as $cliente){
-        $correos[] = $cliente['Email'];
-    }
 
     $filename = './public/assets/imgs/pokeball.png';
     $filename2 = './public/assets/imgs/logo_header.png';
@@ -115,7 +111,7 @@ class ItemCRUD extends CI_Controller {
     
     $email->initialize($config);
 
-    $email->setFrom('adrian@elayudante.es', 'Colegio de Logopedas de Cantabria');
+    $email->setFrom('noreply@colegiologopedas.org', 'Colegio de Logopedas de Cantabria');
     $email->setTo('adrian@elayudante.es');
     $email->setSubject('Nº Colegiado: ' . $numero . ' ha actualizado sus datos personales.');
     $email->setReplyTo('');
@@ -129,7 +125,7 @@ class ItemCRUD extends CI_Controller {
     $cid3 = $email->setAttachmentCID($filename3);
     $cid4 = $email->setAttachmentCID($filename4);
 
-    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $nombre), true));
+    $email->setMessage($this->load->view('App\Views\pages\email_plantilla_admin', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $nombre), true));
 
     $email->send();
     
@@ -636,7 +632,7 @@ class ItemCRUD extends CI_Controller {
     $datos = $_SESSION['user'];
     $id = $datos['Id'];
 
-    $data = $this->db->get_where('colegiados', 'Id = '. $id)->row_array();
+    $data['data'] = $this->db->get_where('colegiados', 'Id = '. $id)->row_array();
 
     echo view('templates/header_usuarios');
     echo view('App\Views\pages\usuarios\home', $data);

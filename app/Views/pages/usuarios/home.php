@@ -110,7 +110,7 @@ $sel_comunidades =  array (
                   <strong>Fecha de Alta:</strong>
                   <div class="d-flex">
                     <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                    <input type="text" class="form-control bg-gray" name="falta" value="<?php echo $value['FechaAlta']?>" autofocus readonly>
+                    <input type="text" class="form-control bg-gray" name="falta" value="<?php echo $data['FechaAlta']?>" autofocus readonly>
                   </div>
                 </div>
               </div>
@@ -118,28 +118,28 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group">
                   <strong>Nº Colegiado:</strong>
-                  <input type="text" class="form-control bg-gray" name="ncolegiado" value="<?php echo $value['Colegiado']?>" autofocus readonly>
+                  <input type="text" class="form-control bg-gray" name="ncolegiado" value="<?php echo $data['Colegiado']?>" autofocus readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Nombre:</strong>
-                  <input type="text" class="form-control bg-gray" name="nombre" value="<?php echo $value['Nombre']?>" autofocus readonly>
+                  <input type="text" class="form-control bg-gray" name="nombre" value="<?php echo $data['Nombre']?>" autofocus readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Apellidos:</strong>
-                  <input type="text" class="form-control bg-gray" name="apellidos" value="<?php echo $value['Apellidos']?>" readonly>
+                  <input type="text" class="form-control bg-gray" name="apellidos" value="<?php echo $data['Apellidos']?>" readonly>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Usuario:</strong>
-                  <input type="text" class="form-control bg-gray" name="usuario" value="<?php echo $value['NIF']?>" readonly>
+                  <input type="text" class="form-control bg-gray" name="usuario" value="<?php echo $data['NIF']?>" readonly>
                 </div>
               </div>
 
@@ -147,7 +147,7 @@ $sel_comunidades =  array (
                 <div class="form-group">
                   <strong>Password:</strong>
                   <div class="d-flex">
-                    <input id="password" type="password" class="form-control" name="pass" value="<?php echo $value['Pass']?>">
+                    <input id="password" type="password" class="form-control" name="pass" value="<?php echo $data['Pass']?>">
                     <span class="input-group-text" onclick="password_show_hide();">
                       <i class="fas fa-eye" id="show_eye"></i>
                       <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
@@ -172,42 +172,42 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group">
                   <strong>DNI:</strong>
-                  <input type="text" class="form-control bg-gray" name="nif" value="<?php echo $value['NIF']?>" readonly>
+                  <input type="text" class="form-control bg-gray" name="nif" value="<?php echo $data['NIF']?>" readonly>
                 </div>
               </div>
 
               <div class="col-md-8">
                 <div class="form-group">
                   <strong>EMAIL:</strong>
-                  <input type="text" class="form-control" name="email" value="<?php echo $value['Email']?>">
+                  <input type="text" class="form-control" name="email" value="<?php echo $data['Email']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Dirección:</strong>
-                  <input type="text" class="form-control" name="direccion" value="<?php echo $value['Direccion']?>">
+                  <input type="text" class="form-control" name="direccion" value="<?php echo $data['Direccion']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Localidad:</strong>
-                  <input type="text" class="form-control" name="localidad" value="<?php echo $value['Localidad']?>">
+                  <input type="text" class="form-control" name="localidad" value="<?php echo $data['Localidad']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Código Postal:</strong>
-                  <input type="number" class="form-control" name="cp" value="<?php echo $value['CP']?>">
+                  <input type="number" class="form-control" name="cp" value="<?php echo $data['CP']?>">
                 </div>
               </div>
 
               <div class="form-group col">
                 <strong>Provincia:</strong>
                 <select id="provincia" class="form-select " name="provincia">
-                  <option selected value="<?php echo $value['Provincia']?>"><?php echo $value['Provincia']?></option>
+                  <option selected value="<?php echo $data['Provincia']?>"><?php echo $data['Provincia']?></option>
                   <?php 
                     foreach ($sel_provincias as $sel_prov => $abreviatura) {
                       echo '<option value="' . $sel_prov . '">' . $abreviatura .'</option>';
@@ -219,7 +219,7 @@ $sel_comunidades =  array (
               <div class="form-group col">
                 <strong>Comunidad Autónoma:</strong>
                 <select id="comunidad" class="form-select " name="comunidad">
-                  <option selected value="<?php echo $value['Comunidad']?>"><?php echo $value['Comunidad']?></option>
+                  <option selected value="<?php echo $data['Comunidad']?>"><?php echo $data['Comunidad']?></option>
                   <?php 
                     foreach ($sel_comunidades as $sel_com => $siglas) {
                       echo '<option value="' . $sel_com . '">' . $siglas .'</option>';
@@ -231,54 +231,54 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group">
                   <strong>Teléfono:</strong>
-                  <input type="number" class="form-control" name="telefono" value="<?php echo $value['Telefono']?>">
+                  <input type="number" class="form-control" name="telefono" value="<?php echo $data['Telefono']?>">
                 </div>
               </div>
 
               <div class="form-group col">
                 <strong>Lugar de Nacimiento:</strong>
-                <input class="form-control bg-gray" value="<?php echo $value['LugarNacimiento']?>" name="lnacimiento" readonly>
+                <input class="form-control bg-gray" value="<?php echo $data['LugarNacimiento']?>" name="lnacimiento" readonly>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Cuenta Bancaria:</strong>
-                  <input type="number" class="form-control" name="cuenta" value="<?php echo $value['CuentaBancaria']?>" placeholder="Cuenta Bancaria">
+                  <input type="number" class="form-control" name="cuenta" value="<?php echo $data['CuentaBancaria']?>" placeholder="Cuenta Bancaria">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Teléfono de Trabajo:</strong>
-                  <input type="number" class="form-control" name="tlftrabajo" value="<?php echo $value['TelefonoTrabajo']?>" placeholder="Teléfono Trabajo">
+                  <input type="number" class="form-control" name="tlftrabajo" value="<?php echo $data['TelefonoTrabajo']?>" placeholder="Teléfono Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Lugar de Trabajo:</strong>
-                  <input type="text" class="form-control" name="lugtrabajo" value="<?php echo $value['LugarTrabajo']?>" placeholder="Lugar Trabajo">
+                  <input type="text" class="form-control" name="lugtrabajo" value="<?php echo $data['LugarTrabajo']?>" placeholder="Lugar Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Dirección de Trabajo:</strong>
-                  <input type="text" class="form-control" name="dtrabajo" value="<?php echo $value['DireccionTrabajo']?>" placeholder="Dirección Trabajo">
+                  <input type="text" class="form-control" name="dtrabajo" value="<?php echo $data['DireccionTrabajo']?>" placeholder="Dirección Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Localidad de Trabajo:</strong>
-                  <input type="text" class="form-control" name="loctrabajo" value="<?php echo $value['LocalidadTrabajo']?>" placeholder="Localidad Trabajo">
+                  <input type="text" class="form-control" name="loctrabajo" value="<?php echo $data['LocalidadTrabajo']?>" placeholder="Localidad Trabajo">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Nº Colegiado de Origen:</strong>
-                  <input type="number" class="form-control bg-gray" name="norigen" value="<?php echo $value['NumColegiado']?>" readonly>
+                  <input type="number" class="form-control bg-gray" name="norigen" value="<?php echo $data['NumColegiado']?>" readonly>
                 </div>
               </div>
 
@@ -287,7 +287,7 @@ $sel_comunidades =  array (
                   <strong>Fecha de Nacimiento:</strong>
                   <div class="d-flex">
                     <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                    <input type="text" class="form-control bg-gray" name="fnacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus readonly>
+                    <input type="text" class="form-control bg-gray" name="fnacimiento" value="<?php echo $data['FechaNacimiento']?>" autofocus readonly>
                   </div>      
                 </div>
               </div>
@@ -298,7 +298,7 @@ $sel_comunidades =  array (
                   <select id ="ejerciente" class="form-select bg-gray" name="ejerciente" readonly>
                     <option value="">
                       <?php
-                        switch($value['Ejerciente']){
+                        switch($data['Ejerciente']){
                           case 0:
                             echo "No Ejerciente";
                             break;
@@ -321,27 +321,27 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group">
                   <strong>Titulación:</strong>
-                  <input type="text" class="form-control" name="titulacion" value="<?php echo $value['Titulacion']?>">
+                  <input type="text" class="form-control" name="titulacion" value="<?php echo $data['Titulacion']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Especialidad:</strong>
-                  <input type="text" class="form-control" name="especialidad" value="<?php echo $value['Especialidad']?>">
+                  <input type="text" class="form-control" name="especialidad" value="<?php echo $data['Especialidad']?>">
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
                   <strong>Ámbito de Trabajo:</strong>
-                  <input type="text" class="form-control" name="ambito" value="<?php echo $value['AmbitoTrabajo']?>">
+                  <input type="text" class="form-control" name="ambito" value="<?php echo $data['AmbitoTrabajo']?>">
                 </div>
               </div>
 
               <div class="col-lg-12">
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
-                <input type="hidden" value="<?php echo $value['Id'] ?>">
+                <input type="hidden" value="<?php echo $data['Id'] ?>">
               </div>
 
             </div>
