@@ -307,9 +307,41 @@ class ItemCRUDModel extends CI_Model{
             'Titulacion'  => $this->input->post('titulacion'),
             'ColegioOrigen'  => $this->input->post('colegioorigen'),
             'NumColegiado'  => $this->input->post('norigen'),
-            'Sector'  => $this->input->post('sectores'),
-            'Usuario' => $this->input->post('usuario'),
-            'Pass' => $this->input->post('pass'),
+            'Sector'  => $this->input->post('sectores')
+		);
+
+		return $this->db->update('colegiados', $data, 'Id ='. $id);
+	}
+
+	public function update_user(){
+
+		$id = $this->input->post('Id');
+		
+		$data = array(
+			'FechaAlta' => $this->input->post('fechaAlta'),
+            'Colegiado' => $this->input->post('numColegiado'),
+            'Nombre' => $this->input->post('nombre'),
+            'Apellidos'  => $this->input->post('apellidos'),
+            'Email'  => $this->input->post('email'),
+            'Telefono'  => $this->input->post('telefono'),
+            'LugarNacimiento'  => $this->input->post('lnacimiento'),
+            'FechaNacimiento'  => $this->input->post('fnacimiento'),
+            'Direccion'  => $this->input->post('direccion'),
+            'CP'  => $this->input->post('cp'),
+            'Localidad'  => $this->input->post('localidad'),
+            'Comunidad'  => $this->input->post('comunidad'),
+            'Provincia'  => $this->input->post('provincia'),
+            'CuentaBancaria'  => $this->input->post('cuenta'),
+            'TelefonoTrabajo'  => $this->input->post('tlftrabajo'),
+            'LugarTrabajo'  => $this->input->post('lugtrabajo'),
+            'DireccionTrabajo'  => $this->input->post('dtrabajo'),
+            'LocalidadTrabajo'  => $this->input->post('loctrabajo'),
+            'Especialidad'  => $this->input->post('especialidad'),
+            'AmbitoTrabajo'  => $this->input->post('ambito'),
+            'Ejerciente' => $this->input->post('ejerciente'),
+            'Titulacion'  => $this->input->post('titulacion'),
+            'NumColegiado'  => $this->input->post('norigen'),
+
 		);
 
 		return $this->db->update('colegiados', $data, 'Id ='. $id);

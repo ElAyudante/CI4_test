@@ -1,4 +1,6 @@
-<?php $value = $_SESSION['user'];
+<?php 
+$session = \Config\Services::session();
+$value = $_SESSION['user'];
 
 $sel_provincias = array (
   'Alava' => 'Alava',
@@ -85,6 +87,20 @@ $sel_comunidades =  array (
 
       <div class="col-lg-10">
         <div class="container p-5">
+        <?php if($session->getFlashdata('error') !== null){ 
+        ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $session->getFlashdata('error');  ?>
+            </div>
+
+        <?php }?>
+        <?php if($session->getFlashdata('cambio') !== null){ 
+        ?>
+            <div class="alert alert-success" role="success">
+                <?php echo $session->getFlashdata('cambio');  ?>
+            </div>
+
+        <?php }?>
           <h3 class="p-3 text-white text-uppercase fs-1 bg-blue fw-bold mb-0">Mis Datos Personales</h3>
           <?php echo form_open('users/update_datos/'.$value['Id']); ?>
           <div class="form-border p-3 bg-white mb-0">
@@ -102,7 +118,7 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group">
                   <strong>Nº Colegiado:</strong>
-                  <input type="text" class="form-control bg-gray" name="colegiado" value="<?php echo $value['Colegiado']?>" autofocus readonly>
+                  <input type="text" class="form-control bg-gray" name="ncolegiado" value="<?php echo $value['Colegiado']?>" autofocus readonly>
                 </div>
               </div>
 
@@ -221,7 +237,7 @@ $sel_comunidades =  array (
 
               <div class="form-group col">
                 <strong>Lugar de Nacimiento:</strong>
-                <input class="form-control bg-gray" value="<?php echo $value['LugarNacimiento']?>" readonly>
+                <input class="form-control bg-gray" value="<?php echo $value['LugarNacimiento']?>" name="lnacimiento" readonly>
               </div>
 
               <div class="col">
@@ -262,7 +278,7 @@ $sel_comunidades =  array (
               <div class="col">
                 <div class="form-group">
                   <strong>Nº Colegiado de Origen:</strong>
-                  <input type="number" class="form-control bg-gray" name="ncolegiado" value="<?php echo $value['NumColegiado']?>" readonly>
+                  <input type="number" class="form-control bg-gray" name="norigen" value="<?php echo $value['NumColegiado']?>" readonly>
                 </div>
               </div>
 
@@ -271,7 +287,7 @@ $sel_comunidades =  array (
                   <strong>Fecha de Nacimiento:</strong>
                   <div class="d-flex">
                     <i class="fas fa-calendar icon" tabindex=0 style="padding: 10px; background: #004987; color: white; min-width: 50px; text-align: center; border-radius:5px; margin-right: -5px;"></i>
-                    <input type="text" class="form-control bg-gray" name="fechanacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus readonly>
+                    <input type="text" class="form-control bg-gray" name="fnacimiento" value="<?php echo $value['FechaNacimiento']?>" autofocus readonly>
                   </div>      
                 </div>
               </div>
@@ -325,6 +341,7 @@ $sel_comunidades =  array (
 
               <div class="col-lg-12">
                 <button type="submit" class="btn btn-primary btn-block btn-acceso text-uppercase">Modificar</button>
+                <input type="hidden" value="<?php echo $value['Id'] ?>">
               </div>
 
             </div>

@@ -38,9 +38,11 @@ class ItemCRUD extends CI_Controller {
    }
 
 
-   public function mandar_correo(){
+   public function mandar_correo_usuarios($data){
 
     $email = \Config\Services::email();  
+    $msg = $data;
+    //$database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
     $database = $this->db->get('test_emails')->result_array();
     $correos = array();
     foreach($database as $cliente){
@@ -78,7 +80,7 @@ class ItemCRUD extends CI_Controller {
 
 
     $email->setSubject('Email Test');
-    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4), true));
+    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $msg), true));
 
     $email->send();
     
@@ -200,7 +202,7 @@ class ItemCRUD extends CI_Controller {
         $crud = new GroceryCrud();
         $crud->setTable('documentos');
         $crud->setSubject('Documento', 'Documentos');
-        $crud->columns(['Nombre', 'descripcion', 'Publico', 'Archivo']);
+        $crud->columns(['Nombre', 'Descripcion', 'Publico', 'Archivo']);
         $crud->unsetAdd();
 
         $crud->unsetBootstrap();
@@ -582,6 +584,9 @@ class ItemCRUD extends CI_Controller {
    }
 
    public function mis_datos(){
+    $datos = $_SESSION['user'];
+    $id = $datos['Id'];
+    
     echo view('templates/header_usuarios');
     echo view('App\Views\pages\usuarios\home');
     echo view('templates/footer');
@@ -649,6 +654,7 @@ class ItemCRUD extends CI_Controller {
         }
 
 		$this->db->insert('documentos', $data);
+        $this->mandar_correo_usuarios('un nuevo Documento');
 
         return redirect()->to(base_url('documentos'));
     }
@@ -672,7 +678,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
-
+        $this->mandar_correo_usuarios('una nueva Oferta de Empleo');
         return $this->listar_ofertas();
     }
 
@@ -748,6 +754,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
+        $this->mandar_correo_usuarios('un nuevo Curso');
         return redirect()->to(base_url('lista_cursos_CPLC'));
 
     }
@@ -770,6 +777,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
+        $this->mandar_correo_usuarios('un nuevo Convenio');
         return redirect()->to(base_url('lista_convenios'));
     }
 
@@ -972,6 +980,48 @@ class ItemCRUD extends CI_Controller {
     } else {
         return redirect()->to(base_url('itemCRUD/edit/'.$item->Id));
     }
+    }
+
+    public function update_usuarios($id) {
+        $model = model(ItemCRUDModel::class);
+        $session = \Config\Services::session();
+		
+		$data = array(
+			'FechaAlta' => $this->input->post('falta'),
+            'Colegiado' => $this->input->post('ncolegiado'),
+            'Nombre' => $this->input->post('nombre'),
+            'Apellidos'  => $this->input->post('apellidos'),
+            'Email'  => $this->input->post('email'),
+            'Telefono'  => $this->input->post('telefono'),
+            'LugarNacimiento'  => $this->input->post('lnacimiento'),
+            'FechaNacimiento'  => $this->input->post('fnacimiento'),
+            'Direccion'  => $this->input->post('direccion'),
+            'CP'  => $this->input->post('cp'),
+            'Localidad'  => $this->input->post('localidad'),
+            'Comunidad'  => $this->input->post('comunidad'),
+            'Provincia'  => $this->input->post('provincia'),
+            'CuentaBancaria'  => $this->input->post('cuenta'),
+            'TelefonoTrabajo'  => $this->input->post('tlftrabajo'),
+            'LugarTrabajo'  => $this->input->post('lugtrabajo'),
+            'DireccionTrabajo'  => $this->input->post('dtrabajo'),
+            'LocalidadTrabajo'  => $this->input->post('loctrabajo'),
+            'Especialidad'  => $this->input->post('especialidad'),
+            'AmbitoTrabajo'  => $this->input->post('ambito'),
+            'Ejerciente' => $this->input->post('ejerciente'),
+            'Titulacion'  => $this->input->post('titulacion'),
+            'NumColegiado'  => $this->input->post('norigen'),
+
+		);
+
+		if($this->db->update('colegiados', $data, 'Id ='. $id)){
+            $session->setFlashdata('cambio', 'Datos modificados satisfactoriamente.');
+            return  redirect()->to(base_url('users/datos'));
+        } else {
+            $session->setFlashdata('cambio', 'Datos modificados satisfactoriamente.');
+            return  redirect()->to(base_url('users/datos'));
+        }
+
+        
         
     }
 
