@@ -67,7 +67,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                         </div>
                     </div>
 
-                    <div class="col">
+                    <!--<div class="col">
                         <div class="form-group">
                         <strong>Password:</strong>
                         <div class="d-flex">
@@ -78,7 +78,7 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
                             </span>
                         </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="col">
                         <div class="form-group">

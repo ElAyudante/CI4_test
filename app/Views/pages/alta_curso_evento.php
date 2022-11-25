@@ -18,14 +18,14 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 						<div class="col">
 							<div class="form-group">
 								<strong>Nombre del Curso/Evento:</strong>
-								<input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso/Evento" autofocus>
+								<input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso/Evento" autofocus required>
 							</div>
 						</div>
 
 						<div class="col-lg-6">
 							<div class="form-group">
 								<strong>Descripción del Curso/Evento:</strong>
-								<textarea type="text" class="form-control" name="descripcion" placeholder="Descripción del Curso/Evento" autofocus></textarea>
+								<textarea type="text" class="form-control" name="descripcion" placeholder="Descripción del Curso/Evento" autofocus required></textarea>
 							</div>
 						</div>
 						
@@ -41,55 +41,55 @@ $form_att=["class"=> "needs-validation form-border p-3 bg-white mb-0", "novalida
 						<div class="col">
 							<div class="form-group">
 								<strong>Fecha del curso:</strong>
-								<input type="date" class="form-control" name="fecha" autofocus></input>
+								<input type="date" class="form-control" name="fecha" autofocus required></input>
 							</div>
 						</div>
 
 						<div class="col">
 							<div class="form-group">
 								<strong>Duración Curso:</strong>
-								<input type="number" class="form-control" name="duracion" placeholder="Duración" autofocus></input>
+								<input type="number" class="form-control" name="duracion" placeholder="Duración" autofocus required></input>
 							</div>
 						</div>
 
 						<div class="col">
 							<div class="form-group">
 								<strong>Hora Inicio:</strong>
-								<input type="text" class="form-control" name="horarioInicio" placeholder="Horario Inicio" autofocus></input>
+								<input type="text" class="form-control" name="horarioInicio" placeholder="Horario Inicio" autofocus required></input>
 							</div>
 						</div>
 						
 						<div class="col">
 							<div class="form-group">
 								<strong>Hora Fin:</strong>
-								<input type="text" class="form-control" name="horarioFin" placeholder="Horario Fin" autofocus></input>
+								<input type="text" class="form-control" name="horarioFin" placeholder="Horario Fin" autofocus required></input>
 							</div>
 						</div>
 
 						<div class="col">
 							<div class="form-group">
 								<strong>Dirigido a:</strong>
-								<input type="text" class="form-control" name="dirigido" placeholder="Dirigido A" autofocus></input>
+								<input type="text" class="form-control" name="dirigido" placeholder="Dirigido A" autofocus required></input>
 							</div>
 						</div>
 
 						<div class="col">
 							<div class="form-group">
 								<strong>Precio Colegiado:</strong>
-								<input type="text" class="form-control" name="precioColegiado" placeholder="Precio Colegiados" autofocus></input>
+								<input type="text" class="form-control" name="precioColegiado" placeholder="Precio Colegiados" autofocus required></input>
 							</div>
 						</div>
 
 						<div class="col">
 							<div class="form-group">
 								<strong>Precio no Colegiado:</strong>
-								<input type="text" class="form-control" name="precioNoColegiado" placeholder="Precio No Colegiado" autofocus></input>
+								<input type="text" class="form-control" name="precioNoColegiado" placeholder="Precio No Colegiado" autofocus required></input>
 							</div>
 						</div>
 						<div class="col">
 							<div class="form-group">
 								<strong>Portada:</strong>
-								<input class="form-control" type="file" id="formFile" name="archivo"></input>
+								<input class="form-control" type="file" id="formFile" name="archivo" required></input>
 							</div>
 						</div>
 
