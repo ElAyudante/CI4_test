@@ -66,8 +66,10 @@ class ItemCRUD extends CI_Controller {
     
     $email->initialize($config);
 
-    $email->setFrom('adrian@elayudante.es', 'Adrian');
+    $email->setFrom('adrian@elayudante.es', 'Colegio de Logopedas de Cantabria');
     $email->setTo($correos);
+    $email->setSubject('Nueva/o ' . $msg . ' disponible.');
+    $email->setReplyTo('');
 
     $email->attach($filename, 'inline');
     $email->attach($filename2, 'inline');
@@ -78,8 +80,54 @@ class ItemCRUD extends CI_Controller {
     $cid3 = $email->setAttachmentCID($filename3);
     $cid4 = $email->setAttachmentCID($filename4);
 
+    $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $msg), true));
 
-    $email->setSubject('Email Test');
+    $email->send();
+    
+   }
+
+   public function mandar_correo_admin($data){
+
+    $email = \Config\Services::email();  
+    $numero = $data;
+    //$database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
+    $database = $this->db->get('test_emails')->result_array();
+    $correos = array();
+    foreach($database as $cliente){
+        $correos[] = $cliente['Email'];
+    }
+
+    $filename = './public/assets/imgs/pokeball.png';
+    $filename2 = './public/assets/imgs/logo_header.png';
+    $filename3 = './public/assets/imgs/facebook.png';
+    $filename4 = './public/assets/imgs/linkedin.png';
+    
+    $config['protocol']    = 'smtp';
+    $config['SMTPHost']    = 'dns10356.phdns19.es';
+    $config['SMTPPort']    = '465';
+    $config['SMTPUser']    = 'adrian@elayudante.es';
+    $config['SMTPPass']    = '&p07A7av0';
+    $config['charset']    = 'utf-8';
+    $config['newline']    = "\r\n";
+    $config['mailType'] = 'html';
+    $config['SMTPCrypto'] = 'ssl';
+    
+    $email->initialize($config);
+
+    $email->setFrom('adrian@elayudante.es', 'Colegio de Logopedas de Cantabria');
+    $email->setTo($correos);
+    $email->setSubject('Nº Colegiado: ' . $numero . ' ha actualizado sus datos personales.');
+    $email->setReplyTo('');
+
+    $email->attach($filename, 'inline');
+    $email->attach($filename2, 'inline');
+    $email->attach($filename3, 'inline');
+    $email->attach($filename4, 'inline');
+    $cid = $email->setAttachmentCID($filename);
+    $cid2 = $email->setAttachmentCID($filename2);
+    $cid3 = $email->setAttachmentCID($filename3);
+    $cid4 = $email->setAttachmentCID($filename4);
+
     $email->setMessage($this->load->view('App\Views\pages\email_plantilla', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $msg), true));
 
     $email->send();
@@ -586,9 +634,11 @@ class ItemCRUD extends CI_Controller {
    public function mis_datos(){
     $datos = $_SESSION['user'];
     $id = $datos['Id'];
-    
+
+    $data = $this->db->get_where('colegiados', 'Id = '. $id)->row_array();
+
     echo view('templates/header_usuarios');
-    echo view('App\Views\pages\usuarios\home');
+    echo view('App\Views\pages\usuarios\home', $data);
     echo view('templates/footer');
    }
 
@@ -638,7 +688,7 @@ class ItemCRUD extends CI_Controller {
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+        $allowTypes = array('jpg','png','jpeg','pdf', 'JPG', 'JPEG', 'PDF', 'PNG');
         if(in_array($fileType, $allowTypes)){
             // Upload file to server
             if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
@@ -654,7 +704,7 @@ class ItemCRUD extends CI_Controller {
         }
 
 		$this->db->insert('documentos', $data);
-        $this->mandar_correo_usuarios('un nuevo Documento');
+        $this->mandar_correo_usuarios('Documento');
 
         return redirect()->to(base_url('documentos'));
     }
@@ -678,7 +728,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
-        $this->mandar_correo_usuarios('una nueva Oferta de Empleo');
+        $this->mandar_correo_usuarios('Oferta de Empleo');
         return $this->listar_ofertas();
     }
 
@@ -691,7 +741,7 @@ class ItemCRUD extends CI_Controller {
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-        $allowTypes = array('jpg','png','jpeg','pdf');
+        $allowTypes = array('jpg','png','jpeg','pdf', 'JPG', 'JPEG', 'PDF', 'PNG');
         if(in_array($fileType, $allowTypes)){
             if(move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFilePath)){
                 $imagen = array(
@@ -754,7 +804,7 @@ class ItemCRUD extends CI_Controller {
             ]);
         }
 
-        $this->mandar_correo_usuarios('un nuevo Curso');
+        $this->mandar_correo_usuarios('Curso');
         return redirect()->to(base_url('lista_cursos_CPLC'));
 
     }
