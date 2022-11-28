@@ -2360,4 +2360,8 @@ class ItemCRUD extends CI_Controller {
         echo view('App\Views\pages\request_nueva_password');
         echo view('templates/footer');
     }
+
+    public function test_email_generarpass(){
+        echo view ('App\Views\pages\email_generarpass');
+    }
 }

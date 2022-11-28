@@ -45,6 +45,7 @@
     $routes->get('bono_formacion', 'itemCRUD::bono_formacion');
 
     $routes->get('email_plantilla', 'itemCRUD::test_email');
+    $routes->get('email_generarpass', 'itemCRUD::test_email_generarpass');
 
     $routes->get('faq', 'itemCRUD::faq');
     $routes->get('juntagob', 'itemCRUD::juntagob');
