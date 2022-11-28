@@ -59,6 +59,7 @@
 
     $routes->get('mandar_correo', 'itemCRUD::mandar_correo');
     $routes->get('request_nueva_password', 'itemCRUD::request_nueva_password');
+    $routes->post('request_new_password', 'itemCRUD::generate_new_password');
 
 
     $routes->get('users/index_login', 'itemCRUD::index_login');
@@ -83,7 +84,7 @@
     $routes->post('users/solicitar_baja', 'itemCRUD::tramitar_baja');
     $routes->get('users/mis_facturas', 'itemCRUD::facturas_usuarios');
     $routes->get('users/seguridad_privacidad', 'itemCRUD::seguridad_usuarios');
-    $routes->post('users/request_password_submit', 'itemCRUD::request_pasword_submit');
+    $routes->post('users/request_password_submit', 'itemCRUD::request_password_submit');
 
     $routes->get('files/facturas/download/(:any)', 'itemCRUD::download_facturas/$1');
     $routes->get('files/documentos/download/(:any)', 'itemCRUD::download_documentos/$1');

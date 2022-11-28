@@ -1,3 +1,4 @@
+<?php $session = \Config\Services::session(); ?>
 <section class="bg-gray">
 	<div class="container-fluid">
 		<div class="row h-auto">
@@ -12,6 +13,17 @@
 
           <?php echo form_open('users/request_password_submit'); ?>
           <div class="form-border p-3 bg-white mb-0">
+          <?php if($session->getFlashdata('msgError') !== null){ 
+            ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $session->getFlashdata('msgError');  ?>
+            </div>
+
+            <?php } elseif($session->getFlashdata('msg') !== null){?>
+              <div class="alert alert-success" role="alert">
+                <?php echo $session->getFlashdata('msg');  ?>
+            </div>
+            <?php }?>
             
             <div class="row row-cols-lg-4 g-lg-4 cblue text-uppercase">
               <div class="col">
@@ -31,7 +43,7 @@
                 <div class="form-group">
                   <strong>Nueva Contraseña:</strong>
                   <div class="d-flex">
-                    <input id="password2" type="password" class="form-control" name="pass" placeholder="Nueva Contraseña">
+                    <input id="password2" type="password" class="form-control" name="passNueva" placeholder="Nueva Contraseña">
                     <span class="input-group-text" onclick="password_show_hide2();">
                       <i class="fas fa-eye" id="show_eye2"></i>
                       <i class="fas fa-eye-slash d-none" id="hide_eye2"></i>

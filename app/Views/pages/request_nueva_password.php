@@ -15,16 +15,20 @@
 
         <div class="p-5 w-75">
 
-        <?php if($session->getFlashdata('error') !== null){ 
-        ?>
+        <?php if($session->getFlashdata('msgError') !== null){ 
+            ?>
             <div class="alert alert-danger" role="alert">
-                <?php echo $session->getFlashdata('error');  ?>
+                <?php echo $session->getFlashdata('msgError');  ?>
             </div>
 
-        <?php }?>
+            <?php } elseif($session->getFlashdata('msg') !== null){?>
+              <div class="alert alert-success" role="alert">
+                <?php echo $session->getFlashdata('msg');  ?>
+            </div>
+            <?php }?>
         <h3 class="py-4 px-5 text-white text-uppercase fs-2 bg-blue fw-bold mb-0 text-center"><i class="fa-solid fa-lock"></i> Recuperar Contraseña</h3>
             
-        <form class="form-border p-5 bg-white mb-0 text-center" method="POST" action="<?php echo base_url(); ?>/users/admin/login">
+        <form class="form-border p-5 bg-white mb-0 text-center" method="POST" action="<?php echo base_url(); ?>/request_new_password">
             <div class="d-flex align-items-center mb-4">
                 <i class="fa-solid fa-envelope fs-1 me-4 cblue"></i>
                 <input class="form-control" placeholder="Correo Electrónico" type="text" name="email" required>

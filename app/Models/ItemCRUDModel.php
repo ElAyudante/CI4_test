@@ -22,8 +22,6 @@ class ItemCRUDModel extends CI_Model{
 		} else {
 			return NULL;
 		}
-		
-		
 	}
 
 	public function login_admin($usuario, $pass){

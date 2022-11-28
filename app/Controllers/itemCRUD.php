@@ -42,8 +42,7 @@ class ItemCRUD extends CI_Controller {
 
     $email = \Config\Services::email();  
     $msg = $data;
-    //$database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
-    $database = $this->db->get('test_emails')->result_array();
+    $database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
     $correos = array();
     foreach($database as $cliente){
         $correos[] = $cliente['Email'];
@@ -90,7 +89,6 @@ class ItemCRUD extends CI_Controller {
 
     $email = \Config\Services::email();  
     $numero = $data;
-    //$database = $this->db->get_where('colegiados', 'Ejerciente = "1"')->result_array();
     $usuario = $this->db->get_where('colegiados', 'Colegiado =' . $numero)->row_array();
     $nombre = $usuario['Nombre'] . ' ' . $usuario['Apellidos'];
 
@@ -1079,8 +1077,8 @@ class ItemCRUD extends CI_Controller {
 
         $id = $_POST['id'];
 
-        $password = 'temp';
-        //$this->password_generate(9). '\n';
+
+        $password = $this->password_generate(9). '\n';
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
@@ -1104,6 +1102,7 @@ class ItemCRUD extends CI_Controller {
         );
 
         $this->db->insert('pagos_pendientes', $data_pago);
+        $this->mandar_correo_pass($password);
 
         return redirect()->to(base_url('itemCRUD'));
     }
@@ -2355,5 +2354,91 @@ class ItemCRUD extends CI_Controller {
         echo view('templates/header');
         echo view('App\Views\pages\request_nueva_password');
         echo view('templates/footer');
+    }
+
+    public function request_password_submit(){
+
+        $sesion = $_SESSION['user'];
+        $session = \Config\Services::session();
+        $contraseña = $_POST['pass'];
+        $usuario = $sesion['Colegiado'];
+        $data = $this->db->get_where('colegiados', array('Colegiado' => $usuario))->row_array();
+		$hashed_password = $data['Pass'];
+        $passNueva = $_POST['passNueva'];
+        $passNuevaHash = password_hash($passNueva, PASSWORD_DEFAULT);
+        $arr = array(
+            'Pass' => $passNuevaHash
+        );
+		
+        if(password_verify($contraseña, $hashed_password)){
+
+            $this->db->update('colegiados', $arr, 'Colegiado =' . $usuario);
+            $session->setFlashdata('msg', 'Contraseña Cambiada Satisfactoriamente');
+            return redirect()->to(base_url('users/seguridad_privacidad'));
+        }else{
+            $session->setFlashdata('msgError', 'Contraseña Incorrecta');
+            return redirect()->to(base_url('users/seguridad_privacidad'));
+        }
+    }
+
+    public function generate_new_password(){
+
+        $session = \Config\Services::session();
+        $nuevaPass = $this->password_generate(9). '\n';
+        $correo = $_POST['email'];
+        $hashed_password = 'temp3';
+        //password_hash($nuevaPass, PASSWORD_DEFAULT);
+
+        if($this->db->get_where('colegiados', array('Email' => $correo))->row_array()){
+            $this->db->update('colegiados', array('Pass' => $hashed_password), array('Email' => $correo));
+            $session->setFlashdata('msg', 'Se ha enviado un correo a esta dirección');
+            $this->mandar_correo_pass($nuevaPass);
+            return redirect()->to(base_url('request_nueva_password'));
+        }else{
+            $session->setFlashdata('msgError', 'Dirección de correo incorrecta');
+            return redirect()->to(base_url('request_nueva_password'));
+        }
+
+    }
+
+    public function mandar_correo_pass($password){
+
+        $email = \Config\Services::email();  
+        $msg = $password;
+
+        $filename = './public/assets/imgs/pokeball.png';
+        $filename2 = './public/assets/imgs/logo_header.png';
+        $filename3 = './public/assets/imgs/facebook.png';
+        $filename4 = './public/assets/imgs/linkedin.png';
+        
+        $config['protocol']    = 'smtp';
+        $config['SMTPHost']    = 'dns10356.phdns19.es';
+        $config['SMTPPort']    = '465';
+        $config['SMTPUser']    = 'adrian@elayudante.es';
+        $config['SMTPPass']    = '&p07A7av0';
+        $config['charset']    = 'utf-8';
+        $config['newline']    = "\r\n";
+        $config['mailType'] = 'html';
+        $config['SMTPCrypto'] = 'ssl';
+        
+        $email->initialize($config);
+
+        $email->setFrom('noreply@colegiologopedas.org', 'Colegio de Logopedas de Cantabria');
+        $email->setTo($correos);
+        $email->setSubject('Email de cambio de contraseña | Colegio de Logopedas de Cantabria');
+
+
+        $email->attach($filename, 'inline');
+        $email->attach($filename2, 'inline');
+        $email->attach($filename3, 'inline');
+        $email->attach($filename4, 'inline');
+        $cid = $email->setAttachmentCID($filename);
+        $cid2 = $email->setAttachmentCID($filename2);
+        $cid3 = $email->setAttachmentCID($filename3);
+        $cid4 = $email->setAttachmentCID($filename4);
+
+        $email->setMessage($this->load->view('App\Views\pages\email_plantillaemail_generar_pass', array('cid' => $cid, 'cid2' => $cid2, 'cid3' => $cid3, 'cid4' => $cid4, 'msg' => $msg), true));
+
+        $email->send();
     }
 }
