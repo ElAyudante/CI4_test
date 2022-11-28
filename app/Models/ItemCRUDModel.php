@@ -27,8 +27,15 @@ class ItemCRUDModel extends CI_Model{
 	}
 
 	public function login_admin($usuario, $pass){
-		$query = $this->db->get_where('users', array('username'=>$usuario, 'password'=>$pass));
-		return $query->row_array();
+
+		$data = $this->db->get_where('users', array('username' => $usuario))->row_array();
+		$hashed_password = $data['password'];
+		if(password_verify($pass, $hashed_password)){
+			$query = $this->db->get_where('users', array('username'=>$usuario));
+			return $query->row_array();
+		} else {
+			return NULL;
+		}
 	}
 
 	//CREATE
